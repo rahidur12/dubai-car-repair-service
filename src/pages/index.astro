@@ -318,7 +318,7 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
     <section class="dcrs-hero">
         <div class="dcrs-hero__bg">
             <picture>
-                <source media="(max-width: 640px)" srcset="/img/hero1-mobile.webp" type="image/webp" />
+                <source media="(max-width: 640px)" srcset="/img/hero1-mobile.webp" type="image/webp" width="640" height="360" />
                 <img
                     src="/img/hero1.webp"
                     alt="Dubai Car Repair Service Workshop"
@@ -402,8 +402,8 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
                                 <li><Fragment set:html={icons.check} />{service.bullet2}</li>
                                 <li><Fragment set:html={icons.check} />{service.bullet3}</li>
                             </ul>
-                            <a href={service.link} class="dcrs-ticket__link">View service details</a>
-                            <a href={waHref} class="dcrs-btn dcrs-btn--block">
+                            <a href={service.link} class="dcrs-ticket__link" aria-label={`View details for ${service.title}`}>View service details</a>
+                            <a href={waHref} class="dcrs-btn dcrs-btn--block" aria-label={`Book ${service.title} on WhatsApp`} target="_blank" rel="noopener noreferrer">
                                 <Fragment set:html={icons.chat} /> Book on WhatsApp
                             </a>
                         </div>
@@ -671,9 +671,9 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
         --paper: #E8E4D8;
         --paper-alt: #DFDACB;
         --white: #FBF9F4;
-        --brass: #C1802E;
-        --brass-deep: #9C6423;
-        --steel: #57706E;
+        --brass: #D48E33;
+        --brass-deep: #A36418;
+        --steel: #354D4B;
         --rule-on-paper: rgba(16, 32, 31, 0.15);
         --rule-on-ink: rgba(251, 249, 244, 0.16);
         --font-display: "Fraunces", Georgia, serif;

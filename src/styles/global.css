@@ -5,9 +5,9 @@
     --paper: #E8E4D8;
     --paper-alt: #DFDACB;
     --white: #FBF9F4;
-    --brass: #C1802E;
-    --brass-deep: #9C6423;
-    --steel: #57706E;
+    --brass: #D48E33;
+    --brass-deep: #A36418;
+    --steel: #354D4B;
 
     /* Legacy aliases kept so older markup referencing these still resolves */
     --main-color: var(--white);
@@ -87,7 +87,7 @@ a {
 }
 
 .dcrs-btn--solid {
-    background-color: var(--brass, #C1802E);
+    background-color: var(--brass, #D48E33);
     color: var(--ink, #10201F);
 }
 
