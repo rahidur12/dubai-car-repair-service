@@ -2,9 +2,6 @@
 # Dubai Car Repair Service - Apache / LiteSpeed Production Server Config
 # ----------------------------------------------------------------------
 
-# Prevent LiteSpeed/Apache from appending trailing slashes to folder URLs
-DirectorySlash Off
-
 RewriteEngine On
 
 # 1. Force HTTPS
@@ -30,14 +27,15 @@ Redirect 301 /locations/car-repair-al-satwa /car-repair-al-satwa
 Redirect 301 /locations/car-repair-sheikh-zayed-road /car-repair-sheikh-zayed-road
 Redirect 301 /resources /resource
 
-# 4. Strip trailing slash from any URL (e.g. /about/ -> /about)
+# 4. Remove trailing slashes from all URLs (e.g. /about/ -> /about)
 RewriteCond %{REQUEST_URI} ^(.+)/$
 RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-# 5. Internally route non-trailing-slash folder request to index.html
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_FILENAME}/index.html -f
-RewriteRule ^(.*)$ $1/index.html [L]
+# 5. Clean URLs: internally serve filename.html without .html in the URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.*)$ $1.html [L]
 
 # 6. Custom 404 Error Page
 ErrorDocument 404 /404.html

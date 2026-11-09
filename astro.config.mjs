@@ -5,6 +5,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://dubaicarrepairservice.com',
   trailingSlash: 'never',
+  build: {
+    format: 'file'
+  },
   redirects: {
     '/car-repair-dubai': '/',
     '/service/car-ac-repair-dubai': '/car-ac-repair-dubai',
