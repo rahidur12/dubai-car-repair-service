@@ -1,6 +1,9 @@
 # ----------------------------------------------------------------------
-# Dubai Car Repair Service - Apache Production Server Config
+# Dubai Car Repair Service - Apache / LiteSpeed Production Server Config
 # ----------------------------------------------------------------------
+
+# Prevent LiteSpeed/Apache from appending trailing slashes to folder URLs
+DirectorySlash Off
 
 RewriteEngine On
 
@@ -12,12 +15,32 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-# 3. Remove trailing slashes from URLs (unless physical directory)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)/$ /$1 [L,R=301]
+# 3. 301 Redirect old Laravel URLs to canonical root URLs
+Redirect 301 /car-repair-dubai /
+Redirect 301 /service/car-ac-repair-dubai /car-ac-repair-dubai
+Redirect 301 /service/car-battery-replacement-dubai /car-battery-replacement-dubai
+Redirect 301 /service/car-engine-service-dubai /car-engine-service-dubai
+Redirect 301 /service/car-inspection-dubai /car-inspection-dubai
+Redirect 301 /service/car-maintenance-dubai /car-maintenance-dubai
+Redirect 301 /service/engine-oil-change-dubai /engine-oil-change-dubai
+Redirect 301 /service/mobile-car-repair-dubai /mobile-car-repair-dubai
+Redirect 301 /service/roadside-assistance-dubai /roadside-assistance-dubai
+Redirect 301 /service/tyre-replacement-dubai /tyre-replacement-dubai
+Redirect 301 /locations/car-repair-al-satwa /car-repair-al-satwa
+Redirect 301 /locations/car-repair-sheikh-zayed-road /car-repair-sheikh-zayed-road
+Redirect 301 /resources /resource
 
-# 4. Custom 404 Error Page
+# 4. Strip trailing slash from any URL (e.g. /about/ -> /about)
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# 5. Internally route non-trailing-slash folder request to index.html
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# 6. Custom 404 Error Page
 ErrorDocument 404 /404.html
 
-# 5. Default directory index file
+# 7. Default index file
 DirectoryIndex index.html
