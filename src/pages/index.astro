@@ -316,7 +316,21 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
 
     <!-- 1. Hero ------------------------------------------------------------->
     <section class="dcrs-hero">
-        <div class="dcrs-hero__bg" style="background-image:url('/img/hero1.webp')"></div>
+        <div class="dcrs-hero__bg">
+            <picture>
+                <source media="(max-width: 640px)" srcset="/img/hero1-mobile.webp" type="image/webp" />
+                <img
+                    src="/img/hero1.webp"
+                    alt="Dubai Car Repair Service Workshop"
+                    class="dcrs-hero__img"
+                    width="1600"
+                    height="900"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                />
+            </picture>
+        </div>
         <div class="dcrs-hero__scrim"></div>
         <div class="dcrs-container dcrs-hero__inner">
             <div class="dcrs-hero__copy">
@@ -378,7 +392,7 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
                 {services.map((service) => (
                     <article class="dcrs-ticket">
                         <div class="dcrs-ticket__media">
-                            <img src={service.image} alt={service.alt} loading="lazy" width="480" height="320" />
+                            <img src={service.image} alt={service.alt} loading="lazy" decoding="async" width="480" height="320" />
                         </div>
                         <div class="dcrs-ticket__body">
                             <span class="dcrs-icon dcrs-icon--sm"><Fragment set:html={icons[service.icon]} /></span>
@@ -434,7 +448,7 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
     <section class="dcrs-section dcrs-section--paper">
         <div class="dcrs-container dcrs-about">
             <div class="dcrs-about__media">
-                <img src={aboutImg.src} alt="Certified mechanics working on a car at the Dubai Car Repair Service Al Satwa workshop" loading="lazy" width={aboutImg.width} height={aboutImg.height} />
+                <img src={aboutImg.src} alt="Certified mechanics working on a car at the Dubai Car Repair Service Al Satwa workshop" loading="lazy" decoding="async" width={aboutImg.width} height={aboutImg.height} />
                 <div class="dcrs-about__badge">
                     <span class="dcrs-about__badge-num">12</span>
                     <span class="dcrs-about__badge-label">Years serving<br/>Dubai drivers</span>
@@ -508,7 +522,7 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
     <section class="dcrs-section dcrs-section--paper">
         <div class="dcrs-container dcrs-diagnostic">
             <div class="dcrs-diagnostic__media">
-                <img src="/img/diagnostic.webp" alt="OBD-II scanner connected to a car for engine fault code diagnostics at Dubai Car Repair Service" loading="lazy" width="640" height="480" />
+                <img src="/img/diagnostic.webp" alt="OBD-II scanner connected to a car for engine fault code diagnostics at Dubai Car Repair Service" loading="lazy" decoding="async" width="640" height="480" />
             </div>
             <div class="dcrs-diagnostic__copy">
                 <h2 class="dcrs-heading__title">Accurate computer diagnostics before any repair begins</h2>
@@ -651,8 +665,6 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
 </style>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
-
     .dcrs {
         --ink: #10201F;
         --ink-soft: #1B302E;
@@ -753,7 +765,13 @@ const waHref = "https://api.whatsapp.com/send?phone=971566121423";
     }
     .dcrs-hero__bg {
         position: absolute; inset: 0;
-        background-size: cover; background-position: center;
+        overflow: hidden;
+    }
+    .dcrs-hero__img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
     }
     .dcrs-hero__scrim {
         position: absolute; inset: 0;

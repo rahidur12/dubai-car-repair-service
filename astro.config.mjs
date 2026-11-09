@@ -6,7 +6,8 @@ export default defineConfig({
   site: 'https://dubaicarrepairservice.com',
   trailingSlash: 'never',
   build: {
-    format: 'file'
+    format: 'file',
+    inlineStylesheets: 'always'
   },
   redirects: {
     '/car-repair-dubai': '/',

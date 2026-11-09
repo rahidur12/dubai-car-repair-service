@@ -58,7 +58,7 @@ const schemaData = {
 };
 
 const siteOrigin = "https://dubaicarrepairservice.com";
-const rawPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '';
+const rawPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '') || '';
 const canonicalUrl = rawPath === '' ? `${siteOrigin}/` : `${siteOrigin}${rawPath}`;
 ---
 
@@ -73,20 +73,51 @@ const canonicalUrl = rawPath === '' ? `${siteOrigin}/` : `${siteOrigin}${rawPath
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5PF9TPBF');</script>
+    {rawPath === '' && (
+        <>
+            <link rel="preload" as="image" href="/img/hero1-mobile.webp" media="(max-width: 640px)" fetchpriority="high" />
+            <link rel="preload" as="image" href="/img/hero1.webp" media="(min-width: 641px)" fetchpriority="high" />
+        </>
+    )}
 
-    <!-- Google Tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WGTVV66H6"></script>
+    <!-- Lazy Google Tag Manager & Google Analytics (fires on user interaction or idle fallback) -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-0WGTVV66H6');
+
+      (function() {
+        var gtmLoaded = false;
+        function loadAnalytics() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-5PF9TPBF');
+
+          var ga = document.createElement('script');
+          ga.async = true;
+          ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-0WGTVV66H6';
+          document.head.appendChild(ga);
+          gtag('config', 'G-0WGTVV66H6');
+        }
+
+        var triggers = ['pointerdown', 'touchstart', 'scroll', 'keydown'];
+        triggers.forEach(function(evt) {
+          window.addEventListener(evt, loadAnalytics, { once: true, passive: true });
+        });
+
+        if ('requestIdleCallback' in window) {
+          window.addEventListener('load', function() {
+            setTimeout(function() { requestIdleCallback(loadAnalytics, { timeout: 2000 }); }, 3000);
+          });
+        } else {
+          window.addEventListener('load', function() { setTimeout(loadAnalytics, 4000); });
+        }
+      })();
     </script>
 
     <!-- Favicon & Touch Icons -->
@@ -95,7 +126,11 @@ const canonicalUrl = rawPath === '' ? `${siteOrigin}/` : `${siteOrigin}${rawPath
     <link rel="apple-touch-icon" href="/logo-round.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+    </noscript>
 
     <!-- Structured JSON-LD Data -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
