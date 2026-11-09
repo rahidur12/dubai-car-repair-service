@@ -6,11 +6,11 @@ RewriteEngine On
 
 # 1. Force HTTPS
 RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # 2. Force non-WWW
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
 # 3. 301 Redirect old Laravel URLs to canonical root URLs
 Redirect 301 /car-repair-dubai /
@@ -27,15 +27,16 @@ Redirect 301 /locations/car-repair-al-satwa /car-repair-al-satwa
 Redirect 301 /locations/car-repair-sheikh-zayed-road /car-repair-sheikh-zayed-road
 Redirect 301 /resources /resource
 
-# 4. Remove trailing slashes from all URLs (e.g. /about/ -> /about)
-RewriteCond %{REQUEST_URI} ^(.+)/$
-RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [R=301,L]
+# 4. Remove trailing slashes from URLs (e.g. /about/ -> /about)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/+$
+RewriteRule ^(.+)/+$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-# 5. Clean URLs: internally serve filename.html without .html in the URL
+# 5. Serve clean URLs internally from .html files (e.g. /about -> about.html)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.*)$ $1.html [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
 
 # 6. Custom 404 Error Page
 ErrorDocument 404 /404.html

@@ -2,5 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/dubaicar/public_html/
+    - rm -rf $DEPLOYPATH/about $DEPLOYPATH/contact $DEPLOYPATH/car-* $DEPLOYPATH/engine-* $DEPLOYPATH/mobile-* $DEPLOYPATH/tyre-* $DEPLOYPATH/roadside-* $DEPLOYPATH/resource* $DEPLOYPATH/terms-* $DEPLOYPATH/privacy-* $DEPLOYPATH/service $DEPLOYPATH/locations
     - /bin/cp -R dist/* $DEPLOYPATH
     - /bin/cp dist/.htaccess $DEPLOYPATH
