@@ -58,7 +58,7 @@ const schemaData = {
 };
 
 const siteOrigin = "https://dubaicarrepairservice.com";
-const rawPath = Astro.url.pathname.replace(/\/$/, '') || '';
+const rawPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '';
 const canonicalUrl = rawPath === '' ? `${siteOrigin}/` : `${siteOrigin}${rawPath}`;
 ---
 

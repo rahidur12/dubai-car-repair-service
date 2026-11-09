@@ -27,19 +27,23 @@ Redirect 301 /locations/car-repair-al-satwa /car-repair-al-satwa
 Redirect 301 /locations/car-repair-sheikh-zayed-road /car-repair-sheikh-zayed-road
 Redirect 301 /resources /resource
 
-# 4. Remove trailing slashes from URLs (e.g. /about/ -> /about)
+# 4. Redirect any direct request for /filename.html to clean URL /filename
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# 5. Remove trailing slashes from URLs (e.g. /about/ -> /about)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} ^(.+)/+$
 RewriteRule ^(.+)/+$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-# 5. Serve clean URLs internally from .html files (e.g. /about -> about.html)
+# 6. Serve clean URLs internally from .html files (e.g. /about -> about.html)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L,QSA]
 
-# 6. Custom 404 Error Page
+# 7. Custom 404 Error Page
 ErrorDocument 404 /404.html
 
-# 7. Default index file
+# 8. Default index file
 DirectoryIndex index.html
