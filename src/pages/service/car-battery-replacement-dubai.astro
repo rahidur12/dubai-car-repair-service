@@ -1,0 +1,1834 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import service5Image from '../../assets/images/service5.webp';
+
+// ---------------------------------------------------------------------------
+// Page Metadata & Settings
+// ---------------------------------------------------------------------------
+const pageTitle = "Car Battery Replacement Dubai | Mobile Battery Service";
+const pageDescription = "Car battery replacement in Dubai from AED 180. Genuine Bosch, Varta & Amaron batteries with on-site mobile fitting across Dubai. Call or WhatsApp 7AM-10PM.";
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://api.whatsapp.com/send?phone=971566121423";
+
+// ---------------------------------------------------------------------------
+// Icons
+// ---------------------------------------------------------------------------
+const icons: Record<string, string> = {
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.3 6.4L4 20l1.4-3.6A7.9 7.9 0 0 1 4 12Z"/><path d="M9 11.5c.3 2 2 3.7 4 4"/></svg>`,
+    chevronDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+    car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`,
+    lightbulb: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>`,
+    plug: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/></svg>`,
+    power: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>`,
+    drop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 7.2 6 11.5a6 6 0 0 1-12 0C6 10.2 12 3 12 3Z"/></svg>`,
+    calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+    alert: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+    moon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+    bolt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    award: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+    receipt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>`,
+    star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    mapPin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>`,
+    info: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+    cog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
+    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`
+};
+
+// ---------------------------------------------------------------------------
+// Section Data
+// ---------------------------------------------------------------------------
+const warningSigns = [
+    {
+        icon: "car",
+        title: "Sluggish Engine Cranking",
+        desc: "The starter motor turns over slowly or labours before starting. This indicates the battery cannot supply sufficient cold cranking amps under initial load."
+    },
+    {
+        icon: "lightbulb",
+        title: "Battery Warning Light",
+        desc: "An illuminated battery or charging symbol on your dashboard indicates a voltage irregularity, often linked to an alternator fault or failing internal cells."
+    },
+    {
+        icon: "plug",
+        title: "Repeated Jump Starts",
+        desc: "If your car requires multiple jump starts within a short period, the battery plates have degraded and can no longer hold a resting charge."
+    },
+    {
+        icon: "power",
+        title: "Flickering Electrical Accessories",
+        desc: "Dimming headlights at idle, slow power windows, or resetting audio screens point to unstable voltage output across the vehicle's electrical system."
+    },
+    {
+        icon: "drop",
+        title: "Case Swelling or Acid Residue",
+        desc: "A bloated battery casing or white powdery corrosion around terminal clamps indicates internal heat stress, overcharging, or venting issues."
+    },
+    {
+        icon: "calendar",
+        title: "Battery Over 2 Years in Service",
+        desc: "Because Dubai's climate accelerates chemical breakdown, batteries older than 24 months should be load-tested during regular vehicle maintenance."
+    },
+    {
+        icon: "alert",
+        title: "Pungent Sulphur Odour",
+        desc: "A rotten egg smell near the battery suggests venting gases from an overcharged or internally shorted cell, requiring immediate technical inspection."
+    },
+    {
+        icon: "moon",
+        title: "No-Start After Parking Overnight",
+        desc: "If your vehicle fails to crank after sitting parked overnight, the battery lacks reserve capacity or the vehicle has an active parasitic electrical drain."
+    }
+];
+
+const batteryBrands = [
+    { name: "Bosch", note: "Engineered to OEM standards for European and Asian models [CONFIRM: current Bosch battery stock and models]" },
+    { name: "Exide", note: "Reinforced plate construction with high heat tolerance [CONFIRM: warranty duration]" },
+    { name: "Varta", note: "Advanced AGM and EFB technology suited for modern vehicles with start-stop systems" },
+    { name: "Amaron", note: "High heat-resistant alloy formulation developed for demanding desert climates" },
+    { name: "ACDelco", note: "Direct factory-fit replacement for American and global vehicle platforms" }
+];
+
+const batteryTypes = [
+    {
+        type: "Standard Flooded (SLI)",
+        desc: "Conventional lead-acid design for vehicles with standard electrical demands and no start-stop systems. Reliable and cost-effective for daily driving.",
+        rating: "⭐⭐⭐"
+    },
+    {
+        type: "EFB - Enhanced Flooded",
+        desc: "Features polyfleece scrims and thicker plates, offering improved cycle durability and heat tolerance for entry-level start-stop vehicles.",
+        rating: "⭐⭐⭐⭐"
+    },
+    {
+        type: "AGM - Absorbent Glass Mat",
+        desc: "Electrolyte is absorbed in glass-mat separators, providing superior charge acceptance, vibration resistance, and deep cycling for luxury and start-stop vehicles.",
+        rating: "⭐⭐⭐⭐⭐"
+    }
+];
+
+const processSteps = [
+    { num: "1", title: "Contact Our Service Team", desc: "Call +971 56 612 1423 or message us on WhatsApp with your vehicle make, model, year, and location in Dubai to check technician availability." },
+    { num: "2", title: "Workshop Visit or Mobile Arrival", desc: "Drive into our workshop at 222 Al Satwa Road, or our mobile technician arrives at your home, office parking, or roadside location [CONFIRM: mobile coverage areas and call-out charges]." },
+    { num: "3", title: "Comprehensive Battery & System Test", desc: "We connect a calibrated digital tester to measure cold cranking amps (CCA), resting voltage, and internal resistance, while also checking alternator charging output." },
+    { num: "4", title: "Transparent Quote Approval", desc: "If replacement is required, we explain the test readings and confirm the total price including supply, installation, and testing before starting [CONFIRM: exact car battery replacement prices]." },
+    { num: "5", title: "Clean Installation & Terminal Securing", desc: "We safely disconnect the old unit, clean terminal corrosion, apply protective grease, install the new battery with correct polarity, and torque terminal clamps." },
+    { num: "6", title: "Alternator Output & Memory Verification", desc: "We test charging voltage under electrical load, register the battery on equipped modern vehicles, and verify clean starting before you drive away." }
+];
+
+const pricingRows = [
+    { type: "Standard Flooded (SLI)", price: "AED 150 – 250", warranty: "[CONFIRM: warranty terms]" },
+    { type: "EFB (Enhanced Flooded)", price: "AED 250 – 380", warranty: "[CONFIRM: warranty terms]" },
+    { type: "AGM (Premium)", price: "AED 380 – 650", warranty: "[CONFIRM: warranty terms]" },
+    { type: "Battery Health & System Test", price: "AED 30 – 50", warranty: "N/A" }
+];
+
+const makes = [
+    'Toyota', 'Nissan', 'Honda', 'Mitsubishi',
+    'Lexus', 'BMW', 'Mercedes-Benz', 'Audi',
+    'Volkswagen', 'Kia', 'Hyundai', 'Ford',
+    'Chevrolet', 'Jeep', 'Land Rover', 'Porsche'
+];
+
+const reasons = [
+    { icon: "mapPin", title: "Workshop & Mobile Coverage", desc: "Visit our central workshop at 222 Al Satwa Road or request mobile battery installation at your home, office, or roadside location in Dubai." },
+    { icon: "bolt", title: "Prompt Service & Dispatch", desc: "We keep common battery group sizes ready for rapid installation so you avoid prolonged roadside delays or towing expenses." },
+    { icon: "shield", title: "Diagnostic-First Approach", desc: "We test before replacing. If your battery is discharged due to lights left on or an alternator defect, we identify the true cause honestly." },
+    { icon: "award", title: "Manufacturer-Specified Units", desc: "We install fresh, genuine batteries matching factory cold cranking amps and reserve capacity [CONFIRM: battery warranty duration and terms]." },
+    { icon: "receipt", title: "Transparent Pricing", desc: "You receive an upfront quote covering parts and installation before any work commences, with no hidden disposal or diagnostic surcharges." },
+    { icon: "cog", title: "Complete System Verification", desc: "Every installation includes alternator charging rate testing, starter draw verification, and battery registration on equipped vehicles." }
+];
+
+const faqs = [
+    {
+        q: "How long does a car battery last in Dubai?",
+        a: "Most car batteries in Dubai last between two and three years. Sustained summer ambient temperatures exceeding 40°C accelerate electrolyte evaporation and internal plate corrosion. We recommend having your battery load-tested at every scheduled service once it passes 18 months of use."
+    },
+    {
+        q: "Can you replace my car battery at my home or office in Dubai?",
+        a: "Yes. Our mobile technicians can test and replace your battery at your home, office parking garage, or roadside location without requiring a tow truck [CONFIRM: mobile battery replacement coverage and call-out charges]."
+    },
+    {
+        q: "How do I know if my battery needs replacing or just recharging?",
+        a: "A professional digital load test measures cold cranking amps (CCA) and internal plate resistance. If a battery tests below 70% of its rated capacity or has shorted cells, recharging will only provide a temporary start before failing again, and replacement is required."
+    },
+    {
+        q: "What battery brands do you supply in Dubai?",
+        a: "We supply batteries from recognized manufacturers including Exide, Varta, Amaron, ACDelco, and Bosch, subject to vehicle specifications and [CONFIRM: current Bosch battery stock and other available brands]."
+    },
+    {
+        q: "Does my car require an AGM battery?",
+        a: "Vehicles with automatic start-stop systems, regenerative braking, or heavy electrical options require an AGM or EFB battery. Installing a standard flooded battery in an AGM-specified vehicle will cause premature battery failure within months and may trigger electrical warning faults."
+    },
+    {
+        q: "What factors determine car battery replacement costs in Dubai?",
+        a: "Pricing depends on battery technology (standard flooded, EFB, or AGM), physical group size, amp-hour (Ah) capacity, brand warranty, and whether battery registration via OBD-II scanner is required for your vehicle's power management system."
+    },
+    {
+        q: "Could my starting problem be caused by something other than the battery?",
+        a: "Yes. Faulty starter motors, failing alternator diodes, loose grounding cables, or parasitic electrical drains can mimic a dead battery. Our technicians test your charging and starting circuits before installing a new battery to ensure the real issue is resolved."
+    }
+];
+
+const relatedServices = [
+    { icon: "bolt", name: "Mobile Car Mechanic Dubai", desc: "On-site battery testing, diagnostics & mechanical assistance", href: "/mobile-car-repair-dubai" },
+    { icon: "alert", name: "Roadside Assistance Near Me", desc: "Emergency jump starts, breakdown towing & flat tyre response", href: "/roadside-assistance-dubai" },
+    { icon: "car", name: "Full Car Check Up", desc: "Multi-point electrical, charging system & vehicle inspection", href: "/car-inspection-dubai" },
+    { icon: "cog", name: "Car Engine Service Dubai", desc: "Alternator repairs, starter motor fixes & engine diagnostics", href: "/car-engine-service-dubai" }
+];
+
+// ---------------------------------------------------------------------------
+// Schema Markup
+// ---------------------------------------------------------------------------
+const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "@id": "https://dubaicarrepairservice.com/car-battery-replacement-dubai#service",
+            "name": "Car Battery Replacement Dubai",
+            "url": "https://dubaicarrepairservice.com/car-battery-replacement-dubai",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://dubaicarrepairservice.com/car-battery-replacement-dubai"
+            },
+            "serviceType": "Car Battery Replacement",
+            "description": "Professional car battery replacement in Dubai with mobile battery installation at your home, office, parking area or roadside. We supply and install genuine batteries for all vehicle makes and models, including AGM and standard batteries.",
+            "provider": {
+                "@id": "https://dubaicarrepairservice.com/#localbusiness"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Dubai"
+            },
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "AED",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": "150",
+                    "maxPrice": "650",
+                    "priceCurrency": "AED"
+                }
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://dubaicarrepairservice.com/car-battery-replacement-dubai#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dubaicarrepairservice.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Car Battery Replacement Dubai",
+                    "item": "https://dubaicarrepairservice.com/car-battery-replacement-dubai"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://dubaicarrepairservice.com/car-battery-replacement-dubai#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How long does a car battery last in Dubai?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Due to Dubai's extreme temperatures, most car batteries last between 2 and 3 years. Heat accelerates battery wear and can significantly reduce battery life compared to cooler climates."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you replace my car battery at my home or office in Dubai?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Our mobile battery replacement service is available across Dubai. We can replace your battery at your home, office, parking area or roadside location without requiring vehicle towing."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does car battery replacement cost in Dubai?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Battery replacement costs depend on battery size, vehicle requirements and battery technology. Standard batteries generally cost less than AGM batteries. Installation and system testing are included with our service."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does my car need an AGM battery?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Many vehicles equipped with stop-start systems or advanced electrical features require AGM batteries. Our technicians verify the manufacturer's specifications before recommending a replacement battery."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What battery brands do you stock in Dubai?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We supply genuine batteries from leading brands including Exide, Bosch, Varta, Amaron and ACDelco. Battery availability may vary depending on vehicle requirements and stock levels."
+                    }
+                }
+            ]
+        }
+    ]
+};
+---
+
+<BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+>
+    <!-- Structured JSON-LD Schema Graph -->
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+    <main class="dcrs-service-page">
+
+        <!-- 1. HERO BANNER --------------------------------------------------->
+        <header class="dcrs-hero-banner">
+            <div class="dcrs-hero-banner__scrim"></div>
+            <div class="dcrs-container dcrs-hero-banner__inner">
+                <nav class="dcrs-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#service">Services</a></li>
+                        <li aria-current="page">Car Battery Replacement Dubai</li>
+                    </ol>
+                </nav>
+                <span class="dcrs-badge">Al Satwa, Dubai · Same-Day Service · All Makes &amp; Models</span>
+                <h1 class="dcrs-hero-banner__title">
+                    Car Battery Replacement Dubai — Mobile &amp; Workshop Fitting
+                </h1>
+                <p class="dcrs-hero-banner__lead">
+                    Car won't start? Get fast car battery replacement in Dubai from our Al Satwa workshop or via mobile service delivered right to your home, office, or roadside. We test your charging system and install genuine, heat-resistant batteries with warranty. From AED 180.
+                </p>
+                <div class="dcrs-hero-banner__actions">
+                    <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                        <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                    </a>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                        <Fragment set:html={icons.chat} /> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. INTRO SECTION ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="service-overview">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+                    
+                    <div class="dcrs-intro-content">
+                        <div class="dcrs-kicker">Service Overview</div>
+                        <h2 class="dcrs-heading__title">
+                            Car Battery Replacement Dubai — On-Site Diagnostics &amp; Installation
+                        </h2>
+                        <p class="dcrs-lead-text">
+                            Dubai's extreme summer heat is the leading cause of premature battery failure. When your vehicle refuses to crank, calling <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a> gets an experienced technician to your vehicle with genuine battery stock. If you need immediate emergency dispatch, you can <a href="/contact" class="dcrs-inline-link">contact us</a> directly.
+                        </p>
+                        <p class="dcrs-body-text">
+                            Before recommending a new battery, our technicians test the entire charging circuit using digital conductance analyzers. If you are stuck at home or the office, our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car mechanic in Dubai</a> delivers on-site fitting with zero hassle. Stranded on the road? We provide rapid <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance near me</a> to get you started safely.
+                        </p>
+                        <p class="dcrs-body-text">
+                            We provide fast service across the emirate. For customers in the local neighborhood, our <a href="/car-repair-al-satwa" class="dcrs-inline-link">car battery replacement in Satwa</a> service ensures arrival within 20–30 minutes. If you encounter a sudden <a href="/car-repair-sheikh-zayed-road" class="dcrs-inline-link">car breakdown on Sheikh Zayed Road</a>, our highway response team is dispatched immediately. To confirm your starter motor and alternator health, we can also conduct a <a href="/car-inspection-dubai" class="dcrs-inline-link">full car check up</a>.
+                        </p>
+
+                        <div class="dcrs-action-row">
+                            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                                <Fragment set:html={icons.phone} /> Call Mechanic
+                            </a>
+                            <a href="/contact" class="dcrs-btn dcrs-btn--outline-ink">
+                                Book Battery Replacement <Fragment set:html={icons.arrowRight} />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dcrs-intro-media">
+                        <div class="dcrs-intro-media__frame">
+                            <img
+                                src={service5Image.src}
+                                alt="Technician performing car battery replacement in Dubai with digital conductance tester at Al Satwa workshop"
+                                loading="eager"
+                                width="600"
+                                height="400"
+                            />
+                            <div class="dcrs-plate dcrs-price-badge" aria-hidden="true">
+                                <div class="dcrs-plate__tab">AED</div>
+                                <div class="dcrs-plate__body">
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">150+</span>
+                                    <span class="dcrs-plate__row">STARTING PRICE</span>
+                                    <span class="dcrs-plate__row">ON-SITE FITTING</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. WARNING SIGNS ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="warning-signs">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Warning Signs</div>
+                    <h2 class="dcrs-heading__title">
+                        8 Signs Your Car Battery Needs Replacing in Dubai
+                    </h2>
+                    <p class="dcrs-heading__sub">
+                        Recognizing early symptoms of battery deterioration helps you schedule a replacement before facing a roadside no-start situation.
+                    </p>
+                </div>
+
+                <div class="dcrs-warning-grid">
+                    {warningSigns.map((s) => (
+                        <div class="dcrs-warning-card">
+                            <span class="dcrs-warning-card__icon">
+                                <Fragment set:html={icons[s.icon]} />
+                            </span>
+                            <h3 class="dcrs-warning-card__title">{s.title}</h3>
+                            <p class="dcrs-warning-card__desc">{s.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BATTERY BRANDS & TYPES ---------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="battery-brands">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col">
+
+                    <!-- Left: Brands -->
+                    <div class="dcrs-brands-info">
+                        <div class="dcrs-kicker">Battery Types &amp; Brands</div>
+                        <h2 class="dcrs-heading__title">
+                            Battery Specifications and Brands Suited for High-Heat Operation
+                        </h2>
+                        <p class="dcrs-body-text">
+                            Automotive batteries in the UAE must endure severe ambient temperatures, prolonged under-hood heat soak, and continuous air conditioning electrical draw. We supply and install heat-tolerant batteries from established manufacturers, subject to [CONFIRM: current Bosch battery stock and other available brands]. Our mechanics match battery group sizes, terminal polarity, and amp-hour ratings strictly to your vehicle's factory standards.
+                        </p>
+
+                        <div class="dcrs-brands-list">
+                            {batteryBrands.map((b) => (
+                                <div class="dcrs-brand-item">
+                                    <div class="dcrs-brand-item__name">{b.name}</div>
+                                    <div class="dcrs-brand-item__note">✅ {b.note}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <!-- Right: Types Explained -->
+                    <div class="dcrs-types-card">
+                        <h3 class="dcrs-types-card__title">Battery Types Explained</h3>
+                        <div class="dcrs-types-list">
+                            {batteryTypes.map((bt) => (
+                                <div class="dcrs-type-item">
+                                    <div class="dcrs-type-item__header">
+                                        <h4 class="dcrs-type-item__name">{bt.type}</h4>
+                                        <span class="dcrs-type-item__rating">{bt.rating}</span>
+                                    </div>
+                                    <p class="dcrs-type-item__desc">{bt.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div class="dcrs-notice-box">
+                            <span class="dcrs-notice-box__icon"><Fragment set:html={icons.info} /></span>
+                            <p>Our mechanics verify factory amp-hour (Ah) ratings, cold cranking amps (CCA), and battery registration requirements before fitting a new unit.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. OUR PROCESS --------------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="our-process">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Our Process</div>
+                    <h2 class="dcrs-heading__title">
+                        How We Replace Your Car Battery in Dubai
+                    </h2>
+                    <p class="dcrs-heading__sub">
+                        A systematic, diagnostic-backed procedure ensuring correct battery fitment, terminal protection, and charging system health.
+                    </p>
+                </div>
+
+                <div class="dcrs-process-grid">
+                    {processSteps.map((s) => (
+                        <div class="dcrs-process-card-item">
+                            <span class="dcrs-process-card-item__num">{s.num}</span>
+                            <div>
+                                <h3 class="dcrs-process-card-item__title">{s.title}</h3>
+                                <p class="dcrs-process-card-item__desc">{s.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PRICING & VEHICLES SERVICED ----------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="pricing">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+
+                    <!-- Left: Pricing Table -->
+                    <div class="dcrs-pricing-block">
+                        <div class="dcrs-kicker">Transparent Pricing</div>
+                        <h2 class="dcrs-heading__title">
+                            Car Battery Replacement Pricing Factors in Dubai
+                        </h2>
+                        <p class="dcrs-body-text">
+                            Battery replacement costs depend on battery chemistry (standard flooded, EFB, or AGM), capacity rating (Ah), physical group size, brand, and vehicle-specific installation requirements. Luxury and European vehicles with computer battery registration or complex boot-mounted locations require specialized setup compared to straightforward under-bonnet installations. We provide transparent estimates upfront before fitting any unit.
+                        </p>
+
+                        <div class="dcrs-table-wrapper">
+                            <table class="dcrs-pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>Battery Type</th>
+                                        <th>Price (AED)</th>
+                                        <th>Warranty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {pricingRows.map((r) => (
+                                        <tr>
+                                            <td class="dcrs-table-service">{r.type}</td>
+                                            <td class="dcrs-table-price">{r.price}</td>
+                                            <td class="dcrs-table-warranty">{r.warranty}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="dcrs-pricing-disclaimer">
+                            <Fragment set:html={icons.info} /> Prices include battery supply, standard installation, charging system check, and old battery disposal [CONFIRM: battery recycling and old-battery collection arrangements]. Final quote confirmed upon vehicle assessment.
+                        </p>
+                    </div>
+
+                    <!-- Right: Vehicles We Service -->
+                    <div class="dcrs-vehicles-card">
+                        <h3 class="dcrs-vehicles-card__title">Vehicles We Service</h3>
+                        <p class="dcrs-vehicles-card__sub">We support battery replacements across Japanese, European, American, and Korean vehicles in standard, SUV, and commercial categories.</p>
+                        
+                        <div class="dcrs-makes-grid">
+                            {makes.map((m) => (
+                                <div class="dcrs-make-pill">
+                                    <span class="dcrs-make-pill__icon"><Fragment set:html={icons.check} /></span>
+                                    <span>{m}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. WHY CHOOSE US ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="why-choose-us">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Why Choose Us</div>
+                    <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Battery Replacement</h2>
+                </div>
+
+                <div class="dcrs-reasons-grid">
+                    {reasons.map((r) => (
+                        <div class="dcrs-reason-card">
+                            <span class="dcrs-reason-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <div>
+                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
+                                <p class="dcrs-reason-card__text">{r.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) ------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faq">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">FAQ</div>
+                    <h2 class="dcrs-heading__title">Car Battery Replacement Dubai - Frequently Asked Questions</h2>
+                </div>
+
+                <div class="dcrs-faq-accordion">
+                    {faqs.map((faq, i) => (
+                        <details class="dcrs-faq-item" open={i === 0}>
+                            <summary class="dcrs-faq-item__question">
+                                <span>{faq.q}</span>
+                                <span class="dcrs-faq-item__toggle">
+                                    <Fragment set:html={icons.chevronDown} />
+                                </span>
+                            </summary>
+                            <div class="dcrs-faq-item__answer">
+                                <p>{faq.a}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="related-services">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">More Services</div>
+                    <h2 class="dcrs-heading__title">Related Services You May Need</h2>
+                </div>
+
+                <div class="dcrs-related-grid">
+                    {relatedServices.map((r) => (
+                        <a href={r.href} class="dcrs-related-card">
+                            <span class="dcrs-related-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <h3 class="dcrs-related-card__title">{r.name}</h3>
+                            <p class="dcrs-related-card__desc">{r.desc}</p>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CTA BANNER --------------------------------------------------->
+        <section class="dcrs-cta-banner">
+            <div class="dcrs-container">
+                <div class="dcrs-cta-banner__inner">
+                    <div class="dcrs-cta-banner__copy">
+                        <span class="dcrs-cta-banner__badge">Professional Battery Service</span>
+                        <h2 class="dcrs-cta-banner__title">
+                            Book Your Car Battery Replacement in Dubai Today
+                        </h2>
+                        <p class="dcrs-cta-banner__sub">
+                            Open daily 7:00 AM – 10:00 PM · Workshop service at 222 Al Satwa Rd &amp; rapid mobile fitting across Dubai. <a href="/contact" class="dcrs-cta-inline-link">Contact us online</a> for an immediate quote.
+                        </p>
+                    </div>
+                    <div class="dcrs-cta-banner__actions">
+                        <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                            <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                        </a>
+                        <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                            <Fragment set:html={icons.chat} /> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. BOTTOM STICKY MOBILE BAR ------------------------------------>
+        <div class="dcrs-stickybar">
+            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
+                <Fragment set:html={icons.phone} /> Call Now
+            </a>
+            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn dcrs-stickybar__btn--wa">
+                <Fragment set:html={icons.chat} /> WhatsApp
+            </a>
+        </div>
+
+    </main>
+</BaseLayout>
+
+<style>
+    /* Scoped styling preserving template design tokens */
+    :root {
+        --ink: #10201F;
+        --ink-soft: #1B302E;
+        --paper: #E8E4D8;
+        --paper-alt: #DFDACB;
+        --white: #FBF9F4;
+        --brass: #C1802E;
+        --brass-deep: #9C6423;
+        --steel: #57706E;
+        --rule-on-paper: rgba(16, 32, 31, 0.15);
+        --rule-on-ink: rgba(251, 249, 244, 0.16);
+    }
+
+    .dcrs-service-page {
+        padding-bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-service-page {
+            padding-bottom: 0;
+        }
+    }
+
+    /* Hide floating WhatsApp button on mobile when sticky bar is active */
+    @media (max-width: 767.98px) {
+        :global(.float) {
+            display: none !important;
+        }
+    }
+
+    .dcrs-container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        .dcrs-container {
+            padding: 0 0.85rem;
+        }
+    }
+
+    /* Kicker & Typography */
+    .dcrs-kicker {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass-deep);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        box-sizing: border-box;
+    }
+
+    .dcrs-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .dcrs-heading--center {
+        text-align: center;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dcrs-heading__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+        line-height: 1.2;
+        color: var(--ink);
+        margin: 0 0 0.6rem;
+    }
+
+    .dcrs-heading__sub {
+        color: var(--steel);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-lead-text {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--ink);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-body-text {
+        font-size: 0.96rem;
+        line-height: 1.75;
+        color: var(--steel);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-inline-link {
+        color: var(--brass-deep);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    /* Section Wrappers */
+    .dcrs-section {
+        padding: clamp(3rem, 6.5vw, 5rem) 0;
+    }
+    .dcrs-section--paper { background: var(--paper); }
+    .dcrs-section--tint { background: var(--paper-alt); }
+
+    /* Buttons */
+    .dcrs-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        font-family: var(--font-body, sans-serif);
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.4rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        line-height: 1;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        min-height: 48px;
+    }
+
+    .dcrs-btn :global(svg) {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .dcrs-btn--solid {
+        background: var(--brass);
+        color: var(--ink);
+    }
+    .dcrs-btn--solid:hover {
+        background: var(--brass-deep);
+        color: #fff;
+    }
+
+    .dcrs-btn--outline-ink {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+    }
+    .dcrs-btn--outline-ink:hover {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+    .dcrs-btn--wa:hover {
+        background: #1ebc59;
+    }
+
+    .dcrs-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.75rem;
+    }
+
+    /* 1. Hero Banner */
+    .dcrs-hero-banner {
+        position: relative;
+        background-color: var(--ink);
+        color: var(--white);
+        padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+        overflow: hidden;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 767.98px) {
+        .dcrs-hero-banner {
+            min-height: auto;
+            padding: clamp(3rem, 7vw, 4rem) 0;
+        }
+    }
+
+    .dcrs-hero-banner .dcrs-container {
+        width: 100%;
+    }
+
+    .dcrs-hero-banner__scrim {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(193, 128, 46, 0.15), transparent 50%);
+        pointer-events: none;
+    }
+
+    .dcrs-hero-banner__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 820px;
+    }
+
+    .dcrs-breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.82rem;
+        color: rgba(251, 249, 244, 0.65);
+    }
+
+    .dcrs-breadcrumb li + li::before {
+        content: "/";
+        margin-right: 0.5rem;
+        color: rgba(251, 249, 244, 0.4);
+    }
+
+    .dcrs-breadcrumb a {
+        color: rgba(251, 249, 244, 0.75);
+        text-decoration: none;
+    }
+
+    .dcrs-breadcrumb a:hover {
+        color: var(--brass);
+    }
+
+    .dcrs-badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+    }
+
+    .dcrs-hero-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.5rem, 5.5vw, 2.9rem);
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 0 0 1rem;
+        color: var(--white);
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .dcrs-hero-banner__lead {
+        font-size: clamp(0.92rem, 2.6vw, 1.15rem);
+        line-height: 1.65;
+        color: rgba(251, 249, 244, 0.85);
+        word-break: break-word;
+        overflow-wrap: break-word;
+        margin: 0 0 2rem;
+    }
+
+    .dcrs-hero-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        .dcrs-hero-banner__actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .dcrs-hero-banner__actions .dcrs-btn {
+            width: 100%;
+        }
+    }
+
+    /* 2. Grid Layouts */
+    .dcrs-grid-2col {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+        width: 100%;
+    }
+
+    .dcrs-grid-2col > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-grid-2col {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 3.5rem;
+        }
+    }
+
+    .dcrs-grid-2col--align-center {
+        align-items: center;
+    }
+
+    /* Media Frame & Price Badge */
+    .dcrs-intro-media__frame {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--rule-on-paper);
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+    }
+
+    .dcrs-intro-media__frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 4 / 3;
+    }
+
+    .dcrs-plate {
+        display: flex;
+        background: var(--white);
+        color: var(--ink);
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(16, 32, 31, 0.16);
+    }
+
+    .dcrs-price-badge {
+        position: absolute;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        z-index: 2;
+    }
+
+    .dcrs-plate__tab {
+        background: var(--brass);
+        color: var(--ink);
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.72rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0.4rem;
+        letter-spacing: 0.05em;
+    }
+
+    .dcrs-plate__body {
+        padding: 0.75rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        font-family: var(--font-mono, monospace);
+    }
+
+    .dcrs-plate__row {
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        color: var(--ink-soft);
+        font-weight: 600;
+    }
+
+    .dcrs-plate__row--big {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+    }
+
+    /* 3. Warning Signs Grid */
+    .dcrs-warning-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 600px) {
+        .dcrs-warning-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-warning-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-warning-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.75rem 1.35rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .dcrs-warning-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.06);
+    }
+
+    .dcrs-warning-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+
+    .dcrs-warning-card__icon :global(svg) {
+        width: 24px;
+        height: 24px;
+    }
+
+    .dcrs-warning-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        color: var(--ink);
+        margin: 0 0 0.5rem;
+    }
+
+    .dcrs-warning-card__desc {
+        font-size: 0.85rem;
+        color: var(--steel);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* 4. Battery Brands & Types */
+    .dcrs-brands-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        margin-top: 1.25rem;
+    }
+
+    .dcrs-brand-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 0.95rem 1.15rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    @media (min-width: 500px) {
+        .dcrs-brand-item {
+            flex-direction: row;
+            align-items: center;
+            gap: 1.25rem;
+        }
+    }
+
+    .dcrs-brand-item__name {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--ink);
+        min-width: 80px;
+    }
+
+    .dcrs-brand-item__note {
+        font-size: 0.86rem;
+        color: var(--steel);
+    }
+
+    .dcrs-types-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: clamp(1.5rem, 3.5vw, 2.25rem);
+    }
+
+    .dcrs-types-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.35rem;
+        margin: 0 0 1.25rem;
+        color: var(--ink);
+    }
+
+    .dcrs-types-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .dcrs-type-item {
+        padding-bottom: 1.15rem;
+        border-bottom: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-type-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .dcrs-type-item__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.35rem;
+    }
+
+    .dcrs-type-item__name {
+        font-size: 0.96rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0;
+    }
+
+    .dcrs-type-item__rating {
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+    }
+
+    .dcrs-type-item__desc {
+        font-size: 0.86rem;
+        color: var(--steel);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-notice-box {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+        background: rgba(193, 128, 46, 0.1);
+        border-left: 3px solid var(--brass);
+        padding: 0.85rem 1rem;
+        border-radius: 4px;
+        font-size: 0.84rem;
+        line-height: 1.6;
+        color: var(--ink-soft);
+    }
+
+    .dcrs-notice-box__icon {
+        color: var(--brass-deep);
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+    }
+
+    .dcrs-notice-box__icon :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-notice-box p { margin: 0; }
+
+    /* 5. Process Grid */
+    .dcrs-process-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-process-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-process-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-process-card-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .dcrs-process-card-item__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    .dcrs-process-card-item__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        color: var(--ink);
+        margin: 0 0 0.4rem;
+    }
+
+    .dcrs-process-card-item__desc {
+        font-size: 0.86rem;
+        color: var(--steel);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* 6. Pricing & Vehicles */
+    .dcrs-table-wrapper {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        box-shadow: 0 4px 16px rgba(16, 32, 31, 0.04);
+        margin: 1.25rem 0 0.85rem;
+    }
+
+    .dcrs-pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.92rem;
+    }
+
+    .dcrs-pricing-table thead {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-pricing-table th {
+        padding: 0.9rem 1.15rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+    }
+
+    .dcrs-pricing-table td {
+        padding: 0.85rem 1.15rem;
+        border-bottom: 1px solid var(--rule-on-paper);
+        color: var(--ink-soft);
+    }
+
+    .dcrs-pricing-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .dcrs-table-service {
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    .dcrs-table-price {
+        font-family: var(--font-mono, monospace);
+        font-weight: 600;
+        color: var(--brass-deep);
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .dcrs-table-warranty {
+        color: var(--steel);
+        font-size: 0.86rem;
+    }
+
+    .dcrs-pricing-disclaimer {
+        font-size: 0.8rem;
+        color: var(--steel);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        line-height: 1.5;
+    }
+
+    .dcrs-pricing-disclaimer :global(svg) {
+        width: 14px;
+        height: 14px;
+        color: var(--brass-deep);
+        flex-shrink: 0;
+    }
+
+    /* Vehicles Card */
+    .dcrs-vehicles-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: clamp(1.5rem, 3.5vw, 2.25rem);
+    }
+
+    .dcrs-vehicles-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.35rem;
+        margin: 0 0 0.4rem;
+        color: var(--ink);
+    }
+
+    .dcrs-vehicles-card__sub {
+        font-size: 0.88rem;
+        color: var(--steel);
+        margin: 0 0 1.25rem;
+        line-height: 1.55;
+    }
+
+    .dcrs-makes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    @media (min-width: 500px) {
+        .dcrs-makes-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-make-pill {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.65rem;
+        background: var(--paper);
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--ink);
+    }
+
+    .dcrs-make-pill__icon {
+        color: var(--brass-deep);
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .dcrs-make-pill__icon :global(svg) {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* 7. Why Choose Us */
+    .dcrs-reasons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-reason-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .dcrs-reason-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(16, 32, 31, 0.06);
+    }
+
+    .dcrs-reason-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+    }
+
+    .dcrs-reason-card__icon :global(svg) {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dcrs-reason-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.12rem;
+        color: var(--ink);
+        margin: 0 0 0.45rem;
+    }
+
+    .dcrs-reason-card__text {
+        font-size: 0.88rem;
+        color: var(--steel);
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* 8. FAQ Accordion */
+    .dcrs-faq-accordion {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .dcrs-faq-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+    }
+
+    .dcrs-faq-item[open] {
+        border-color: var(--brass);
+    }
+
+    .dcrs-faq-item__question {
+        list-style: none;
+        padding: 1.15rem 1.35rem;
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass-deep);
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .dcrs-faq-item__toggle :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
+        transform: rotate(180deg);
+    }
+
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: var(--steel);
+    }
+
+    /* 9. Related Services */
+    .dcrs-related-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-related-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .dcrs-related-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
+        border-color: var(--brass);
+    }
+
+    .dcrs-related-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--paper);
+        color: var(--brass-deep);
+        border-radius: 50%;
+        margin-bottom: 0.85rem;
+    }
+
+    .dcrs-related-card__icon :global(svg) {
+        width: 22px;
+        height: 22px;
+    }
+
+    .dcrs-related-card__title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0 0 0.35rem;
+    }
+
+    .dcrs-related-card__desc {
+        font-size: 0.8rem;
+        color: var(--steel);
+        line-height: 1.45;
+        margin: 0;
+    }
+
+    /* 10. CTA Banner */
+    .dcrs-cta-banner {
+        background: var(--ink);
+        color: var(--white);
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .dcrs-cta-banner__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-cta-banner__inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .dcrs-cta-banner__badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcrs-cta-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+        color: var(--white);
+        margin: 0 0 0.5rem;
+        line-height: 1.25;
+    }
+
+    .dcrs-cta-banner__sub {
+        color: rgba(251, 249, 244, 0.75);
+        font-size: 0.98rem;
+        margin: 0;
+    }
+
+    .dcrs-cta-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    /* 11. Sticky Mobile Bar */
+    .dcrs-stickybar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.6rem 0.75rem;
+        background: var(--ink);
+        border-top: 1px solid var(--rule-on-ink);
+        z-index: 99;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-stickybar {
+            display: none;
+        }
+    }
+
+    .dcrs-stickybar__btn {
+        flex: 1;
+        min-height: 44px;
+        font-size: 0.88rem;
+        padding: 0.6rem;
+    }
+
+    .dcrs-stickybar__btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+    /* Mobile price badge & makes grid scaling */
+    @media (max-width: 480px) {
+        .dcrs-price-badge {
+            bottom: 0.75rem;
+            right: 0.75rem;
+            max-width: 175px;
+        }
+        .dcrs-price-badge .dcrs-plate__tab {
+            font-size: 0.65rem;
+            padding: 0.4rem 0.35rem;
+        }
+        .dcrs-price-badge .dcrs-plate__row--big {
+            font-size: 1.15rem;
+        }
+        .dcrs-price-badge .dcrs-plate__row {
+            font-size: 0.68rem;
+        }
+    }
+    @media (max-width: 380px) {
+        .dcrs-makes-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    /* marker: dcrs-price-badge-responsive */
+
+    /* Responsive pricing table font size & compact padding */
+    @media (max-width: 768px) {
+        .dcrs-pricing-table th {
+            padding: 0.75rem 0.85rem;
+            font-size: 0.78rem;
+        }
+        .dcrs-pricing-table td {
+            padding: 0.75rem 0.85rem;
+            font-size: 0.84rem;
+        }
+        .dcrs-table-price {
+            font-size: 0.82rem;
+        }
+    }
+    @media (max-width: 480px) {
+        .dcrs-pricing-table {
+            font-size: 0.78rem;
+        }
+        .dcrs-pricing-table th {
+            padding: 0.55rem 0.45rem;
+            font-size: 0.68rem;
+            letter-spacing: 0.02em;
+        }
+        .dcrs-pricing-table td {
+            padding: 0.55rem 0.45rem;
+            font-size: 0.75rem;
+            line-height: 1.35;
+        }
+        .dcrs-table-service {
+            font-size: 0.76rem;
+        }
+        .dcrs-table-price {
+            font-size: 0.74rem;
+            word-break: normal;
+        overflow-wrap: break-word;
+        }
+        .dcrs-table-warranty {
+            font-size: 0.72rem;
+        }
+        .dcrs-pricing-disclaimer {
+            font-size: 0.75rem;
+        }
+    }
+    /* marker: dcrs-pricing-table-mobile-text */
+
+
+    /* Protection against flex/grid item blowout on mobile viewports */
+    .dcrs-engine-item,
+    .dcrs-warning-item,
+    .dcrs-process-step,
+    .dcrs-engines-block,
+    .dcrs-pricing-block,
+    .dcrs-warnings-block,
+    .dcrs-process-block,
+    .dcrs-col-block,
+    .dcrs-intro-content,
+    .dcrs-intro-media {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .dcrs-engine-item > div,
+    .dcrs-warning-item > div,
+    .dcrs-process-step > div {
+        min-width: 0;
+        flex: 1;
+    }
+    @media (max-width: 480px) {
+        .dcrs-heading__title {
+            font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+            line-height: 1.25;
+        }
+        .dcrs-engine-item {
+            padding: 0.75rem 0.85rem;
+            gap: 0.65rem;
+        }
+        .dcrs-engine-item__name {
+            font-size: 0.88rem;
+        }
+        .dcrs-engine-item__desc {
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+        .dcrs-table-price,
+        .dcrs-table__price,
+        .dcrs-price-cell,
+        .dcrs-price-tag {
+            white-space: normal !important;
+            word-break: normal !important;
+            overflow-wrap: break-word !important;
+        }
+    }
+    /* marker: .dcrs-flex-overflow-fix */
+    .dcrs-cta-inline-link {
+        color: var(--brass, #C1802E);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+    .dcrs-cta-inline-link:hover { opacity: 0.85; }
+
+</style>
+

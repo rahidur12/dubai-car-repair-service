@@ -1,0 +1,229 @@
+---
+const serviceLinks = [
+    { label: "Car Battery Replacement Dubai", href: "/car-battery-replacement-dubai" },
+    { label: "Car AC Repair Dubai", href: "/car-ac-repair-dubai" },
+    { label: "Car Inspection Dubai", href: "/car-inspection-dubai" },
+    { label: "Car Engine Service Dubai", href: "/car-engine-service-dubai" },
+    { label: "Tyre Replacement Dubai", href: "/tyre-replacement-dubai" },
+    { label: "Engine Oil Change Dubai", href: "/engine-oil-change-dubai" },
+    { label: "Mobile Car Repair Dubai", href: "/mobile-car-repair-dubai" },
+    { label: "Car Maintenance Dubai", href: "/car-maintenance-dubai" },
+    { label: "Roadside Assistance Dubai", href: "/roadside-assistance-dubai" },
+];
+
+const socials = [
+    { icon: "facebook", href: "https://www.facebook.com/share/17eHKHA45x/", label: "Facebook" },
+    { icon: "instagram", href: "https://www.instagram.com/dubaicarrepairservice", label: "Instagram" },
+    { icon: "pinterest", href: "https://www.pinterest.com/dubaicarrepairservice/", label: "Pinterest" },
+];
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const emailAddress = "contact@dubaicarrepairservice.com";
+const mapEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.644202007923!2d55.2771888!3d25.2312177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f438155692891%3A0x85f09a9921e1c24c!2sDubai%20Car%20Repair%20Service!5e1!3m2!1sen!2sbd!4v1786201448984!5m2!1sen!2sbd";
+const year = new Date().getFullYear();
+
+const icons: Record<string, string> = {
+    mapPin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>`,
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    envelope: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6"/></svg>`,
+    clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>`,
+    chevron: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>`,
+    facebook: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-8h2.7l.4-3.2H14V7.7c0-.9.3-1.6 1.7-1.6h1.5V3.2C16.9 3.1 15.8 3 14.6 3 12 3 10.2 4.6 10.2 7.4v2.4H7.5V13h2.7v8h3.8Z"/></svg>`,
+    instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>`,
+    pinterest: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 20c.6-2 1.6-6 1.6-6s-.4-.8-.4-2c0-1.9 1.1-3.3 2.5-3.3 1.2 0 1.7.9 1.7 1.9 0 1.2-.7 2.9-1.1 4.5-.3 1.3.6 2.4 1.9 2.4 2.3 0 3.9-3 3.9-6.4 0-2.7-1.8-4.7-5.1-4.7-3.7 0-6 2.8-6 5.9 0 1.1.3 1.8.9 2.4.2.2.2.4.1.7l-.3 1c-.1.3-.3.4-.6.3-1.6-.7-2.4-2.5-2.4-4.6 0-3.5 2.9-7.6 8.6-7.6 4.6 0 7.6 3.3 7.6 6.9 0 4.7-2.6 8.2-6.4 8.2-1.3 0-2.5-.7-2.9-1.4 0 0-.7 2.7-.8 3.2" fill="none"/></svg>`,
+};
+---
+
+<footer class="dftr">
+    <div class="dftr-top">
+        <div class="dftr-container dftr-grid">
+
+            <!-- Map -->
+            <div class="dftr-col dftr-map">
+                <h4 class="dftr-heading">Find Us</h4>
+                <div class="dftr-map__frame">
+                    <iframe
+                        src={mapEmbed}
+                        width="100%"
+                        height="230"
+                        style="border:0;"
+                        allowfullscreen
+                        loading="lazy"
+                        title="Dubai Car Repair Service location map"
+                    ></iframe>
+                </div>
+            </div>
+
+            <!-- Address / contact -->
+            <div class="dftr-col">
+                <h4 class="dftr-heading">Get In Touch</h4>
+                <ul class="dftr-contact">
+                    <li>
+                        <span class="dftr-icon"><Fragment set:html={icons.mapPin} /></span>
+                        222 Al Satwa Rd, Al Satwa, Dubai, United Arab Emirates
+                    </li>
+                    <li>
+                        <span class="dftr-icon"><Fragment set:html={icons.clock} /></span>
+                        Open Sat–Fri, 7AM – 10PM
+                    </li>
+                    <li>
+                        <a href={phoneHref}>
+                            <span class="dftr-icon"><Fragment set:html={icons.phone} /></span>
+                            {phoneDisplay}
+                        </a>
+                    </li>
+                    <li>
+                        <a href={`mailto:${emailAddress}`}>
+                            <span class="dftr-icon"><Fragment set:html={icons.envelope} /></span>
+                            {emailAddress}
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="dftr-socials">
+                    {socials.map((s) => (
+                        <a href={s.href} class="dftr-social" aria-label={s.label} target="_blank" rel="noopener noreferrer">
+                            <Fragment set:html={icons[s.icon]} />
+                        </a>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="dftr-col">
+                <h4 class="dftr-heading">Service</h4>
+                <ul class="dftr-links">
+                    {serviceLinks.map((item) => (
+                        <li>
+                            <a href={item.href}>
+                                <span class="dftr-icon dftr-icon--chevron"><Fragment set:html={icons.chevron} /></span>
+                                {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="dftr-bottom">
+        <div class="dftr-container dftr-bottom__inner">
+            <p class="dftr-bottom__text">&copy; {year} Dubai Car Repair Service. All rights reserved.</p>
+            <div class="dftr-bottom__links">
+                <a href="/privacy-policy">Privacy Policy</a>
+                <span class="dftr-bottom__dot">&middot;</span>
+                <a href="/terms-of-service">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .dftr {
+        --ink: #10201F;
+        --ink-soft: #1B302E;
+        --paper: #E8E4D8;
+        --white: #FBF9F4;
+        --brass: #C1802E;
+        --brass-deep: #9C6423;
+        --steel: #57706E;
+        --rule: rgba(251, 249, 244, 0.14);
+        --font-display: "Fraunces", Georgia, serif;
+        --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+        background: var(--ink);
+        color: rgba(251, 249, 244, 0.72);
+        font-family: var(--font-body);
+    }
+    .dftr * { box-sizing: border-box; }
+    .dftr a { color: inherit; text-decoration: none; }
+    .dftr :focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+    .dftr-container { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
+
+    .dftr-top { padding: clamp(3rem, 6vw, 4.5rem) 0 clamp(2.5rem, 5vw, 3.5rem); border-top: 3px solid var(--brass); }
+
+    .dftr-grid { display: grid; gap: 2.75rem; grid-template-columns: 1fr; }
+
+    .dftr-heading {
+        font-family: var(--font-display); font-weight: 600; color: var(--white);
+        font-size: 1.15rem; margin: 0 0 1.35rem; position: relative; padding-bottom: 0.75rem;
+    }
+    .dftr-heading::after {
+        content: ""; position: absolute; left: 0; bottom: 0; width: 34px; height: 2px; background: var(--brass);
+    }
+
+    /* Icons ------------------------------------------------------------ */
+    .dftr-icon { display: inline-flex; width: 17px; height: 17px; flex-shrink: 0; color: var(--brass); }
+    .dftr-icon svg { width: 100%; height: 100%; display: block; }
+    .dftr-icon--chevron { width: 12px; height: 12px; transition: transform 0.15s ease; }
+
+    /* Map ------------------------------------------------------------ */
+    .dftr-map__frame {
+        border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
+        filter: grayscale(0.35) contrast(1.05);
+    }
+    .dftr-map__frame iframe { display: block; }
+
+    /* Contact ------------------------------------------------------------ */
+    .dftr-contact { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 1rem; }
+    .dftr-contact li {
+        display: flex; align-items: flex-start; gap: 0.75rem;
+        font-size: 0.92rem; line-height: 1.5;
+    }
+    .dftr-contact li a { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .dftr-contact li a:hover { color: var(--white); }
+
+    .dftr-socials { display: flex; gap: 0.6rem; }
+    .dftr-social {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 38px; height: 38px; border-radius: 50%;
+        border: 1px solid rgba(251,249,244,0.3);
+        color: var(--white);
+    }
+    .dftr-social svg { width: 16px; height: 16px; }
+    .dftr-social:hover { background: var(--brass); border-color: var(--brass); color: var(--ink); }
+
+    /* Service links ------------------------------------------------------------ */
+    .dftr-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+    .dftr-links a {
+        display: inline-flex; align-items: center; gap: 0.55rem;
+        font-size: 0.9rem; transition: color 0.15s ease, padding-left 0.15s ease;
+    }
+    .dftr-links a:hover { color: var(--white); padding-left: 0.15rem; }
+    .dftr-links a:hover .dftr-icon--chevron { transform: translateX(2px); color: var(--brass); }
+
+    /* Bottom bar ------------------------------------------------------------ */
+    .dftr-bottom { border-top: 1px solid var(--rule); background: var(--ink-soft); }
+    .dftr-bottom__inner {
+        display: flex; flex-direction: column; gap: 0.6rem;
+        align-items: center; text-align: center;
+        padding: 1.25rem 1.25rem; font-size: 0.8rem;
+        font-family: var(--font-mono);
+    }
+    .dftr-bottom__text { margin: 0; color: rgba(251,249,244,0.55); }
+    .dftr-bottom__links { display: flex; align-items: center; gap: 0.5rem; color: rgba(251,249,244,0.55); }
+    .dftr-bottom__links a:hover { color: var(--brass); }
+    .dftr-bottom__dot { opacity: 0.5; }
+
+    /* --------------------------------------------------------------------
+       Breakpoints
+       -------------------------------------------------------------------- */
+    @media (min-width: 640px) {
+        .dftr-bottom__inner { flex-direction: row; justify-content: space-between; text-align: left; }
+    }
+
+    @media (min-width: 1024px) {
+        .dftr-grid { grid-template-columns: 1.1fr 1fr 1.2fr; gap: 3rem; }
+    }
+    /* Ensure sticky mobile bar clearance inside dark footer bottom */
+    @media (max-width: 767.98px) {
+        .dftr-bottom {
+            padding-bottom: max(4.5rem, calc(4.5rem + env(safe-area-inset-bottom)));
+        }
+    }
+    /* marker: dftr-bottom-stickybar-clearance */
+</style>

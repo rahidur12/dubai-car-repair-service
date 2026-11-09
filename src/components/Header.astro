@@ -1,0 +1,499 @@
+---
+// ---------------------------------------------------------------------------
+// Header Navigation & Content
+// ---------------------------------------------------------------------------
+
+const serviceLinks = [
+    { label: "Car Battery Replacement Dubai", href: "/car-battery-replacement-dubai" },
+    { label: "Car AC Repair Dubai", href: "/car-ac-repair-dubai" },
+    { label: "Car Inspection Dubai", href: "/car-inspection-dubai" },
+    { label: "Car Engine Service Dubai", href: "/car-engine-service-dubai" },
+    { label: "Tyre Replacement Dubai", href: "/tyre-replacement-dubai" },
+    { label: "Engine Oil Change Dubai", href: "/engine-oil-change-dubai" },
+    { label: "Mobile Car Repair Dubai", href: "/mobile-car-repair-dubai" },
+    { label: "Car Maintenance Dubai", href: "/car-maintenance-dubai" },
+    { label: "Roadside Assistance Dubai", href: "/roadside-assistance-dubai" },
+];
+
+const locationLinks: { label: string; href: string }[] = [
+    { label: "Al Satwa", href: "/car-repair-al-satwa" },
+    { label: "Sheikh Zayed Road", href: "/car-repair-sheikh-zayed-road" },
+];
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://api.whatsapp.com/send?phone=971566121423";
+
+const icons: Record<string, string> = {
+    mapPin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>`,
+    clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>`,
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.3 6.4L4 20l1.4-3.6A7.9 7.9 0 0 1 4 12Z"/><path d="M9 11.5c.3 2 2 3.7 4 4"/></svg>`,
+    chevron: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`,
+    menu: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></svg>`,
+    close: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5 5 19"/></svg>`,
+};
+
+// Active path detection
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isHome = currentPath === '/';
+const isAbout = currentPath === '/about';
+const isServiceActive = serviceLinks.some(s => s.href === currentPath);
+const isLocationActive = locationLinks.some(l => l.href === currentPath);
+const isResourceActive = currentPath === '/resource' || currentPath === '/resources';
+---
+
+<header class="dhdr" id="dhdr">
+
+    <!-- Main nav -->
+    <div class="dhdr-main">
+        <div class="dhdr-container dhdr-main__inner">
+
+            <a href="/" class="dhdr-brand">
+                <img src="/src/assets/images/logo.webp" alt="Dubai Car Repair Service logo" class="dhdr-brand__img" width="44" height="44" />
+                <span class="dhdr-brand__text">
+                    <span class="dhdr-brand__title">Dubai Car Repair Service</span>
+                </span>
+            </a>
+
+            <!-- Primary desktop navigation -->
+            <nav class="dhdr-nav" aria-label="Primary">
+                <a href="/" class:list={['dhdr-nav__link', { 'is-active': isHome }]}>Home</a>
+                <a href="/about" class:list={['dhdr-nav__link', { 'is-active': isAbout }]}>About</a>
+
+                <!-- Service Dropdown: Accessible directly on hover without extra click -->
+                <div class="dhdr-dropdown">
+                    <button
+                        type="button"
+                        class:list={['dhdr-nav__link', 'dhdr-dropdown__trigger', { 'is-active': isServiceActive }]}
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <span>Service</span>
+                        <span class="dhdr-icon dhdr-icon--chevron"><Fragment set:html={icons.chevron} /></span>
+                    </button>
+                    <div class="dhdr-dropdown__panel" role="menu">
+                        {serviceLinks.map((item) => (
+                            <a href={item.href} class="dhdr-dropdown__item" role="menuitem">{item.label}</a>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Location Dropdown: Accessible directly on hover without extra click -->
+                <div class="dhdr-dropdown">
+                    <button
+                        type="button"
+                        class:list={['dhdr-nav__link', 'dhdr-dropdown__trigger', { 'is-active': isLocationActive }]}
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <span>Location</span>
+                        <span class="dhdr-icon dhdr-icon--chevron"><Fragment set:html={icons.chevron} /></span>
+                    </button>
+                    {locationLinks.length > 0 && (
+                        <div class="dhdr-dropdown__panel" role="menu">
+                            {locationLinks.map((item) => (
+                                <a href={item.href} class="dhdr-dropdown__item" role="menuitem">{item.label}</a>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <!-- Resource Direct Link -->
+                <a href="/resource" class:list={['dhdr-nav__link', { 'is-active': isResourceActive }]}>Resource</a>
+            </nav>
+
+            <div class="dhdr-actions">
+                <a href={phoneHref} class="dhdr-btn dhdr-btn--ghost" aria-label={`Call ${phoneDisplay}`}>
+                    <span class="dhdr-icon"><Fragment set:html={icons.phone} /></span>
+                </a>
+                <a href="/contact" class="dhdr-btn dhdr-btn--solid">
+                    Booking <span class="dhdr-icon dhdr-icon--sm"><Fragment set:html={icons.chevron} /></span>
+                </a>
+            </div>
+
+            <button class="dhdr-toggle" id="dhdr-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="dhdr-mobile">
+                <span class="dhdr-icon dhdr-toggle__icon dhdr-toggle__icon--open"><Fragment set:html={icons.menu} /></span>
+                <span class="dhdr-icon dhdr-toggle__icon dhdr-toggle__icon--close"><Fragment set:html={icons.close} /></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile panel -->
+    <div class="dhdr-mobile" id="dhdr-mobile">
+        <div class="dhdr-mobile__scroll">
+            <nav class="dhdr-mobile__nav" aria-label="Mobile">
+                <a href="/" class:list={['dhdr-mobile__link', { 'is-active': isHome }]}>Home</a>
+                <a href="/about" class:list={['dhdr-mobile__link', { 'is-active': isAbout }]}>About</a>
+
+                <!-- Service Accordion for Mobile -->
+                <div class="dhdr-accordion">
+                    <button class="dhdr-mobile__link dhdr-accordion__trigger" aria-expanded="false">
+                        <span>Service</span>
+                        <span class="dhdr-icon dhdr-icon--chevron"><Fragment set:html={icons.chevron} /></span>
+                    </button>
+                    <div class="dhdr-accordion__panel">
+                        {serviceLinks.map((item) => (
+                            <a href={item.href} class="dhdr-accordion__item">{item.label}</a>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Location Accordion for Mobile -->
+                <div class="dhdr-accordion">
+                    <button class="dhdr-mobile__link dhdr-accordion__trigger" aria-expanded="false">
+                        <span>Location</span>
+                        <span class="dhdr-icon dhdr-icon--chevron"><Fragment set:html={icons.chevron} /></span>
+                    </button>
+                    {locationLinks.length > 0 && (
+                        <div class="dhdr-accordion__panel">
+                            {locationLinks.map((item) => (
+                                <a href={item.href} class="dhdr-accordion__item">{item.label}</a>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <!-- Resource Direct Link for Mobile -->
+                <a href="/resource" class:list={['dhdr-mobile__link', { 'is-active': isResourceActive }]}>Resource</a>
+            </nav>
+
+            <div class="dhdr-mobile__ctas">
+                <a href={phoneHref} class="dhdr-btn dhdr-btn--solid dhdr-btn--block">
+                    <span class="dhdr-icon"><Fragment set:html={icons.phone} /></span> Call {phoneDisplay}
+                </a>
+                <a href={waHref} class="dhdr-btn dhdr-btn--outline dhdr-btn--block">
+                    <span class="dhdr-icon"><Fragment set:html={icons.chat} /></span> WhatsApp us
+                </a>
+                <a href="/contact" class="dhdr-btn dhdr-btn--outline-line dhdr-btn--block">Book a service</a>
+            </div>
+
+            <div class="dhdr-mobile__info">
+                <span class="dhdr-mobile__info-row">
+                    <span class="dhdr-icon dhdr-icon--xs"><Fragment set:html={icons.mapPin} /></span>
+                    222 Al Satwa Rd, Al Satwa, Dubai, UAE
+                </span>
+                <span class="dhdr-mobile__info-row">
+                    <span class="dhdr-icon dhdr-icon--xs"><Fragment set:html={icons.clock} /></span>
+                    Sat–Fri, 7AM–10PM
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="dhdr-scrim" id="dhdr-scrim"></div>
+</header>
+
+<script>
+    const header = document.getElementById('dhdr');
+    const toggle = document.getElementById('dhdr-toggle');
+    const scrim = document.getElementById('dhdr-scrim');
+
+    // Sticky Scroll Shadow Enhancement
+    function updateScrollState() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        if (scrollY > 8) {
+            header?.classList.add('is-scrolled');
+        } else {
+            header?.classList.remove('is-scrolled');
+        }
+    }
+    window.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState, { passive: true });
+    document.addEventListener('DOMContentLoaded', updateScrollState);
+    updateScrollState();
+
+    // Mobile Drawer Controls
+    function closeMobile() {
+        header?.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    function openMobile() {
+        header?.classList.add('is-open');
+        toggle?.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    toggle?.addEventListener('click', () => {
+        header?.classList.contains('is-open') ? closeMobile() : openMobile();
+    });
+    scrim?.addEventListener('click', closeMobile);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMobile();
+    });
+
+    // Mobile Accordions Toggle
+    document.querySelectorAll('.dhdr-accordion__trigger').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const acc = btn.closest('.dhdr-accordion');
+            const isOpen = acc?.classList.contains('is-open');
+            document.querySelectorAll('.dhdr-accordion.is-open').forEach((el) => {
+                if (el !== acc) {
+                    el.classList.remove('is-open');
+                    el.querySelector('.dhdr-accordion__trigger')?.setAttribute('aria-expanded', 'false');
+                }
+            });
+            acc?.classList.toggle('is-open', !isOpen);
+            btn.setAttribute('aria-expanded', String(!isOpen));
+        });
+    });
+
+    // Close mobile menu on resize to desktop
+    let lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        const w = window.innerWidth;
+        if (w >= 1024 && lastWidth < 1024) closeMobile();
+        lastWidth = w;
+    });
+</script>
+
+<style>
+    .dhdr {
+        --ink: #10201F;
+        --ink-soft: #1B302E;
+        --paper: #E8E4D8;
+        --paper-alt: #DFDACB;
+        --white: #FBF9F4;
+        --brass: #C1802E;
+        --brass-deep: #9C6423;
+        --steel: #57706E;
+        --rule: rgba(16, 32, 31, 0.12);
+        --font-display: "Fraunces", Georgia, serif;
+        --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+        /* Sticky Navbar Fix */
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1050;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--white);
+    }
+    .dhdr * { box-sizing: border-box; }
+    .dhdr a { text-decoration: none; color: inherit; }
+    .dhdr button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+    .dhdr :focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+    .dhdr-container { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
+
+    .dhdr-icon { display: inline-flex; width: 16px; height: 16px; flex-shrink: 0; }
+    .dhdr-icon svg { width: 100%; height: 100%; display: block; }
+    .dhdr-icon--sm { width: 14px; height: 14px; }
+    .dhdr-icon--xs { width: 15px; height: 15px; color: var(--brass); }
+    .dhdr-icon--chevron { width: 13px; height: 13px; transition: transform 0.2s ease; }
+
+    /* Main nav bar */
+    .dhdr-main {
+        background: var(--white);
+        border-bottom: 1px solid var(--rule);
+        transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .dhdr.is-scrolled .dhdr-main {
+        box-shadow: 0 4px 20px rgba(16, 32, 31, 0.1);
+        border-bottom-color: rgba(16, 32, 31, 0.18);
+    }
+    .dhdr-main__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 68px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .dhdr-brand { display: flex; align-items: center; gap: 0.7rem; }
+    .dhdr-brand__img { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+    .dhdr-brand__text { display: flex; flex-direction: column; line-height: 1.15; }
+    .dhdr-brand__title { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; color: var(--ink); }
+
+    .dhdr-nav { display: none; }
+    .dhdr-nav__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--ink);
+        padding: 0.65rem 0.25rem;
+        position: relative;
+        cursor: pointer;
+    }
+    .dhdr-nav__link::after {
+        content: "";
+        position: absolute;
+        left: 0.25rem;
+        right: 0.25rem;
+        bottom: 2px;
+        height: 2px;
+        background: var(--brass);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s ease;
+    }
+    .dhdr-nav__link:hover::after,
+    .dhdr-nav__link.is-active::after {
+        transform: scaleX(1);
+    }
+    .dhdr-nav__link.is-active {
+        color: var(--brass-deep);
+    }
+
+    /* Desktop dropdowns (PC View)
+       - Continuous hover hit-test with pseudo-element bridge (no gap)
+       - Subitems accessible immediately on hover without needing to click main button */
+    .dhdr-dropdown {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .dhdr-dropdown__panel {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+        min-width: 275px;
+        background: var(--white);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        box-shadow: 0 16px 36px rgba(16, 32, 31, 0.16);
+        padding: 0.45rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.18s ease, visibility 0.18s ease;
+        max-height: min(72vh, 500px);
+        overflow-y: auto;
+        z-index: 1060;
+    }
+
+    /* Invisible bridge pseudo-element connecting the trigger to panel */
+    .dhdr-dropdown__panel::before {
+        content: "";
+        position: absolute;
+        top: -14px;
+        left: 0;
+        right: 0;
+        height: 14px;
+        background: transparent;
+    }
+
+    /* Hover & focus trigger rules */
+    .dhdr-dropdown:hover .dhdr-dropdown__panel,
+    .dhdr-dropdown:focus-within .dhdr-dropdown__panel {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .dhdr-dropdown:hover .dhdr-icon--chevron,
+    .dhdr-dropdown:focus-within .dhdr-icon--chevron {
+        transform: rotate(180deg);
+    }
+
+    .dhdr-dropdown__item {
+        display: block;
+        padding: 0.55rem 0.75rem;
+        font-size: 0.86rem;
+        color: var(--steel);
+        border-radius: 4px;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .dhdr-dropdown__item:hover,
+    .dhdr-dropdown__item:focus-visible {
+        background: var(--paper);
+        color: var(--ink);
+    }
+
+    .dhdr-actions { display: none; align-items: center; gap: 0.6rem; }
+    .dhdr-btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+        font-weight: 600; font-size: 0.88rem; padding: 0.7rem 1.2rem;
+        border-radius: 3px; border: 1px solid transparent; min-height: 44px;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        white-space: nowrap;
+    }
+    .dhdr-btn .dhdr-icon { width: 16px; height: 16px; }
+    .dhdr-btn--solid { background: var(--brass); color: var(--ink); }
+    .dhdr-btn--solid:hover { background: var(--brass-deep); }
+    .dhdr-btn--ghost { padding: 0.6rem; min-width: 44px; border: 1px solid var(--rule); color: var(--ink); }
+    .dhdr-btn--ghost:hover { border-color: var(--brass); color: var(--brass-deep); }
+    .dhdr-btn--outline { background: transparent; color: var(--white); border-color: rgba(251,249,244,0.35); }
+    .dhdr-btn--outline:hover { border-color: var(--white); }
+    .dhdr-btn--outline-line { background: transparent; color: var(--ink); border-color: var(--ink); }
+    .dhdr-btn--outline-line:hover { background: var(--ink); color: var(--white); }
+    .dhdr-btn--block { width: 100%; }
+
+    /* Mobile toggle */
+    .dhdr-toggle {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 44px; height: 44px; border: 1px solid var(--rule); border-radius: 4px;
+        position: relative; flex-shrink: 0;
+        z-index: 1110;
+    }
+    .dhdr-toggle__icon { width: 20px; height: 20px; position: absolute; transition: opacity 0.15s ease, transform 0.15s ease; }
+    .dhdr-toggle__icon--close { opacity: 0; transform: rotate(-45deg) scale(0.7); }
+    .dhdr.is-open .dhdr-toggle__icon--open { opacity: 0; transform: rotate(45deg) scale(0.7); }
+    .dhdr.is-open .dhdr-toggle__icon--close { opacity: 1; transform: rotate(0) scale(1); color: var(--brass-deep); }
+
+    /* Mobile panel */
+    .dhdr-scrim {
+        position: fixed; inset: 0; background: rgba(16,32,31,0.5);
+        opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 1090;
+    }
+    .dhdr.is-open .dhdr-scrim { opacity: 1; pointer-events: auto; }
+
+    .dhdr-mobile {
+        position: fixed; top: 0; right: 0; bottom: 0;
+        width: min(88vw, 380px);
+        background: var(--ink); color: var(--white);
+        transform: translateX(100%);
+        transition: transform 0.28s ease;
+        z-index: 1100;
+        display: flex; flex-direction: column;
+        padding-top: env(safe-area-inset-top, 0px);
+    }
+    .dhdr.is-open .dhdr-mobile { transform: translateX(0); }
+    .dhdr-mobile__scroll { overflow-y: auto; padding: 5.5rem 1.5rem 2rem; flex: 1; }
+
+    .dhdr-mobile__nav { display: flex; flex-direction: column; }
+    .dhdr-mobile__link {
+        display: flex; align-items: center; justify-content: space-between;
+        font-family: var(--font-display); font-weight: 600; font-size: 1.15rem;
+        padding: 1rem 0; border-bottom: 1px solid rgba(251,249,244,0.12);
+        text-align: left; width: 100%; color: var(--white);
+    }
+    .dhdr-mobile__link.is-active { color: var(--brass); }
+
+    .dhdr-accordion.is-open .dhdr-icon--chevron { transform: rotate(180deg); }
+    .dhdr-accordion__panel {
+        max-height: 0; overflow: hidden; transition: max-height 0.25s ease;
+        display: flex; flex-direction: column;
+    }
+    .dhdr-accordion.is-open .dhdr-accordion__panel { max-height: 600px; }
+    .dhdr-accordion__item {
+        padding: 0.65rem 0 0.65rem 0.4rem; font-size: 0.92rem;
+        color: rgba(251,249,244,0.68); border-bottom: 1px solid rgba(251,249,244,0.08);
+    }
+    .dhdr-accordion__item:hover { color: var(--brass); }
+
+    .dhdr-mobile__ctas { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.75rem; }
+    .dhdr-mobile__info { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(251,249,244,0.12); display: flex; flex-direction: column; gap: 0.7rem; }
+    .dhdr-mobile__info-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: rgba(251,249,244,0.65); }
+
+    /* Breakpoints */
+    @media (min-width: 1024px) {
+        .dhdr-nav { display: flex; align-items: center; gap: 1.75rem; }
+        .dhdr-actions { display: flex; }
+        .dhdr-toggle { display: none; }
+        .dhdr-mobile, .dhdr-scrim { display: none; }
+    }
+</style>

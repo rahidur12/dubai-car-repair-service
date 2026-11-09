@@ -1,0 +1,400 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Terms of Service | Dubai Car Repair Service";
+const pageDescription = "Read the official service terms, quotation policies, warranties, and repair conditions for Dubai Car Repair Service.";
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://api.whatsapp.com/send?phone=971566121423";
+const emailAddress = "contact@dubaicarrepairservice.com";
+const lastUpdated = "November 2, 2026";
+---
+
+<BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+    noindex={true}
+>
+    <main class="legal-page">
+        <!-- Header banner -->
+        <header class="legal-header">
+            <div class="legal-container">
+                <nav class="legal-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li aria-current="page">Terms of Service</li>
+                    </ol>
+                </nav>
+                <span class="legal-badge">Service Terms & Conditions</span>
+                <h1 class="legal-title">Terms of Service</h1>
+                <p class="legal-subtitle">
+                    Last updated: {lastUpdated} &middot; Governing automotive repairs, mobile mechanics & roadside dispatch in Dubai
+                </p>
+            </div>
+        </header>
+
+        <!-- Content body -->
+        <section class="legal-body">
+            <div class="legal-container legal-grid">
+                <article class="legal-content">
+                    <p class="legal-lead">
+                        These Terms of Service ("Terms") govern all vehicle repair, maintenance, diagnostic inspection, mobile mechanic callouts, and roadside assistance services provided by <strong>Dubai Car Repair Service</strong> ("we," "us," or "our") at our Al Satwa workshop (222 Al Satwa Rd, Dubai, UAE) and on-site across Dubai. By scheduling a service, requesting mobile dispatch, or leaving a vehicle at our workshop, you agree to these Terms.
+                    </p>
+
+                    <h2>1. Diagnostic Assessments & Repair Authorizations</h2>
+                    <p>
+                        We operate on a transparent, approval-first policy for all automotive work:
+                    </p>
+                    <ul>
+                        <li><strong>Computerized Scans:</strong> Before mechanical disassembly or component replacement, our technicians perform diagnostic inspections to identify root causes.</li>
+                        <li><strong>Written Estimates:</strong> Customers receive an itemized estimate outlining parts, labor, and expected completion timelines before any repair begins.</li>
+                        <li><strong>No Hidden Work:</strong> No additional repairs or part replacements are executed without explicit customer authorization via phone, WhatsApp, or written approval.</li>
+                    </ul>
+
+                    <h2>2. Mobile Mechanic & Roadside Dispatch Policy</h2>
+                    <p>
+                        For mobile battery replacement, roadside puncture fixes, emergency jump-starts, or mobile diagnostic callouts:
+                    </p>
+                    <ul>
+                        <li><strong>Location Accuracy:</strong> Customers must supply accurate GPS coordinates, street addresses, or landmark references to ensure rapid technician arrival.</li>
+                        <li><strong>Roadside Safety:</strong> If a vehicle is stranded on a high-speed motorway (such as Sheikh Zayed Road or Al Khail Road), the customer must park on the shoulder, turn on hazard lights, and remain in a safe location outside traffic lanes.</li>
+                        <li><strong>Cancellations:</strong> If you must cancel a dispatched mobile technician, please notify us immediately via phone. Callouts canceled after a technician has already arrived on-site may incur a nominal mobilization fee.</li>
+                    </ul>
+
+                    <h2>3. Replacement Parts & Quality Standards</h2>
+                    <p>
+                        We supply genuine Original Equipment Manufacturer (OEM) parts and certified high-grade aftermarket components built to withstand extreme UAE ambient temperatures:
+                    </p>
+                    <ul>
+                        <li>All parts fitted by our technicians match manufacturer vehicle specifications and thermal tolerances.</li>
+                        <li>Replaced parts are available for customer inspection upon request before disposal.</li>
+                        <li>If a customer supplies their own parts, our warranty covers only the labor provided and does not extend to the performance or durability of customer-supplied parts.</li>
+                    </ul>
+
+                    <h2>4. Repair Warranties & Guarantee Conditions</h2>
+                    <p>
+                        We stand behind our workmanship:
+                    </p>
+                    <ul>
+                        <li><strong>Workmanship Guarantee:</strong> Mechanical and electrical repairs performed by our technicians include standard workmanship coverage.</li>
+                        <li><strong>Parts Warranty:</strong> New replacement parts carry manufacturer-backed warranties (e.g. 12 to 24 months for premium automotive batteries, subject to manufacturer stipulations).</li>
+                        <li><strong>Exclusions:</strong> Warranties do not cover damage resulting from subsequent accidents, track racing, off-road water ingress, intentional negligence, unauthorized tampering by a third-party garage, or driving with active overheating warnings.</li>
+                    </ul>
+
+                    <h2>5. Pricing, Currency & Payment Terms</h2>
+                    <p>
+                        All service charges, labor rates, and part prices are quoted in <strong>United Arab Emirates Dirhams (AED)</strong> and are inclusive of applicable VAT under UAE law:
+                    </p>
+                    <ul>
+                        <li>Payment is due immediately upon completion of services and prior to vehicle release.</li>
+                        <li>We accept Cash, major Credit Cards (Visa, MasterCard), Debit Cards, and direct bank transfers.</li>
+                        <li>Disassembled components or vehicles will not be released until invoices are settled in full.</li>
+                    </ul>
+
+                    <h2>6. Vehicle Care & Personal Belongings</h2>
+                    <p>
+                        While vehicles are on our premises or attended by our mobile team, we take rigorous care of all customer assets:
+                    </p>
+                    <ul>
+                        <li>Customers are requested to remove all personal valuables, electronic devices, toll tags, cash, and luxury items prior to handing over the vehicle.</li>
+                        <li>We are not responsible for the loss or damage of unsecured personal possessions left inside the vehicle.</li>
+                    </ul>
+
+                    <h2>7. Vehicle Storage & Collection</h2>
+                    <p>
+                        Customers will be notified via phone or WhatsApp as soon as repairs and post-service quality checks are finalized:
+                    </p>
+                    <ul>
+                        <li>Completed vehicles must be collected from our Al Satwa workshop within 48 hours of notification unless prior storage arrangements have been agreed in writing.</li>
+                        <li>Vehicles left uncollected beyond this period without authorization may be subject to a daily workshop storage fee.</li>
+                    </ul>
+
+                    <h2>8. Governing Law & Jurisdiction</h2>
+                    <p>
+                        These Terms are governed by and construed in accordance with the laws of the <strong>Emirate of Dubai and the Federal Laws of the United Arab Emirates</strong>. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Dubai.
+                    </p>
+
+                    <h2>9. Contact & Inquiries</h2>
+                    <p>
+                        If you have questions about these Terms of Service or our workshop policies, please contact our management:
+                    </p>
+                    <div class="legal-card">
+                        <p><strong>Dubai Car Repair Service</strong></p>
+                        <p>Workshop Address: 222 Al Satwa Rd - Al Satwa, Dubai, UAE</p>
+                        <p>Phone / WhatsApp: <a href={phoneHref}>{phoneDisplay}</a></p>
+                        <p>Email: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
+                        <p>Hours: Monday &ndash; Sunday, 07:00 AM &ndash; 10:00 PM</p>
+                    </div>
+                </article>
+
+                <!-- Sidebar navigation -->
+                <aside class="legal-sidebar">
+                    <div class="legal-sidebar__box">
+                        <h3 class="legal-sidebar__title">Important Information</h3>
+                        <ul class="legal-sidebar__links">
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-service" class="active">Terms of Service</a></li>
+                            <li><a href="/about">About Our Workshop</a></li>
+                            <li><a href="/contact">Contact & Location</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-sidebar__cta">
+                        <h4>Book a Repair or Mobile Callout</h4>
+                        <p>Get a transparent, upfront quote from certified technicians in Dubai.</p>
+                        <a href={phoneHref} class="legal-btn">{phoneDisplay}</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .legal-page {
+        --ink: #10201F;
+        --ink-soft: #1B302E;
+        --paper: #E8E4D8;
+        --paper-light: #F4F1EA;
+        --white: #FFFFFF;
+        --brass: #C1802E;
+        --brass-deep: #9C6423;
+        --steel: #57706E;
+        --line: rgba(16, 32, 31, 0.12);
+        --font-serif: "Fraunces", Georgia, serif;
+        --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "IBM Plex Mono", monospace;
+        background: var(--paper-light);
+        color: var(--ink);
+        font-family: var(--font-sans);
+        padding-bottom: 5rem;
+    }
+
+    .legal-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .legal-header {
+        background: var(--ink);
+        color: #FBF9F4;
+        padding: 3.5rem 0 3rem;
+        border-bottom: 3px solid var(--brass);
+    }
+
+    .legal-breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.25rem 0;
+        display: flex;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-family: var(--font-mono);
+    }
+
+    .legal-breadcrumb a {
+        color: rgba(251, 249, 244, 0.7);
+        text-decoration: none;
+    }
+
+    .legal-breadcrumb li + li::before {
+        content: "/";
+        margin-right: 0.5rem;
+        color: rgba(251, 249, 244, 0.4);
+    }
+
+    .legal-breadcrumb [aria-current="page"] {
+        color: var(--brass);
+    }
+
+    .legal-badge {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        background: rgba(193, 128, 46, 0.2);
+        color: var(--brass);
+        border: 1px solid var(--brass);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    .legal-title {
+        font-family: var(--font-serif);
+        font-size: 2.75rem;
+        line-height: 1.15;
+        margin: 0 0 0.75rem 0;
+        color: #FBF9F4;
+    }
+
+    .legal-subtitle {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: rgba(251, 249, 244, 0.65);
+        margin: 0;
+    }
+
+    .legal-body {
+        padding-top: 3rem;
+    }
+
+    .legal-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    @media (min-width: 900px) {
+        .legal-grid {
+            grid-template-columns: 2.5fr 1fr;
+        }
+    }
+
+    .legal-content {
+        background: var(--white);
+        padding: 2.5rem 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        border: 1px solid var(--line);
+        line-height: 1.7;
+    }
+
+    .legal-lead {
+        font-size: 1.1rem;
+        color: var(--ink-soft);
+        font-weight: 500;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1.5rem;
+    }
+
+    .legal-content h2 {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        color: var(--ink);
+        margin: 2.25rem 0 1rem;
+        padding-top: 0.5rem;
+    }
+
+    .legal-content p, .legal-content li {
+        font-size: 0.95rem;
+        color: #334443;
+    }
+
+    .legal-content ul {
+        padding-left: 1.5rem;
+        margin: 1rem 0 1.5rem;
+    }
+
+    .legal-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .legal-content a {
+        color: var(--brass-deep);
+        text-decoration: underline;
+    }
+
+    .legal-card {
+        background: var(--paper-light);
+        border-left: 4px solid var(--brass);
+        padding: 1.25rem 1.5rem;
+        border-radius: 4px;
+        margin-top: 1.5rem;
+    }
+
+    .legal-card p {
+        margin: 0.35rem 0;
+        font-size: 0.9rem;
+    }
+
+    /* Sidebar */
+    .legal-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .legal-sidebar__box {
+        background: var(--white);
+        padding: 1.75rem;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+    }
+
+    .legal-sidebar__title {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        margin: 0 0 1rem;
+        color: var(--ink);
+    }
+
+    .legal-sidebar__links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    .legal-sidebar__links a {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        color: var(--steel);
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+    }
+
+    .legal-sidebar__links a:hover,
+    .legal-sidebar__links a.active {
+        background: var(--paper-light);
+        color: var(--brass-deep);
+        font-weight: 600;
+    }
+
+    .legal-sidebar__cta {
+        background: var(--ink);
+        color: #FBF9F4;
+        padding: 1.75rem;
+        border-radius: 8px;
+    }
+
+    .legal-sidebar__cta h4 {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        margin: 0 0 0.5rem;
+    }
+
+    .legal-sidebar__cta p {
+        font-size: 0.85rem;
+        color: rgba(251, 249, 244, 0.75);
+        margin: 0 0 1.25rem;
+        line-height: 1.5;
+    }
+
+    .legal-btn {
+        display: block;
+        text-align: center;
+        background: var(--brass);
+        color: var(--ink);
+        padding: 0.75rem 1rem;
+        border-radius: 4px;
+        font-weight: 700;
+        font-family: var(--font-mono);
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+    .legal-btn:hover {
+        background: #D89438;
+    }
+</style>
+

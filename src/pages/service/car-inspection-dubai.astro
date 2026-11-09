@@ -1,0 +1,1885 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import service1Image from '../../assets/images/service1.webp';
+
+// ---------------------------------------------------------------------------
+// Page Metadata & Settings
+// ---------------------------------------------------------------------------
+const pageTitle = "Car Inspection Dubai | Vehicle Check & RTA Pre-Test";
+const pageDescription = "Car inspection in Dubai from AED 99. Pre-purchase inspection, RTA pre-test & full car check up at 222 Al Satwa Road. Fast written report. Call or WhatsApp.";
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://api.whatsapp.com/send?phone=971566121423";
+
+// ---------------------------------------------------------------------------
+// Icons
+// ---------------------------------------------------------------------------
+const icons: Record<string, string> = {
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.3 6.4L4 20l1.4-3.6A7.9 7.9 0 0 1 4 12Z"/><path d="M9 11.5c.3 2 2 3.7 4 4"/></svg>`,
+    chevronDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+    times: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
+    road: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 19 4-14h8l4 14"/><line x1="12" y1="9" x2="12" y2="11"/><line x1="12" y1="15" x2="12" y2="17"/></svg>`,
+    searchDollar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 7v8M9 9h3.5a1.5 1.5 0 0 1 0 3H10a1.5 1.5 0 0 0 0 3H13"/></svg>`,
+    shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    cog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
+    circle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>`,
+    bolt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`,
+    eye: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+    fileText: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    search: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+    certificate: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="5.5"/><path d="M8.8 13.2 7.5 21l4.5-2.2 4.5 2.2-1.3-7.8"/></svg>`,
+    camera: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
+    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    info: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
+    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`,
+    disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`,
+    laptop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`
+};
+
+// ---------------------------------------------------------------------------
+// Section Data
+// ---------------------------------------------------------------------------
+const inspectionTypes = [
+    {
+        icon: "road",
+        title: "RTA Pre-Test Inspection",
+        badge: "Pre-Registration Check",
+        desc: "A pre-registration inspection designed to evaluate critical roadworthiness items checked at authorized Dubai testing centers such as Tasjeel or Wasel. We examine lighting, wipers, horn, braking efficiency, steering play, tyres, emissions, and structural points before your official test, helping you avoid test failure and re-testing delays.",
+        list: [
+            "Exterior lights: headlights, brake lamps, indicators, hazard lights",
+            "Wiper blade condition, windscreen washers, and horn operation",
+            "Tyre tread depth, sidewall condition, and 5-year DOT date",
+            "Braking performance, disc condition, and handbrake travel",
+            "Steering rack play, tie rods, and suspension ball joints",
+            "Visible exhaust leaks and emission system warning lights",
+            "Windscreen condition (cracks or chips in driver sightlines)",
+            "Seatbelt latching mechanism and airbag warning light check"
+        ]
+    },
+    {
+        icon: "searchDollar",
+        title: "Pre-Purchase Used Car Inspection",
+        badge: "Buyer Protection",
+        desc: "An independent mechanical assessment before completing a used vehicle purchase in Dubai. Our mechanics inspect major mechanical assemblies, fluid condition, and underbody components on our hydraulic ramp, looking for evidence of previous collision repairs, water intrusion, or stored electronic trouble codes.",
+        list: [
+            "Digital paint depth check to identify hidden body filler or resprays",
+            "Chassis rail inspection for structural repair welds or distortion",
+            "Full OBD-II diagnostic scan across engine, transmission, and ABS modules",
+            "Engine oil condition, coolant quality, and signs of internal sludge",
+            "Transmission fluid condition, shift smoothness, and drive axle checks",
+            "Underbody inspection for active oil, coolant, or steering leaks",
+            "Tyre age verification (DOT code) and uneven wear pattern analysis",
+            "Air conditioning cooling performance and vent temperature check"
+        ]
+    },
+    {
+        icon: "shield",
+        title: "Annual Safety & Health Inspection",
+        badge: "Preventive Care",
+        desc: "A comprehensive health check for vehicles operating year-round in the UAE climate. We evaluate cooling efficiency, battery reserve, brake pad wear, suspension bushings, and fluid condition to help you plan necessary maintenance before unexpected roadside breakdowns occur.",
+        list: [
+            "Full multi-point mechanical and safety evaluation",
+            "Battery load test, terminal condition, and charging voltage check",
+            "AC compressor operation, belt tension, and cooling vent output",
+            "Coolant concentration, expansion tank condition, and hose flexibility",
+            "Brake pad thickness measurement and fluid boiling point check",
+            "Differential, steering, and transmission fluid condition",
+            "Inspection of air, cabin, and fuel filter elements",
+            "Suspension shock absorbers, control arm bushes, and wheel bearings"
+        ]
+    }
+];
+
+const checklistCategories = [
+    {
+        icon: "cog",
+        title: "Engine & Drivetrain (12 points)",
+        points: [
+            "Engine oil level, condition & colour",
+            "Coolant level & antifreeze concentration",
+            "OBD-II fault code scan across active modules",
+            "Drive belt condition and tension check",
+            "Visible oil leaks: valve cover, oil pan, seals",
+            "Engine air filter restriction check",
+            "Fuel system lines - no visible leakage",
+            "Exhaust system security & visible emissions",
+            "Transmission fluid level & condition check",
+            "Drive shaft boots, CV joints & axle seals",
+            "Engine mount rubber condition & movement",
+            "Turbocharger & intercooler inspection (where fitted)"
+        ]
+    },
+    {
+        icon: "circle",
+        title: "Brakes & Wheels (10 points)",
+        points: [
+            "Front brake pad thickness measurement",
+            "Rear brake pad thickness measurement",
+            "Front brake disc surface & wear lip check",
+            "Rear brake disc / drum condition check",
+            "Brake fluid reservoir level & moisture check",
+            "Brake hydraulic lines & flex hose condition",
+            "Parking brake engagement & cable travel",
+            "Tyre tread depth measurement (all corners)",
+            "Tyre age verification (DOT code 5-year limit)",
+            "Tyre pressure & sidewall structural condition"
+        ]
+    },
+    {
+        icon: "bolt",
+        title: "Electrics & Lights (10 points)",
+        points: [
+            "Battery resting voltage & load test",
+            "Alternator charging voltage output check",
+            "Headlights (low and high beam) operation",
+            "Brake lights, reverse lights & indicators",
+            "Hazard warning flashers & horn operation",
+            "Windscreen wiper blades & washer sprayers",
+            "Dashboard instrument cluster & warning lights",
+            "Air conditioning vent temperature test",
+            "Blower motor operation across all speeds",
+            "Power windows & central locking function"
+        ]
+    },
+    {
+        icon: "car",
+        title: "Suspension & Steering (8 points)",
+        points: [
+            "Steering rack play & tie rod end condition",
+            "Power steering fluid level & pump operation",
+            "Front shock absorbers & strut mounting check",
+            "Rear shock absorber leakage & rebound check",
+            "Lower control arm bushes & ball joints",
+            "Anti-roll bar links & stabilizer bushings",
+            "Wheel hub bearing play check (all corners)",
+            "Visual alignment & uneven tyre wear indicators"
+        ]
+    },
+    {
+        icon: "eye",
+        title: "Body, Chassis & Safety (10 points)",
+        points: [
+            "Windscreen condition (cracks or chips in line of sight)",
+            "Door hinges, latches & weather-strip seals",
+            "Boot / tailgate latch & support strut operation",
+            "Seatbelts - webbing, retraction & buckle lock",
+            "Airbag warning light bulb check & status",
+            "Underbody visual check - corrosion & floor pan",
+            "Chassis alignment & previous repair indicators",
+            "Digital paint depth gauge reading across panels",
+            "Spare wheel condition & emergency jack",
+            "Side mirrors & interior rear-view mirror adjustment"
+        ]
+    }
+];
+
+const rtaFails = [
+    "Tyre age exceeding the UAE 5-year limit or tread below legal depth",
+    "Cracked, chipped, or heavily pitted windscreens in driver sightlines",
+    "Inoperative headlights, brake lamps, indicators, or number plate lights",
+    "Uneven brake force balance or excessive handbrake lever travel",
+    "Worn wiper blades failing to clear water cleanly across the screen",
+    "Excessive exhaust smoke or emission system fault warnings",
+    "Steering rack play or deteriorated suspension ball joints",
+    "Inoperative horn or persistent airbag warning lamps"
+];
+
+const pricingRows = [
+    { service: "RTA Pre-Test Inspection", price: "AED 99 – 150*", duration: "45–60 min [CONFIRM: package details]" },
+    { service: "Pre-Purchase Used Car Check", price: "AED 150 – 250*", duration: "60–90 min [CONFIRM: package details]" },
+    { service: "Annual Safety & Health Check", price: "AED 120 – 180*", duration: "60–75 min [CONFIRM: package details]" },
+    { service: "OBD-II Diagnostic Scan (add-on)", price: "AED 50 – 80*", duration: "20–30 min" },
+    { service: "Digital Paint Depth Test (add-on)", price: "AED 50*", duration: "15 min" }
+];
+
+const reasons = [
+    {
+        icon: "fileText",
+        title: "Itemized Written Findings",
+        desc: "You receive a clear, documented summary itemizing each inspected component with Pass, Advisory, or Attention ratings, providing objective facts rather than vague verbal assurances."
+    },
+    {
+        icon: "search",
+        title: "Independent Assessment",
+        desc: "Our inspection provides an objective evaluation of your vehicle's current mechanical condition, helping you prioritize safety and maintenance without pressure."
+    },
+    {
+        icon: "road",
+        title: "UAE Operating Realities",
+        desc: "We evaluate conditions accelerated by Dubai's climate—including tyre compound age (DOT code), brake fluid moisture absorption, battery reserve capacity, and cooling system efficiency under high ambient heat."
+    },
+    {
+        icon: "tools",
+        title: "Experienced Technicians & Ramp Access",
+        desc: "Inspections are conducted by experienced mechanics using hydraulic workshop ramps, specialized diagnostic scanners, and dedicated testing equipment at 222 Al Satwa Road."
+    },
+    {
+        icon: "camera",
+        title: "Visual Evidence for Buyers",
+        desc: "When assessing a pre-owned car, our technicians document visible defects, fluid leaks, and underbody wear so you have concrete information before making a purchasing decision."
+    },
+    {
+        icon: "shield",
+        title: "Same-Day Minor Rectifications",
+        desc: "If an inspection highlights minor roadworthiness issues—such as blown bulbs, worn wiper blades, or low fluids—our workshop can resolve them during your visit."
+    }
+];
+
+const faqs = [
+    {
+        q: "How does a workshop pre-inspection differ from official RTA vehicle testing?",
+        a: "Official roadworthiness testing in Dubai is conducted exclusively at RTA-authorized test centers (such as Tasjeel, Shamil, or Wasel) to approve vehicle registration. Our workshop pre-inspection evaluates those same critical test points beforehand, allowing you to identify and fix defects before your official test to avoid re-inspection fees."
+    },
+    {
+        q: "What does a pre-purchase car inspection in Dubai include?",
+        a: "A pre-purchase inspection covers a comprehensive evaluation of the vehicle's engine, transmission operation, braking system, steering, suspension, tyres, and underbody structure on a hydraulic ramp. We also scan electronic modules with an OBD-II diagnostic scanner and check panel consistency with a digital paint depth gauge where requested."
+    },
+    {
+        q: "How much does a car inspection cost in Dubai?",
+        a: "Car inspection pricing depends on the scope of the evaluation and vehicle type. Basic pre-registration checks typically range from AED 99 to AED 150, while comprehensive pre-purchase inspections range from AED 150 to AED 250 [CONFIRM: exact car inspection package prices]. Inspection fees are separate from any recommended repair work."
+    },
+    {
+        q: "Can an inspection guarantee that my car will pass the official RTA test?",
+        a: "While an independent pre-inspection thoroughly checks items known to cause test failures under RTA standards, official testing centers retain final authority. We cannot issue official test certificates or guarantee an RTA pass, but our inspection helps eliminate all foreseeable mechanical and safety failure points."
+    },
+    {
+        q: "What is the vehicle testing requirement for registration renewal in Dubai?",
+        a: "In Dubai, private light passenger vehicles are exempt from annual roadworthiness testing for their first three years from initial registration. Starting in their fourth year, vehicles must pass an annual roadworthiness inspection at an authorized RTA testing center before registration renewal."
+    },
+    {
+        q: "Do you provide mobile or at-home car inspections in Dubai?",
+        a: "Our standard comprehensive inspections are performed on hydraulic vehicle ramps at our workshop at 222 Al Satwa Road for complete underbody, brake, and chassis visibility [CONFIRM: mobile or at-home car inspection availability and call-out charges]."
+    },
+    {
+        q: "Why can older tyres fail an inspection even if they have good tread depth?",
+        a: "Under UAE regulations and roadworthiness standards, tyres older than five years from their manufacture date (indicated by the 4-digit DOT code on the sidewall) are deemed unsafe regardless of remaining tread. Intense desert heat hardens the rubber compound, increasing blowout risks."
+    }
+];
+
+const relatedServices = [
+    { icon: "cog", name: "Engine Diagnostics Dubai", desc: "OBD-II scans, sensor testing & engine troubleshooting", href: "/car-engine-service-dubai" },
+    { icon: "circle", name: "Car Maintenance Dubai", desc: "Periodic servicing, brake checks & fluid renewal", href: "/car-maintenance-dubai" },
+    { icon: "disc", name: "Tyre Replacement Dubai", desc: "Wheel balancing, laser alignment & tyre supply", href: "/tyre-replacement-dubai" },
+    { icon: "bolt", name: "Car AC Repair Dubai", desc: "Refrigerant gas refill, leak tests & compressor repairs", href: "/car-ac-repair-dubai" }
+];
+
+// ---------------------------------------------------------------------------
+// Schema Markup
+// ---------------------------------------------------------------------------
+const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "@id": "https://dubaicarrepairservice.com/car-inspection-dubai#service",
+            "name": "Car Inspection Dubai",
+            "url": "https://dubaicarrepairservice.com/car-inspection-dubai",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://dubaicarrepairservice.com/car-inspection-dubai"
+            },
+            "serviceType": "Vehicle Inspection",
+            "description": "Professional vehicle inspection services in Dubai including pre-purchase inspections, RTA pre-test inspections, annual safety inspections, diagnostic checks and detailed written inspection reports for all vehicle makes and models.",
+            "provider": {
+                "@id": "https://dubaicarrepairservice.com/#localbusiness"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Dubai"
+            },
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "AED",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": "99",
+                    "maxPrice": "250",
+                    "priceCurrency": "AED"
+                }
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://dubaicarrepairservice.com/car-inspection-dubai#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dubaicarrepairservice.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Car Inspection Dubai",
+                    "item": "https://dubaicarrepairservice.com/car-inspection-dubai"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://dubaicarrepairservice.com/car-inspection-dubai#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How do I prepare my car for RTA inspection in Dubai?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Before an RTA inspection, vehicle owners should check lights, tyres, wipers, mirrors, horn operation and dashboard warning indicators. A pre-inspection can help identify potential issues before the official test."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does car inspection cost in Dubai?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Inspection costs vary depending on the inspection type, vehicle condition and reporting requirements. Pre-purchase inspections and comprehensive safety inspections typically involve more detailed evaluations than basic inspections."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is the RTA car inspection age rule in Dubai?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Vehicles registered in Dubai are generally required to undergo periodic roadworthiness inspections according to RTA regulations before registration renewal. Requirements may vary depending on vehicle type and age."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can old tyres fail an RTA inspection even if tread is fine?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Tyre condition assessments consider multiple factors including age, sidewall condition, damage, cracking and manufacturer recommendations in addition to tread depth."
+                    }
+                }
+            ]
+        }
+    ]
+};
+---
+
+<BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+>
+    <!-- Structured JSON-LD Schema Graph -->
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+    <main class="dcrs-service-page">
+
+        <!-- 1. HERO BANNER --------------------------------------------------->
+        <header class="dcrs-hero-banner">
+            <div class="dcrs-hero-banner__scrim"></div>
+            <div class="dcrs-container dcrs-hero-banner__inner">
+                <nav class="dcrs-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#service">Services</a></li>
+                        <li aria-current="page">Car Inspection Dubai</li>
+                    </ol>
+                </nav>
+                <span class="dcrs-badge">Al Satwa, Dubai · RTA Pre-Test · Pre-Purchase · Safety Inspection</span>
+                <h1 class="dcrs-hero-banner__title">
+                    Car Inspection Dubai — Pre-Purchase Check &amp; RTA Testing
+                </h1>
+                <p class="dcrs-hero-banner__lead">
+                    Need a trusted car inspection in Dubai before buying a used car or renewing your registration? Our certified mechanics run a thorough 50+ point check at 222 Al Satwa Road, covering engine diagnostics, brakes, tyres, and chassis. Starting from AED 99 with a clear written report.
+                </p>
+                <div class="dcrs-hero-banner__actions">
+                    <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                        <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                    </a>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                        <Fragment set:html={icons.chat} /> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. INTRO SECTION ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="service-overview">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+                    
+                    <div class="dcrs-intro-content">
+                        <div class="dcrs-kicker">Service Overview</div>
+                        <h2 class="dcrs-heading__title">
+                            Car Inspection Dubai — Complete Vehicle Health &amp; Pre-Purchase Checks
+                        </h2>
+                        <p class="dcrs-lead-text">
+                            An independent vehicle inspection provides an objective assessment of mechanical condition, safety systems, and structural integrity. At <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a> in Al Satwa, our vehicle checks are structured around three distinct requirements: evaluating pre-owned vehicles prior to purchase, identifying defects before mandatory RTA registration renewal tests, and establishing baseline health during routine ownership.
+                        </p>
+                        <p class="dcrs-body-text">
+                            Operating conditions across Dubai place substantial stress on cooling circuits, rubber suspension bushings, electronic sensors, and friction materials. Our comprehensive inspection includes computerized <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine diagnostics in Dubai</a> to detect hidden fault codes, as well as testing whether you need an urgent <a href="/engine-oil-change-dubai" class="dcrs-inline-link">car oil change in Dubai</a> or cooling system service.
+                        </p>
+                        <p class="dcrs-body-text">
+                            We also inspect climate control components for necessary <a href="/car-ac-repair-dubai" class="dcrs-inline-link">car ac repair in Dubai</a>, examine tread depth and DOT date codes to determine if you need <a href="/tyre-replacement-dubai" class="dcrs-inline-link">tyre replacement in Dubai</a>, and advise on scheduled <a href="/car-maintenance-dubai" class="dcrs-inline-link">car maintenance in Dubai</a> to prevent unexpected breakdowns. If you need same-day testing, you can <a href="/contact" class="dcrs-inline-link">contact us</a> for prompt scheduling.
+                        </p>
+
+                        <div class="dcrs-action-row">
+                            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                                <Fragment set:html={icons.phone} /> Call Workshop
+                            </a>
+                            <a href="/contact" class="dcrs-btn dcrs-btn--outline-ink">
+                                Book Inspection <Fragment set:html={icons.arrowRight} />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dcrs-intro-media">
+                        <div class="dcrs-intro-media__frame">
+                            <img
+                                src={service1Image.src}
+                                alt="Mechanic performing comprehensive car inspection in Dubai at Al Satwa workshop on hydraulic lift"
+                                loading="eager"
+                                width="600"
+                                height="400"
+                            />
+                            <div class="dcrs-plate dcrs-price-badge" aria-hidden="true">
+                                <div class="dcrs-plate__tab">AED</div>
+                                <div class="dcrs-plate__body">
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">99+</span>
+                                    <span class="dcrs-plate__row">INSPECTION FROM</span>
+                                    <span class="dcrs-plate__row">WRITTEN REPORT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TYPES OF INSPECTION ------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="inspection-types">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Types of Inspection</div>
+                    <h2 class="dcrs-heading__title">
+                        Which Car Inspection Do You Need in Dubai?
+                    </h2>
+                    <p class="dcrs-heading__sub">
+                        Three inspection types, each with a different purpose and scope. Choose the one that fits your situation.
+                    </p>
+                </div>
+
+                <div class="dcrs-types-grid">
+                    {inspectionTypes.map((t) => (
+                        <div class="dcrs-type-card">
+                            <div class="dcrs-type-card__head">
+                                <span class="dcrs-type-card__icon">
+                                    <Fragment set:html={icons[t.icon]} />
+                                </span>
+                                <div>
+                                    <h3 class="dcrs-type-card__title">{t.title}</h3>
+                                    <span class="dcrs-badge-tag">{t.badge}</span>
+                                </div>
+                            </div>
+                            <p class="dcrs-type-card__desc">{t.desc}</p>
+                            <ul class="dcrs-type-card__list">
+                                {t.list.map((item) => (
+                                    <li>
+                                        <span class="dcrs-icon-check"><Fragment set:html={icons.check} /></span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 50-POINT CHECKLIST ACCORDION ---------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="checklist">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col align-start">
+
+                    <!-- Left: Description Box -->
+                    <div class="dcrs-checklist-info">
+                        <div class="dcrs-kicker">What We Check</div>
+                        <h2 class="dcrs-heading__title">
+                            Our 50-Point Car Inspection Checklist
+                        </h2>
+                        <p class="dcrs-body-text">
+                            Our inspection checklist examines visible, accessible mechanical components, suspension joints, safety gear, and electronic control modules across five key categories. Findings are documented with clear condition ratings and prioritised notes so you know exactly what requires attention.
+                        </p>
+
+                        <div class="dcrs-report-card">
+                            <h4 class="dcrs-report-card__title">Every Inspection Report Includes:</h4>
+                            <ul class="dcrs-report-list">
+                                <li><Fragment set:html={icons.check} /> Condition assessment across 5 key mechanical & safety systems</li>
+                                <li><Fragment set:html={icons.check} /> OBD-II electronic diagnostic trouble code (DTC) scan summary</li>
+                                <li><Fragment set:html={icons.check} /> Fluid level, contamination, and external leak checks</li>
+                                <li><Fragment set:html={icons.check} /> Urgency rating: Immediate safety priority, upcoming service, or monitor</li>
+                                <li><Fragment set:html={icons.check} /> Itemised repair cost estimate for recommended remedial work</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right: Accordion of 5 Categories -->
+                    <div class="dcrs-checklist-accordion">
+                        {checklistCategories.map((cat, i) => (
+                            <details class="dcrs-check-item" open={i === 0}>
+                                <summary class="dcrs-check-item__head">
+                                    <div class="dcrs-check-item__title">
+                                        <span class="dcrs-check-item__icon"><Fragment set:html={icons[cat.icon]} /></span>
+                                        <span>{cat.title}</span>
+                                    </div>
+                                    <span class="dcrs-check-item__toggle"><Fragment set:html={icons.chevronDown} /></span>
+                                </summary>
+                                <div class="dcrs-check-item__body">
+                                    <div class="dcrs-points-grid">
+                                        {cat.points.map((p) => (
+                                            <div class="dcrs-point-line">
+                                                <span class="dcrs-icon-check"><Fragment set:html={icons.check} /></span>
+                                                <span>{p}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </details>
+                        ))}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. RTA PREPARATION & PRICING GUIDE -------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="rta-section">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">RTA Inspection Dubai</div>
+                    <h2 class="dcrs-heading__title">
+                        Preparing Your Car for RTA Inspection in Dubai
+                    </h2>
+                </div>
+
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+
+                    <!-- Left: Description & Fail Reasons -->
+                    <div class="dcrs-rta-copy">
+                        <p class="dcrs-body-text">
+                            In Dubai, passenger vehicles older than three years must pass an annual roadworthiness test at an authorised RTA testing centre -such as Tasjeel, Shamil, Wasel, or AG Cars -before vehicle registration (Mulkiya) can be renewed. Failing an official test requires repairing the faults and returning for a re-test within a specified window.
+                        </p>
+                        <p class="dcrs-body-text">
+                            Our workshop provides independent pre-RTA testing to identify issues before you enter the test lane. We inspect the common failure points targeted by testing technicians:
+                        </p>
+
+                        <div class="dcrs-fails-list">
+                            {rtaFails.map((f) => (
+                                <div class="dcrs-fail-item">
+                                    <span class="dcrs-fail-item__icon"><Fragment set:html={icons.times} /></span>
+                                    <span>{f}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div class="dcrs-action-row">
+                            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                                <Fragment set:html={icons.phone} /> Book an Inspection -{phoneDisplay}
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Pricing Table Card -->
+                    <div class="dcrs-pricing-card">
+                        <h3 class="dcrs-pricing-card__title">Inspection Pricing Guide</h3>
+                        <div class="dcrs-table-wrapper">
+                            <table class="dcrs-pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>Inspection Type</th>
+                                        <th>Price (AED)</th>
+                                        <th>Duration</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {pricingRows.map((r) => (
+                                        <tr>
+                                            <td class="dcrs-table-service">{r.service}</td>
+                                            <td class="dcrs-table-price">{r.price}</td>
+                                            <td class="dcrs-table-duration">{r.duration}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="dcrs-pricing-disclaimer">
+                            <Fragment set:html={icons.info} /> Inspection fee is separate from any repair costs. Written report provided for all inspection types. [CONFIRM: exact inspection package prices and turnaround times]. Walk-ins welcome at 222 Al Satwa Road.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. WHY CHOOSE US ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="why-choose-us">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Why Choose Us</div>
+                    <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Our Inspection Service</h2>
+                </div>
+
+                <div class="dcrs-reasons-grid">
+                    {reasons.map((r) => (
+                        <div class="dcrs-reason-card">
+                            <span class="dcrs-reason-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <div>
+                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
+                                <p class="dcrs-reason-card__text">{r.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FREQUENTLY ASKED QUESTIONS (FAQ) ------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="faq">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">FAQ</div>
+                    <h2 class="dcrs-heading__title">Car Inspection Dubai -Frequently Asked Questions</h2>
+                </div>
+
+                <div class="dcrs-faq-accordion">
+                    {faqs.map((faq, i) => (
+                        <details class="dcrs-faq-item" open={i === 0}>
+                            <summary class="dcrs-faq-item__question">
+                                <span>{faq.q}</span>
+                                <span class="dcrs-faq-item__toggle">
+                                    <Fragment set:html={icons.chevronDown} />
+                                </span>
+                            </summary>
+                            <div class="dcrs-faq-item__answer">
+                                <p>{faq.a}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="related-services">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">More Services</div>
+                    <h2 class="dcrs-heading__title">Services Commonly Needed After Inspection</h2>
+                </div>
+
+                <div class="dcrs-related-grid">
+                    {relatedServices.map((r) => (
+                        <a href={r.href} class="dcrs-related-card">
+                            <span class="dcrs-related-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <h3 class="dcrs-related-card__title">{r.name}</h3>
+                            <p class="dcrs-related-card__desc">{r.desc}</p>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CTA BANNER ---------------------------------------------------->
+        <section class="dcrs-cta-banner">
+            <div class="dcrs-container">
+                <div class="dcrs-cta-banner__inner">
+                    <div class="dcrs-cta-banner__copy">
+                        <span class="dcrs-cta-banner__badge">Al Satwa Workshop</span>
+                        <h2 class="dcrs-cta-banner__title">
+                            Book Your Car Inspection in Dubai Today
+                        </h2>
+                        <p class="dcrs-cta-banner__sub">
+                            Open 7AM–10PM daily · 222 Al Satwa Rd · Pre-RTA checks, pre-purchase assessments &amp; full vehicle health reports. <a href="/contact" class="dcrs-cta-inline-link">Contact us online</a> to schedule your inspection.
+                        </p>
+                    </div>
+                    <div class="dcrs-cta-banner__actions">
+                        <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                            <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                        </a>
+                        <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                            <Fragment set:html={icons.chat} /> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. BOTTOM STICKY MOBILE BAR ------------------------------------->
+        <div class="dcrs-stickybar">
+            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
+                <Fragment set:html={icons.phone} /> Call Now
+            </a>
+            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn dcrs-stickybar__btn--wa">
+                <Fragment set:html={icons.chat} /> WhatsApp
+            </a>
+        </div>
+
+    </main>
+</BaseLayout>
+
+<style>
+    /* Scoped styling preserving template design tokens */
+    :root {
+        --ink: #10201F;
+        --ink-soft: #1B302E;
+        --paper: #E8E4D8;
+        --paper-alt: #DFDACB;
+        --white: #FBF9F4;
+        --brass: #C1802E;
+        --brass-deep: #9C6423;
+        --steel: #57706E;
+        --rule-on-paper: rgba(16, 32, 31, 0.15);
+        --rule-on-ink: rgba(251, 249, 244, 0.16);
+    }
+
+    .dcrs-service-page {
+        padding-bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-service-page {
+            padding-bottom: 0;
+        }
+    }
+
+    /* Hide floating WhatsApp button on mobile when sticky bar is active */
+    @media (max-width: 767.98px) {
+        :global(.float) {
+            display: none !important;
+        }
+    }
+
+    .dcrs-container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        .dcrs-container {
+            padding: 0 0.85rem;
+        }
+    }
+
+    /* Kicker & Typography */
+    .dcrs-kicker {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass-deep);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        box-sizing: border-box;
+    }
+
+    .dcrs-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .dcrs-heading--center {
+        text-align: center;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dcrs-heading__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+        line-height: 1.2;
+        color: var(--ink);
+        margin: 0 0 0.6rem;
+    }
+
+    .dcrs-heading__sub {
+        color: var(--steel);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-lead-text {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--ink);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-body-text {
+        font-size: 0.96rem;
+        line-height: 1.75;
+        color: var(--steel);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-inline-link {
+        color: var(--brass-deep);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    /* Section Wrappers */
+    .dcrs-section {
+        padding: clamp(3rem, 6.5vw, 5rem) 0;
+    }
+    .dcrs-section--paper { background: var(--paper); }
+    .dcrs-section--tint { background: var(--paper-alt); }
+
+    /* Buttons */
+    .dcrs-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        font-family: var(--font-body, sans-serif);
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.4rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        line-height: 1;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        min-height: 48px;
+    }
+
+    .dcrs-btn :global(svg) {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .dcrs-btn--solid {
+        background: var(--brass);
+        color: var(--ink);
+    }
+    .dcrs-btn--solid:hover {
+        background: var(--brass-deep);
+        color: #fff;
+    }
+
+    .dcrs-btn--outline-ink {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+    }
+    .dcrs-btn--outline-ink:hover {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+    .dcrs-btn--wa:hover {
+        background: #1ebc59;
+    }
+
+    .dcrs-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.75rem;
+    }
+
+    /* 1. Hero Banner */
+    .dcrs-hero-banner {
+        position: relative;
+        background-color: var(--ink);
+        color: var(--white);
+        padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+        overflow: hidden;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 767.98px) {
+        .dcrs-hero-banner {
+            min-height: auto;
+            padding: clamp(3rem, 7vw, 4rem) 0;
+        }
+    }
+
+    .dcrs-hero-banner .dcrs-container {
+        width: 100%;
+    }
+
+    .dcrs-hero-banner__scrim {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(193, 128, 46, 0.15), transparent 50%);
+        pointer-events: none;
+    }
+
+    .dcrs-hero-banner__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 820px;
+    }
+
+    .dcrs-breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.82rem;
+        color: rgba(251, 249, 244, 0.65);
+    }
+
+    .dcrs-breadcrumb li + li::before {
+        content: "/";
+        margin-right: 0.5rem;
+        color: rgba(251, 249, 244, 0.4);
+    }
+
+    .dcrs-breadcrumb a {
+        color: rgba(251, 249, 244, 0.75);
+        text-decoration: none;
+    }
+
+    .dcrs-breadcrumb a:hover {
+        color: var(--brass);
+    }
+
+    .dcrs-badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+    }
+
+    .dcrs-hero-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.5rem, 5.5vw, 2.9rem);
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 0 0 1rem;
+        color: var(--white);
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .dcrs-hero-banner__lead {
+        font-size: clamp(0.92rem, 2.6vw, 1.15rem);
+        line-height: 1.65;
+        color: rgba(251, 249, 244, 0.85);
+        word-break: break-word;
+        overflow-wrap: break-word;
+        margin: 0 0 2rem;
+    }
+
+    .dcrs-hero-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        .dcrs-hero-banner__actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .dcrs-hero-banner__actions .dcrs-btn {
+            width: 100%;
+        }
+    }
+
+    /* 2. Grid Layouts */
+    .dcrs-grid-2col {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+        width: 100%;
+    }
+
+    .dcrs-grid-2col > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-grid-2col {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 3.5rem;
+        }
+    }
+
+    .dcrs-grid-2col--align-center {
+        align-items: center;
+    }
+
+    .align-start {
+        align-items: start;
+    }
+
+    /* Media Frame & Price Badge */
+    .dcrs-intro-media__frame {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--rule-on-paper);
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+    }
+
+    .dcrs-intro-media__frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 4 / 3;
+    }
+
+    .dcrs-plate {
+        display: flex;
+        background: var(--white);
+        color: var(--ink);
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(16, 32, 31, 0.16);
+    }
+
+    .dcrs-price-badge {
+        position: absolute;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        z-index: 2;
+    }
+
+    .dcrs-plate__tab {
+        background: var(--brass);
+        color: var(--ink);
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.72rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0.4rem;
+        letter-spacing: 0.05em;
+    }
+
+    .dcrs-plate__body {
+        padding: 0.75rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        font-family: var(--font-mono, monospace);
+    }
+
+    .dcrs-plate__row {
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        color: var(--ink-soft);
+        font-weight: 600;
+    }
+
+    .dcrs-plate__row--big {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+    }
+
+    /* 3. Types of Inspection Grid */
+    .dcrs-types-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-types-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-type-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dcrs-type-card__head {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .dcrs-type-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .dcrs-type-card__icon :global(svg) {
+        width: 24px;
+        height: 24px;
+    }
+
+    .dcrs-type-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.15rem;
+        color: var(--ink);
+        margin: 0 0 0.25rem;
+    }
+
+    .dcrs-badge-tag {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        background: var(--ink);
+        color: var(--white);
+        padding: 0.15rem 0.45rem;
+        border-radius: 3px;
+        font-weight: 600;
+    }
+
+    .dcrs-type-card__desc {
+        font-size: 0.88rem;
+        color: var(--steel);
+        line-height: 1.65;
+        margin: 0 0 1.25rem;
+    }
+
+    .dcrs-type-card__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        margin-top: auto;
+    }
+
+    .dcrs-type-card__list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: 0.84rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+    }
+
+    .dcrs-icon-check {
+        color: var(--brass-deep);
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+        display: inline-flex;
+    }
+
+    .dcrs-icon-check :global(svg) {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* 4. 50-Point Checklist */
+    .dcrs-report-card {
+        background: var(--ink);
+        color: var(--white);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+    }
+
+    .dcrs-report-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.1rem;
+        margin: 0 0 0.85rem;
+        color: var(--white);
+    }
+
+    .dcrs-report-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .dcrs-report-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: 0.86rem;
+        color: rgba(251, 249, 244, 0.88);
+        line-height: 1.5;
+    }
+
+    .dcrs-report-list :global(svg) {
+        width: 14px;
+        height: 14px;
+        color: var(--brass);
+        flex-shrink: 0;
+        margin-top: 0.2rem;
+    }
+
+    .dcrs-checklist-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .dcrs-check-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .dcrs-check-item[open] {
+        border-color: var(--brass);
+    }
+
+    .dcrs-check-item__head {
+        list-style: none;
+        padding: 1.15rem 1.25rem;
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .dcrs-check-item__head::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-check-item__title {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+    }
+
+    .dcrs-check-item__icon {
+        color: var(--brass-deep);
+        display: inline-flex;
+    }
+
+    .dcrs-check-item__icon :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-check-item__toggle {
+        color: var(--brass-deep);
+        display: inline-flex;
+        transition: transform 0.2s ease;
+    }
+
+    .dcrs-check-item__toggle :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-check-item[open] .dcrs-check-item__toggle {
+        transform: rotate(180deg);
+    }
+
+    .dcrs-check-item__body {
+        padding: 0 1.25rem 1.25rem;
+        border-top: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-points-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.85rem;
+    }
+
+    .dcrs-point-line {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px dashed rgba(16, 32, 31, 0.1);
+    }
+
+    .dcrs-point-line:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    /* 5. RTA & Pricing */
+    .dcrs-fails-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin: 1.25rem 0 1.5rem;
+    }
+
+    .dcrs-fail-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: 0.88rem;
+        color: var(--ink-soft);
+    }
+
+    .dcrs-fail-item__icon {
+        color: #dc2626;
+        display: inline-flex;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+    }
+
+    .dcrs-fail-item__icon :global(svg) {
+        width: 16px;
+        height: 16px;
+    }
+
+    .dcrs-pricing-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: clamp(1.5rem, 3.5vw, 2.25rem);
+    }
+
+    .dcrs-pricing-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.35rem;
+        margin: 0 0 1.25rem;
+        color: var(--ink);
+    }
+
+    .dcrs-table-wrapper {
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+
+    .dcrs-pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.92rem;
+    }
+
+    .dcrs-pricing-table thead {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-pricing-table th {
+        padding: 0.9rem 1.15rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+    }
+
+    .dcrs-pricing-table td {
+        padding: 0.85rem 1.15rem;
+        border-bottom: 1px solid var(--rule-on-paper);
+        color: var(--ink-soft);
+    }
+
+    .dcrs-pricing-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .dcrs-table-service {
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    .dcrs-table-price {
+        font-family: var(--font-mono, monospace);
+        font-weight: 600;
+        color: var(--brass-deep);
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .dcrs-table-duration {
+        font-size: 0.85rem;
+        color: var(--steel);
+    }
+
+    .dcrs-pricing-disclaimer {
+        font-size: 0.8rem;
+        color: var(--steel);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        line-height: 1.5;
+        margin-top: 0.85rem;
+    }
+
+    .dcrs-pricing-disclaimer :global(svg) {
+        width: 14px;
+        height: 14px;
+        color: var(--brass-deep);
+        flex-shrink: 0;
+    }
+
+    /* 6. Why Choose Us */
+    .dcrs-reasons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-reason-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .dcrs-reason-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(16, 32, 31, 0.06);
+    }
+
+    .dcrs-reason-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+    }
+
+    .dcrs-reason-card__icon :global(svg) {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dcrs-reason-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.12rem;
+        color: var(--ink);
+        margin: 0 0 0.45rem;
+    }
+
+    .dcrs-reason-card__text {
+        font-size: 0.88rem;
+        color: var(--steel);
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* 7. FAQ Accordion */
+    .dcrs-faq-accordion {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .dcrs-faq-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+    }
+
+    .dcrs-faq-item[open] {
+        border-color: var(--brass);
+    }
+
+    .dcrs-faq-item__question {
+        list-style: none;
+        padding: 1.15rem 1.35rem;
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass-deep);
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .dcrs-faq-item__toggle :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
+        transform: rotate(180deg);
+    }
+
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: var(--steel);
+    }
+
+    /* 8. Related Services */
+    .dcrs-related-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-related-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .dcrs-related-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
+        border-color: var(--brass);
+    }
+
+    .dcrs-related-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--paper);
+        color: var(--brass-deep);
+        border-radius: 50%;
+        margin-bottom: 0.85rem;
+    }
+
+    .dcrs-related-card__icon :global(svg) {
+        width: 22px;
+        height: 22px;
+    }
+
+    .dcrs-related-card__title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0 0 0.35rem;
+    }
+
+    .dcrs-related-card__desc {
+        font-size: 0.8rem;
+        color: var(--steel);
+        line-height: 1.45;
+        margin: 0;
+    }
+
+    /* 9. CTA Banner */
+    .dcrs-cta-banner {
+        background: var(--ink);
+        color: var(--white);
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .dcrs-cta-banner__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-cta-banner__inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .dcrs-cta-banner__badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcrs-cta-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+        color: var(--white);
+        margin: 0 0 0.5rem;
+        line-height: 1.25;
+    }
+
+    .dcrs-cta-banner__sub {
+        color: rgba(251, 249, 244, 0.75);
+        font-size: 0.98rem;
+        margin: 0;
+    }
+
+    .dcrs-cta-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    /* 10. Sticky Mobile Bar */
+    .dcrs-stickybar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.6rem 0.75rem;
+        background: var(--ink);
+        border-top: 1px solid var(--rule-on-ink);
+        z-index: 99;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-stickybar {
+            display: none;
+        }
+    }
+
+    .dcrs-stickybar__btn {
+        flex: 1;
+        min-height: 44px;
+        font-size: 0.88rem;
+        padding: 0.6rem;
+    }
+
+    .dcrs-stickybar__btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+    /* Mobile price badge scaling */
+    @media (max-width: 480px) {
+        .dcrs-price-badge {
+            bottom: 0.75rem;
+            right: 0.75rem;
+            max-width: 175px;
+        }
+        .dcrs-price-badge .dcrs-plate__tab {
+            font-size: 0.65rem;
+            padding: 0.4rem 0.35rem;
+        }
+        .dcrs-price-badge .dcrs-plate__row--big {
+            font-size: 1.15rem;
+        }
+        .dcrs-price-badge .dcrs-plate__row {
+            font-size: 0.68rem;
+        }
+    }
+    /* marker: dcrs-price-badge-responsive */
+
+    /* Responsive pricing table font size & compact padding */
+    @media (max-width: 768px) {
+        .dcrs-pricing-table th {
+            padding: 0.75rem 0.85rem;
+            font-size: 0.78rem;
+        }
+        .dcrs-pricing-table td {
+            padding: 0.75rem 0.85rem;
+            font-size: 0.84rem;
+        }
+        .dcrs-table-price {
+            font-size: 0.82rem;
+        }
+    }
+    @media (max-width: 480px) {
+        .dcrs-pricing-table {
+            font-size: 0.78rem;
+        }
+        .dcrs-pricing-table th {
+            padding: 0.55rem 0.45rem;
+            font-size: 0.68rem;
+            letter-spacing: 0.02em;
+        }
+        .dcrs-pricing-table td {
+            padding: 0.55rem 0.45rem;
+            font-size: 0.75rem;
+            line-height: 1.35;
+        }
+        .dcrs-table-service {
+            font-size: 0.76rem;
+        }
+        .dcrs-table-price {
+            font-size: 0.74rem;
+            word-break: normal;
+        overflow-wrap: break-word;
+        }
+        .dcrs-table-duration {
+            font-size: 0.72rem;
+        }
+        .dcrs-pricing-disclaimer {
+            font-size: 0.75rem;
+        }
+    }
+    /* marker: dcrs-pricing-table-mobile-text */
+
+
+    /* Protection against flex/grid item blowout on mobile viewports */
+    .dcrs-engine-item,
+    .dcrs-warning-item,
+    .dcrs-process-step,
+    .dcrs-engines-block,
+    .dcrs-pricing-block,
+    .dcrs-warnings-block,
+    .dcrs-process-block,
+    .dcrs-col-block,
+    .dcrs-intro-content,
+    .dcrs-intro-media {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .dcrs-engine-item > div,
+    .dcrs-warning-item > div,
+    .dcrs-process-step > div {
+        min-width: 0;
+        flex: 1;
+    }
+    @media (max-width: 480px) {
+        .dcrs-heading__title {
+            font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+            line-height: 1.25;
+        }
+        .dcrs-engine-item {
+            padding: 0.75rem 0.85rem;
+            gap: 0.65rem;
+        }
+        .dcrs-engine-item__name {
+            font-size: 0.88rem;
+        }
+        .dcrs-engine-item__desc {
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+        .dcrs-table-price,
+        .dcrs-table__price,
+        .dcrs-price-cell,
+        .dcrs-price-tag {
+            white-space: normal !important;
+            word-break: normal !important;
+            overflow-wrap: break-word !important;
+        }
+    }
+    /* marker: .dcrs-flex-overflow-fix */
+    .dcrs-cta-inline-link {
+        color: var(--brass, #C1802E);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+    .dcrs-cta-inline-link:hover { opacity: 0.85; }
+
+</style>
+

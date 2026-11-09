@@ -1,0 +1,350 @@
+:root {
+    /* Core palette — matches Header / Footer / Home components */
+    --ink: #10201F;
+    --ink-soft: #1B302E;
+    --paper: #E8E4D8;
+    --paper-alt: #DFDACB;
+    --white: #FBF9F4;
+    --brass: #C1802E;
+    --brass-deep: #9C6423;
+    --steel: #57706E;
+
+    /* Legacy aliases kept so older markup referencing these still resolves */
+    --main-color: var(--white);
+    --secondary-color: var(--ink);
+    --text-color: var(--ink);
+
+    /* Fonts — same trio used across Header / Footer / Home */
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-heading: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Base resets */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+img, svg, picture, video, canvas {
+    max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, a, li {
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: var(--brass);
+    color: var(--ink);
+}
+
+/* Service Pages Standard Buttons (Car Battery Replacement standard) */
+.dcrs-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: var(--font-body, sans-serif);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    min-height: 48px;
+    box-sizing: border-box;
+}
+
+.dcrs-btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.dcrs-btn--solid {
+    background-color: var(--brass, #C1802E);
+    color: var(--ink, #10201F);
+}
+
+.dcrs-btn--solid:hover {
+    background-color: var(--brass-deep, #9C6423);
+    color: #fff;
+}
+
+.dcrs-btn--wa {
+    background-color: #25d366;
+    color: #fff;
+}
+
+.dcrs-btn--wa:hover {
+    background-color: #1ebc59;
+}
+
+/* Service Pages Standard Hero Banner (Car Maintenance Dubai standard) */
+.dcrs-hero-banner {
+    position: relative;
+    background-color: var(--ink);
+    color: var(--white);
+    padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767.98px) {
+    .dcrs-hero-banner {
+        min-height: auto;
+        padding: clamp(3rem, 7vw, 4rem) 0;
+    }
+}
+
+.dcrs-hero-banner .dcrs-container {
+    width: 100%;
+}
+
+/* Floating WhatsApp Button */
+.float {
+    position: fixed;
+    width: 58px;
+    height: 58px;
+    bottom: 96px; /* clears the sticky mobile call/WhatsApp bar if one is present */
+    right: 24px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(16, 32, 31, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.float svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+.float:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(16, 32, 31, 0.34);
+}
+
+@media (max-width: 767.98px) {
+    body:has(.dcrs-stickybar) .float {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .float {
+        bottom: 32px;
+        right: 32px;
+    }
+}
+
+/* Legacy Bootstrap-grid tightening — safe to remove once inner pages
+   are migrated off Bootstrap's container/row/col classes */
+@media (max-width: 991.98px) {
+    .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+    .row {
+        margin-left: -4px !important;
+        margin-right: -4px !important;
+    }
+    div[class^="col-"] {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+    .py-5, #service.py-5, #about.py-5, #fact.py-5, #booking.py-5 {
+        padding-top: 1.75rem !important;
+        padding-bottom: 1.75rem !important;
+    }
+}
+
+/* ==========================================================================
+   Universal Mobile Responsiveness Protections
+   ========================================================================== */
+html, body {
+    overflow-x: clip;
+    max-width: 100%;
+}
+
+.dcrs-service-page,
+.dcrs-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Prevent CSS grid & flex item blowout across all service pages */
+.dcrs-grid-2col,
+.dcrs-columns-2,
+.dcrs-two-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.dcrs-grid-2col > *,
+.dcrs-columns-2 > *,
+.dcrs-two-col > *,
+.dcrs-two-col__col,
+.dcrs-pricing-block,
+.dcrs-engines-block,
+.dcrs-warnings-block,
+.dcrs-process-block,
+.dcrs-pricing-card,
+.dcrs-vehicles-card,
+.dcrs-intervals-block,
+.dcrs-severe-duty-card,
+.dcrs-symptoms-block,
+.dcrs-checklist-block,
+.dcrs-maintenance-card,
+.dcrs-col-block,
+.dcrs-intro-content,
+.dcrs-intro-media,
+.dcrs-engine-item,
+.dcrs-warning-item,
+.dcrs-process-step {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.dcrs-engine-item > div,
+.dcrs-warning-item > div,
+.dcrs-process-step > div {
+    min-width: 0 !important;
+    flex: 1 !important;
+}
+
+/* Ensure all tables are horizontally scrollable without breaking page layout */
+.dcrs-table-wrapper,
+.dcrs-table-wrap,
+.dcrs-price-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+}
+
+/* Mobile typography & table wrapping */
+@media (max-width: 480px) {
+    .dcrs-heading__title {
+        font-size: clamp(1.35rem, 5.5vw, 1.65rem) !important;
+        line-height: 1.25 !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+
+    .dcrs-pricing-table,
+    .dcrs-price-table,
+    .dcrs-table {
+        table-layout: auto !important;
+        width: 100% !important;
+    }
+
+    .dcrs-table-price,
+    .dcrs-table__price,
+    .dcrs-price-cell,
+    .dcrs-price-tag {
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .dcrs-engine-item,
+    .dcrs-warning-item,
+    .dcrs-process-step {
+        padding: 0.75rem 0.85rem !important;
+        gap: 0.65rem !important;
+    }
+}
+
+
+
+@media (max-width: 640px) {
+    .dcrs-response-box {
+        padding: 1.15rem 0.95rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .dcrs-response-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.35rem !important;
+        padding: 0.7rem 0 !important;
+        width: 100% !important;
+    }
+    .dcrs-response-row__area {
+        font-size: 0.88rem !important;
+        font-weight: 500 !important;
+        color: #fff !important;
+        line-height: 1.4 !important;
+        width: 100% !important;
+    }
+    .dcrs-response-row__time,
+    .dcrs-response-row__badge {
+        font-size: 0.78rem !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        line-height: 1.35 !important;
+        align-self: flex-start !important;
+        display: inline-block !important;
+    }
+    .dcrs-areas-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .dcrs-area-pill__name {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        word-break: normal !important;
+        line-height: 1.35 !important;
+    }
+}
+
+
+/* Ensure zero white gap between main page content and footer on mobile */
+.dcrs-service-page,
+.dcrs {
+    padding-bottom: 0 !important;
+}
+/* marker: dcrs-no-white-bottom-gap */

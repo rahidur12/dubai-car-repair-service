@@ -1,0 +1,25 @@
+---
+// Dynamically route and render pages from src/pages/service/ and src/pages/locations/ directly at the root URL
+// to preserve 100% of the live SEO URLs from your Laravel web.php
+export async function getStaticPaths() {
+    const serviceFiles = import.meta.glob('./service/*.astro', { eager: true });
+    const locationFiles = import.meta.glob('./locations/*.astro', { eager: true });
+    
+    const allFiles = { ...serviceFiles, ...locationFiles };
+
+    return Object.entries(allFiles)
+        .filter(([path]) => !path.endsWith('/index.astro'))
+        .map(([path, module]) => {
+            // Extracts slug (e.g. "car-ac-repair-dubai" or "car-repair-al-satwa")
+            const slug = path.split('/').pop()?.replace('.astro', '') || '';
+            return {
+                params: { slug },
+                props: { Component: (module as any).default }
+            };
+        });
+}
+
+const { Component } = Astro.props;
+---
+
+<Component />

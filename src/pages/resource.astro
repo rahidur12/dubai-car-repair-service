@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Car Care Guides & Resources | Dubai Car Repair Service";
+const pageDescription = "Helpful automotive guides, maintenance tips, and vehicle advice from certified Dubai mechanics. Learn how to protect your car against extreme UAE heat.";
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://wa.me/971566121423";
+
+const articles = [
+    {
+        title: "How Dubai's 50°C Summer Heat Destroys Car Batteries (And How to Prevent It)",
+        category: "Battery & Electrical",
+        readTime: "4 min read",
+        desc: "In Dubai, car batteries rarely last longer than 2 years. Learn the science of electrolyte evaporation, internal grid corrosion, and why regular testing saves you from getting stranded in summer.",
+        date: "Updated October 2026"
+    },
+    {
+        title: "AC Not Blowing Cold? The 5 Most Common AC Failures in Dubai",
+        category: "Air Conditioning",
+        readTime: "5 min read",
+        desc: "From slow refrigerant leaks and clogged cabin filters to condenser blockages and compressor failure, here is how our mechanics diagnose air conditioning faults accurately.",
+        date: "Updated October 2026"
+    },
+    {
+        title: "Synthetic vs Semi-Synthetic Oil: What Does Your Engine Need in the UAE?",
+        category: "Engine & Fluids",
+        readTime: "6 min read",
+        desc: "Why low-viscosity full synthetic oils perform dramatically better at high operating temperatures, and why sticking to manufacturer viscosity tolerances prevents premature wear.",
+        date: "Updated October 2026"
+    },
+    {
+        title: "The 5-Year Tyre Rule in Dubai: Why Tread Depth Isn't the Only Safety Metric",
+        category: "Tyres & Alignment",
+        readTime: "4 min read",
+        desc: "Road surface temperatures can exceed 70°C in July and August. Discover how UV exposure oxidizes rubber compounds invisibly, and how to verify the DOT manufacture date code.",
+        date: "Updated October 2026"
+    },
+    {
+        title: "Pre-Purchase Used Car Checklist: Don't Buy Without These 8 Inspections",
+        category: "Buyer Protection",
+        readTime: "7 min read",
+        desc: "Dubai's secondary car market is booming. Protect yourself against flood damage, concealed structural repairs, rolled-back odometers, and hidden electronic fault codes.",
+        date: "Updated October 2026"
+    },
+    {
+        title: "RTA Vehicle Testing Pre-Inspection Guide: How to Pass First Time",
+        category: "RTA Passing",
+        readTime: "5 min read",
+        desc: "Avoid test failures and repeat fee payments. Our mechanics break down the exact mechanical, emissions, brake, and tyre criteria evaluated at Dubai RTA passing centres.",
+        date: "Updated October 2026"
+    }
+];
+
+const icons: Record<string, string> = {
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.3 6.4L4 20l1.4-3.6A7.9 7.9 0 0 1 4 12Z"/><path d="M9 11.5c.3 2 2 3.7 4 4"/></svg>`,
+    book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>`,
+    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <main class="dcrs-resources-page">
+        <!-- Hero Banner -->
+        <header class="dcrs-hero-banner">
+            <div class="dcrs-hero-banner__scrim"></div>
+            <div class="dcrs-container dcrs-hero-banner__inner">
+                <nav class="dcrs-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li aria-current="page">Resources</li>
+                    </ol>
+                </nav>
+                <span class="dcrs-badge">Expert Guides · Maintenance Tips · UAE Insights</span>
+                <h1 class="dcrs-hero-banner__title">
+                    Car Care Guides &amp; Automotive Resources
+                </h1>
+                <p class="dcrs-hero-banner__lead">
+                    Practical maintenance advice, troubleshooting breakdowns, and expert automotive insights compiled by our certified mechanics at 222 Al Satwa Road.
+                </p>
+                <div class="dcrs-hero-banner__actions">
+                    <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                        <Fragment set:html={icons.phone} /> Call Mechanic {phoneDisplay}
+                    </a>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                        <Fragment set:html={icons.chat} /> Ask a Question on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Guides Grid -->
+        <section class="dcrs-section">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Knowledge Base</div>
+                    <h2 class="dcrs-heading__title">Featured Guides for UAE Drivers</h2>
+                    <p class="dcrs-heading__sub">
+                        Written to help you keep your vehicle reliable, pass inspections, and avoid costly unexpected repairs.
+                    </p>
+                </div>
+
+                <div class="dcrs-guides-grid">
+                    {articles.map((art) => (
+                        <article class="dcrs-article-card">
+                            <div class="dcrs-article-card__meta">
+                                <span class="dcrs-article-card__category">{art.category}</span>
+                                <span class="dcrs-article-card__read">{art.readTime}</span>
+                            </div>
+                            <h3 class="dcrs-article-card__title">{art.title}</h3>
+                            <p class="dcrs-article-card__desc">{art.desc}</p>
+                            <div class="dcrs-article-card__footer">
+                                <span class="dcrs-article-card__date">{art.date}</span>
+                                <a href="/contact" class="dcrs-article-card__link">
+                                    <span>Ask our team</span>
+                                    <Fragment set:html={icons.arrowRight} />
+                                </a>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="dcrs-cta-banner">
+            <div class="dcrs-container">
+                <div class="dcrs-cta-banner__inner">
+                    <div class="dcrs-cta-banner__content">
+                        <h2 class="dcrs-cta-banner__title">Have a Question About Your Car?</h2>
+                        <p class="dcrs-cta-banner__sub">
+                            Speak directly with our senior technicians. Free honest advice &bull; Open 7AM–10PM daily
+                        </p>
+                    </div>
+                    <div class="dcrs-cta-banner__actions">
+                        <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                            <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                        </a>
+                        <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .dcrs-resources-page {
+        color: var(--ink, #10201F);
+        background-color: var(--chalk, #FAF8F5);
+    }
+    .dcrs-container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 clamp(1rem, 4vw, 2rem);
+    }
+    .dcrs-hero-banner {
+        position: relative;
+        background: linear-gradient(135deg, #001516 0%, #002a2a 100%);
+        color: #fff;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+        text-align: center;
+    }
+    .dcrs-hero-banner__inner { max-width: 860px; margin: 0 auto; }
+    .dcrs-breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.6);
+    }
+    .dcrs-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .dcrs-breadcrumb li:not(:last-child)::after { content: "/"; margin-left: 0.5rem; }
+    .dcrs-breadcrumb li[aria-current="page"] { color: #fff; }
+    .dcrs-badge {
+        display: inline-block;
+        padding: 0.35rem 1rem;
+        background: rgba(193, 128, 46, 0.15);
+        border: 1px solid rgba(193, 128, 46, 0.4);
+        border-radius: 9999px;
+        color: var(--brass-light, #E3A354);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+    }
+    .dcrs-hero-banner__title {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(1.85rem, 4vw, 2.85rem);
+        color: #fff;
+        margin: 0 0 1.25rem;
+        line-height: 1.25;
+    }
+    .dcrs-hero-banner__lead {
+        font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+        color: rgba(255,255,255,0.85);
+        line-height: 1.7;
+        margin: 0 auto 2rem;
+        max-width: 680px;
+    }
+    .dcrs-hero-banner__actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .dcrs-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        border-radius: 4px;
+        min-height: 48px;
+        padding: 0.85rem 1.4rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .dcrs-btn :global(svg) { width: 18px; height: 18px; }
+    .dcrs-btn--solid { background: var(--brass, #C1802E); color: var(--ink, #10201F) !important; }
+    .dcrs-btn--wa { background: #25d366; color: #fff !important; }
+
+    .dcrs-section { padding: clamp(3rem, 6vw, 4.5rem) 0; }
+    .dcrs-kicker {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass, #C1802E);
+        border: 1px solid rgba(193, 128, 46, 0.35);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        margin-bottom: 0.8rem;
+    }
+    .dcrs-heading--center { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
+    .dcrs-heading__title {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+        color: var(--ink, #10201F);
+        margin: 0 0 0.75rem;
+    }
+    .dcrs-heading__sub { color: #666; font-size: 0.95rem; margin: 0; }
+
+    .dcrs-guides-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+        .dcrs-guides-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+        .dcrs-guides-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .dcrs-article-card {
+        background: #fff;
+        border: 1px solid #e4e8ec;
+        border-radius: 10px;
+        padding: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .dcrs-article-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+        border-color: var(--brass, #C1802E);
+    }
+    .dcrs-article-card__meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.9rem;
+    }
+    .dcrs-article-card__category {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--brass, #C1802E);
+    }
+    .dcrs-article-card__read {
+        font-size: 0.75rem;
+        color: #888;
+    }
+    .dcrs-article-card__title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--ink, #10201F);
+        margin: 0 0 0.75rem;
+        line-height: 1.38;
+    }
+    .dcrs-article-card__desc {
+        font-size: 0.88rem;
+        color: #555;
+        line-height: 1.65;
+        margin: 0 0 1.25rem;
+        flex-grow: 1;
+    }
+    .dcrs-article-card__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #f0f2f4;
+        padding-top: 0.85rem;
+        font-size: 0.82rem;
+    }
+    .dcrs-article-card__date { color: #888; }
+    .dcrs-article-card__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-weight: 600;
+        color: var(--brass, #C1802E);
+        text-decoration: none;
+    }
+    .dcrs-article-card__link :global(svg) { width: 13px; height: 13px; }
+    .dcrs-article-card__link:hover { text-decoration: underline; }
+
+    .dcrs-cta-banner {
+        background: linear-gradient(135deg, #001516 0%, #002a2a 100%);
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
+        color: #fff;
+    }
+    .dcrs-cta-banner__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    @media (min-width: 992px) {
+        .dcrs-cta-banner__inner {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+    .dcrs-cta-banner__title {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(1.4rem, 2.8vw, 2rem);
+        color: #fff;
+        margin: 0 0 0.5rem;
+    }
+    .dcrs-cta-banner__sub { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.95rem; }
+    .dcrs-cta-banner__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+</style>
+

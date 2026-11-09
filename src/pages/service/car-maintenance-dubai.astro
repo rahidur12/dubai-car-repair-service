@@ -1,0 +1,1593 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import service9Image from '../../assets/images/service9.webp';
+
+// ---------------------------------------------------------------------------
+// Page Metadata & Settings
+// ---------------------------------------------------------------------------
+const pageTitle = "Car Service Dubai | Scheduled Car Maintenance Packages";
+const pageDescription = "Car service in Dubai from AED 200. Minor, full & major periodic car maintenance at 222 Al Satwa Road. Genuine OEM parts & warranty. Call or WhatsApp.";
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://api.whatsapp.com/send?phone=971566121423";
+
+// ---------------------------------------------------------------------------
+// Icons
+// ---------------------------------------------------------------------------
+const icons: Record<string, string> = {
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.3 6.4L4 20l1.4-3.6A7.9 7.9 0 0 1 4 12Z"/><path d="M9 11.5c.3 2 2 3.7 4 4"/></svg>`,
+    chevronDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+    oilCan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/><path d="M5 10l3-5h8l3 5"/><line x1="12" y1="2" x2="12" y2="5"/></svg>`,
+    battery: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="11" x2="23" y2="13"/></svg>`,
+    drop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 7.2 6 11.5a6 6 0 0 1-12 0C6 10.2 12 3 12 3Z"/></svg>`,
+    snowflake: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="12" y1="12" x2="4" y2="7.5"/><line x1="12" y1="12" x2="20" y2="16.5"/><line x1="12" y1="12" x2="4" y2="16.5"/><line x1="12" y1="12" x2="20" y2="7.5"/></svg>`,
+    filter: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>`,
+    thermometer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>`,
+    disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`,
+    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    award: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+    fileText: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    search: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+    car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`,
+    receipt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>`,
+    circle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>`,
+    cog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
+    info: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
+    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`
+};
+
+// ---------------------------------------------------------------------------
+// Section Data
+// ---------------------------------------------------------------------------
+const packages = [
+    {
+        title: "Basic Service",
+        price: "From AED 200 [CONFIRM: basic service package starting price and range]",
+        freq: "Every 5,000–8,000 km or 4–6 months",
+        badge: "Essential Care",
+        desc: "Targeted lubrication and preventive inspection to protect internal engine components between major services. Essential for high ambient temperatures and stop-and-go driving across Dubai.",
+        items: [
+            "Engine oil drain via gravity and refill with correct OEM-spec viscosity",
+            "OEM-quality oil filter replacement with fresh sump plug crush washer",
+            "Drained oil visual inspection for coolant contamination, sludge, or particulate wear",
+            "Engine air intake filter inspection and housing clearance",
+            "Cold tyre pressure adjustment across all four wheels and spare",
+            "Essential fluid top-up check -brake fluid, coolant, steering fluid, and washer reservoir",
+            "12V battery open-circuit voltage and terminal corrosion inspection",
+            "Exterior and safety lighting operation check (headlights, brake, hazard)",
+            "Underbody visual check for active fluid weeping or exhaust hanger damage"
+        ]
+    },
+    {
+        title: "Full Service",
+        price: "From AED 450 [CONFIRM: full service package starting price and range]",
+        freq: "Every 15,000 km or 6–9 months",
+        badge: "Recommended",
+        desc: "Comprehensive mid-tier service covering all basic maintenance items plus multi-system inspection and secondary filtration replacement accelerated by UAE heat and desert dust.",
+        items: [
+            "Everything included in the Basic Service package",
+            "Engine air filter element replacement",
+            "Cabin pollen and AC microfilter replacement to restore HVAC ventilation",
+            "Brake pad friction lining measurement across all four corners",
+            "Brake rotor disc surface inspection, lip measurement, and caliper slider check",
+            "Brake fluid boiling point and moisture contamination test",
+            "Coolant concentration, glycol ratio, and freeze/boil point testing",
+            "Digital conductance battery health test (CCA vs rated capacity)",
+            "OBD-II diagnostic scan across powertrain, ABS, and body control modules",
+            "Tyre tread depth measurement, uneven wear analysis, and DOT age audit",
+            "Drive belt serpentine rib inspection for glazing, cracks, and tension",
+            "Chassis suspension inspection -ball joints, control arm bushes, and damper seals",
+            "Full underbody ramp inspection with itemised condition report"
+        ]
+    },
+    {
+        title: "Major Service",
+        price: "From AED 900 [CONFIRM: major service package starting price and range]",
+        freq: "Every 30,000–40,000 km or 12–18 months",
+        badge: "Complete Reset",
+        desc: "The complete vehicle reset covering critical scheduled wear items, multi-system fluid flushes, filtration overhaul, and full chassis safety diagnostics. Recommended annually for high-demand Dubai driving.",
+        items: [
+            "Everything included in the Full Service package",
+            "Spark plug replacement with manufacturer-specified platinum or iridium plugs",
+            "Fuel filtration system inspection and external filter replacement where applicable",
+            "Transmission fluid and differential gear oil condition assessment and top-up",
+            "Brake fluid full system pressure flush and bleed (DOT 4 or DOT 5.1)",
+            "Engine cooling system drain, chemical flush, and refill with fresh premixed coolant",
+            "Throttle body intake inspection and electronic throttle cleaning if needed",
+            "Positive Crankcase Ventilation (PCV) valve operational test",
+            "Drive belt inspection or replacement recommendation based on wear",
+            "Four-wheel mechanical steering alignment check",
+            "Front and rear wiper blade replacement",
+            "Comprehensive safety checklist with written component health assessment",
+            "Post-service dynamic road test -engine response, braking balance, and transmission shift feel"
+        ]
+    }
+];
+
+const climateImpacts = [
+    { icon: "oilCan", title: "Engine Oil", desc: "Thermal oxidation and shear degradation accelerate in sustained 40°C+ ambient heat. Viscosity breaks down faster, requiring shorter drain intervals." },
+    { icon: "battery", title: "12V Battery", desc: "Extreme under-hood engine bay temperatures accelerate positive plate grid corrosion and electrolyte evaporation, reducing typical battery lifespan to 2–3 years." },
+    { icon: "drop", title: "Brake Fluid", desc: "Hygroscopic brake fluid absorbs atmospheric moisture in coastal Dubai humidity. Moisture depresses the boiling point, increasing vapour-lock fade risk under hard braking." },
+    { icon: "snowflake", title: "AC System", desc: "Automotive HVAC compressors operate near maximum duty cycle for 6+ continuous months, placing extreme thermal stress on shaft seals, condensers, and expansion valves." },
+    { icon: "filter", title: "Cabin Air Filter", desc: "Fine desert sand and airborne dust rapidly restrict pleated filter media, choking airflow and fostering musty bacterial odours in the cabin HVAC system." },
+    { icon: "thermometer", title: "Engine Coolant", desc: "Extended high-temperature operation depletes corrosion inhibitor packages and acidifies coolant pH, risking radiator core scaling and head gasket erosion." },
+    { icon: "disc", title: "Tyres", desc: "Road asphalt temperatures exceeding 65°C accelerate vulcanised rubber hardening, dry rotting, and tread oxidation. UAE traffic regulations strictly enforce a 5-year maximum tyre age." },
+    { icon: "tools", title: "Rubber Hoses & Belts", desc: "Thermal cycling hardens EPDM auxiliary drive belts and radiator hoses, causing micro-cracking, tension loss, and sudden coolant hose blowouts." }
+];
+
+const intervals = [
+    { item: "Engine Oil (Synthetic)", mfr: "Every 10,000–15,000 km", uae: "Every 7,500–10,000 km / 6 months [CONFIRM: severe interval recommendation]" },
+    { item: "Engine Oil (Semi-Synthetic/Mineral)", mfr: "Every 5,000–7,500 km", uae: "Every 4,000–5,000 km / 3–4 months [CONFIRM: mineral interval]" },
+    { item: "Engine Air Filter", mfr: "Every 20,000–30,000 km", uae: "Every 10,000–15,000 km (inspect every 5k)" },
+    { item: "Cabin Air Filter", mfr: "Every 20,000 km / 12 months", uae: "Every 10,000 km / 6 months" },
+    { item: "Spark Plugs (Iridium/Platinum)", mfr: "Every 80,000–100,000 km", uae: "Every 50,000–60,000 km" },
+    { item: "Brake Fluid Flush", mfr: "Every 24 months / 40,000 km", uae: "Every 12–18 months / 30,000 km" },
+    { item: "Cooling System Flush", mfr: "Every 4–5 years / 100,000 km", uae: "Every 2 years / 40,000–50,000 km" },
+    { item: "12V Battery Conductance Test", mfr: "Every 24 months", uae: "Every 6 months (after 18 months)" },
+    { item: "Tyre Safety & Age Audit", mfr: "5–6 year replacement limit", uae: "Annual check; strict 5-year UAE RTA limit" }
+];
+
+const reasons = [
+    { icon: "thermometer", title: "UAE Severe-Duty Service Schedules", desc: "We tailor maintenance protocols to actual Gulf operating realities: high ambient heat, extended idle hours with maximum AC load, and airborne dust that degrade lubricants and filters faster than standard factory baselines." },
+    { icon: "award", title: "Verified OEM-Specification Parts & Fluids", desc: "We never use unbranded lubricants or grey-market filtration elements. Every oil, fluid, and replacement filter installed at our Al Satwa workshop matches or exceeds manufacturer viscosity grades and engineering certifications." },
+    { icon: "fileText", title: "Complete Itemised Service Records", desc: "Following every scheduled maintenance, you receive an itemised invoice and service record detailing all fluids, filter part numbers, and diagnostic tests performed. This documented history preserves your vehicle's resale value and warranty traceability." },
+    { icon: "search", title: "Multi-Point Preventive Condition Reports", desc: "Our technicians inspect safety and wear items beyond the routine checklist. You receive a transparent breakdown of brake pad thickness, tyre tread depth, and belt condition so you can plan future maintenance without unexpected surprises." },
+    { icon: "car", title: "Multi-Brand Workshop Expertise", desc: "Located at 222 Al Satwa Road, our facility is equipped with multi-system scan tools, hydraulic vehicle lifts, and calibrated fluid-exchange machinery suited for Japanese, European, American, and Korean vehicles." },
+    { icon: "receipt", title: "No Unnecessary Service Upselling", desc: "We recommend only what your vehicle legitimately requires based on elapsed time, recorded mileage, and verified physical inspection. If a component is in sound working order, we leave it alone." }
+];
+
+const faqs = [
+    {
+        q: "How often should I service my car in Dubai?",
+        a: "Due to sustained summer ambient temperatures exceeding 40°C, stop-and-go highway traffic, and continuous AC compressor load, vehicle manufacturers classify Dubai driving as 'severe service.' Under these conditions, engine oil and filters should be replaced every 7,500–10,000 km (for fully synthetic oils) or every 5,000 km (for semi-synthetic oils). A full service should be performed every 15,000 km or 6 months, and a major service every 30,000–40,000 km or 12 months. [CONFIRM: severe interval recommendations]"
+    },
+    {
+        q: "What is the difference between a Full Service and a Major Service?",
+        a: "A Full Service focuses on essential fluid replacements (oil and filter), engine and cabin air filters, brake lining inspection, battery load testing, and underbody safety checks. A Major Service is a comprehensive vehicle reset: it includes everything in a full service plus spark plug replacement, complete brake fluid flush, engine coolant exchange, gearbox and differential fluid condition checks, throttle body cleaning, and four-wheel alignment checks."
+    },
+    {
+        q: "Does servicing my car at an independent garage void my warranty in Dubai?",
+        a: "No. Under UAE Consumer Protection regulations, having your vehicle serviced at an independent automotive workshop does not invalidate your manufacturer or dealer warranty, provided the service follows the manufacturer's specified service schedule, uses OEM-approved parts and fluids, and is supported by a stamped, itemised service invoice. We provide complete documentation specifying parts, oil viscosities, and labour performed."
+    },
+    {
+        q: "How long does a scheduled car maintenance service take?",
+        a: "Service turnaround depends on the package selected and workshop scheduling. A basic oil and filter service typically takes 45 to 60 minutes. A full scheduled service with multi-point inspections takes approximately 2 to 3 hours. A major service requiring complete fluid flushes, spark plug replacement, and alignment takes 4 to 6 hours. We provide a confirmed completion estimate when you drop off your vehicle at our Al Satwa workshop. [CONFIRM: workshop turnaround times]"
+    },
+    {
+        q: "What is the difference between routine maintenance and mechanical repairs?",
+        a: "Scheduled maintenance is preventive: it replaces fluids, filters, and predictable wear items before they fail, ensuring optimum lubrication and preventing component wear. Mechanical repair is corrective: it addresses components that have already malfunctioned, worn beyond tolerance, or broken (such as a seized AC compressor, worn alternator, or blown radiator hose). Regular maintenance minimizes the risk of costly corrective repairs."
+    },
+    {
+        q: "Can you service my vehicle if I do not have its past service history?",
+        a: "Yes. When customers bring in recently purchased pre-owned vehicles with missing records, our technicians conduct a comprehensive baseline health assessment. We test brake fluid boiling point, check coolant pH and specific gravity, inspect spark plug electrode gap, perform a battery conductance test, check tyre DOT manufacture dates, and scan all onboard ECUs for stored diagnostic trouble codes. This gives you an accurate snapshot of the vehicle's true mechanical health."
+    }
+];
+
+const relatedServices = [
+    { icon: "oilCan", name: "Engine Oil Change Dubai", desc: "Premium synthetic oil & OEM filter replacement", href: "/engine-oil-change-dubai" },
+    { icon: "search", name: "Full Car Check Up", desc: "50-point pre-RTA, electrical & mechanical inspection", href: "/car-inspection-dubai" },
+    { icon: "cog", name: "Car Engine Service Dubai", desc: "Precision engine diagnostics & cooling repairs", href: "/car-engine-service-dubai" },
+    { icon: "circle", name: "Mobile Car Service Dubai", desc: "On-site scheduled maintenance & minor repairs", href: "/mobile-car-repair-dubai" }
+];
+
+// ---------------------------------------------------------------------------
+// Schema Markup
+// ---------------------------------------------------------------------------
+const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "@id": "https://dubaicarrepairservice.com/car-maintenance-dubai#service",
+            "name": "Car Maintenance Dubai",
+            "url": "https://dubaicarrepairservice.com/car-maintenance-dubai",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://dubaicarrepairservice.com/car-maintenance-dubai"
+            },
+            "serviceType": "Scheduled Car Maintenance Service",
+            "description": "Professional car maintenance services in Dubai including periodic servicing, oil changes, filter replacement, brake inspections, battery testing, cooling system maintenance, diagnostic checks and manufacturer-recommended maintenance schedules for all vehicle makes and models.",
+            "provider": {
+                "@id": "https://dubaicarrepairservice.com/#localbusiness"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Dubai"
+            },
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": "200",
+                "highPrice": "2200",
+                "priceCurrency": "AED",
+                "availability": "https://schema.org/InStock"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://dubaicarrepairservice.com/car-maintenance-dubai#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dubaicarrepairservice.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Car Maintenance Dubai",
+                    "item": "https://dubaicarrepairservice.com/car-maintenance-dubai"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://dubaicarrepairservice.com/car-maintenance-dubai#faq",
+            "mainEntity": faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.q,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.a
+                }
+            }))
+        }
+    ]
+};
+---
+
+<BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+>
+    <!-- Structured JSON-LD Schema Graph -->
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+    <main class="dcrs-service-page">
+
+        <!-- 1. HERO BANNER --------------------------------------------------->
+        <header class="dcrs-hero-banner">
+            <div class="dcrs-hero-banner__scrim"></div>
+            <div class="dcrs-container dcrs-hero-banner__inner">
+                <nav class="dcrs-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#service">Services</a></li>
+                        <li aria-current="page">Car Maintenance Dubai</li>
+                    </ol>
+                </nav>
+                <span class="dcrs-badge">Al Satwa, Dubai · Basic to Major Servicing · All Makes &amp; Models</span>
+                <h1 class="dcrs-hero-banner__title">
+                    Car Service Dubai — Scheduled Car Maintenance Packages
+                </h1>
+                <p class="dcrs-hero-banner__lead">
+                    Looking for a dependable car service in Dubai? Our Al Satwa garage provides complete basic, full, and major car maintenance packages for Japanese, European, and American vehicles. Packages start from AED 200 with genuine parts, full diagnostics, and transparent pricing. Open daily 7 AM to 10 PM.
+                </p>
+                <div class="dcrs-hero-banner__actions">
+                    <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                        <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                    </a>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                        <Fragment set:html={icons.chat} /> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. INTRO SECTION ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="service-overview">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+                    
+                    <div class="dcrs-intro-content">
+                        <div class="dcrs-kicker">Service Overview</div>
+                        <h2 class="dcrs-heading__title">
+                            Car Service Dubai — Periodic Vehicle Maintenance &amp; Care
+                        </h2>
+                        <p class="dcrs-lead-text">
+                            Standard vehicle maintenance handbooks are engineered for temperate climates. In Dubai, extreme summer heat exceeding 45°C, high humidity, and highway traffic place exceptional stress on lubricants, cooling lines, and electronics. At <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a>, our car service center Dubai team adapts scheduled intervals to actual Gulf driving conditions. If your service interval is due, you can <a href="/contact" class="dcrs-inline-link">contact us</a> for a transparent quote.
+                        </p>
+                        <p class="dcrs-body-text">
+                            Every scheduled service includes a fresh <a href="/engine-oil-change-dubai" class="dcrs-inline-link">engine oil change in Dubai</a>, OEM filter replacement, and digital testing of your <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">car battery in Dubai</a>. We also check wheel condition and provide optical alignment or <a href="/tyre-replacement-dubai" class="dcrs-inline-link">tyre replacement in Dubai</a> to ensure highway safety, alongside refrigerant checks and <a href="/car-ac-repair-dubai" class="dcrs-inline-link">car ac repair in Dubai</a> before hot weather sets in.
+                        </p>
+                        <p class="dcrs-body-text">
+                            For vehicles requiring mechanical attention, our certified technicians carry out precision <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine service in Dubai</a> and provide a comprehensive <a href="/car-inspection-dubai" class="dcrs-inline-link">full car check up</a> report. Prefer service at your residence or workplace? Our flexible <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car service in Dubai</a> brings scheduled minor maintenance right to your parking bay.
+                        </p>
+
+                        <div class="dcrs-action-row">
+                            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                                <Fragment set:html={icons.phone} /> Call Workshop
+                            </a>
+                            <a href="/contact" class="dcrs-btn dcrs-btn--outline-ink">
+                                Book Scheduled Service <Fragment set:html={icons.arrowRight} />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dcrs-intro-media">
+                        <div class="dcrs-intro-media__frame">
+                            <img
+                                src={service9Image.src}
+                                alt="Technician conducting comprehensive car service in Dubai on hydraulic lift at Al Satwa auto workshop"
+                                loading="eager"
+                                width="600"
+                                height="400"
+                            />
+                            <div class="dcrs-plate dcrs-price-badge" aria-hidden="true">
+                                <div class="dcrs-plate__tab">AED</div>
+                                <div class="dcrs-plate__body">
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">200+</span>
+                                    <span class="dcrs-plate__row">BASIC SERVICE FROM</span>
+                                    <span class="dcrs-plate__row">GENUINE OEM PARTS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SERVICE PACKAGES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="packages">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Service Packages</div>
+                    <h2 class="dcrs-heading__title">
+                        Car Maintenance Packages for Dubai Drivers
+                    </h2>
+                    <p class="dcrs-heading__sub">
+                        Three transparent maintenance tiers calibrated for UAE severe driving schedules, protecting your vehicle's mechanical integrity from routine oil changes to complete fluid flushes.
+                    </p>
+                </div>
+
+                <div class="dcrs-packages-grid">
+                    {packages.map((pkg) => (
+                        <div class="dcrs-pkg-card">
+                            <div class="dcrs-pkg-card__header">
+                                <div>
+                                    <h3 class="dcrs-pkg-card__title">{pkg.title}</h3>
+                                    <span class="dcrs-pkg-card__price">{pkg.price}</span>
+                                </div>
+                                <span class="dcrs-pkg-card__freq">{pkg.freq}</span>
+                            </div>
+                            <p class="dcrs-pkg-card__desc">{pkg.desc}</p>
+                            <div class="dcrs-pkg-card__items">
+                                {pkg.items.map((item) => (
+                                    <div class="dcrs-pkg-item">
+                                        <span class="dcrs-icon-check"><Fragment set:html={icons.check} /></span>
+                                        <span>{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div class="dcrs-notice-banner">
+                    <span class="dcrs-notice-banner__icon"><Fragment set:html={icons.info} /></span>
+                    <p>All package prices cover foundational fluids, filters, and labour. Exact pricing varies by vehicle make, model, cylinder count, and oil sump capacity. We confirm an itemised quotation before starting any work.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. UAE CLIMATE IMPACT & INTERVALS -------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="climate-impact">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col align-start">
+
+                    <!-- Left: Climate Wear Factors -->
+                    <div class="dcrs-climate-block">
+                        <div class="dcrs-kicker">UAE Climate Realities</div>
+                        <h2 class="dcrs-heading__title">
+                            How Dubai's Extreme Climate Affects Critical Vehicle Systems
+                        </h2>
+                        <p class="dcrs-body-text">
+                            Sustained summer temperatures exceeding 45°C coupled with airborne sand create severe thermal and mechanical stresses. Consumables and rubber wear items deteriorate significantly faster than under temperate factory test baselines.
+                        </p>
+
+                        <div class="dcrs-impacts-list">
+                            {climateImpacts.map((imp) => (
+                                <div class="dcrs-impact-item">
+                                    <span class="dcrs-impact-item__icon">
+                                        <Fragment set:html={icons[imp.icon]} />
+                                    </span>
+                                    <div>
+                                        <h3 class="dcrs-impact-item__title">{imp.title}</h3>
+                                        <p class="dcrs-impact-item__desc">{imp.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <!-- Right: Recommended Intervals Table -->
+                    <div class="dcrs-intervals-block">
+                        <div class="dcrs-kicker">Maintenance Schedule</div>
+                        <h2 class="dcrs-heading__title">
+                            Manufacturer Baseline vs. UAE Recommended Intervals
+                        </h2>
+                        <p class="dcrs-body-text">
+                            Comparing standard global maintenance recommendations against severe-duty intervals adjusted for continuous Dubai driving conditions.
+                        </p>
+
+                        <div class="dcrs-table-wrapper">
+                            <table class="dcrs-pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Manufacturer Interval</th>
+                                        <th>UAE Recommendation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {intervals.map((iv) => (
+                                        <tr>
+                                            <td class="dcrs-table-service">{iv.item}</td>
+                                            <td class="dcrs-table-mfr">{iv.mfr}</td>
+                                            <td class="dcrs-table-uae">{iv.uae}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="dcrs-pricing-disclaimer">
+                            <Fragment set:html={icons.info} /> Intervals represent severe-duty guidelines. Turbocharged engines, commercial fleet vehicles, and cars with daily high-idle stop-and-go usage should follow the shorter interval thresholds.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. WHY CHOOSE US ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="why-choose-us">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Why Choose Us</div>
+                    <h2 class="dcrs-heading__title">Why Dubai Drivers Choose Our Workshop for Scheduled Maintenance</h2>
+                </div>
+
+                <div class="dcrs-reasons-grid">
+                    {reasons.map((r) => (
+                        <div class="dcrs-reason-card">
+                            <span class="dcrs-reason-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <div>
+                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
+                                <p class="dcrs-reason-card__text">{r.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FREQUENTLY ASKED QUESTIONS (FAQ) ------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faq">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">FAQ</div>
+                    <h2 class="dcrs-heading__title">Car Maintenance Dubai -Frequently Asked Questions</h2>
+                </div>
+
+                <div class="dcrs-faq-accordion">
+                    {faqs.map((faq, i) => (
+                        <details class="dcrs-faq-item" open={i === 0}>
+                            <summary class="dcrs-faq-item__question">
+                                <span>{faq.q}</span>
+                                <span class="dcrs-faq-item__toggle">
+                                    <Fragment set:html={icons.chevronDown} />
+                                </span>
+                            </summary>
+                            <div class="dcrs-faq-item__answer">
+                                <p>{faq.a}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="related-services">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">More Services</div>
+                    <h2 class="dcrs-heading__title">Related Automotive Services in Dubai</h2>
+                </div>
+
+                <div class="dcrs-related-grid">
+                    {relatedServices.map((r) => (
+                        <a href={r.href} class="dcrs-related-card">
+                            <span class="dcrs-related-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <h3 class="dcrs-related-card__title">{r.name}</h3>
+                            <p class="dcrs-related-card__desc">{r.desc}</p>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CTA BANNER ---------------------------------------------------->
+        <section class="dcrs-cta-banner">
+            <div class="dcrs-container">
+                <div class="dcrs-cta-banner__inner">
+                    <div class="dcrs-cta-banner__copy">
+                        <span class="dcrs-cta-banner__badge">Transparent &amp; Reliable</span>
+                        <h2 class="dcrs-cta-banner__title">
+                            Book Your Car Service in Dubai Today
+                        </h2>
+                        <p class="dcrs-cta-banner__sub">
+                            Open 7AM–10PM daily &bull; 222 Al Satwa Rd &bull; Basic, full &amp; major service packages. <a href="/contact" class="dcrs-cta-inline-link">Contact us online</a> to schedule your service.
+                        </p>
+                    </div>
+                    <div class="dcrs-cta-banner__actions">
+                        <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                            <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                        </a>
+                        <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                            <Fragment set:html={icons.chat} /> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. BOTTOM STICKY MOBILE BAR -------------------------------------->
+        <div class="dcrs-stickybar">
+            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
+                <Fragment set:html={icons.phone} /> Call Now
+            </a>
+            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn dcrs-stickybar__btn--wa">
+                <Fragment set:html={icons.chat} /> WhatsApp
+            </a>
+        </div>
+
+    </main>
+</BaseLayout>
+
+<style>
+    /* Scoped styling preserving template design tokens */
+    :root {
+        --ink: #10201F;
+        --ink-soft: #1B302E;
+        --paper: #E8E4D8;
+        --paper-alt: #DFDACB;
+        --white: #FBF9F4;
+        --brass: #C1802E;
+        --brass-deep: #9C6423;
+        --steel: #57706E;
+        --rule-on-paper: rgba(16, 32, 31, 0.15);
+        --rule-on-ink: rgba(251, 249, 244, 0.16);
+    }
+
+    .dcrs-service-page {
+        padding-bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-service-page {
+            padding-bottom: 0;
+        }
+    }
+
+    /* Hide floating WhatsApp button on mobile when sticky bar is active */
+    @media (max-width: 767.98px) {
+        :global(.float) {
+            display: none !important;
+        }
+    }
+
+    .dcrs-container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        .dcrs-container {
+            padding: 0 0.85rem;
+        }
+    }
+
+    /* Kicker & Typography */
+    .dcrs-kicker {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass-deep);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        box-sizing: border-box;
+    }
+
+    .dcrs-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .dcrs-heading--center {
+        text-align: center;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dcrs-heading__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+        line-height: 1.2;
+        color: var(--ink);
+        margin: 0 0 0.6rem;
+    }
+
+    .dcrs-heading__sub {
+        color: var(--steel);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-lead-text {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--ink);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-body-text {
+        font-size: 0.96rem;
+        line-height: 1.75;
+        color: var(--steel);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-inline-link {
+        color: var(--brass-deep);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    /* Section Wrappers */
+    .dcrs-section {
+        padding: clamp(3rem, 6.5vw, 5rem) 0;
+    }
+    .dcrs-section--paper { background: var(--paper); }
+    .dcrs-section--tint { background: var(--paper-alt); }
+
+    /* Buttons */
+    .dcrs-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        font-family: var(--font-body, sans-serif);
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.4rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        line-height: 1;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        min-height: 48px;
+    }
+
+    .dcrs-btn :global(svg) {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .dcrs-btn--solid {
+        background: var(--brass);
+        color: var(--ink);
+    }
+    .dcrs-btn--solid:hover {
+        background: var(--brass-deep);
+        color: #fff;
+    }
+
+    .dcrs-btn--outline-ink {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+    }
+    .dcrs-btn--outline-ink:hover {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+    .dcrs-btn--wa:hover {
+        background: #1ebc59;
+    }
+
+    .dcrs-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.75rem;
+    }
+
+    /* 1. Hero Banner */
+    .dcrs-hero-banner {
+        position: relative;
+        background-color: var(--ink);
+        color: var(--white);
+        padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+        overflow: hidden;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 767.98px) {
+        .dcrs-hero-banner {
+            min-height: auto;
+            padding: clamp(3rem, 7vw, 4rem) 0;
+        }
+    }
+
+    .dcrs-hero-banner .dcrs-container {
+        width: 100%;
+    }
+
+    .dcrs-hero-banner__scrim {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(193, 128, 46, 0.15), transparent 50%);
+        pointer-events: none;
+    }
+
+    .dcrs-hero-banner__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 820px;
+    }
+
+    .dcrs-breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.82rem;
+        color: rgba(251, 249, 244, 0.65);
+    }
+
+    .dcrs-breadcrumb li + li::before {
+        content: "/";
+        margin-right: 0.5rem;
+        color: rgba(251, 249, 244, 0.4);
+    }
+
+    .dcrs-breadcrumb a {
+        color: rgba(251, 249, 244, 0.75);
+        text-decoration: none;
+    }
+
+    .dcrs-breadcrumb a:hover {
+        color: var(--brass);
+    }
+
+    .dcrs-badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+    }
+
+    .dcrs-hero-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.5rem, 5.5vw, 2.9rem);
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 0 0 1rem;
+        color: var(--white);
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .dcrs-hero-banner__lead {
+        font-size: clamp(0.92rem, 2.6vw, 1.15rem);
+        line-height: 1.65;
+        color: rgba(251, 249, 244, 0.85);
+        word-break: break-word;
+        overflow-wrap: break-word;
+        margin: 0 0 2rem;
+    }
+
+    .dcrs-hero-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        .dcrs-hero-banner__actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .dcrs-hero-banner__actions .dcrs-btn {
+            width: 100%;
+        }
+    }
+
+    /* 2. Grid Layouts */
+    .dcrs-grid-2col {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+        width: 100%;
+    }
+
+    .dcrs-grid-2col > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-grid-2col {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 3.5rem;
+        }
+    }
+
+    .dcrs-grid-2col--align-center {
+        align-items: center;
+    }
+
+    .align-start {
+        align-items: start;
+    }
+
+    /* Media Frame & Price Badge */
+    .dcrs-intro-media__frame {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--rule-on-paper);
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+    }
+
+    .dcrs-intro-media__frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 4 / 3;
+    }
+
+    .dcrs-plate {
+        display: flex;
+        background: var(--white);
+        color: var(--ink);
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(16, 32, 31, 0.16);
+    }
+
+    .dcrs-price-badge {
+        position: absolute;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        z-index: 2;
+    }
+
+    .dcrs-plate__tab {
+        background: var(--brass);
+        color: var(--ink);
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.72rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0.4rem;
+        letter-spacing: 0.05em;
+    }
+
+    .dcrs-plate__body {
+        padding: 0.75rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        font-family: var(--font-mono, monospace);
+    }
+
+    .dcrs-plate__row {
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        color: var(--ink-soft);
+        font-weight: 600;
+    }
+
+    .dcrs-plate__row--big {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+    }
+
+    /* 3. Packages Grid */
+    .dcrs-packages-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-packages-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-pkg-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .dcrs-pkg-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+    }
+
+    .dcrs-pkg-card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+    }
+
+    .dcrs-pkg-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.3rem;
+        color: var(--ink);
+        margin: 0 0 0.2rem;
+    }
+
+    .dcrs-pkg-card__price {
+        font-family: var(--font-mono, monospace);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--brass-deep);
+    }
+
+    .dcrs-pkg-card__freq {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        background: var(--paper-alt);
+        color: var(--ink);
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: right;
+        max-width: 140px;
+        line-height: 1.3;
+    }
+
+    .dcrs-pkg-card__desc {
+        font-size: 0.88rem;
+        color: var(--steel);
+        line-height: 1.6;
+        margin: 0 0 1.25rem;
+    }
+
+    .dcrs-pkg-card__items {
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        padding-top: 1.15rem;
+        border-top: 1px solid var(--rule-on-paper);
+        margin-top: auto;
+    }
+
+    .dcrs-pkg-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: 0.84rem;
+        color: var(--ink-soft);
+        line-height: 1.45;
+    }
+
+    .dcrs-icon-check {
+        color: var(--brass-deep);
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+        display: inline-flex;
+    }
+
+    .dcrs-icon-check :global(svg) {
+        width: 14px;
+        height: 14px;
+    }
+
+    .dcrs-notice-banner {
+        display: flex;
+        gap: 0.85rem;
+        align-items: center;
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1rem 1.25rem;
+        margin-top: 2rem;
+        font-size: 0.86rem;
+        color: var(--steel);
+        line-height: 1.55;
+    }
+
+    .dcrs-notice-banner__icon {
+        color: var(--brass-deep);
+        flex-shrink: 0;
+        display: inline-flex;
+    }
+
+    .dcrs-notice-banner__icon :global(svg) {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dcrs-notice-banner p { margin: 0; }
+
+    /* 4. Climate Impacts & Intervals */
+    .dcrs-impacts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+    }
+
+    .dcrs-impact-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 0.9rem 1.1rem;
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+    }
+
+    .dcrs-impact-item__icon {
+        color: var(--brass-deep);
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+        display: inline-flex;
+    }
+
+    .dcrs-impact-item__icon :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-impact-item__title {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0 0 0.15rem;
+    }
+
+    .dcrs-impact-item__desc {
+        font-size: 0.83rem;
+        color: var(--steel);
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .dcrs-table-wrapper {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        margin-top: 1.25rem;
+    }
+
+    .dcrs-pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.88rem;
+    }
+
+    .dcrs-pricing-table thead {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-pricing-table th {
+        padding: 0.85rem 1rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+    }
+
+    .dcrs-pricing-table td {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid var(--rule-on-paper);
+        color: var(--ink-soft);
+    }
+
+    .dcrs-pricing-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .dcrs-table-service {
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    .dcrs-table-mfr {
+        color: var(--steel);
+    }
+
+    .dcrs-table-uae {
+        font-family: var(--font-mono, monospace);
+        font-weight: 600;
+        color: var(--brass-deep);
+    }
+
+    .dcrs-pricing-disclaimer {
+        font-size: 0.8rem;
+        color: var(--steel);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        line-height: 1.5;
+        margin-top: 0.85rem;
+    }
+
+    .dcrs-pricing-disclaimer :global(svg) {
+        width: 14px;
+        height: 14px;
+        color: var(--brass-deep);
+        flex-shrink: 0;
+    }
+
+    /* 5. Why Choose Us */
+    .dcrs-reasons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-reason-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .dcrs-reason-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(16, 32, 31, 0.06);
+    }
+
+    .dcrs-reason-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+    }
+
+    .dcrs-reason-card__icon :global(svg) {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dcrs-reason-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.12rem;
+        color: var(--ink);
+        margin: 0 0 0.45rem;
+    }
+
+    .dcrs-reason-card__text {
+        font-size: 0.88rem;
+        color: var(--steel);
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* 6. FAQ Accordion */
+    .dcrs-faq-accordion {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .dcrs-faq-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+    }
+
+    .dcrs-faq-item[open] {
+        border-color: var(--brass);
+    }
+
+    .dcrs-faq-item__question {
+        list-style: none;
+        padding: 1.15rem 1.35rem;
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass-deep);
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .dcrs-faq-item__toggle :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
+        transform: rotate(180deg);
+    }
+
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: var(--steel);
+    }
+
+    /* 7. Related Services */
+    .dcrs-related-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-related-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .dcrs-related-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
+        border-color: var(--brass);
+    }
+
+    .dcrs-related-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--paper);
+        color: var(--brass-deep);
+        border-radius: 50%;
+        margin-bottom: 0.85rem;
+    }
+
+    .dcrs-related-card__icon :global(svg) {
+        width: 22px;
+        height: 22px;
+    }
+
+    .dcrs-related-card__title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0 0 0.35rem;
+    }
+
+    .dcrs-related-card__desc {
+        font-size: 0.8rem;
+        color: var(--steel);
+        line-height: 1.45;
+        margin: 0;
+    }
+
+    /* 8. CTA Banner */
+    .dcrs-cta-banner {
+        background: var(--ink);
+        color: var(--white);
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .dcrs-cta-banner__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-cta-banner__inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .dcrs-cta-banner__badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcrs-cta-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+        color: var(--white);
+        margin: 0 0 0.5rem;
+        line-height: 1.25;
+    }
+
+    .dcrs-cta-banner__sub {
+        color: rgba(251, 249, 244, 0.75);
+        font-size: 0.98rem;
+        margin: 0;
+    }
+
+    .dcrs-cta-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    /* 9. Sticky Mobile Bar */
+    .dcrs-stickybar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.6rem 0.75rem;
+        background: var(--ink);
+        border-top: 1px solid var(--rule-on-ink);
+        z-index: 99;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-stickybar {
+            display: none;
+        }
+    }
+
+    .dcrs-stickybar__btn {
+        flex: 1;
+        min-height: 44px;
+        font-size: 0.88rem;
+        padding: 0.6rem;
+    }
+
+    .dcrs-stickybar__btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+    /* Mobile price badge scaling */
+    @media (max-width: 480px) {
+        .dcrs-price-badge {
+            bottom: 0.75rem;
+            right: 0.75rem;
+            max-width: 175px;
+        }
+        .dcrs-price-badge .dcrs-plate__tab {
+            font-size: 0.65rem;
+            padding: 0.4rem 0.35rem;
+        }
+        .dcrs-price-badge .dcrs-plate__row--big {
+            font-size: 1.15rem;
+        }
+        .dcrs-price-badge .dcrs-plate__row {
+            font-size: 0.68rem;
+        }
+    }
+    /* marker: dcrs-price-badge-responsive */
+
+    /* Responsive pricing table font size & compact padding */
+    @media (max-width: 768px) {
+        .dcrs-pricing-table th {
+            padding: 0.75rem 0.85rem;
+            font-size: 0.78rem;
+        }
+        .dcrs-pricing-table td {
+            padding: 0.75rem 0.85rem;
+            font-size: 0.84rem;
+        }
+    }
+    @media (max-width: 480px) {
+        .dcrs-pricing-table {
+            font-size: 0.78rem;
+        }
+        .dcrs-pricing-table th {
+            padding: 0.55rem 0.45rem;
+            font-size: 0.68rem;
+            letter-spacing: 0.02em;
+        }
+        .dcrs-pricing-table td {
+            padding: 0.55rem 0.45rem;
+            font-size: 0.75rem;
+            line-height: 1.35;
+        }
+        .dcrs-table-service {
+            font-size: 0.76rem;
+        }
+        .dcrs-table-mfr,
+        .dcrs-table-uae {
+            font-size: 0.72rem;
+            line-height: 1.3;
+        }
+        .dcrs-pricing-disclaimer {
+            font-size: 0.75rem;
+        }
+    }
+    /* marker: dcrs-pricing-table-mobile-text */
+
+
+    /* Protection against flex/grid item blowout on mobile viewports */
+    .dcrs-engine-item,
+    .dcrs-warning-item,
+    .dcrs-process-step,
+    .dcrs-engines-block,
+    .dcrs-pricing-block,
+    .dcrs-warnings-block,
+    .dcrs-process-block,
+    .dcrs-col-block,
+    .dcrs-intro-content,
+    .dcrs-intro-media {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .dcrs-engine-item > div,
+    .dcrs-warning-item > div,
+    .dcrs-process-step > div {
+        min-width: 0;
+        flex: 1;
+    }
+    @media (max-width: 480px) {
+        .dcrs-heading__title {
+            font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+            line-height: 1.25;
+        }
+        .dcrs-engine-item {
+            padding: 0.75rem 0.85rem;
+            gap: 0.65rem;
+        }
+        .dcrs-engine-item__name {
+            font-size: 0.88rem;
+        }
+        .dcrs-engine-item__desc {
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+        .dcrs-table-price,
+        .dcrs-table__price,
+        .dcrs-price-cell,
+        .dcrs-price-tag {
+            white-space: normal !important;
+            word-break: normal !important;
+            overflow-wrap: break-word !important;
+        }
+    }
+    /* marker: .dcrs-flex-overflow-fix */
+    .dcrs-cta-inline-link {
+        color: var(--brass, #C1802E);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+    .dcrs-cta-inline-link:hover { opacity: 0.85; }
+
+</style>
+

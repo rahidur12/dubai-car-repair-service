@@ -1,0 +1,1378 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import aboutImage1 from '../assets/images/ab1.webp';
+import aboutImage2 from '../assets/images/about 2.webp';
+
+// ---------------------------------------------------------------------------
+// Page Metadata & Settings (Strict SEO Requirements)
+// Title <= 60 chars | Description <= 155 chars | Primary: [brand name] car repair company dubai
+// ---------------------------------------------------------------------------
+const pageTitle = "About Us | Dubai Car Repair Service Company in Dubai";
+const pageDescription = "Learn about Dubai Car Repair Service, a leading car repair company in Dubai offering trusted auto workshop & mobile mechanic services since 2012.";
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://api.whatsapp.com/send?phone=971566121423";
+
+// ---------------------------------------------------------------------------
+// Icons
+// ---------------------------------------------------------------------------
+const icons: Record<string, string> = {
+    mapPin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>`,
+    certificate: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="5.5"/><path d="M8.8 13.2 7.5 21l4.5-2.2 4.5 2.2-1.3-7.8"/></svg>`,
+    car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V11.5L6.3 6.8a2 2 0 0 1 1.8-1.1h7.8a2 2 0 0 1 1.8 1.1L20 11.5V16"/><path d="M4 16v2.3a.9.9 0 0 0 .9.9h1.4a.9.9 0 0 0 .9-.9V16M20 16v2.3a.9.9 0 0 1-.9.9h-1.4a.9.9 0 0 1-.9-.9V16M4 16h16M7.5 11h9"/></svg>`,
+    invoice: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 2.5h8l3 3v15.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5Z"/><path d="M9 9h6M9 12.5h6M9 16h3.5"/></svg>`,
+    bolt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5h6L10 22l8.5-11.5h-6L13 2Z"/></svg>`,
+    star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20 6v6c0 5-3.4 8.4-8 9.5-4.6-1.1-8-4.5-8-9.5V6l8-3.5Z"/><path d="m8.7 12 2.3 2.3 4.3-4.6"/></svg>`,
+    award: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+    clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>`,
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>`,
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.3 6.4L4 20l1.4-3.6A7.9 7.9 0 0 1 4 12Z"/><path d="M9 11.5c.3 2 2 3.7 4 4"/></svg>`,
+    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`,
+    chevronDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+    search: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.7-4.7"/></svg>`,
+    engine: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v2.4M12 19.1v2.4M21.5 12h-2.4M4.9 12H2.5M18.2 5.8l-1.7 1.7M7.5 16.5l-1.7 1.7M18.2 18.2l-1.7-1.7M7.5 7.5 5.8 5.8"/></svg>`,
+    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5 18 3l3 3-3.5 3.5"/><path d="M17 4 13 8"/><path d="M3 21l7-7"/><path d="M8.5 9.5 3 4l2-2 5.5 5.5"/><path d="M12.5 13.5 21 22"/></svg>`,
+    drop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 7.2 6 11.5a6 6 0 0 1-12 0C6 10.2 12 3 12 3Z"/></svg>`,
+    snowflake: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v19M3.8 6.75l16.4 10.5M20.2 6.75 3.8 17.25"/><path d="m9 5 3-2.5L15 5M9 19l3 2.5L15 19M6 9.3 2.7 8.4l-.4-3.4M18 9.3l3.3-.9.4-3.4M6 14.7l-3.3.9-.4 3.4M18 14.7l3.3.9.4 3.4"/></svg>`,
+    disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`,
+    truck: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+};
+
+// ---------------------------------------------------------------------------
+// Section Data
+// ---------------------------------------------------------------------------
+const values = [
+    {
+        icon: "shield",
+        title: "Accurate Diagnostics & Upfront Pricing",
+        text: "Vehicles undergo computerized inspection before work begins. We provide itemized written estimates with zero unapproved charges."
+    },
+    {
+        icon: "award",
+        title: "Manufacturer-Approved Parts & Fluids",
+        text: "Extreme UAE summer heat demands genuine parts and certified fluids with proper thermal ratings, ensuring lasting engine safety."
+    },
+    {
+        icon: "clock",
+        title: "Same-Day Service & Daily Availability",
+        text: "Routine maintenance, oil, brakes, and batteries are completed same-day. Open daily 7:00 AM to 10:00 PM for easy vehicle drop-off."
+    }
+];
+
+const reasons = [
+    {
+        icon: "mapPin",
+        title: "Central Workshop at 222 Al Satwa Road",
+        text: "Conveniently located minutes from Sheikh Zayed Road, Jumeirah, Downtown Dubai, and DIFC with dedicated customer parking bays."
+    },
+    {
+        icon: "certificate",
+        title: "8 Specialist Mechanics with 12+ Years Experience",
+        text: "Certified mechanics experienced in powertrain overhauls, electronics, cooling systems, and computerized OBD-II scanning."
+    },
+    {
+        icon: "car",
+        title: "Multi-Brand Mechanical Capability",
+        text: "Comprehensive diagnostic and repair capability for Toyota, Nissan, BMW, Mercedes-Benz, Ford, Land Rover, and Korean models."
+    },
+    {
+        icon: "invoice",
+        title: "Itemized Written Quotations",
+        text: "Full cost clarity before work commences. The price agreed upon is what appears on your final invoice, with zero surprise extras."
+    },
+    {
+        icon: "bolt",
+        title: "Efficient Turnaround Times",
+        text: "Routine servicing, battery testing, and brake replacements completed rapidly to keep downtime to an absolute minimum."
+    },
+    {
+        icon: "star",
+        title: "Over 8,500 Satisfied Motorists",
+        text: "Twelve years of trusted service delivering high customer satisfaction and dependable automotive engineering across Dubai."
+    }
+];
+
+const teamPoints = [
+    "Dealer-grade OBD-II scanning to read trouble codes and live engine sensor telemetry",
+    "Specialized technical training covering Japanese, European, American, and Korean vehicles",
+    "Practical experience with Toyota Land Cruiser, Nissan Patrol, BMW, Mercedes, and Ford",
+    "Extensive understanding of Gulf thermal demands on radiators, batteries, and engine oils",
+    "Thorough multi-point inspection protocols before any part replacement is recommended",
+    "Clear communication explaining repair recommendations in plain, understandable language"
+];
+
+const brands = [
+    { name: "Toyota", origin: "Japanese" },
+    { name: "Nissan", origin: "Japanese" },
+    { name: "Honda", origin: "Japanese" },
+    { name: "Mitsubishi", origin: "Japanese" },
+    { name: "Lexus", origin: "Japanese" },
+    { name: "BMW", origin: "European" },
+    { name: "Mercedes-Benz", origin: "European" },
+    { name: "Audi", origin: "European" },
+    { name: "Volkswagen", origin: "European" },
+    { name: "Porsche", origin: "European" },
+    { name: "Kia", origin: "Korean" },
+    { name: "Hyundai", origin: "Korean" },
+    { name: "Ford", origin: "American" },
+    { name: "Chevrolet", origin: "American" },
+    { name: "Jeep", origin: "American" },
+    { name: "Land Rover", origin: "British" }
+];
+
+const reviews = [
+    {
+        name: "Vivek Kumar Gautam",
+        area: "Al Barsha",
+        text: "Top-notch service! My car battery was replaced in no time. The team was professional, quick, and the price matched the quote exactly."
+    },
+    {
+        name: "Mohammad Ashek",
+        area: "Business Bay",
+        text: "Efficient and reliable! They handled my car engine service professionally with a full breakdown before starting."
+    },
+    {
+        name: "Muhammad Isa",
+        area: "Karama",
+        text: "Great experience. Called them for car AC repair and they fixed the cooling problem fast. Will use them again."
+    }
+];
+
+const faqs = [
+    {
+        q: "Where is Dubai Car Repair Service located?",
+        a: "Our central workshop is located at 222 Al Satwa Road, Al Satwa, Dubai, conveniently accessible from Sheikh Zayed Road, Jumeirah, and Downtown Dubai."
+    },
+    {
+        q: "What are your operating hours?",
+        a: "We are open seven days a week from 7:00 AM to 10:00 PM, including weekends and public holidays. Drive-ins are welcome daily."
+    },
+    {
+        q: "Do you service all vehicle makes and models?",
+        a: "Yes, our mechanics service Japanese, European, American, and Korean passenger cars, 4x4 SUVs, and light commercial vehicles."
+    },
+    {
+        q: "What is your pricing policy for car repairs?",
+        a: "We provide upfront, itemized written quotes before beginning any mechanical or electrical repair, ensuring zero hidden costs."
+    },
+    {
+        q: "Do you offer on-site mobile mechanic assistance?",
+        a: "Yes, our mobile vans provide rapid roadside assistance, dead battery replacement, and emergency tyre changes across Dubai."
+    }
+];
+
+// ---------------------------------------------------------------------------
+// Schema for AboutPage, LocalBusiness & FAQPage
+// ---------------------------------------------------------------------------
+const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": ["AutoRepair", "LocalBusiness", "AboutPage"],
+            "@id": "https://dubaicarrepairservice.com/about#webpage",
+            "name": "About Dubai Car Repair Service Company in Dubai",
+            "url": "https://dubaicarrepairservice.com/about",
+            "telephone": "+971566121423",
+            "image": "https://dubaicarrepairservice.com/img/logo.webp",
+            "priceRange": "AED 80 - AED 2,500",
+            "currenciesAccepted": "AED",
+            "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "222 Al Satwa Rd - Al Satwa",
+                "addressLocality": "Dubai",
+                "addressRegion": "Dubai",
+                "postalCode": "00000",
+                "addressCountry": "AE"
+            },
+            "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "07:00",
+                "closes": "22:00"
+            }],
+            "description": "Learn about Dubai Car Repair Service, an independent car repair company in Dubai delivering honest auto workshop and mobile mechanic repairs since 2012."
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://dubaicarrepairservice.com/about#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dubaicarrepairservice.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "About Us",
+                    "item": "https://dubaicarrepairservice.com/about"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://dubaicarrepairservice.com/about#faq",
+            "mainEntity": faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.q,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.a
+                }
+            }))
+        }
+    ]
+};
+---
+
+<BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+>
+    <!-- Structured JSON-LD Schema Graph -->
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+    <main class="dcrs-about-page">
+
+        <!-- HERO BANNER ----------------------------------------------------->
+        <header class="dcrs-hero-banner">
+            <div class="dcrs-hero-banner__scrim"></div>
+            <div class="dcrs-container dcrs-hero-banner__inner">
+                <nav class="dcrs-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+                <span class="dcrs-badge">Trusted Since 2012 · Al Satwa, Dubai</span>
+                <h1 class="dcrs-hero-banner__title">
+                    Dubai Car Repair Service — Leading Car Repair Company in Dubai
+                </h1>
+                <p class="dcrs-hero-banner__lead">
+                    As an independent car repair company in Dubai established in 2012, Dubai Car Repair Service provides honest computer diagnostics, precision mechanical overhauls, and prompt mobile mechanic support for motorists across the UAE.
+                </p>
+                <div class="dcrs-hero-banner__actions">
+                    <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                        <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                    </a>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--outline">
+                        <Fragment set:html={icons.chat} /> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 1: OUR STORY / WHO WE ARE ------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="our-story">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+                    
+                    <div class="dcrs-story-media">
+                        <div class="dcrs-story-media__frame">
+                            <img
+                                src={aboutImage1.src}
+                                alt="Technicians working at Dubai Car Repair Service company in Dubai workshop"
+                                loading="eager"
+                                width="600"
+                                height="400"
+                            />
+                            <div class="dcrs-plate dcrs-story-badge" aria-hidden="true">
+                                <div class="dcrs-plate__tab">DXB</div>
+                                <div class="dcrs-plate__body">
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">12</span>
+                                    <span class="dcrs-plate__row">YEARS SERVING</span>
+                                    <span class="dcrs-plate__row">DUBAI DRIVERS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dcrs-story-content">
+                        <div class="dcrs-kicker">Our Heritage</div>
+                        <h2 class="dcrs-heading__title">
+                            An Independent Car Repair Company Dubai Drivers Rely On
+                        </h2>
+                        <p class="dcrs-lead-text">
+                            At <a href="/" class="dcrs-inline-link">dubai car repair service</a>, our mission since 2012 has been clear: deliver dealership-grade mechanical craftsmanship and honest transparent pricing without aggressive upselling or hidden markups.
+                        </p>
+                        <p class="dcrs-body-text">
+                            From our central workshop at 222 Al Satwa Road, our licensed garage has grown into a premier automotive care destination staffed by 8 specialist mechanics. We understand the demanding operating conditions that Dubai's extreme summer heat imposes on vehicle engines, air conditioning compressors, and electrical batteries.
+                        </p>
+                        <p class="dcrs-body-text">
+                            Whether you need routine <a href="/car-maintenance-dubai" class="dcrs-inline-link">car service dubai</a> maintenance or urgent on-demand assistance through our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair dubai</a> fleet, our technicians apply rigorous diagnostic standards to ensure lasting reliability on every journey.
+                        </p>
+
+                        <div class="dcrs-action-row">
+                            <a href="/contact" class="dcrs-btn dcrs-btn--solid">
+                                <Fragment set:html={icons.phone} /> Contact Us
+                            </a>
+                            <a href={phoneHref} class="dcrs-btn dcrs-btn--outline-ink">
+                                Speak to a Mechanic <Fragment set:html={icons.arrowRight} />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: OUR MISSION & VALUES ---------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="mission-values">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Operating Standards</div>
+                    <h2 class="dcrs-heading__title">Core Principles That Guide Our Company</h2>
+                    <p class="dcrs-heading__sub">
+                        Every vehicle inspection, scheduled maintenance, and major mechanical rebuild adheres to three strict standards.
+                    </p>
+                </div>
+
+                <div class="dcrs-values-grid">
+                    {values.map((v) => (
+                        <div class="dcrs-value-card">
+                            <span class="dcrs-value-card__icon">
+                                <Fragment set:html={icons[v.icon]} />
+                            </span>
+                            <h3 class="dcrs-value-card__title">{v.title}</h3>
+                            <p class="dcrs-value-card__text">{v.text}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: WHY CHOOSE US ----------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="why-choose-us">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Why Choose Us</div>
+                    <h2 class="dcrs-heading__title">Why Dubai Motorists Trust Our Auto Repair Garage</h2>
+                    <p class="dcrs-heading__sub">
+                        Practical mechanical competence, dealer-standard diagnostic tools, and transparent customer care.
+                    </p>
+                </div>
+
+                <div class="dcrs-reasons-grid">
+                    {reasons.map((r) => (
+                        <div class="dcrs-reason-card">
+                            <span class="dcrs-reason-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <div>
+                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
+                                <p class="dcrs-reason-card__text">{r.text}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CALL TO ACTION BANNER --------------------------------->
+        <section class="dcrs-cta-banner">
+            <div class="dcrs-container">
+                <div class="dcrs-cta-banner__inner">
+                    <div class="dcrs-cta-banner__copy">
+                        <span class="dcrs-cta-banner__badge">Book Your Service</span>
+                        <h2 class="dcrs-cta-banner__title">
+                            Need Professional Car Servicing or Diagnostic Inspection?
+                        </h2>
+                        <p class="dcrs-cta-banner__sub">
+                            Visit our Al Satwa workshop or <a href="/contact" class="dcrs-cta-inline-link">contact us</a> for prompt mobile mechanic dispatch anywhere in Dubai.
+                        </p>
+                    </div>
+                    <div class="dcrs-cta-banner__actions">
+                        <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                            <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                        </a>
+                        <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: OUR TEAM / CERTIFIED MECHANICS ------------------------>
+        <section class="dcrs-section dcrs-section--paper" id="our-team">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Technical Excellence</div>
+                    <h2 class="dcrs-heading__title">8 Specialist Mechanics Dedicated to Vehicle Safety</h2>
+                    <p class="dcrs-heading__sub">
+                        Our mechanics bring years of hands-on experience across Japanese, European, American, and Korean vehicle platforms.
+                    </p>
+                </div>
+
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+                    <div class="dcrs-team-media">
+                        <img
+                            src={aboutImage2.src}
+                            alt="Certified mechanics conducting diagnostics and auto repairs in Dubai workshop"
+                            loading="lazy"
+                            width="640"
+                            height="450"
+                        />
+                    </div>
+
+                    <div class="dcrs-team-content">
+                        <h3 class="dcrs-team-content__title">Our Repair Methodology</h3>
+                        <ul class="dcrs-checklist">
+                            {teamPoints.map((point) => (
+                                <li>
+                                    <span class="dcrs-icon dcrs-icon--xs"><Fragment set:html={icons.check} /></span>
+                                    <span>{point}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div class="dcrs-action-row">
+                            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                                <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                            </a>
+                            <a href="/contact" class="dcrs-btn dcrs-btn--outline-ink">
+                                Visit Workshop
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CAR BRANDS WE SERVICE --------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="brands-serviced">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Multi-Brand Fleet</div>
+                    <h2 class="dcrs-heading__title">Vehicle Makes Regularly Repaired</h2>
+                    <p class="dcrs-heading__sub">
+                        Dedicated diagnostic equipment and technical specifications for all major automotive badges across the UAE.
+                    </p>
+                </div>
+
+                <div class="dcrs-brands-grid">
+                    {brands.map((brand) => (
+                        <div class="dcrs-brand-badge">
+                            <strong class="dcrs-brand-badge__name">{brand.name}</strong>
+                            <span class="dcrs-brand-badge__origin">{brand.origin}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CUSTOMER TESTIMONIALS --------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="reviews">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Customer Reviews</div>
+                    <h2 class="dcrs-heading__title">Verified Feedback from Dubai Drivers</h2>
+                    <div class="dcrs-rating-summary">
+                        <span class="dcrs-stars">★★★★★</span>
+                        <strong class="dcrs-score">4.8</strong>
+                        <span class="dcrs-rating-sub">· From Google Reviews</span>
+                    </div>
+                </div>
+
+                <div class="dcrs-reviews-grid">
+                    {reviews.map((rev) => (
+                        <div class="dcrs-review-card">
+                            <div class="dcrs-review-card__stars">★★★★★</div>
+                            <blockquote class="dcrs-review-card__text">
+                                "{rev.text}"
+                            </blockquote>
+                            <div class="dcrs-review-card__author">
+                                <div class="dcrs-author-avatar">
+                                    {rev.name.charAt(0)}
+                                </div>
+                                <div class="dcrs-author-info">
+                                    <strong class="dcrs-author-name">{rev.name}</strong>
+                                    <span class="dcrs-author-area">
+                                        <Fragment set:html={icons.mapPin} /> {rev.area}, Dubai
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: FREQUENTLY ASKED QUESTIONS (FAQ) ----------------------->
+        <section class="dcrs-section dcrs-section--tint" id="faq">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">FAQ</div>
+                    <h2 class="dcrs-heading__title">Frequently Asked Questions About Our Dubai Workshop</h2>
+                    <p class="dcrs-heading__sub">
+                        Direct answers regarding our workshop location, turnaround times, and mobile repair capabilities.
+                    </p>
+                </div>
+
+                <div class="dcrs-faq-accordion">
+                    {faqs.map((faq, i) => (
+                        <details class="dcrs-faq-item" open={i === 0}>
+                            <summary class="dcrs-faq-item__question">
+                                <span>{faq.q}</span>
+                                <span class="dcrs-faq-item__toggle">
+                                    <Fragment set:html={icons.chevronDown} />
+                                </span>
+                            </summary>
+                            <div class="dcrs-faq-item__answer">
+                                <p>{faq.a}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTTOM STICKY MOBILE BAR ----------------------------------------->
+        <div class="dcrs-stickybar">
+            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
+                <Fragment set:html={icons.phone} /> Call Now
+            </a>
+            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn dcrs-stickybar__btn--wa">
+                <Fragment set:html={icons.chat} /> WhatsApp
+            </a>
+        </div>
+
+    </main>
+</BaseLayout>
+
+<style>
+    /* Scoped styling maintaining unified brand design & color tokens */
+    :root {
+        --ink: #10201F;
+        --ink-soft: #1B302E;
+        --paper: #E8E4D8;
+        --paper-alt: #DFDACB;
+        --white: #FBF9F4;
+        --brass: #C1802E;
+        --brass-deep: #9C6423;
+        --steel: #57706E;
+        --rule-on-paper: rgba(16, 32, 31, 0.15);
+        --rule-on-ink: rgba(251, 249, 244, 0.16);
+    }
+
+    .dcrs-about-page {
+        padding-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-about-page {
+            padding-bottom: 0;
+        }
+    }
+
+    .dcrs-container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+    }
+
+    /* Common typography & elements */
+    .dcrs-kicker {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass-deep);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcrs-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .dcrs-heading--center {
+        text-align: center;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dcrs-heading__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+        line-height: 1.2;
+        color: var(--ink);
+        margin: 0 0 0.6rem;
+    }
+
+    .dcrs-heading__sub {
+        color: var(--steel);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-lead-text {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--ink);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-body-text {
+        font-size: 0.96rem;
+        line-height: 1.75;
+        color: var(--steel);
+        margin: 0 0 1.2rem;
+    }
+
+    .dcrs-inline-link {
+        color: var(--brass-deep);
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .dcrs-inline-link:hover {
+        color: var(--ink);
+    }
+
+    /* Section background wrappers */
+    .dcrs-section {
+        padding: clamp(3rem, 6.5vw, 5rem) 0;
+    }
+    .dcrs-section--paper { background: var(--paper); }
+    .dcrs-section--tint { background: var(--paper-alt); }
+
+    /* Buttons */
+    .dcrs-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        font-family: var(--font-body, sans-serif);
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.4rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        line-height: 1;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+        min-height: 48px;
+    }
+
+    .dcrs-btn :global(svg) {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .dcrs-btn--solid {
+        background: var(--brass);
+        color: var(--ink);
+    }
+    .dcrs-btn--solid:hover {
+        background: var(--brass-deep);
+        color: #fff;
+    }
+
+    .dcrs-btn--outline {
+        background: transparent;
+        color: var(--white);
+        border-color: rgba(251, 249, 244, 0.45);
+    }
+    .dcrs-btn--outline:hover {
+        border-color: var(--white);
+    }
+
+    .dcrs-btn--outline-ink {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+    }
+    .dcrs-btn--outline-ink:hover {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+    .dcrs-btn--wa:hover {
+        background: #1ebc59;
+    }
+
+    .dcrs-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.75rem;
+    }
+
+    /* 1. Hero Banner */
+    .dcrs-hero-banner {
+        position: relative;
+        background-color: var(--ink);
+        color: var(--white);
+        padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+        overflow: hidden;
+    }
+
+    .dcrs-hero-banner__scrim {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(193, 128, 46, 0.15), transparent 50%);
+        pointer-events: none;
+    }
+
+    .dcrs-hero-banner__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 820px;
+    }
+
+    .dcrs-breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem;
+        display: flex;
+        gap: 0.5rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.82rem;
+        color: rgba(251, 249, 244, 0.65);
+    }
+
+    .dcrs-breadcrumb li + li::before {
+        content: "/";
+        margin-right: 0.5rem;
+        color: rgba(251, 249, 244, 0.4);
+    }
+
+    .dcrs-breadcrumb a {
+        color: rgba(251, 249, 244, 0.75);
+        text-decoration: none;
+    }
+
+    .dcrs-breadcrumb a:hover {
+        color: var(--brass);
+    }
+
+    .dcrs-badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+    }
+
+    .dcrs-hero-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(2rem, 5vw, 3.1rem);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        margin: 0 0 1rem;
+        color: var(--white);
+    }
+
+    .dcrs-hero-banner__lead {
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
+        line-height: 1.65;
+        color: rgba(251, 249, 244, 0.85);
+        margin: 0 0 2rem;
+    }
+
+    .dcrs-hero-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+    }
+
+    /* 2-Column Grid */
+    .dcrs-grid-2col {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-grid-2col {
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+        }
+    }
+
+    .dcrs-grid-2col--align-center {
+        align-items: center;
+    }
+
+    /* Story Media & DXB Plate */
+    .dcrs-story-media__frame {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--rule-on-paper);
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+    }
+
+    .dcrs-story-media__frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 4 / 3;
+    }
+
+    .dcrs-plate {
+        display: flex;
+        background: var(--white);
+        color: var(--ink);
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(16, 32, 31, 0.16);
+    }
+
+    .dcrs-story-badge {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 1.25rem;
+        z-index: 2;
+    }
+
+    .dcrs-plate__tab {
+        background: var(--brass);
+        color: var(--ink);
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.72rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0.4rem;
+        letter-spacing: 0.05em;
+    }
+
+    .dcrs-plate__body {
+        padding: 0.75rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        font-family: var(--font-mono, monospace);
+    }
+
+    .dcrs-plate__row {
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        color: var(--ink-soft);
+        font-weight: 600;
+    }
+
+    .dcrs-plate__row--big {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+    }
+
+    /* Values Grid */
+    .dcrs-values-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-values-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-value-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 2.25rem 1.75rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dcrs-value-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 58px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        margin-bottom: 1.25rem;
+    }
+
+    .dcrs-value-card__icon :global(svg) {
+        width: 26px;
+        height: 26px;
+    }
+
+    .dcrs-value-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.3rem;
+        color: var(--ink);
+        margin: 0 0 0.85rem;
+    }
+
+    .dcrs-value-card__text {
+        color: var(--steel);
+        font-size: 0.94rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* Reasons Grid */
+    .dcrs-reasons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-reason-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .dcrs-reason-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(16, 32, 31, 0.06);
+    }
+
+    .dcrs-reason-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+    }
+
+    .dcrs-reason-card__icon :global(svg) {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dcrs-reason-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.12rem;
+        color: var(--ink);
+        margin: 0 0 0.45rem;
+    }
+
+    .dcrs-reason-card__text {
+        font-size: 0.88rem;
+        color: var(--steel);
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* CTA Banner */
+    .dcrs-cta-banner {
+        background: var(--ink);
+        color: var(--white);
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .dcrs-cta-banner__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-cta-banner__inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .dcrs-cta-banner__badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcrs-cta-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+        color: var(--white);
+        margin: 0 0 0.5rem;
+        line-height: 1.25;
+    }
+
+    .dcrs-cta-banner__sub {
+        color: rgba(251, 249, 244, 0.75);
+        font-size: 0.98rem;
+        margin: 0;
+    }
+
+    .dcrs-cta-inline-link {
+        color: var(--brass, #C1802E);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .dcrs-cta-inline-link:hover {
+        color: var(--white, #FBF9F4);
+    }
+
+    .dcrs-cta-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    /* Team Section */
+    .dcrs-team-media img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        border: 1px solid var(--rule-on-paper);
+        aspect-ratio: 4 / 3;
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+    }
+
+    .dcrs-team-content__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.4rem, 3vw, 1.85rem);
+        margin: 0 0 1.25rem;
+        color: var(--ink);
+    }
+
+    .dcrs-checklist {
+        list-style: none;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .dcrs-checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.94rem;
+        line-height: 1.6;
+        color: var(--ink-soft);
+    }
+
+    .dcrs-icon {
+        display: inline-flex;
+        width: 20px;
+        height: 20px;
+        color: var(--ink);
+    }
+
+    .dcrs-icon--xs {
+        width: 18px;
+        height: 18px;
+        color: var(--brass-deep);
+        flex-shrink: 0;
+        margin-top: 0.2rem;
+    }
+
+    .dcrs-icon :global(svg) {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Brands */
+    .dcrs-brands-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    @media (min-width: 600px) {
+        .dcrs-brands-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-brands-grid {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+
+    .dcrs-brand-badge {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 0.9rem 0.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .dcrs-brand-badge__name {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    .dcrs-brand-badge__origin {
+        font-size: 0.72rem;
+        color: var(--steel);
+        font-family: var(--font-mono, monospace);
+    }
+
+    /* Reviews */
+    .dcrs-rating-summary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+    }
+
+    .dcrs-stars {
+        color: #f59e0b;
+        font-size: 1.15rem;
+        letter-spacing: 0.1em;
+    }
+
+    .dcrs-score {
+        font-family: var(--font-mono, monospace);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--ink);
+    }
+
+    .dcrs-rating-sub {
+        color: var(--steel);
+        font-size: 0.9rem;
+    }
+
+    .dcrs-reviews-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-reviews-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-reviews-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-review-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dcrs-review-card__stars {
+        color: #f59e0b;
+        font-size: 0.95rem;
+        margin-bottom: 0.85rem;
+        letter-spacing: 0.1em;
+    }
+
+    .dcrs-review-card__text {
+        margin: 0 0 1.25rem;
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--steel);
+        font-style: italic;
+    }
+
+    .dcrs-review-card__author {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-author-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--brass);
+        color: var(--ink);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    .dcrs-author-name {
+        display: block;
+        font-size: 0.88rem;
+        color: var(--ink);
+    }
+
+    .dcrs-author-area {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.76rem;
+        color: var(--steel);
+    }
+
+    .dcrs-author-area :global(svg) {
+        width: 12px;
+        height: 12px;
+        color: var(--brass-deep);
+    }
+
+    /* FAQ Accordion */
+    .dcrs-faq-accordion {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .dcrs-faq-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+    }
+
+    .dcrs-faq-item[open] {
+        border-color: var(--brass);
+    }
+
+    .dcrs-faq-item__question {
+        list-style: none;
+        padding: 1.15rem 1.35rem;
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass-deep);
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .dcrs-faq-item__toggle :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
+        transform: rotate(180deg);
+    }
+
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: var(--steel);
+    }
+
+    /* Bottom Sticky Mobile Action Bar */
+    .dcrs-stickybar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.6rem 0.75rem;
+        background: var(--ink);
+        border-top: 1px solid var(--rule-on-ink);
+        z-index: 99;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-stickybar {
+            display: none;
+        }
+    }
+
+    .dcrs-stickybar__btn {
+        flex: 1;
+        min-height: 44px;
+        font-size: 0.88rem;
+        padding: 0.6rem;
+    }
+
+    .dcrs-stickybar__btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+</style>

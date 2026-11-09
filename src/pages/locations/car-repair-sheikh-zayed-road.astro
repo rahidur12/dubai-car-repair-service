@@ -1,0 +1,1682 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import diagnosticImage from '../../assets/images/loc2.webp';
+
+// ---------------------------------------------------------------------------
+// Page Metadata & Settings (Strict SEO Requirements)
+// Title <= 60 chars | Description <= 155 chars | Primary: "car repair sheikh zayed road"
+// ---------------------------------------------------------------------------
+const pageTitle = "Car Repair Sheikh Zayed Road | Mobile Mechanic & Help";
+const pageDescription = "Need fast car repair sheikh zayed road? Our mobile mechanics reach SZR in 15 mins for breakdowns, battery jumps, flat tyres & repairs. Call now!";
+
+const phoneDisplay = "+971 56 612 1423";
+const phoneHref = "tel:+971566121423";
+const waHref = "https://api.whatsapp.com/send?phone=971566121423";
+
+// ---------------------------------------------------------------------------
+// SVG Icons
+// ---------------------------------------------------------------------------
+const icons: Record<string, string> = {
+    phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4 5.1a1.5 1.5 0 0 1 1.5-1.6Z"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.3 6.4L4 20l1.4-3.6A7.9 7.9 0 0 1 4 12Z"/><path d="M9 11.5c.3 2 2 3.7 4 4"/></svg>`,
+    chevronDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+    search: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+    mapPin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>`,
+    clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>`,
+    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    wrench: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2a5 5 0 0 0-4.5 7.2L3 15.7a2.1 2.1 0 0 0 3 3l6.5-6.5A5 5 0 0 0 20 7.7V4l-3.5 1.5L14 2Z"/></svg>`,
+    award: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
+    shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>`,
+    car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`,
+    bolt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    battery: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>`,
+    snowflake: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="20" y1="12" x2="4" y2="12"/><line x1="17.6" y1="6.4" x2="6.4" y2="17.6"/><line x1="17.6" y1="17.6" x2="6.4" y2="6.4"/></svg>`,
+    disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`,
+    oilCan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/><path d="M5 10l3-5h8l3 5"/><line x1="12" y1="2" x2="12" y2="5"/></svg>`,
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`
+};
+
+// ---------------------------------------------------------------------------
+// Structured Schema Markup (LocalBusiness with Service Area - No Fake Address)
+// ---------------------------------------------------------------------------
+const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": ["AutoRepair", "LocalBusiness"],
+            "@id": "https://dubaicarrepairservice.com/car-repair-sheikh-zayed-road#localbusiness",
+            "name": "Dubai Car Repair Service - Sheikh Zayed Road Mobile Mechanic",
+            "url": "https://dubaicarrepairservice.com/car-repair-sheikh-zayed-road",
+            "telephone": "+971566121423",
+            "image": "https://dubaicarrepairservice.com/img/logo.webp",
+            "priceRange": "AED 120 - AED 1,200",
+            "currenciesAccepted": "AED",
+            "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
+            "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }],
+            "areaServed": [
+                { "@type": "AdministrativeArea", "name": "Sheikh Zayed Road" },
+                { "@type": "AdministrativeArea", "name": "DIFC" },
+                { "@type": "AdministrativeArea", "name": "Trade Centre" },
+                { "@type": "AdministrativeArea", "name": "Business Bay" },
+                { "@type": "AdministrativeArea", "name": "Al Quoz" },
+                { "@type": "AdministrativeArea", "name": "Dubai Marina" },
+                { "@type": "AdministrativeArea", "name": "JLT" },
+                { "@type": "City", "name": "Dubai" }
+            ],
+            "description": "Rapid mobile car repair along Sheikh Zayed Road (SZR), Dubai. Emergency roadside assistance, dead battery replacement, mobile flat tyre changes, and on-site breakdown diagnostics across E11."
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://dubaicarrepairservice.com/car-repair-sheikh-zayed-road#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://dubaicarrepairservice.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Locations",
+                    "item": "https://dubaicarrepairservice.com/#service"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Car Repair Sheikh Zayed Road",
+                    "item": "https://dubaicarrepairservice.com/car-repair-sheikh-zayed-road"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://dubaicarrepairservice.com/car-repair-sheikh-zayed-road#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What should I do if my car breaks down while driving on Sheikh Zayed Road?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Safely guide your vehicle onto the nearest emergency shoulder or service road exit, turn on your hazard lights, and phone +971 56 612 1423 immediately. Our mobile mechanic units patrol the SZR corridor and reach you within 15 to 20 minutes."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can your mobile mechanic assist in corporate basement parking along SZR?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We frequently service cars in office basements, hotel parking decks, and residential towers in DIFC, Trade Centre, Downtown, Business Bay, and Dubai Marina."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What emergency on-site repairs can you perform roadside?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We handle on-the-spot battery jump starts and replacements, puncture repairs, tyre changes, emergency radiator hose checks, alternator diagnostics, belt adjustments, and computer error clearing."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How quickly can emergency roadside assistance reach me on SZR?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Because our mobile emergency vans are stationed near primary E11 interchanges, our average arrival time is 15 to 20 minutes depending on highway traffic conditions."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What are your mobile repair charges for Sheikh Zayed Road call-outs?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "On-site diagnostics and emergency jump starts begin at AED 120. Battery replacements with warranty range from AED 250 to AED 680, and flat tyre services start from AED 120 with transparent written quotes."
+                    }
+                }
+            ]
+        }
+    ]
+};
+
+// ---------------------------------------------------------------------------
+// Sheikh Zayed Road High-Demand Mobile Services Data
+// ---------------------------------------------------------------------------
+const szrServices = [
+    {
+        icon: "tools",
+        title: "Emergency Roadside Assistance",
+        badge: "15-Min Response",
+        desc: "Stranded on highway shoulders, slip lanes, or service roads? Fast roadside support for overheating, stalls, warning lights, and mechanical faults.",
+        link: "/roadside-assistance-dubai"
+    },
+    {
+        icon: "car",
+        title: "Mobile Mechanic SZR",
+        badge: "Direct On-Site",
+        desc: "Certified mobile technicians dispatched right to your tower parking bay or roadside location with OBD-II diagnostic tools and parts.",
+        link: "/mobile-car-repair-dubai"
+    },
+    {
+        icon: "battery",
+        title: "Battery Jump & Replacement",
+        badge: "Tested & Fitted",
+        desc: "Emergency jump starts, digital conductance alternator checks, and on-the-spot fitment of genuine branded batteries backed by warranties.",
+        link: "/car-battery-replacement-dubai"
+    },
+    {
+        icon: "disc",
+        title: "Emergency Tyre Replacement",
+        badge: "Puncture & Fitment",
+        desc: "Rapid response tyre assistance for highway blowouts, road debris punctures, wheel swaps, and precision torque tightening anywhere on SZR.",
+        link: "/tyre-replacement-dubai"
+    }
+];
+
+// ---------------------------------------------------------------------------
+// Pricing Data
+// ---------------------------------------------------------------------------
+const priceList = [
+    { service: "Emergency Roadside Diagnostic Check", price: "AED 120 – 180", time: "15–25 mins" },
+    { service: "Car Battery Replacement (Delivered & Installed)", price: "AED 250 – 680", time: "20–30 mins" },
+    { service: "Mobile Flat Tyre Replacement / Wheel Swap", price: "AED 120 – 250", time: "20–35 mins" },
+    { service: "Emergency Battery Boost & Alternator Test", price: "AED 120 – 150", time: "15–20 mins" },
+    { service: "Engine Cooling System Emergency Check", price: "AED 150 – 350", time: "30–45 mins" },
+    { service: "Mobile AC Leak Check & Fast Gas Refill", price: "AED 150 – 350", time: "30–45 mins" },
+    { service: "Emergency Belt & Hose Roadside Fix", price: "AED 180 – 420", time: "30–50 mins" }
+];
+
+// ---------------------------------------------------------------------------
+// Why SZR Commuters Choose Us Data
+// ---------------------------------------------------------------------------
+const reasons = [
+    {
+        title: "15-Minute Highway Response",
+        desc: "Stationed near major SZR exits, our mobile rapid-response units reach broken down vehicles across Trade Centre, DIFC, Downtown, and Business Bay in minutes."
+    },
+    {
+        title: "No Inconvenient Towing Delays",
+        desc: "Skip costly flatbed recovery charges and lengthy workshop queues. We repair over 85% of starting, tyre, and electrical breakdowns directly on the spot."
+    },
+    {
+        title: "Office Basement & Tower Access",
+        desc: "Our service units carry low-clearance portable diagnostic gear, easily accessing multi-level underground parking across commercial high-rises."
+    },
+    {
+        title: "Transparent Upfront Pricing",
+        desc: "Clear itemized rates with zero surprise fees. You receive a verified quote before work begins, with genuine parts and warranty protection."
+    }
+];
+
+// ---------------------------------------------------------------------------
+// FAQs
+// ---------------------------------------------------------------------------
+const faqs = [
+    {
+        q: "What should I do if my car breaks down while driving on Sheikh Zayed Road?",
+        a: "Immediately signal and move into the nearest emergency shoulder, slip lane, or petrol station forecourt. Turn on your hazard flashers, remain safely clear of passing highway traffic, and call +971 56 612 1423. Our mobile response team will head directly to your location."
+    },
+    {
+        q: "Can your mobile mechanic assist in office basement parking along SZR?",
+        a: "Yes. We frequently assist motorists in corporate basement lots, hotel decks, and residential high-rises throughout DIFC, Trade Centre, Business Bay, and Downtown Dubai. Our mobile units carry portable diagnostic gear, battery tools, and tyre equipment."
+    },
+    {
+        q: "What types of on-site car breakdowns can you repair along SZR?",
+        a: "We resolve flat batteries, sudden starter issues, puncture blowouts, radiator hose leaks, serpentine belt slippage, AC compressor cuts, and check engine warnings right where the vehicle is stopped."
+    },
+    {
+        q: "How fast can emergency roadside assistance reach me on SZR?",
+        a: "Our mobile response technicians are strategically distributed near central highway interchanges, enabling typical arrival times of 15 to 20 minutes depending on traffic flow."
+    },
+    {
+        q: "What are your mobile repair charges for Sheikh Zayed Road call-outs?",
+        a: "On-site diagnostics and emergency jump starts begin at AED 120. Battery replacements with warranty range from AED 250 to AED 680, and emergency tyre changes begin at AED 120, with clear written quotes confirmed upfront."
+    }
+];
+
+const relatedServices = [
+    { icon: "tools", name: "Roadside Assistance Dubai", desc: "Emergency breakdown & towing help", href: "/roadside-assistance-dubai" },
+    { icon: "car", name: "Mobile Car Repair Dubai", desc: "On-site mechanical diagnostics & fixes", href: "/mobile-car-repair-dubai" },
+    { icon: "battery", name: "Car Battery Replacement Dubai", desc: "Delivered & fitted with warranty", href: "/car-battery-replacement-dubai" },
+    { icon: "disc", name: "Tyre Change Dubai", desc: "Mobile puncture repair & wheel swaps", href: "/tyre-replacement-dubai" }
+];
+---
+
+<BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+>
+    <!-- Structured JSON-LD Schema Graph -->
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+    <main class="dcrs-location-page">
+
+        <!-- 1. HERO BANNER --------------------------------------------------->
+        <header class="dcrs-hero-banner">
+            <div class="dcrs-hero-banner__scrim"></div>
+            <div class="dcrs-container dcrs-hero-banner__inner">
+                <nav class="dcrs-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#service">Locations</a></li>
+                        <li aria-current="page">Car Repair Sheikh Zayed Road</li>
+                    </ol>
+                </nav>
+                <span class="dcrs-badge">Rapid Highway Response · Sheikh Zayed Road Corridor · 24/7 Mobile Dispatch</span>
+                <h1 class="dcrs-hero-banner__title">
+                    Car Repair Sheikh Zayed Road — Fast Emergency Breakdown &amp; Mobile Mechanic
+                </h1>
+                <p class="dcrs-hero-banner__lead">
+                    Encountered a sudden breakdown, blown tyre, dead battery, or engine fault on the E11 highway? Our certified mobile mechanics reach your location along Sheikh Zayed Road within 15 to 20 minutes for complete on-site automotive repairs.
+                </p>
+                <div class="dcrs-hero-banner__actions">
+                    <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                        <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                    </a>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                        <Fragment set:html={icons.chat} /> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. TRUST / HIGHLIGHT STRIP --------------------------------------->
+        <section class="dcrs-strip" aria-label="Highway Highlights">
+            <div class="dcrs-container">
+                <div class="dcrs-strip__grid">
+                    <div class="dcrs-strip__item">
+                        <span class="dcrs-strip__icon"><Fragment set:html={icons.clock} /></span>
+                        <div>
+                            <strong>15–20 Min Arrival</strong>
+                            <span>Fast SZR Dispatch</span>
+                        </div>
+                    </div>
+                    <div class="dcrs-strip__item">
+                        <span class="dcrs-strip__icon"><Fragment set:html={icons.wrench} /></span>
+                        <div>
+                            <strong>On-Site Repairs</strong>
+                            <span>Skip Middleman Towing</span>
+                        </div>
+                    </div>
+                    <div class="dcrs-strip__item">
+                        <span class="dcrs-strip__icon"><Fragment set:html={icons.tools} /></span>
+                        <div>
+                            <strong>Multi-Brand Techs</strong>
+                            <span>Dealer-Grade Scanners</span>
+                        </div>
+                    </div>
+                    <div class="dcrs-strip__item">
+                        <span class="dcrs-strip__icon"><Fragment set:html={icons.shield} /></span>
+                        <div>
+                            <strong>Transparent AED Rates</strong>
+                            <span>Upfront Quotes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. INTRO SECTION ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="szr-overview">
+            <div class="dcrs-container">
+                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
+                    
+                    <div class="dcrs-intro-content">
+                        <div class="dcrs-kicker">Rapid Highway Assistance</div>
+                        <h2 class="dcrs-heading__title">
+                            Urgent On-Site Car Repair Sheikh Zayed Road Motorists Can Rely On
+                        </h2>
+                        <p class="dcrs-lead-text">
+                            Driving along Dubai's busiest arterial highway at speeds of 100 to 120 km/h places heavy demands on vehicle mechanical systems. When unexpected failures strike, getting urgent <strong>car repair sheikh zayed road</strong> drivers trust is vital for safety and peace of mind.
+                        </p>
+                        <p class="dcrs-body-text">
+                            At <a href="/" class="dcrs-inline-link">dubai car repair service</a>, our dedicated mobile response units patrol the entire highway corridor daily. Whether you are pulled onto an emergency shoulder, stranded at a service station, or parked in an office tower basement, our certified <strong>mobile mechanic sheikh zayed road</strong> arrives fast with diagnostic scanners, jump kits, replacement batteries, and tyre changing tools.
+                        </p>
+                        <p class="dcrs-body-text">
+                            Dealerships along the highway often charge inflated fees and require bookings days in advance. Instead of waiting hours for a tow truck, our team provides instant <strong>emergency car repair sheikh zayed road</strong> support directly where your vehicle is stopped, saving you time, stress, and unnecessary expense.
+                        </p>
+
+                        <div class="dcrs-features-inline">
+                            <div class="dcrs-feature-check">
+                                <span class="dcrs-check-icon"><Fragment set:html={icons.check} /></span>
+                                <span>Immediate highway dispatch for high-speed stalls, flat tyres, and thermal overheating</span>
+                            </div>
+                            <div class="dcrs-feature-check">
+                                <span class="dcrs-check-icon"><Fragment set:html={icons.check} /></span>
+                                <span>Basement garage access across DIFC, Trade Centre, Downtown, and Business Bay towers</span>
+                            </div>
+                            <div class="dcrs-feature-check">
+                                <span class="dcrs-check-icon"><Fragment set:html={icons.check} /></span>
+                                <span>Coordinated with our neighboring mobile team for <a href="/car-repair-al-satwa" class="dcrs-inline-link">car repair satwa</a> call-outs</span>
+                            </div>
+                        </div>
+
+                        <div class="dcrs-action-row">
+                            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                                <Fragment set:html={icons.phone} /> Call Dispatch
+                            </a>
+                            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--outline-ink">
+                                WhatsApp Location <Fragment set:html={icons.arrowRight} />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dcrs-intro-media">
+                        <div class="dcrs-intro-media__frame">
+                            <img
+                                src={diagnosticImage.src}
+                                alt="Emergency car repair sheikh zayed road mobile mechanic inspecting engine breakdown"
+                                loading="eager"
+                                width="600"
+                                height="420"
+                            />
+                            <div class="dcrs-plate dcrs-price-badge" aria-hidden="true">
+                                <div class="dcrs-plate__tab">SZR ROAD</div>
+                                <div class="dcrs-plate__body">
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">15 MIN</span>
+                                    <span class="dcrs-plate__row">FAST DISPATCH</span>
+                                    <span class="dcrs-plate__row">ON-SITE REPAIRS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CORE SERVICES GRID (BREAKDOWNS, ROADSIDE & MOBILE) -------------->
+        <section class="dcrs-section dcrs-section--white" id="szr-services">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <span class="dcrs-kicker">Emergency Highway Capabilities</span>
+                    <h2 class="dcrs-heading__title">
+                        Complete Mobile Assistance Along the SZR Corridor
+                    </h2>
+                    <p class="dcrs-heading__desc">
+                        From sudden electrical blackouts to highway tyre punctures, our mobile mechanics deliver rapid, dependable solutions without recovery delays.
+                    </p>
+                </div>
+
+                <div class="dcrs-services-grid">
+                    {szrServices.map((item) => (
+                        <div class="dcrs-service-card">
+                            <div class="dcrs-service-card__head">
+                                <span class="dcrs-service-card__icon">
+                                    <Fragment set:html={icons[item.icon] || icons.tools} />
+                                </span>
+                                <span class="dcrs-service-card__badge">{item.badge}</span>
+                            </div>
+                            <h3 class="dcrs-service-card__title">{item.title}</h3>
+                            <p class="dcrs-service-card__desc">{item.desc}</p>
+                            <a href={item.link} class="dcrs-service-card__link">
+                                Explore Service <Fragment set:html={icons.arrowRight} />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DETAILED COMMUTER BREAKDOWN FOCUS ------------------------------>
+        <section class="dcrs-section dcrs-section--paper" id="deep-dive">
+            <div class="dcrs-container">
+                <div class="dcrs-heading">
+                    <span class="dcrs-kicker">Breakdown Defense</span>
+                    <h2 class="dcrs-heading__title">
+                        Fast Highway Solutions for SZR Commuters &amp; Fleets
+                    </h2>
+                    <p class="dcrs-heading__desc">
+                        Highway driving amplifies vehicle stress. Intense summer ambient heat combined with stop-and-go congestion frequently triggers rapid component failures. Here is how our mobile units solve emergencies on the spot:
+                    </p>
+                </div>
+
+                <div class="dcrs-grid-2col">
+                    <div>
+                        <h3 class="dcrs-heading__title" style="font-size: 1.45rem;">
+                            Car Breakdown Sheikh Zayed Road — Rapid Response
+                        </h3>
+                        <p class="dcrs-body-text">
+                            Experiencing an unexpected <strong>car breakdown sheikh zayed road</strong> is a high-stress emergency. Stalling in active highway lanes or emergency shoulders requires immediate help. Our technicians carry diagnostic scanners to isolate limp-mode triggers, sensor disconnects, and fuel delivery faults, backed by full <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance dubai</a> support.
+                        </p>
+                        
+                        <h3 class="dcrs-heading__title" style="font-size: 1.45rem; margin-top: 1.75rem;">
+                            Roadside Assistance Sheikh Zayed Road — Battery &amp; Alternator
+                        </h3>
+                        <p class="dcrs-body-text">
+                            When your car will not crank in an office garage or along an exit slipway, our prompt <strong>roadside assistance sheikh zayed road</strong> team runs electronic conductance tests on your battery, starter motor, and alternator. If a replacement is needed, we deliver and install warranty-backed units on-site via our <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">car battery replacement dubai</a> service.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="dcrs-heading__title" style="font-size: 1.45rem;">
+                            Highway Puncture &amp; Emergency Tyre Changes
+                        </h3>
+                        <p class="dcrs-body-text">
+                            Road debris or tire delamination at 100 km/h requires immediate attention. Instead of wrestling with a manual jack in extreme heat, our mobile units arrive with pneumatic lifting gear, digital torque wrenches, and replacement tyres through our rapid <a href="/tyre-replacement-dubai" class="dcrs-inline-link">tyre change dubai</a> service.
+                        </p>
+
+                        <h3 class="dcrs-heading__title" style="font-size: 1.45rem; margin-top: 1.75rem;">
+                            Engine Cooling, Belts &amp; Routine Mobile Care
+                        </h3>
+                        <p class="dcrs-body-text">
+                            Radiator blowouts, ruptured coolant hoses, and broken serpentine belts frequently disable vehicles along E11. We perform pressure tests, replace split hoses, and refill factory coolant roadside. For deeper mechanical issues, rely on our comprehensive <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine repair dubai</a> team or arrange convenient <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair dubai</a> right at your office parking bay.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. HIGHWAY CORRIDOR COVERAGE -------------------------------------->
+        <section class="dcrs-section dcrs-section--white" id="local-area">
+            <div class="dcrs-container">
+                <div class="dcrs-local-content">
+                    <div class="dcrs-kicker">Comprehensive Highway Coverage</div>
+                    <h2 class="dcrs-heading__title">
+                        Servicing All Key Sheikh Zayed Road Districts &amp; Interchanges
+                    </h2>
+                    <p class="dcrs-lead-text">
+                        Our mobile mechanic vans are strategically deployed across central Dubai, ensuring rapid dispatch to any section of the highway corridor.
+                    </p>
+                    <p class="dcrs-body-text">
+                        Primary areas covered for emergency dispatches and office call-outs include:
+                    </p>
+                    <ul class="dcrs-location-bullets">
+                        <li><strong>DIFC &amp; Trade Centre:</strong> Quick access to financial towers, exhibition gates, and multi-story parking decks.</li>
+                        <li><strong>Downtown Dubai &amp; Business Bay:</strong> Fast arrival along Financial Centre Road and Happiness Street.</li>
+                        <li><strong>Al Quoz &amp; Al Safa:</strong> Immediate mobile response near industrial exits and service road petrol stations.</li>
+                        <li><strong>Dubai Marina &amp; JLT:</strong> Southern corridor coverage for high-rise residential towers and highway interchanges.</li>
+                        <li><strong>Barsha &amp; Mall of the Emirates:</strong> Central roadside support along major E11 flyovers and slipways.</li>
+                    </ul>
+                    <p class="dcrs-body-text">
+                        Whether you need a scheduled <strong>car service sheikh zayed road</strong> drop-in at your corporate parking or emergency roadside repair on the highway shoulder, our specialists arrive promptly.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. TRANSPARENT PRICING GUIDE ------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="pricing-guide">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <span class="dcrs-kicker">Upfront &amp; Honest Rates</span>
+                    <h2 class="dcrs-heading__title">
+                        Sheikh Zayed Road Mobile Repair Pricing Guide
+                    </h2>
+                    <p class="dcrs-heading__desc">
+                        Transparent AED rates with zero dealership surcharges or unexpected add-on costs. Written estimates confirmed before any work begins.
+                    </p>
+                </div>
+
+                <div class="dcrs-table-wrap">
+                    <table class="dcrs-price-table">
+                        <thead>
+                            <tr>
+                                <th>Service Description</th>
+                                <th>Starting Price Range</th>
+                                <th>Estimated Duration</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {priceList.map((row) => (
+                                <tr>
+                                    <td>
+                                        <strong>{row.service}</strong>
+                                    </td>
+                                    <td>
+                                        <span class="dcrs-price-tag">{row.price}</span>
+                                    </td>
+                                    <td>
+                                        <span class="dcrs-time-tag"><Fragment set:html={icons.clock} /> {row.time}</span>
+                                    </td>
+                                    <td>
+                                        <a href={phoneHref} class="dcrs-btn-sm">
+                                            Call Now
+                                        </a>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="dcrs-table-note">
+                    * Pricing varies based on vehicle make, tyre profile, and battery model. All quotes are confirmed before technicians start work.
+                </p>
+            </div>
+        </section>
+
+        <!-- 8. WHY SZR MOTORISTS CHOOSE OUR TEAM ----------------------------->
+        <section class="dcrs-section dcrs-section--ink" id="why-choose-us">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center dcrs-heading--light">
+                    <span class="dcrs-kicker dcrs-kicker--brass">Why Choose Us</span>
+                    <h2 class="dcrs-heading__title">
+                        Why SZR Motorists Rely on Our Mobile Mechanics
+                    </h2>
+                    <p class="dcrs-heading__desc">
+                        Providing responsive roadside solutions and professional doorstep vehicle care for commuters, corporate fleets, and luxury vehicles along Dubai's busiest highway.
+                    </p>
+                </div>
+
+                <div class="dcrs-reasons-grid">
+                    {reasons.map((r, i) => (
+                        <div class="dcrs-reason-card">
+                            <span class="dcrs-reason-card__num">0{i + 1}</span>
+                            <h3 class="dcrs-reason-card__title">{r.title}</h3>
+                            <p class="dcrs-reason-card__desc">{r.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. REPAIR WORKFLOW ------------------------------------------------>
+        <section class="dcrs-section dcrs-section--white" id="process">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <span class="dcrs-kicker">Simple 4-Step Process</span>
+                    <h2 class="dcrs-heading__title">
+                        How Our SZR Mobile Call-Out Works
+                    </h2>
+                    <p class="dcrs-heading__desc">
+                        Fast, organized, and transparent roadside assistance designed to minimize vehicle downtime and get you moving safely.
+                    </p>
+                </div>
+
+                <div class="dcrs-steps-grid">
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">1</span>
+                        <h3 class="dcrs-step-card__title">Emergency Call</h3>
+                        <p class="dcrs-step-card__desc">
+                            Contact our dispatcher via phone or WhatsApp with your exact SZR mile marker, exit, or tower parking bay.
+                        </p>
+                    </div>
+
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">2</span>
+                        <h3 class="dcrs-step-card__title">Rapid Dispatch</h3>
+                        <p class="dcrs-step-card__desc">
+                            Our nearest mobile response vehicle heads directly to your location with diagnostic gear and parts.
+                        </p>
+                    </div>
+
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">3</span>
+                        <h3 class="dcrs-step-card__title">On-Site Diagnostic</h3>
+                        <p class="dcrs-step-card__desc">
+                            Our mechanic evaluates the fault, explains parts and labor requirements, and confirms an upfront quote.
+                        </p>
+                    </div>
+
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">4</span>
+                        <h3 class="dcrs-step-card__title">Complete Repair</h3>
+                        <p class="dcrs-step-card__desc">
+                            We execute the repair using quality components, verify engine safety, and get you back on your journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQ SECTION --------------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faq">
+            <div class="dcrs-container dcrs-container--narrow">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <span class="dcrs-kicker">Got Questions?</span>
+                    <h2 class="dcrs-heading__title">
+                        Frequently Asked Questions About Car Repair on SZR
+                    </h2>
+                    <p class="dcrs-heading__desc">
+                        Helpful answers regarding our mobile response times, highway breakdown services, and pricing across Sheikh Zayed Road.
+                    </p>
+                </div>
+
+                <div class="dcrs-faq-list">
+                    {faqs.map((faq, i) => (
+                        <details class="dcrs-faq-item" open={i === 0}>
+                            <summary class="dcrs-faq-item__question">
+                                <span>{faq.q}</span>
+                                <span class="dcrs-faq-item__toggle">
+                                    <Fragment set:html={icons.chevronDown} />
+                                </span>
+                            </summary>
+                            <div class="dcrs-faq-item__answer">
+                                <p>{faq.a}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--white" id="related-services">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <span class="dcrs-kicker">Explore More</span>
+                    <h2 class="dcrs-heading__title">Related Emergency Services in Dubai</h2>
+                </div>
+
+                <div class="dcrs-related-grid">
+                    {relatedServices.map((rel) => (
+                        <a href={rel.href} class="dcrs-related-card">
+                            <span class="dcrs-related-card__icon">
+                                <Fragment set:html={icons[rel.icon] || icons.tools} />
+                            </span>
+                            <span class="dcrs-related-card__title">{rel.name}</span>
+                            <span class="dcrs-related-card__desc">{rel.desc}</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. BOTTOM CTA BANNER --------------------------------------------->
+        <section class="dcrs-cta-banner">
+            <div class="dcrs-container dcrs-cta-banner__inner">
+                <div>
+                    <span class="dcrs-cta-banner__badge">Fast Mobile Response on Sheikh Zayed Road</span>
+                    <h2 class="dcrs-cta-banner__title">
+                        Broken Down on SZR? We Arrive in 15 Minutes!
+                    </h2>
+                    <p class="dcrs-cta-banner__sub">
+                        Call our emergency response mechanics now or <a href="/contact" class="dcrs-cta-inline-link">contact us</a> for prompt on-site vehicle repair along the highway.
+                    </p>
+                </div>
+                <div class="dcrs-cta-banner__actions">
+                    <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
+                        <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                    </a>
+                    <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                        <Fragment set:html={icons.chat} /> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. STICKY MOBILE CALL / WHATSAPP BAR ----------------------------->
+        <div class="dcrs-stickybar" aria-label="Quick contact actions">
+            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
+                <Fragment set:html={icons.phone} /> Call Now
+            </a>
+            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-stickybar__btn dcrs-stickybar__btn--wa">
+                <Fragment set:html={icons.chat} /> WhatsApp
+            </a>
+        </div>
+
+    </main>
+</BaseLayout>
+
+<style>
+    /* ==========================================================================
+       Sheikh Zayed Road Location Page Styles
+       Consistent with Dubai Car Repair Service Design Tokens
+       ========================================================================== */
+
+    .dcrs-location-page {
+        --rule-on-paper: rgba(16, 32, 31, 0.12);
+        --rule-on-ink: rgba(251, 249, 244, 0.12);
+    }
+
+    .dcrs-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+    }
+
+    .dcrs-container--narrow {
+        max-width: 860px;
+    }
+
+    /* Sections */
+    .dcrs-section {
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .dcrs-section--paper {
+        background-color: var(--paper, #E8E4D8);
+        color: var(--ink, #10201F);
+    }
+
+    .dcrs-section--white {
+        background-color: var(--white, #FBF9F4);
+        color: var(--ink, #10201F);
+    }
+
+    .dcrs-section--ink {
+        background-color: var(--ink, #10201F);
+        color: var(--white, #FBF9F4);
+    }
+
+    /* Breadcrumbs */
+    .dcrs-breadcrumb ol {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.25rem;
+        font-size: 0.85rem;
+        gap: 0.5rem;
+        color: rgba(251, 249, 244, 0.7);
+    }
+
+    .dcrs-breadcrumb li + li::before {
+        content: "/";
+        margin-right: 0.5rem;
+        color: rgba(251, 249, 244, 0.4);
+    }
+
+    .dcrs-breadcrumb a {
+        color: rgba(251, 249, 244, 0.85);
+        text-decoration: none;
+    }
+
+    .dcrs-breadcrumb a:hover {
+        color: var(--brass, #C1802E);
+        text-decoration: underline;
+    }
+
+    .dcrs-breadcrumb [aria-current="page"] {
+        color: var(--brass, #C1802E);
+        font-weight: 500;
+    }
+
+    /* Hero Banner Inner */
+    .dcrs-hero-banner__inner {
+        position: relative;
+        z-index: 2;
+        max-width: 850px;
+    }
+
+    .dcrs-hero-banner__scrim {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(193, 128, 46, 0.15) 0%, transparent 60%);
+        pointer-events: none;
+    }
+
+    .dcrs-badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass, #C1802E);
+        background: rgba(193, 128, 46, 0.12);
+        padding: 0.35rem 0.75rem;
+        border-radius: 4px;
+        margin-bottom: 1.25rem;
+        border: 1px solid rgba(193, 128, 46, 0.3);
+    }
+
+    .dcrs-hero-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        line-height: 1.18;
+        margin: 0 0 1.25rem;
+        color: var(--white);
+        font-weight: 600;
+    }
+
+    .dcrs-hero-banner__lead {
+        font-size: clamp(1rem, 1.8vw, 1.15rem);
+        line-height: 1.65;
+        color: rgba(251, 249, 244, 0.88);
+        margin: 0 0 2rem;
+    }
+
+    .dcrs-hero-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    /* Highlight Strip */
+    .dcrs-strip {
+        background-color: var(--ink-soft, #1B302E);
+        color: var(--white);
+        border-top: 1px solid var(--rule-on-ink);
+        border-bottom: 1px solid var(--rule-on-ink);
+        padding: 1.25rem 0;
+    }
+
+    .dcrs-strip__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+        .dcrs-strip__grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-strip__item {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+    }
+
+    .dcrs-strip__icon {
+        display: inline-flex;
+        color: var(--brass);
+        flex-shrink: 0;
+    }
+
+    .dcrs-strip__icon :global(svg) {
+        width: 28px;
+        height: 28px;
+    }
+
+    .dcrs-strip__item strong {
+        display: block;
+        font-size: 0.95rem;
+        color: var(--white);
+    }
+
+    .dcrs-strip__item span {
+        display: block;
+        font-size: 0.8rem;
+        color: rgba(251, 249, 244, 0.7);
+    }
+
+    /* Headings */
+    .dcrs-heading {
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .dcrs-heading--center {
+        text-align: center;
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dcrs-kicker {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--brass-deep, #9C6423);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .dcrs-kicker--brass {
+        color: var(--brass, #C1802E);
+    }
+
+    .dcrs-heading__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        line-height: 1.22;
+        margin: 0 0 0.85rem;
+        color: var(--ink);
+    }
+
+    .dcrs-heading--light .dcrs-heading__title {
+        color: var(--white);
+    }
+
+    .dcrs-heading__desc {
+        font-size: 1.05rem;
+        line-height: 1.65;
+        color: var(--steel, #57706E);
+        margin: 0;
+    }
+
+    .dcrs-heading--light .dcrs-heading__desc {
+        color: rgba(251, 249, 244, 0.75);
+    }
+
+    /* 2-Column Grid */
+    .dcrs-grid-2col {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+        width: 100%;
+    }
+
+    .dcrs-grid-2col > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    @media (min-width: 900px) {
+        .dcrs-grid-2col {
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            align-items: center;
+            gap: 3.5rem;
+        }
+    }
+
+    .dcrs-lead-text {
+        font-size: 1.08rem;
+        line-height: 1.7;
+        font-weight: 500;
+        color: var(--ink);
+        margin: 0 0 1rem;
+    }
+
+    .dcrs-body-text {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        color: var(--steel);
+        margin: 0 0 1rem;
+    }
+
+    .dcrs-inline-link {
+        color: var(--brass-deep);
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .dcrs-inline-link:hover {
+        color: var(--ink);
+    }
+
+    .dcrs-features-inline {
+        margin: 1.25rem 0 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    .dcrs-feature-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        font-size: 0.93rem;
+        color: var(--ink);
+    }
+
+    .dcrs-check-icon {
+        color: var(--brass-deep);
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .dcrs-check-icon :global(svg) {
+        width: 17px;
+        height: 17px;
+    }
+
+    .dcrs-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.5rem;
+    }
+
+    .dcrs-btn--outline-ink {
+        background: transparent;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+    }
+
+    .dcrs-btn--outline-ink:hover {
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    /* Media Frames */
+    .dcrs-intro-media__frame {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(16, 32, 31, 0.12);
+        border: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-intro-media__frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* Price Plate */
+    .dcrs-plate {
+        position: absolute;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        background: var(--ink);
+        color: var(--white);
+        border: 2px solid var(--brass);
+        border-radius: 6px;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+    }
+
+    .dcrs-plate__tab {
+        background: var(--brass);
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 0.75rem;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        padding: 0.4rem 0.3rem;
+        text-align: center;
+        letter-spacing: 0.08em;
+    }
+
+    .dcrs-plate__body {
+        padding: 0.65rem 0.95rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dcrs-plate__row {
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(251, 249, 244, 0.8);
+    }
+
+    .dcrs-plate__row--big {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--brass);
+        font-family: var(--font-display, serif);
+        line-height: 1.1;
+    }
+
+    /* Services Grid */
+    .dcrs-services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-services-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-services-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-service-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .dcrs-service-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(16, 32, 31, 0.08);
+        border-color: var(--brass);
+    }
+
+    .dcrs-service-card__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .dcrs-service-card__icon {
+        display: inline-flex;
+        color: var(--brass-deep);
+        background: var(--paper);
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+    }
+
+    .dcrs-service-card__icon :global(svg) {
+        width: 22px;
+        height: 22px;
+    }
+
+    .dcrs-service-card__badge {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--steel);
+        background: var(--paper);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+    }
+
+    .dcrs-service-card__title {
+        font-size: 1.1rem;
+        margin: 0 0 0.65rem;
+        color: var(--ink);
+    }
+
+    .dcrs-service-card__desc {
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: var(--steel);
+        margin: 0 0 1.25rem;
+        flex-grow: 1;
+    }
+
+    .dcrs-service-card__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--brass-deep);
+        text-decoration: none;
+    }
+
+    .dcrs-service-card__link:hover {
+        color: var(--ink);
+    }
+
+    .dcrs-service-card__link :global(svg) {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Local Coverage Content */
+    .dcrs-local-content {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    /* Location Bullets */
+    .dcrs-location-bullets {
+        margin: 0 0 1.25rem;
+        padding-left: 1.25rem;
+        color: var(--steel);
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .dcrs-location-bullets li {
+        margin-bottom: 0.45rem;
+    }
+
+    .dcrs-location-bullets strong {
+        color: var(--ink);
+    }
+
+    /* Price Table */
+    .dcrs-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--rule-on-paper);
+        background: var(--white);
+        box-shadow: 0 6px 18px rgba(16, 32, 31, 0.04);
+    }
+
+    .dcrs-price-table {
+        width: 100%;
+        min-width: 440px;
+        border-collapse: collapse;
+        font-size: 0.93rem;
+        text-align: left;
+    }
+
+    .dcrs-price-table th {
+        background: var(--paper);
+        color: var(--ink);
+        padding: 0.95rem 1.25rem;
+        font-weight: 600;
+        border-bottom: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-price-table td {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--rule-on-paper);
+        vertical-align: middle;
+    }
+
+    .dcrs-price-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .dcrs-price-tag {
+        font-family: var(--font-mono, monospace);
+        font-weight: 600;
+        color: var(--brass-deep);
+        font-size: 0.95rem;
+    }
+
+    .dcrs-time-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--steel);
+        font-size: 0.85rem;
+    }
+
+    .dcrs-time-tag :global(svg) {
+        width: 14px;
+        height: 14px;
+    }
+
+    .dcrs-btn-sm {
+        display: inline-block;
+        padding: 0.4rem 0.85rem;
+        background: var(--paper);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 4px;
+        color: var(--ink);
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .dcrs-btn-sm:hover {
+        background: var(--brass);
+        color: var(--ink);
+    }
+
+    .dcrs-table-note {
+        font-size: 0.82rem;
+        color: var(--steel);
+        font-style: italic;
+        margin-top: 0.85rem;
+        text-align: center;
+    }
+
+    /* Reasons Cards (Ink Section) */
+    .dcrs-reasons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-reasons-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-reason-card {
+        background: rgba(251, 249, 244, 0.04);
+        border: 1px solid var(--rule-on-ink);
+        border-radius: 8px;
+        padding: 1.75rem 1.35rem;
+        position: relative;
+    }
+
+    .dcrs-reason-card__num {
+        font-family: var(--font-mono, monospace);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--brass);
+        display: block;
+        margin-bottom: 0.75rem;
+        opacity: 0.85;
+    }
+
+    .dcrs-reason-card__title {
+        font-size: 1.12rem;
+        color: var(--white);
+        margin: 0 0 0.65rem;
+    }
+
+    .dcrs-reason-card__desc {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: rgba(251, 249, 244, 0.7);
+        margin: 0;
+    }
+
+    /* Process Steps */
+    .dcrs-steps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-step-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.75rem 1.35rem;
+        position: relative;
+    }
+
+    .dcrs-step-card__num {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--brass);
+        color: var(--ink);
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .dcrs-step-card__title {
+        font-size: 1.05rem;
+        color: var(--ink);
+        margin: 0 0 0.5rem;
+    }
+
+    .dcrs-step-card__desc {
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: var(--steel);
+        margin: 0;
+    }
+
+    /* FAQ List */
+    .dcrs-faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+
+    .dcrs-faq-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: border-color 0.15s ease;
+    }
+
+    .dcrs-faq-item[open] {
+        border-color: var(--brass);
+    }
+
+    .dcrs-faq-item__question {
+        padding: 1.15rem 1.35rem;
+        font-size: 1.02rem;
+        font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass-deep);
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .dcrs-faq-item__toggle :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
+        transform: rotate(180deg);
+    }
+
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: var(--steel);
+    }
+
+    /* Related Services */
+    .dcrs-related-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-related-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-related-card {
+        background: var(--paper);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .dcrs-related-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
+        border-color: var(--brass);
+    }
+
+    .dcrs-related-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--white);
+        color: var(--brass-deep);
+        border-radius: 50%;
+        margin-bottom: 0.85rem;
+    }
+
+    .dcrs-related-card__icon :global(svg) {
+        width: 22px;
+        height: 22px;
+    }
+
+    .dcrs-related-card__title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0 0 0.35rem;
+    }
+
+    .dcrs-related-card__desc {
+        font-size: 0.8rem;
+        color: var(--steel);
+        line-height: 1.45;
+        margin: 0;
+    }
+
+    /* Bottom CTA Banner */
+    .dcrs-cta-banner {
+        background: var(--ink);
+        color: var(--white);
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .dcrs-cta-banner__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-cta-banner__inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .dcrs-cta-banner__badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .dcrs-cta-banner__title {
+        font-family: var(--font-display, serif);
+        font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+        color: var(--white);
+        margin: 0 0 0.5rem;
+        line-height: 1.25;
+    }
+
+    .dcrs-cta-banner__sub {
+        color: rgba(251, 249, 244, 0.75);
+        font-size: 0.98rem;
+        margin: 0;
+    }
+
+    .dcrs-cta-inline-link {
+        color: var(--brass, #C1802E);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .dcrs-cta-inline-link:hover {
+        color: var(--white, #FBF9F4);
+    }
+
+    .dcrs-cta-banner__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    /* Sticky Mobile Bar */
+    .dcrs-stickybar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.6rem 0.75rem;
+        background: var(--ink);
+        border-top: 1px solid var(--rule-on-ink);
+        z-index: 99;
+    }
+
+    @media (min-width: 768px) {
+        .dcrs-stickybar {
+            display: none;
+        }
+    }
+
+    .dcrs-stickybar__btn {
+        flex: 1;
+        min-height: 44px;
+        font-size: 0.88rem;
+        padding: 0.6rem;
+    }
+
+    .dcrs-stickybar__btn--wa {
+        background: #25d366;
+        color: #fff;
+    }
+
+    @media (max-width: 540px) {
+        .dcrs-strip__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .dcrs-price-table th {
+            padding: 0.7rem 0.75rem;
+            font-size: 0.82rem;
+        }
+        .dcrs-price-table td {
+            padding: 0.7rem 0.75rem;
+            font-size: 0.82rem;
+        }
+        .dcrs-price-tag {
+            font-size: 0.84rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .dcrs-price-table th {
+            padding: 0.5rem 0.45rem;
+            font-size: 0.68rem;
+        }
+        .dcrs-price-table td {
+            padding: 0.5rem 0.45rem;
+            font-size: 0.74rem;
+            line-height: 1.3;
+        }
+        .dcrs-price-tag {
+            font-size: 0.74rem;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+        .dcrs-table-note {
+            font-size: 0.74rem;
+        }
+        .dcrs-heading__title {
+            font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+            line-height: 1.25;
+        }
+    }
+</style>
