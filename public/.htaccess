@@ -1,0 +1,23 @@
+# ----------------------------------------------------------------------
+# Dubai Car Repair Service - Apache Production Server Config
+# ----------------------------------------------------------------------
+
+RewriteEngine On
+
+# 1. Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Force non-WWW
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# 3. Remove trailing slashes from URLs (unless physical directory)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# 4. Custom 404 Error Page
+ErrorDocument 404 /404.html
+
+# 5. Default directory index file
+DirectoryIndex index.html
