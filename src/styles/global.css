@@ -129,24 +129,9 @@ a {
     width: 100%;
 }
 
-/* Floating WhatsApp Button */
+/* Floating WhatsApp Button - PC / Desktop only */
 .float {
-    position: fixed;
-    width: 58px;
-    height: 58px;
-    bottom: 96px; /* clears the sticky mobile call/WhatsApp bar if one is present */
-    right: 24px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 10px 24px rgba(16, 32, 31, 0.28);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: none !important;
 }
 
 .float svg {
@@ -155,21 +140,29 @@ a {
     display: block;
 }
 
-.float:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(16, 32, 31, 0.34);
-}
-
-@media (max-width: 767.98px) {
-    body:has(.dcrs-stickybar) .float {
-        display: none !important;
-    }
-}
-
 @media (min-width: 1024px) {
     .float {
+        position: fixed;
+        width: 58px;
+        height: 58px;
         bottom: 32px;
         right: 32px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        z-index: 1000;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 10px 24px rgba(16, 32, 31, 0.28);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(16, 32, 31, 0.34);
     }
 }
 
