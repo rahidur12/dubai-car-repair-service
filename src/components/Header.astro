@@ -191,19 +191,29 @@ const isResourceActive = currentPath === '/resource' || currentPath === '/resour
     const toggle = document.getElementById('dhdr-toggle');
     const scrim = document.getElementById('dhdr-scrim');
 
-    // Sticky Scroll Shadow Enhancement
+    // Sticky Scroll Shadow Enhancement (RAF debounced to avoid forced reflow)
+    let isTicking = false;
     function updateScrollState() {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrollY = window.scrollY || 0;
         if (scrollY > 8) {
             header?.classList.add('is-scrolled');
         } else {
             header?.classList.remove('is-scrolled');
         }
+        isTicking = false;
     }
-    window.addEventListener('scroll', updateScrollState, { passive: true });
-    window.addEventListener('resize', updateScrollState, { passive: true });
-    document.addEventListener('DOMContentLoaded', updateScrollState);
-    updateScrollState();
+
+    function onScroll() {
+        if (!isTicking) {
+            window.requestAnimationFrame(updateScrollState);
+            isTicking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        window.requestIdleCallback(() => onScroll(), { timeout: 1000 });
+    }
 
     // Mobile Drawer Controls
     function closeMobile() {

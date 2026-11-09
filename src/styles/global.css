@@ -7,7 +7,7 @@
     --white: #FBF9F4;
     --brass: #D48E33;
     --brass-deep: #A36418;
-    --steel: #354D4B;
+    --steel: #354745;
 
     /* Legacy aliases kept so older markup referencing these still resolves */
     --main-color: var(--white);
@@ -87,8 +87,9 @@ a {
 }
 
 .dcrs-btn--solid {
-    background-color: var(--brass, #D48E33);
-    color: var(--ink, #10201F);
+    background-color: #d88f28 !important;
+    color: #040908 !important;
+    font-weight: 700 !important;
 }
 
 .dcrs-btn--solid:hover {
