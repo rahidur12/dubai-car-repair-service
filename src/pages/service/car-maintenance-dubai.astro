@@ -1243,13 +1243,18 @@ const pageSchema = {
         margin: 0 0 1.25rem;
     }
 
+    @media (min-width: 992px) {
+        .dcrs-pkg-card__desc {
+            min-height: 4.25rem;
+        }
+    }
+
     .dcrs-pkg-card__items {
         display: flex;
         flex-direction: column;
         gap: 0.65rem;
         padding-top: 1.15rem;
         border-top: 1px solid var(--rule-on-paper);
-        margin-top: auto;
     }
 
     .dcrs-pkg-item {
