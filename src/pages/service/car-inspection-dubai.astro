@@ -5,8 +5,8 @@ import service1Image from '../../assets/images/service1.webp';
 // ---------------------------------------------------------------------------
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
-const pageTitle = "Car Inspection Dubai | Vehicle Check & RTA Pre-Test";
-const pageDescription = "Car inspection in Dubai from AED 99. Pre-purchase inspection, RTA pre-test & full car check up at 222 Al Satwa Road. Fast written report. Call or WhatsApp.";
+const pageTitle = "Car Inspection Dubai | Pre-Purchase Check & RTA Pre-Test";
+const pageDescription = "Professional car inspection in Dubai from AED 99. Pre-purchase used car checks, RTA pre-test inspections & written reports at 222 Al Satwa Road. Open daily 7AM-10PM.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -31,13 +31,11 @@ const icons: Record<string, string> = {
     eye: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
     fileText: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
     search: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
-    certificate: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="5.5"/><path d="M8.8 13.2 7.5 21l4.5-2.2 4.5 2.2-1.3-7.8"/></svg>`,
     camera: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
     tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
     info: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
     arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`,
-    disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`,
-    laptop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`
+    disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`
 };
 
 // ---------------------------------------------------------------------------
@@ -48,11 +46,11 @@ const inspectionTypes = [
         icon: "road",
         title: "RTA Pre-Test Inspection",
         badge: "Pre-Registration Check",
-        desc: "A pre-registration inspection designed to evaluate critical roadworthiness items checked at authorized Dubai testing centers such as Tasjeel or Wasel. We examine lighting, wipers, horn, braking efficiency, steering play, tyres, emissions, and structural points before your official test, helping you avoid test failure and re-testing delays.",
+        desc: "A workshop roadworthiness evaluation designed to help motorists identify common mechanical and safety defects before visiting an official RTA testing centre (such as Tasjeel or Wasel). This pre-inspection checks essential roadworthiness items to help you address faults before official testing.",
         list: [
             "Exterior lights: headlights, brake lamps, indicators, hazard lights",
             "Wiper blade condition, windscreen washers, and horn operation",
-            "Tyre tread depth, sidewall condition, and 5-year DOT date",
+            "Tyre tread depth, sidewall condition, and manufacturing date",
             "Braking performance, disc condition, and handbrake travel",
             "Steering rack play, tie rods, and suspension ball joints",
             "Visible exhaust leaks and emission system warning lights",
@@ -63,12 +61,12 @@ const inspectionTypes = [
     {
         icon: "searchDollar",
         title: "Pre-Purchase Used Car Inspection",
-        badge: "Buyer Protection",
-        desc: "An independent mechanical assessment before completing a used vehicle purchase in Dubai. Our mechanics inspect major mechanical assemblies, fluid condition, and underbody components on our hydraulic ramp, looking for evidence of previous collision repairs, water intrusion, or stored electronic trouble codes.",
+        badge: "Buyer Protection Check",
+        desc: "An independent mechanical assessment before completing a used vehicle purchase in Dubai. Our mechanics inspect major mechanical assemblies, fluid condition, and underbody components on our hydraulic ramp, helping you evaluate vehicle condition before making a financial commitment.",
         list: [
             "Digital paint depth check to identify hidden body filler or resprays",
-            "Chassis rail inspection for structural repair welds or distortion",
-            "Full OBD-II diagnostic scan across engine, transmission, and ABS modules",
+            "Chassis rail inspection for visible damage or previous structural repair",
+            "OBD-II diagnostic scan across engine, transmission, and ABS modules",
             "Engine oil condition, coolant quality, and signs of internal sludge",
             "Transmission fluid condition, shift smoothness, and drive axle checks",
             "Underbody inspection for active oil, coolant, or steering leaks",
@@ -79,14 +77,14 @@ const inspectionTypes = [
     {
         icon: "shield",
         title: "Annual Safety & Health Inspection",
-        badge: "Preventive Care",
-        desc: "A comprehensive health check for vehicles operating year-round in the UAE climate. We evaluate cooling efficiency, battery reserve, brake pad wear, suspension bushings, and fluid condition to help you plan necessary maintenance before unexpected roadside breakdowns occur.",
+        badge: "Preventive Maintenance Check",
+        desc: "A comprehensive health check for vehicles operating year-round in the UAE climate. We evaluate cooling efficiency, battery reserve, brake pad wear, suspension bushings, and fluid condition to help you plan necessary maintenance and avoid unexpected breakdowns.",
         list: [
-            "Full multi-point mechanical and safety evaluation",
+            "Multi-point mechanical and safety evaluation",
             "Battery load test, terminal condition, and charging voltage check",
             "AC compressor operation, belt tension, and cooling vent output",
-            "Coolant concentration, expansion tank condition, and hose flexibility",
-            "Brake pad thickness measurement and fluid boiling point check",
+            "Coolant level, expansion tank condition, and hose flexibility",
+            "Brake pad thickness measurement and disc surface condition",
             "Differential, steering, and transmission fluid condition",
             "Inspection of air, cabin, and fuel filter elements",
             "Suspension shock absorbers, control arm bushes, and wheel bearings"
@@ -99,18 +97,18 @@ const checklistCategories = [
         icon: "cog",
         title: "Engine & Drivetrain (12 points)",
         points: [
-            "Engine oil level, condition & colour",
-            "Coolant level & antifreeze concentration",
-            "OBD-II fault code scan across active modules",
-            "Drive belt condition and tension check",
-            "Visible oil leaks: valve cover, oil pan, seals",
-            "Engine air filter restriction check",
-            "Fuel system lines - no visible leakage",
-            "Exhaust system security & visible emissions",
-            "Transmission fluid level & condition check",
+            "Engine oil level, colour & visible condition",
+            "Coolant level, condition & reservoir cap seal",
+            "OBD-II diagnostic fault code scan",
+            "Drive belt condition, alignment & tension",
+            "Visible engine oil leaks (valve cover, oil pan, seals)",
+            "Engine air filter restriction & cleanliness",
+            "Fuel lines & visible fuel system connections",
+            "Exhaust system mounting, security & visible leaks",
+            "Transmission fluid level & visible condition",
             "Drive shaft boots, CV joints & axle seals",
-            "Engine mount rubber condition & movement",
-            "Turbocharger & intercooler inspection (where fitted)"
+            "Engine & transmission mount condition",
+            "Turbocharger & intercooler visible condition (where fitted)"
         ]
     },
     {
@@ -118,82 +116,130 @@ const checklistCategories = [
         title: "Brakes & Wheels (10 points)",
         points: [
             "Front brake pad thickness measurement",
-            "Rear brake pad thickness measurement",
-            "Front brake disc surface & wear lip check",
-            "Rear brake disc / drum condition check",
-            "Brake fluid reservoir level & moisture check",
-            "Brake hydraulic lines & flex hose condition",
-            "Parking brake engagement & cable travel",
-            "Tyre tread depth measurement (all corners)",
-            "Tyre age verification (DOT code 5-year limit)",
-            "Tyre pressure & sidewall structural condition"
+            "Rear brake pad / shoe wear check",
+            "Front brake disc surface condition & wear ridge",
+            "Rear brake disc condition & handbrake drum check",
+            "Brake fluid reservoir level & moisture inspection",
+            "Brake hydraulic lines & flexible rubber hoses",
+            "Parking brake lever travel & cable tension",
+            "Tyre tread depth measurement across all tyres",
+            "Tyre manufacturing date (DOT code) verification",
+            "Tyre sidewall condition, damage & pressure check"
         ]
     },
     {
         icon: "bolt",
         title: "Electrics & Lights (10 points)",
         points: [
-            "Battery resting voltage & load test",
-            "Alternator charging voltage output check",
-            "Headlights (low and high beam) operation",
-            "Brake lights, reverse lights & indicators",
-            "Hazard warning flashers & horn operation",
-            "Windscreen wiper blades & washer sprayers",
-            "Dashboard instrument cluster & warning lights",
-            "Air conditioning vent temperature test",
-            "Blower motor operation across all speeds",
-            "Power windows & central locking function"
+            "Battery resting voltage & charging output check",
+            "Alternator and belt drive operation",
+            "Headlights (low beam & high beam) operation",
+            "Brake lights, tail lamps & reverse lights",
+            "Directional indicators & hazard warning flashers",
+            "Windscreen wipers & washer spray nozzles",
+            "Dashboard instrument cluster & warning lamps",
+            "Air conditioning cooling performance & vent output",
+            "Interior blower motor operation across speeds",
+            "Horn operation & basic electrical switch checks"
         ]
     },
     {
         icon: "car",
         title: "Suspension & Steering (8 points)",
         points: [
-            "Steering rack play & tie rod end condition",
+            "Steering rack play, boots & tie-rod end joints",
             "Power steering fluid level & pump operation",
-            "Front shock absorbers & strut mounting check",
-            "Rear shock absorber leakage & rebound check",
-            "Lower control arm bushes & ball joints",
+            "Front shock absorbers, struts & mount condition",
+            "Rear shock absorbers & visible fluid leakage",
+            "Control arm bushings & lower ball joints",
             "Anti-roll bar links & stabilizer bushings",
-            "Wheel hub bearing play check (all corners)",
-            "Visual alignment & uneven tyre wear indicators"
+            "Wheel hub bearing play check (all four wheels)",
+            "Visual wheel alignment & tyre wear pattern review"
         ]
     },
     {
         icon: "eye",
         title: "Body, Chassis & Safety (10 points)",
         points: [
-            "Windscreen condition (cracks or chips in line of sight)",
-            "Door hinges, latches & weather-strip seals",
+            "Windscreen condition (chips or cracks in sightline)",
+            "Door latches, locks & hinge operation",
             "Boot / tailgate latch & support strut operation",
-            "Seatbelts - webbing, retraction & buckle lock",
-            "Airbag warning light bulb check & status",
-            "Underbody visual check - corrosion & floor pan",
-            "Chassis alignment & previous repair indicators",
-            "Digital paint depth gauge reading across panels",
-            "Spare wheel condition & emergency jack",
-            "Side mirrors & interior rear-view mirror adjustment"
+            "Seatbelt webbing, retractors & buckle latching",
+            "Airbag dashboard warning light status check",
+            "Underbody floor pan & visible corrosion check",
+            "Subframe & visible chassis structural integrity",
+            "Digital paint depth gauge reading across main panels",
+            "Side mirrors & interior rear-view mirror adjustment",
+            "Spare wheel condition, jack & wheel brace check"
         ]
     }
 ];
 
 const rtaFails = [
-    "Tyre age exceeding the UAE 5-year limit or tread below legal depth",
-    "Cracked, chipped, or heavily pitted windscreens in driver sightlines",
-    "Inoperative headlights, brake lamps, indicators, or number plate lights",
-    "Uneven brake force balance or excessive handbrake lever travel",
-    "Worn wiper blades failing to clear water cleanly across the screen",
-    "Excessive exhaust smoke or emission system fault warnings",
-    "Steering rack play or deteriorated suspension ball joints",
-    "Inoperative horn or persistent airbag warning lamps"
+    {
+        num: "1",
+        title: "Tyre Wear, Sidewall Damage or Age",
+        desc: "Tyres with tread depth below the legal safety limit, visible sidewall cuts or bulges, or manufacturing dates exceeding recommended roadworthiness limits are primary reasons for test failure.",
+        fix: "Check your tyre tread depth, inspect sidewalls for cracks, and verify the 4-digit DOT manufacture date on each tyre before booking your test."
+    },
+    {
+        num: "2",
+        title: "Faulty Exterior Lighting & Indicators",
+        desc: "Blown bulbs in headlights, high beams, brake lamps, indicators, reverse lights, or number plate illumination will result in an immediate test failure.",
+        fix: "Turn on your vehicle lights and hazard flashers, and have a helper verify that every exterior bulb illuminates brightly before your test."
+    },
+    {
+        num: "3",
+        title: "Windscreen Cracks or Deep Chips",
+        desc: "Cracks, stars, or significant stone chips within the driver's direct field of view impair visibility and fail official roadworthiness safety standards.",
+        fix: "Have chips repaired by a windscreen specialist or replace a cracked windscreen prior to presenting the vehicle for registration testing."
+    },
+    {
+        num: "4",
+        title: "Brake Performance & Handbrake Travel",
+        desc: "Imbalanced braking force between wheels, worn brake pads, corroded brake discs, or excessive parking brake lever travel fail brake-roller evaluations.",
+        fix: "Have your brake pads, discs, and handbrake cable tension evaluated at a workshop to ensure balanced, responsive stopping power."
+    },
+    {
+        num: "5",
+        title: "Steering Play & Worn Suspension Bushings",
+        desc: "Excessive looseness in the steering rack, worn tie-rod ends, torn CV boots, or deteriorated ball joints compromise vehicle control and result in test failure.",
+        fix: "A workshop lift inspection detects worn rubber bushings and steering play before test examiners flag them as critical safety defects."
+    },
+    {
+        num: "6",
+        title: "Dashboard Warning Lights & Visible Fluid Leaks",
+        desc: "Illuminated check engine, ABS, or airbag warning lights on your dashboard, as well as active engine oil or coolant dripping under the vehicle, cause test failure.",
+        fix: "Run an OBD-II diagnostic scan to address warning codes and repair active fluid leaks well in advance of your official RTA testing appointment."
+    }
 ];
 
 const pricingRows = [
-    { service: "RTA Pre-Test Inspection", price: "AED 99 – 150*", duration: "45–60 min [CONFIRM: package details]" },
-    { service: "Pre-Purchase Used Car Check", price: "AED 150 – 250*", duration: "60–90 min [CONFIRM: package details]" },
-    { service: "Annual Safety & Health Check", price: "AED 120 – 180*", duration: "60–75 min [CONFIRM: package details]" },
-    { service: "OBD-II Diagnostic Scan (add-on)", price: "AED 50 – 80*", duration: "20–30 min" },
-    { service: "Digital Paint Depth Test (add-on)", price: "AED 50*", duration: "15 min" }
+    {
+        service: "RTA Pre-Test Inspection",
+        price: "AED 99 – 150",
+        includes: "Roadworthiness pre-check: exterior lights, wipers, horn, tyres, brakes, steering, seatbelts & written report"
+    },
+    {
+        service: "Pre-Purchase Used Car Check",
+        price: "AED 150 – 250",
+        includes: "Lift inspection, OBD-II diagnostic scan, fluid condition, underbody check, road test evaluation & written findings"
+    },
+    {
+        service: "Annual Safety & Health Check",
+        price: "AED 120 – 180",
+        includes: "Multi-point safety assessment: battery, brakes, suspension, cooling system & AC performance summary"
+    },
+    {
+        service: "OBD-II Diagnostic Scan (Add-on)",
+        price: "AED 50 – 80",
+        includes: "Full computer scan of engine, transmission & safety modules with fault code summary"
+    },
+    {
+        service: "Digital Paint Depth Test (Add-on)",
+        price: "AED 50",
+        includes: "Electronic paint thickness measurement across panels to detect previous bodywork or filler"
+    }
 ];
 
 const reasons = [
@@ -204,59 +250,59 @@ const reasons = [
     },
     {
         icon: "search",
-        title: "Independent Assessment",
-        desc: "Our inspection provides an objective evaluation of your vehicle's current mechanical condition, helping you prioritize safety and maintenance without pressure."
+        title: "Objective Technical Assessment",
+        desc: "Our mechanics provide a thorough assessment of your vehicle's mechanical condition, giving you the facts you need to decide whether to proceed with recommended repairs without high-pressure sales."
     },
     {
         icon: "road",
-        title: "UAE Operating Realities",
-        desc: "We evaluate conditions accelerated by Dubai's climate-including tyre compound age (DOT code), brake fluid moisture absorption, battery reserve capacity, and cooling system efficiency under high ambient heat."
+        title: "Experienced Automotive Team",
+        desc: "Established in 2012, our team of 8 skilled mechanics has serviced more than 8,500 vehicles across Dubai, earning a 4.8-star Google rating for quality craftsmanship."
     },
     {
         icon: "tools",
-        title: "Experienced Technicians & Ramp Access",
-        desc: "Inspections are conducted by experienced mechanics using hydraulic workshop ramps, specialized diagnostic scanners, and dedicated testing equipment at 222 Al Satwa Road."
+        title: "Dedicated Workshop Facilities",
+        desc: "Inspections are conducted at our 222 Al Satwa Road workshop, equipped with hydraulic vehicle lifts, electronic diagnostic scan tools, and testing equipment for complete underbody visibility."
     },
     {
         icon: "camera",
         title: "Visual Evidence for Buyers",
-        desc: "When assessing a pre-owned car, our technicians document visible defects, fluid leaks, and underbody wear so you have concrete information before making a purchasing decision."
+        desc: "When inspecting a pre-owned car, our technicians point out visible defects, fluid leaks, and underbody wear so you have concrete information before making a purchasing decision."
     },
     {
         icon: "shield",
-        title: "Same-Day Minor Rectifications",
-        desc: "If an inspection highlights minor roadworthiness issues-such as blown bulbs, worn wiper blades, or low fluids-our workshop can resolve them during your visit."
+        title: "Convenient Minor Rectifications",
+        desc: "If an inspection highlights minor roadworthiness issues-such as blown bulbs, worn wiper blades, or low fluids-our workshop can carry out repairs during your visit upon your approval."
     }
 ];
 
 const faqs = [
     {
         q: "How does a workshop pre-inspection differ from official RTA vehicle testing?",
-        a: "Official roadworthiness testing in Dubai is conducted exclusively at RTA-authorized test centers (such as Tasjeel, Shamil, or Wasel) to approve vehicle registration. Our workshop pre-inspection evaluates those same critical test points beforehand, allowing you to identify and fix defects before your official test to avoid re-inspection fees."
+        a: "Official roadworthiness testing in Dubai is conducted exclusively at RTA-authorized testing centres (such as Tasjeel, Shamil, or Wasel) to approve vehicle registration. Our workshop pre-inspection examines those same critical test points beforehand, allowing you to identify and fix defects before your official test to avoid re-inspection delays and fees. We do not issue official RTA certificates."
     },
     {
         q: "What does a pre-purchase car inspection in Dubai include?",
-        a: "A pre-purchase inspection covers a comprehensive evaluation of the vehicle's engine, transmission operation, braking system, steering, suspension, tyres, and underbody structure on a hydraulic ramp. We also scan electronic modules with an OBD-II diagnostic scanner and check panel consistency with a digital paint depth gauge where requested."
+        a: "A pre-purchase inspection covers a comprehensive evaluation of the vehicle's engine, transmission operation, braking system, steering, suspension, tyres, and underbody structure on a hydraulic ramp. We also scan electronic modules with an OBD-II diagnostic scanner and check panel paint thickness where requested, providing a written summary of findings."
     },
     {
         q: "How much does a car inspection cost in Dubai?",
-        a: "Car inspection pricing depends on the scope of the evaluation and vehicle type. Basic pre-registration checks typically range from AED 99 to AED 150, while comprehensive pre-purchase inspections range from AED 150 to AED 250 [CONFIRM: exact car inspection package prices]. Inspection fees are separate from any recommended repair work."
+        a: "Car inspection pricing depends on the package required. Our RTA pre-test inspections start from AED 99 to AED 150, annual safety checks range from AED 120 to AED 180, and comprehensive pre-purchase inspections range from AED 150 to AED 250. Individual add-ons such as OBD-II scans or digital paint depth tests are available from AED 50."
     },
     {
         q: "Can an inspection guarantee that my car will pass the official RTA test?",
-        a: "While an independent pre-inspection thoroughly checks items known to cause test failures under RTA standards, official testing centers retain final authority. We cannot issue official test certificates or guarantee an RTA pass, but our inspection helps eliminate all foreseeable mechanical and safety failure points."
+        a: "No workshop can guarantee that a vehicle will pass the official RTA test, as final testing and approval rest solely with authorized testing centres. However, our pre-inspection checks all major mechanical, safety, and visual failure points so you can address foreseeable issues prior to testing."
     },
     {
         q: "What is the vehicle testing requirement for registration renewal in Dubai?",
-        a: "In Dubai, private light passenger vehicles are exempt from annual roadworthiness testing for their first three years from initial registration. Starting in their fourth year, vehicles must pass an annual roadworthiness inspection at an authorized RTA testing center before registration renewal."
+        a: "In Dubai, private passenger vehicles are typically exempt from annual roadworthiness testing for their first three years from new registration. Beginning in their fourth year, vehicles generally require an annual roadworthiness inspection at an authorized RTA testing centre before registration can be renewed."
     },
     {
         q: "Do you provide mobile or at-home car inspections in Dubai?",
-        a: "Our standard comprehensive inspections are performed on hydraulic vehicle ramps at our workshop at 222 Al Satwa Road for complete underbody, brake, and chassis visibility [CONFIRM: mobile or at-home car inspection availability and call-out charges]."
+        a: "Our comprehensive vehicle inspections are conducted on hydraulic vehicle ramps at our workshop at 222 Al Satwa Road, Dubai, where full underbody, brake, and chassis access is available. Please contact our team to confirm current on-site or mobile inspection availability."
     },
     {
         q: "Why can older tyres fail an inspection even if they have good tread depth?",
-        a: "Under UAE regulations and roadworthiness standards, tyres older than five years from their manufacture date (indicated by the 4-digit DOT code on the sidewall) are deemed unsafe regardless of remaining tread. Intense desert heat hardens the rubber compound, increasing blowout risks."
+        a: "Under UAE roadworthiness guidelines, tyres older than five years from their manufacture date (indicated by the 4-digit DOT date code on the sidewall) are considered safety risks, even if tread depth appears sufficient. High desert ambient temperatures harden the rubber compound over time, increasing the likelihood of structural failure and blowouts."
     }
 ];
 
@@ -283,7 +329,7 @@ const pageSchema = {
                 "@id": "https://dubaicarrepairservice.com/car-inspection-dubai"
             },
             "serviceType": "Vehicle Inspection",
-            "description": "Professional vehicle inspection services in Dubai including pre-purchase inspections, RTA pre-test inspections, annual safety inspections, diagnostic checks and detailed written inspection reports for all vehicle makes and models.",
+            "description": "Professional vehicle inspection services in Dubai including pre-purchase inspections, RTA pre-test checks, annual safety inspections, diagnostic scans and itemized written inspection reports for all vehicle makes and models.",
             "provider": {
                 "@id": "https://dubaicarrepairservice.com/#localbusiness"
             },
@@ -294,6 +340,7 @@ const pageSchema = {
             "offers": {
                 "@type": "Offer",
                 "priceCurrency": "AED",
+                "price": "99",
                 "availability": "https://schema.org/InStock",
                 "priceSpecification": {
                     "@type": "PriceSpecification",
@@ -324,40 +371,14 @@ const pageSchema = {
         {
             "@type": "FAQPage",
             "@id": "https://dubaicarrepairservice.com/car-inspection-dubai#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "How do I prepare my car for RTA inspection in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Before an RTA inspection, vehicle owners should check lights, tyres, wipers, mirrors, horn operation and dashboard warning indicators. A pre-inspection can help identify potential issues before the official test."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How much does car inspection cost in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Inspection costs vary depending on the inspection type, vehicle condition and reporting requirements. Pre-purchase inspections and comprehensive safety inspections typically involve more detailed evaluations than basic inspections."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What is the RTA car inspection age rule in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Vehicles registered in Dubai are generally required to undergo periodic roadworthiness inspections according to RTA regulations before registration renewal. Requirements may vary depending on vehicle type and age."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Can old tyres fail an RTA inspection even if tread is fine?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. Tyre condition assessments consider multiple factors including age, sidewall condition, damage, cracking and manufacturer recommendations in addition to tread depth."
-                    }
+            "mainEntity": faqs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f.a
                 }
-            ]
+            }))
         }
     ]
 };
@@ -388,7 +409,7 @@ const pageSchema = {
                     Car Inspection Dubai - Pre-Purchase Check &amp; RTA Testing
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Purchasing a pre-owned vehicle or preparing for mandatory annual registration in Dubai requires an independent, thorough technical assessment to identify hidden mechanical defects and structural safety concerns. Our car inspection in Dubai includes full multi-system OBD-II diagnostic scanning, brake and suspension testing, chassis and paint thickness analysis, and roadworthiness verification. From our Al Satwa workshop, our certified mechanics deliver transparent, comprehensive vehicle health reports with fast and affordable pricing.
+                    Car inspection in Dubai helps identify mechanical problems, safety concerns, and potential repair costs before you purchase a used vehicle or renew your registration. Dubai Car Repair Service provides pre-purchase inspections, RTA pre-test checks, and general vehicle health inspections for different makes and models. Our technicians examine important vehicle components, check for visible defects, and use diagnostic equipment where required. Visit our Al Satwa workshop for a professional inspection and a clear explanation of your vehicle's condition.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -412,13 +433,13 @@ const pageSchema = {
                             Car Inspection Dubai - Technical Diagnostics &amp; Roadworthiness Verification
                         </h2>
                         <p class="dcrs-lead-text">
-                            A professional vehicle inspection is crucial in the UAE automotive market, where severe climate exposure, previous flood damage, or cosmetic repairs often conceal serious mechanical degradation. Whether you are finalizing a pre-purchase deal, preparing for annual RTA registration renewal, or planning long-distance desert road trips, a multi-point inspection provides an impartial, evidence-based evaluation of your vehicle's true mechanical condition.
+                            In Dubai's demanding driving climate, regular vehicle inspections help motorists maintain safety and prevent costly mechanical failures. High ambient heat, sand exposure, and prolonged highway driving accelerate wear on cooling systems, batteries, rubber bushings, and tyres. Whether buying a pre-owned vehicle, preparing for annual registration renewal, or monitoring your car's general health, a workshop inspection provides an objective assessment of your vehicle's condition.
                         </p>
                         <p class="dcrs-body-text">
-                            At Dubai Car Repair Service, our inspection begins on dedicated hydraulic vehicle lifts, allowing technicians to inspect undercarriage crossmembers, subframes, and steering linkages for collision damage, stress fractures, or underbody corrosion. We employ specialized diagnostic scan tools to read live powertrain sensor streams, transmission clutch slip data, and stored ECU error codes. If we identify engine misfires or overdue lubricant degradation, our workshop can immediately arrange <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine mechanical repairs</a> or recommend an <a href="/engine-oil-change-dubai" class="dcrs-inline-link">engine oil change</a>.
+                            For used-car buyers, an independent pre-purchase inspection helps identify previous body repairs, fluid leaks, and electronic fault codes that may not be apparent during a casual test drive. For vehicle owners preparing for registration renewal, our workshop pre-inspection checks essential roadworthiness items—including lighting, braking performance, steering linkages, and windscreen condition—helping you address issues before your official test. When inspections reveal mechanical wear or overdue servicing, our workshop can arrange <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine service</a>, carry out an <a href="/engine-oil-change-dubai" class="dcrs-inline-link">engine oil change</a>, or schedule comprehensive <a href="/car-maintenance-dubai" class="dcrs-inline-link">periodic car maintenance</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            Our 50+ point inspection protocol also evaluates safety-critical friction components, tyre manufacturing dates, and air conditioning cooling performance before minor defects lead to test failure or on-road breakdowns. Customers receive an itemized, clear written inspection report detailing immediate safety concerns, upcoming maintenance needs, and realistic repair estimates. Visit our workshop at 222 Al Satwa Road, or contact our <a href="/contact" class="dcrs-inline-link">service desk</a> to book your inspection slot.
+                            Our inspections are performed at our Al Satwa workshop on hydraulic vehicle lifts, giving technicians clear access to evaluate underbody structural components, suspension assemblies, and driveline seals. We use OBD-II diagnostic scanners to check for electronic fault codes and digital paint depth gauges to inspect body panels where requested. While an inspection cannot uncover every hidden or intermittent defect, customers receive an itemized written report detailing observed conditions and recommended repairs so they can make informed decisions.
                         </p>
 
                         <div class="dcrs-action-row">
@@ -462,7 +483,7 @@ const pageSchema = {
                     <div class="dcrs-kicker">Fast and Affordable Pricing</div>
                     <h2 class="dcrs-heading__title">Vehicle Inspection Pricing in Dubai</h2>
                     <p class="dcrs-heading__sub">
-                        Clear, upfront pricing with no hidden costs. Every inspection includes a written report and a verbal debrief with the inspecting mechanic.
+                        Clear, upfront pricing with no hidden costs. Every inspection includes an itemized written report and a review of the findings with your mechanic.
                     </p>
                 </div>
 
@@ -471,9 +492,8 @@ const pageSchema = {
                         <thead>
                             <tr>
                                 <th>Inspection Package</th>
-                                <th>Price Range (AED)</th>
-                                <th>Duration</th>
-                                <th>Included Work</th>
+                                <th>Price Range</th>
+                                <th>Inclusions &amp; Scope</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -481,8 +501,7 @@ const pageSchema = {
                                 <tr>
                                     <td class="dcrs-table-service"><strong>{r.service}</strong></td>
                                     <td class="dcrs-table-price">{r.price}</td>
-                                    <td class="dcrs-table-time">{r.time}</td>
-                                    <td class="dcrs-table-desc">{r.desc}</td>
+                                    <td class="dcrs-table-includes">{r.includes}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -490,7 +509,7 @@ const pageSchema = {
                 </div>
 
                 <p class="dcrs-pricing-disclaimer">
-                    <Fragment set:html={icons.info} /> Pre-purchase inspections (PPI) can be conducted at our Al Satwa workshop or arranged as an on-site evaluation across Dubai. If major repair work identified during the inspection is carried out with us, we offer partial credit toward your invoice.
+                    <Fragment set:html={icons.info} /> Prices vary based on vehicle make, model, and required inspection depth. Workshop pre-inspections are conducted on hydraulic lifts at 222 Al Satwa Road, Dubai. An itemized written report is provided with every inspection package.
                 </p>
             </div>
         </section>
@@ -510,22 +529,22 @@ const pageSchema = {
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">1</span>
                         <h3 class="dcrs-step-card__title">OBD-II Computer Diagnostic Scan</h3>
-                        <p class="dcrs-step-card__desc">Complete electronic scan of engine, transmission, ABS, airbag, and body control modules to detect active and cleared historical fault codes.</p>
+                        <p class="dcrs-step-card__desc">We connect a diagnostic scanner to check active and stored fault codes across engine, transmission, ABS, and airbag modules where supported by vehicle specifications.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">2</span>
                         <h3 class="dcrs-step-card__title">Under-Hood Mechanical &amp; Fluid Check</h3>
-                        <p class="dcrs-step-card__desc">Evaluation of cooling hoses, radiator, drive belts, engine oil quality, brake fluid moisture levels, and battery conductance health.</p>
+                        <p class="dcrs-step-card__desc">Technicians inspect drive belts, cooling hoses, battery health, and fluid levels (engine oil, coolant, brake fluid) for contamination, degradation, or active leaks.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">3</span>
                         <h3 class="dcrs-step-card__title">Hoist Inspection &amp; Structural Safety</h3>
-                        <p class="dcrs-step-card__desc">Vehicle lifted to inspect chassis rails, suspension control arms, shock absorbers, brake discs/pads, steering rack, and fluid leaks.</p>
+                        <p class="dcrs-step-card__desc">The vehicle is raised on a hydraulic workshop lift to evaluate chassis rails, suspension control arms, shock absorbers, steering rack, brake lines, and tyres for play or damage.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">4</span>
                         <h3 class="dcrs-step-card__title">Road Test &amp; Itemized Written Report</h3>
-                        <p class="dcrs-step-card__desc">Dynamic evaluation of transmission shift quality, brake feel, and wheel alignment, followed by a detailed written report and verbal review.</p>
+                        <p class="dcrs-step-card__desc">Where practical, a brief road test evaluates transmission shifting, brake pedal response, and steering behaviour, followed by an itemized written report reviewing all findings.</p>
                     </div>
                 </div>
             </div>
@@ -555,7 +574,7 @@ const pageSchema = {
                             <p class="dcrs-type-card__desc">{t.desc}</p>
                             
                             <ul class="dcrs-type-card__bullets">
-                                {(t.list || t.bullets || []).map((b) => (
+                                {(t.list || []).map((b) => (
                                     <li><Fragment set:html={icons.check} /> {b}</li>
                                 ))}
                             </ul>
@@ -567,19 +586,29 @@ const pageSchema = {
                     <h3 class="dcrs-subheading">Our 50-Point Technical Checklist</h3>
                     <div class="dcrs-checklist-accordion">
                         {checklistCategories.map((c, i) => (
-                            <details class="dcrs-faq-item" open={i === 0}>
-                                <summary class="dcrs-faq-item__question">
-                                    <span>{c.title}</span>
-                                    <span class="dcrs-faq-item__toggle">
+                            <details class="dcrs-check-item" open={i === 0}>
+                                <summary class="dcrs-check-item__head">
+                                    <span class="dcrs-check-item__title">
+                                        <span class="dcrs-check-item__icon">
+                                            <Fragment set:html={icons[c.icon]} />
+                                        </span>
+                                        <span>{c.title}</span>
+                                    </span>
+                                    <span class="dcrs-check-item__toggle">
                                         <Fragment set:html={icons.chevronDown} />
                                     </span>
                                 </summary>
-                                <div class="dcrs-faq-item__answer">
-                                    <ul class="dcrs-checklist-items">
-                                        {(c.points || c.items || []).map((item) => (
-                                            <li><Fragment set:html={icons.check} /> {item}</li>
+                                <div class="dcrs-check-item__body">
+                                    <div class="dcrs-points-grid">
+                                        {(c.points || []).map((point) => (
+                                            <div class="dcrs-point-line">
+                                                <span class="dcrs-icon-check">
+                                                    <Fragment set:html={icons.check} />
+                                                </span>
+                                                <span>{point}</span>
+                                            </div>
                                         ))}
-                                    </ul>
+                                    </div>
                                 </div>
                             </details>
                         ))}
@@ -595,16 +624,18 @@ const pageSchema = {
                     <div class="dcrs-kicker">Common RTA Failure Points</div>
                     <h2 class="dcrs-heading__title">Top 6 Reasons Cars Fail RTA Inspections in Dubai</h2>
                     <p class="dcrs-heading__sub">
-                        Avoid re-test fees and administrative delays by checking these critical points before your official RTA testing appointment.
+                        Avoid re-test fees and administrative delays by checking these critical points before your official RTA testing appointment. Note: Workshop pre-inspections identify potential failure points to help you prepare; official pass or fail determinations are made exclusively by authorized testing centres.
                     </p>
                 </div>
 
                 <div class="dcrs-fails-grid">
                     {rtaFails.map((f) => (
                         <div class="dcrs-fail-card">
-                            <span class="dcrs-fail-card__num">{f.num}</span>
-                            <h3 class="dcrs-fail-card__title">{f.title}</h3>
-                            <p class="dcrs-fail-card__desc">{f.desc}</p>
+                            <div>
+                                <span class="dcrs-fail-card__num">{f.num}</span>
+                                <h3 class="dcrs-fail-card__title">{f.title}</h3>
+                                <p class="dcrs-fail-card__desc">{f.desc}</p>
+                            </div>
                             <span class="dcrs-fail-card__tip"><strong>Pre-Check Tip:</strong> {f.fix}</span>
                         </div>
                     ))}
@@ -618,7 +649,7 @@ const pageSchema = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Vehicle Inspections</h2>
-                    <p class="dcrs-heading__sub">12+ years of independent mechanical experience, transparent reporting, and fast and affordable pricing.</p>
+                    <p class="dcrs-heading__sub">Diagnostic-first approach, experienced technicians, and transparent written reporting at our Al Satwa workshop.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -690,12 +721,12 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">100% Independent Inspection</span>
+                        <span class="dcrs-cta-banner__badge">Vehicle Health &amp; Roadworthiness Assessment</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Car Inspection in Dubai Today
+                            Book Your Professional Car Inspection in Dubai
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing from AED 99 with a comprehensive written report. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us to schedule.
+                            Visit our Al Satwa workshop at 222 Al Satwa Road, Dubai, for thorough pre-purchase checks, RTA pre-test inspections, and complete vehicle safety assessments. Transparent pricing starting from AED 99 with an itemized written report. Open daily from 7:00 AM to 10:00 PM. Call or WhatsApp our experienced team today.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -703,7 +734,7 @@ const pageSchema = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
                         </a>
                     </div>
                 </div>
@@ -1873,6 +1904,135 @@ const pageSchema = {
         text-underline-offset: 3px;
     }
     .dcrs-cta-inline-link:hover { opacity: 0.85; }
+
+
+    /* Missing / Enhanced styles for Steps, Fails Grid, and 3-Col Pricing Table */
+    .dcrs-steps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 1024px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    .dcrs-step-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+    .dcrs-step-card__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+    }
+    .dcrs-step-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.12rem;
+        color: var(--ink);
+        margin: 0;
+    }
+    .dcrs-step-card__desc {
+        color: var(--steel);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-fails-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+        .dcrs-fails-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 1024px) {
+        .dcrs-fails-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .dcrs-fail-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .dcrs-fail-card__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: #fee2e2;
+        color: #b91c1c;
+        border-radius: 50%;
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+    .dcrs-fail-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.15rem;
+        color: var(--ink);
+        margin: 0 0 0.5rem;
+    }
+    .dcrs-fail-card__desc {
+        color: var(--steel);
+        font-size: 0.88rem;
+        line-height: 1.65;
+        margin: 0 0 1rem;
+        flex: 1;
+    }
+    .dcrs-fail-card__tip {
+        background: var(--paper);
+        border-left: 3px solid var(--brass);
+        padding: 0.65rem 0.85rem;
+        border-radius: 3px;
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        line-height: 1.45;
+    }
+    .dcrs-fail-card__tip strong {
+        color: var(--brass-deep);
+    }
+
+    .dcrs-table-includes {
+        color: var(--steel);
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    @media (max-width: 480px) {
+        .dcrs-table-includes {
+            font-size: 0.72rem;
+            line-height: 1.3;
+        }
+    }
 
 </style>
 
