@@ -576,7 +576,7 @@ const pageSchema = {
                             
                             <ul class="dcrs-type-card__list">
                                 {(t.list || []).map((b) => (
-                                    <li>
+                                    <li role="checkbox" aria-checked="false" tabindex="0">
                                         <span class="dcrs-icon-check"><Fragment set:html={icons.check} /></span>
                                         <span>{b}</span>
                                     </li>
@@ -756,6 +756,23 @@ const pageSchema = {
         </div>
 
     </main>
+
+    <script>
+        document.querySelectorAll('.dcrs-type-card__list li').forEach((item) => {
+            const toggle = () => {
+                const checked = item.classList.toggle('is-checked');
+                item.setAttribute('aria-checked', checked ? 'true' : 'false');
+            };
+            item.addEventListener('click', toggle);
+            item.addEventListener('keydown', (e: Event) => {
+                const key = (e as KeyboardEvent).key;
+                if (key === ' ' || key === 'Enter') {
+                    e.preventDefault();
+                    toggle();
+                }
+            });
+        });
+    </script>
 </BaseLayout>
 
 <style>
@@ -1224,12 +1241,12 @@ const pageSchema = {
     .dcrs-type-card__list,
     .dcrs-type-card__bullets {
         list-style: none;
-        padding: 0;
+        padding: 1rem 0 0;
         margin: 0;
         display: flex;
         flex-direction: column;
         gap: 0.65rem;
-        margin-top: auto;
+        border-top: 1px solid var(--rule-on-paper);
     }
 
     .dcrs-type-card__list li,
@@ -1240,25 +1257,44 @@ const pageSchema = {
         font-size: 0.84rem;
         color: var(--ink-soft);
         line-height: 1.5;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.15s ease;
+    }
+
+    .dcrs-type-card__list li:hover {
+        color: var(--ink);
+    }
+
+    .dcrs-type-card__list li.is-checked {
+        color: var(--ink);
+    }
+
+    .dcrs-type-card__list li.is-checked .dcrs-icon-check {
+        background: var(--brass);
+        border-color: var(--brass-deep);
+        color: var(--ink);
+        box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.25);
     }
 
     .dcrs-icon-check {
         color: var(--brass-deep);
-        background: rgba(197, 160, 89, 0.15);
-        border: 1px solid rgba(197, 160, 89, 0.3);
-        border-radius: 50%;
+        background: rgba(197, 160, 89, 0.14);
+        border: 1.5px solid var(--brass);
+        border-radius: 4px;
         width: 18px;
         height: 18px;
         flex-shrink: 0;
-        margin-top: 0.1rem;
+        margin-top: 2px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
     }
 
     .dcrs-icon-check :global(svg) {
-        width: 10px;
-        height: 10px;
+        width: 11px;
+        height: 11px;
         stroke-width: 2.5;
     }
 
@@ -1670,19 +1706,19 @@ const pageSchema = {
     .dcrs-related-card {
         background: var(--white);
         border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
+        border-radius: 8px;
         padding: 1.5rem 1.25rem;
         text-align: center;
         text-decoration: none;
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .dcrs-related-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
         border-color: var(--brass);
     }
 
@@ -1692,10 +1728,12 @@ const pageSchema = {
         justify-content: center;
         width: 48px;
         height: 48px;
-        background: var(--paper);
+        background: rgba(197, 160, 89, 0.14);
         color: var(--brass-deep);
+        border: 1px solid rgba(197, 160, 89, 0.3);
         border-radius: 50%;
         margin-bottom: 0.85rem;
+        flex-shrink: 0;
     }
 
     .dcrs-related-card__icon :global(svg) {
@@ -1704,16 +1742,18 @@ const pageSchema = {
     }
 
     .dcrs-related-card__title {
-        font-size: 0.95rem;
-        font-weight: 600;
+        font-family: var(--font-display, serif);
+        font-size: 1.02rem;
+        font-weight: 700;
         color: var(--ink);
-        margin: 0 0 0.35rem;
+        margin: 0 0 0.4rem;
+        line-height: 1.3;
     }
 
     .dcrs-related-card__desc {
-        font-size: 0.8rem;
+        font-size: 0.82rem;
         color: var(--steel);
-        line-height: 1.45;
+        line-height: 1.5;
         margin: 0;
     }
 

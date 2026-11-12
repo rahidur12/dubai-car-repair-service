@@ -33,7 +33,12 @@ const icons: Record<string, string> = {
     calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
     info: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
     car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`,
-    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`
+    arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`,
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+    truck: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    battery: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>`,
+    disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`,
+    oilCan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/><path d="M5 10l3-5h8l3 5"/><line x1="12" y1="2" x2="12" y2="5"/></svg>`
 };
 
 // ---------------------------------------------------------------------------
@@ -75,33 +80,45 @@ const faults = [
 const serviceSteps = [
     {
         num: "1",
+        icon: "tools",
         title: "Pressure & Temperature Assessment",
-        desc: "We connect digital manifold gauges to monitor high-side and low-side pressures while checking dashboard vent temperatures against ambient conditions."
+        desc: "We connect digital manifold gauges to monitor high-side and low-side pressures while checking dashboard vent temperatures against ambient conditions.",
+        deliverable: "High/Low Pressure & Vent Baseline"
     },
     {
         num: "2",
+        icon: "search",
         title: "Electronic & UV Leak Detection",
-        desc: "If pressures indicate low refrigerant, technicians use electronic leak detectors and UV fluorescent dye to inspect hose connections, condenser fins, compressor seals, and service valves."
+        desc: "If pressures indicate low refrigerant, technicians use electronic leak detectors and UV fluorescent dye to inspect hose connections, condenser fins, compressor seals, and service valves.",
+        deliverable: "UV Dye & Sniffer Leak Mapping"
     },
     {
         num: "3",
+        icon: "shield",
         title: "Transparent Quote Approval",
-        desc: "We explain the diagnostic findings and provide an itemized quote for necessary repairs, parts, and refrigerant recharge before any work begins."
+        desc: "We explain the diagnostic findings and provide an itemized quote for necessary repairs, parts, and refrigerant recharge before any work begins.",
+        deliverable: "Upfront Itemized Estimate"
     },
     {
         num: "4",
+        icon: "snowflake",
         title: "Vacuum & Moisture Evacuation",
-        desc: "We connect a specialized vacuum station to evacuate air and moisture from the sealed circuit, ensuring the system is clean and dry before recharging."
+        desc: "We connect a specialized vacuum station to evacuate air and moisture from the sealed circuit, ensuring the system is clean and dry before recharging.",
+        deliverable: "Deep Vacuum Moisture Removal"
     },
     {
         num: "5",
+        icon: "bolt",
         title: "Precision Refrigerant Recharge",
-        desc: "We recharge the system by weight according to manufacturer specifications (R134a or R1234yf) and add the correct compatible compressor lubricant (such as PAG or POE oil specified for your vehicle)."
+        desc: "We recharge the system by weight according to manufacturer specifications (R134a or R1234yf) and add the correct compatible compressor lubricant (such as PAG or POE oil specified for your vehicle).",
+        deliverable: "Gram-Accurate OEM Fill & PAG Oil"
     },
     {
         num: "6",
+        icon: "check",
         title: "Cooling Performance Verification",
-        desc: "We test the vehicle under operating load to evaluate vent temperature and cooling performance against manufacturer specifications and Dubai ambient temperatures before handover."
+        desc: "We test the vehicle under operating load to evaluate vent temperature and cooling performance against manufacturer specifications and Dubai ambient temperatures before handover.",
+        deliverable: "Digital Vent Temp Test (<7°C)"
     }
 ];
 
@@ -425,11 +442,20 @@ const pageSchema = {
                     {serviceSteps.map((s) => (
                         <div class="dcrs-process-card-item">
                             <div class="dcrs-process-card-item__top">
-                                <span class="dcrs-process-card-item__num">{s.num}</span>
-                                <span class="dcrs-process-card-item__step">Phase 0{s.num}</span>
+                                <div class="dcrs-process-num-wrap">
+                                    <span class="dcrs-process-card-item__num">{s.num}</span>
+                                    <span class="dcrs-process-card-item__step">Phase 0{s.num}</span>
+                                </div>
+                                <span class="dcrs-process-card-item__icon">
+                                    <Fragment set:html={icons[s.icon] || icons.tools} />
+                                </span>
                             </div>
                             <h3 class="dcrs-process-card-item__title">{s.title}</h3>
                             <p class="dcrs-process-card-item__desc">{s.desc}</p>
+                            <div class="dcrs-process-deliverable">
+                                <span class="dcrs-deliverable-label">Deliverable:</span>
+                                <span class="dcrs-deliverable-value">{s.deliverable}</span>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -1240,6 +1266,7 @@ const pageSchema = {
     .dcrs-process-card-item {
         background: var(--white);
         border: 1px solid var(--rule-on-paper);
+        border-top: 3px solid var(--brass);
         border-radius: 8px;
         padding: 1.6rem 1.4rem;
         display: flex;
@@ -1260,6 +1287,12 @@ const pageSchema = {
         align-items: center;
         justify-content: space-between;
         margin-bottom: 1.15rem;
+    }
+
+    .dcrs-process-num-wrap {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     .dcrs-process-card-item__num {
@@ -1290,6 +1323,24 @@ const pageSchema = {
         font-weight: 600;
     }
 
+    .dcrs-process-card-item__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: rgba(197, 160, 89, 0.12);
+        color: var(--brass-deep);
+        border-radius: 50%;
+        border: 1px solid rgba(197, 160, 89, 0.25);
+        flex-shrink: 0;
+    }
+
+    .dcrs-process-card-item__icon :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+
     .dcrs-process-card-item__title {
         font-family: var(--font-display, serif);
         font-size: 1.12rem;
@@ -1303,7 +1354,34 @@ const pageSchema = {
         font-size: 0.88rem;
         color: var(--steel);
         line-height: 1.6;
-        margin: 0;
+        margin: 0 0 1rem;
+    }
+
+    .dcrs-process-deliverable {
+        margin-top: auto;
+        padding-top: 0.85rem;
+        border-top: 1px dashed var(--rule-on-paper);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        font-size: 0.78rem;
+    }
+
+    .dcrs-deliverable-label {
+        font-family: var(--font-mono, monospace);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--steel);
+        font-size: 0.68rem;
+        font-weight: 600;
+    }
+
+    .dcrs-deliverable-value {
+        color: var(--brass-deep);
+        font-weight: 600;
+        font-size: 0.8rem;
     }
 
     /* 5. Pricing Table */
@@ -1545,19 +1623,19 @@ const pageSchema = {
     .dcrs-related-card {
         background: var(--white);
         border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
+        border-radius: 8px;
         padding: 1.5rem 1.25rem;
         text-align: center;
         text-decoration: none;
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .dcrs-related-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
         border-color: var(--brass);
     }
 
@@ -1567,10 +1645,12 @@ const pageSchema = {
         justify-content: center;
         width: 48px;
         height: 48px;
-        background: var(--paper);
+        background: rgba(197, 160, 89, 0.14);
         color: var(--brass-deep);
+        border: 1px solid rgba(197, 160, 89, 0.3);
         border-radius: 50%;
         margin-bottom: 0.85rem;
+        flex-shrink: 0;
     }
 
     .dcrs-related-card__icon :global(svg) {
@@ -1579,16 +1659,18 @@ const pageSchema = {
     }
 
     .dcrs-related-card__title {
-        font-size: 0.95rem;
-        font-weight: 600;
+        font-family: var(--font-display, serif);
+        font-size: 1.02rem;
+        font-weight: 700;
         color: var(--ink);
-        margin: 0 0 0.35rem;
+        margin: 0 0 0.4rem;
+        line-height: 1.3;
     }
 
     .dcrs-related-card__desc {
-        font-size: 0.8rem;
+        font-size: 0.82rem;
         color: var(--steel);
-        line-height: 1.45;
+        line-height: 1.5;
         margin: 0;
     }
 
