@@ -5,8 +5,8 @@ import service7Image from '../../assets/images/service7.webp';
 // ---------------------------------------------------------------------------
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
-const pageTitle = "Mobile Car Repair Dubai | Mobile Mechanic Comes to You";
-const pageDescription = "Mobile car repair in Dubai - mechanic comes to your home, office or roadside. Battery, oil change, AC & diagnostics. Call-out from AED 30. Open 7 days.";
+const pageTitle = "Mobile Car Repair Dubai | On-Site Mechanic in Dubai – From AED 30";
+const pageDescription = "Mobile car repair in Dubai. On-site battery replacement, jump starts, diagnostics & minor repairs. Call-out from AED 30. Al Satwa workshop support. Call or WhatsApp.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -38,7 +38,8 @@ const icons: Record<string, string> = {
     coolant: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
     alert: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
     arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`,
-    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
+    infoCircle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`
 };
 
 // ---------------------------------------------------------------------------
@@ -46,74 +47,81 @@ const icons: Record<string, string> = {
 // ---------------------------------------------------------------------------
 const onsiteServices = [
     {
+        icon: "mapPin",
+        title: "Central Dubai Call-Out & Arrival",
+        desc: "Covers technician travel and arrival at your vehicle's designated location in central Dubai neighbourhoods. Diagnostic scanning, labour, and replacement parts are itemised and charged separately with your approval.",
+        price: "From AED 30",
+        mobileScope: "yes"
+    },
+    {
         icon: "battery",
         title: "Car Battery Testing & Replacement",
-        desc: "On-site digital conductance and load testing to confirm battery health, reserve capacity, and starting draw. When replacement is necessary, we supply and fit OEM-specification AGM, EFB, or flooded batteries matched to your vehicle's DIN dimensions and cold cranking amps (CCA). Includes alternator charging circuit test and terminal anti-corrosion treatment.",
-        price: "AED 180–680 [CONFIRM: mobile battery replacement package pricing range]",
+        desc: "On-site battery health check and charging circuit test. When replacement is required, the price includes the supply, professional fitting, and testing of a new battery matched to your vehicle's specifications.",
+        price: "AED 180 – 680",
         mobileScope: "yes"
     },
     {
         icon: "laptop",
-        title: "OBD-II Multi-System Diagnostics",
-        desc: "On-site electronic interrogation across powertrain (PCM), transmission (TCM), ABS/stability, and body control modules (BCM). We scan active and pending diagnostic trouble codes (DTCs), evaluate live sensor parameters, and determine whether the issue is a failed sensor or a mechanical fault requiring workshop intervention.",
-        price: "AED 80–130 [CONFIRM: mobile diagnostic scan pricing]",
+        title: "OBD-II Multi-System Diagnostic Scan",
+        desc: "Connecting a diagnostic scanner to read active and stored fault codes across engine, transmission, ABS, and body modules to identify electronic or sensor faults before initiating repairs.",
+        price: "AED 80 – 130",
         mobileScope: "yes"
     },
     {
         icon: "bolt",
         title: "Regulated Jump Start & Alternator Check",
-        desc: "Safe jump-start assistance using commercial voltage-regulated booster packs, protecting sensitive ECU circuits against load-dump voltage spikes. We immediately verify alternator output voltage (13.8V–14.4V under load) and diode ripple before leaving to ensure your vehicle does not stall in traffic.",
-        price: "AED 60–100 [CONFIRM: jump start service fee]",
+        desc: "Safe jump start assistance using a commercial booster pack to protect vehicle electronics, followed by an alternator voltage check to confirm the charging system is functioning properly.",
+        price: "AED 60 – 100",
         mobileScope: "yes"
     },
     {
         icon: "oil",
         title: "Mobile Engine Oil & Filter Change",
-        desc: "Routine lube servicing performed cleanly at your residential or commercial parking bay using sealed spill-containment equipment. We drain degraded oil, install an OEM-grade filter with a fresh sump crush washer, and refill with manufacturer-approved synthetic oil matching required viscosity and API/ACEA specifications. Waste oil is collected for certified recycling.",
-        price: "AED 119–410 [CONFIRM: mobile oil change pricing range]",
+        desc: "On-site draining of degraded oil, installation of a replacement oil filter, and refilling with manufacturer-specified oil. Subject to suitable parking surface and property permissions.",
+        price: "AED 119 – 410",
         mobileScope: "yes"
     },
     {
         icon: "snowflake",
         title: "AC Pressure Diagnostic & Refrigerant Top-Up",
-        desc: "On-site manifold gauge pressure diagnostics across high and low service ports for systems blowing warm. If the compressor clutch engages and the sealed refrigerant circuit holds pressure, we top up R134a or R1234yf refrigerant to factory weight. Systems with severe pressure leaks or compressor failure are referred to our workshop.",
-        price: "AED 130–380 [CONFIRM: mobile AC top-up pricing range]",
-        mobileScope: "yes"
+        desc: "Manifold gauge pressure check to evaluate refrigerant levels and compressor operation. A top-up is performed only if the system holds pressure without major leaks; active leaks require workshop repair.",
+        price: "AED 130 – 380",
+        mobileScope: "partial"
     },
     {
         icon: "tyre",
-        title: "On-Site Tyre Puncture Plug-Patch Repair",
-        desc: "Tread-centre puncture inspection and permanent vulcanising plug-patch repair where tyre structure and puncture angle permit. Includes pneumatic pressure equalization and TPMS sensor verification. Sidewall cuts, shoulder punctures, or severely aged rubber requiring mounting machinery are referred to our workshop tyre bay.",
-        price: "AED 55–80 [CONFIRM: tyre puncture repair price]",
+        title: "On-Site Tyre Puncture Plug Repair",
+        desc: "On-site repair for standard tread-centre punctures where tyre structure and safety permit. Sidewall damage, shoulder punctures, or worn tyres requiring replacement must be handled at a tyre bay.",
+        price: "AED 55 – 80",
         mobileScope: "yes"
     },
     {
         icon: "brake",
         title: "Brake System Inspection & Fluid Top-Up",
-        desc: "Wheel-off visual inspection of brake pad friction material thickness, rotor disc scoring, and hydraulic caliper slider condition. We test brake fluid boiling point and top up reservoirs on-site. Complete disc rotor skimming or pad replacements require our Al Satwa workshop hydraulic ramps for safety and calibrated torque compliance.",
-        price: "From AED 80 [CONFIRM: mobile brake inspection fee]",
+        desc: "Visual examination of brake pad thickness, disc rotor condition, and fluid levels. Brake pad and disc rotor replacement require workshop hydraulic hoists for safety and proper torque installation.",
+        price: "From AED 80",
         mobileScope: "partial"
     },
     {
         icon: "filter",
-        title: "Engine Air & Cabin Microfilter Replacement",
-        desc: "Rapid on-site replacement of dust-saturated engine intake air filters and activated carbon cabin filters. In Dubai's arid climate, airborne particulate accumulation chokes engine induction and creates musty air conditioning odour; regular replacement restores airflow and HVAC efficiency.",
-        price: "AED 50–150 [CONFIRM: filter replacement pricing range]",
+        title: "Engine Air & Cabin Filter Replacement",
+        desc: "On-site replacement of dust-saturated engine intake air filters and cabin filters to restore clean airflow and HVAC performance in dusty driving conditions.",
+        price: "AED 50 – 150",
         mobileScope: "yes"
     },
     {
         icon: "coolant",
         title: "Cooling System Inspection & Fluid Top-Up",
-        desc: "Thermal inspection of radiator hoses, expansion tank pressure cap, and visible engine hose couplings for heat degradation or crusting. We top up cooling circuits with premixed manufacturer-grade OAT or HOAT coolant. Active radiator leaks, failed water pumps, or thermostat housing cracks require workshop towing to prevent severe engine overheating.",
-        price: "AED 70–160 [CONFIRM: coolant inspection and top-up price]",
+        desc: "Visual check of radiator hoses, expansion tank cap, and coolant level, with top-up using appropriate coolant. Severe leaks, water pump failures, or radiator cracks require workshop towing.",
+        price: "AED 70 – 160",
         mobileScope: "yes"
     }
 ];
 
 const workshopRepairs = [
     "AC compressor replacement, evaporator core teardown, and nitrogen decay leak testing",
-    "Brake pad and disc rotor replacement (requires hydraulic lift and precision caliper torquing)",
-    "Timing belt, timing chain, and water pump mechanical replacements",
+    "Brake pad and disc rotor replacement (requires hydraulic hoist and calibrated torque wrench)",
+    "Timing belt, timing chain, and mechanical water pump replacements",
     "Cylinder head gasket replacement and internal engine rebuilding or overhauling",
     "Four-wheel laser alignment and dynamic high-speed wheel balancing",
     "Tyre demounting, bead seating, and new tyre machine fitting",
@@ -125,102 +133,92 @@ const steps = [
     {
         num: "1",
         icon: "phone",
-        title: "Call or Share Location via WhatsApp",
+        title: "Contact & Share Fault Details",
         desc: "Contact us via phone at +971 56 612 1423 or WhatsApp. Provide your vehicle make, model, year, parking location, and a description of the symptoms, no-start condition, or dashboard warnings."
     },
     {
         num: "2",
         icon: "car",
-        title: "Triage & Technician Dispatch",
-        desc: "Our Al Satwa team evaluates the fault to verify on-site feasibility. A technician is dispatched with multi-system scanners, electrical testing meters, and vehicle-matched consumables."
+        title: "Initial Assessment & Dispatch Confirmation",
+        desc: "Our team evaluates the reported issue to confirm on-site feasibility, technician availability, and the applicable call-out fee before dispatching a mobile mechanic."
     },
     {
         num: "3",
         icon: "search",
-        title: "On-Site Mechanical Diagnostics",
-        desc: "Upon arrival, the mechanic performs hands-on testing-whether OBD-II scan, battery conductance test, or fluid pressure check. You receive a clear explanation and an itemised quotation before work begins."
+        title: "On-Site Inspection & Itemised Quote",
+        desc: "Upon arrival, the mechanic conducts the relevant testing—whether an OBD-II scan, battery conductance check, or visual inspection—and provides a clear quote before work begins."
     },
     {
         num: "4",
         icon: "check",
-        title: "On-Site Repair or Workshop Coordination",
-        desc: "Approved mobile services are executed cleanly on the spot. If the fault requires workshop lifting equipment or extensive mechanical dismantling, we coordinate safe transfer to our 222 Al Satwa Road facility."
+        title: "On-Site Repair or Workshop Transfer",
+        desc: "Approved minor services are completed cleanly on-site. If the fault requires specialized workshop lifting or major disassembly, we coordinate transfer to our Al Satwa facility with your approval."
     }
-];
-
-const responseTimes = [
-    { area: "Al Satwa, Jumeirah, Karama, Bur Dubai", time: "25–40 min [CONFIRM: dispatch transit window]" },
-    { area: "Downtown Dubai, Business Bay, DIFC, Za'abeel", time: "30–45 min [CONFIRM: dispatch transit window]" },
-    { area: "Al Quoz, Al Barsha, Sheikh Zayed Rd Corridor", time: "35–50 min [CONFIRM: dispatch transit window]" },
-    { area: "Dubai Marina, JBR, JVC, JLT", time: "40–60 min [CONFIRM: dispatch transit window]" },
-    { area: "Mirdif, Al Nahda, International City", time: "45–65 min [CONFIRM: dispatch transit window]" }
 ];
 
 const coverageAreas = [
     "Al Satwa", "Jumeirah", "Bur Dubai", "Karama", "Al Mankhool",
     "Za'abeel", "DIFC", "Downtown Dubai", "Business Bay", "Al Quoz",
-    "Al Barsha", "Dubai Marina", "JBR", "JVC", "JLT",
-    "Mirdif", "Al Nahda", "Al Jaddaf", "Oud Metha", "Sheikh Zayed Rd",
-    "International City", "Silicon Oasis", "Al Wasl", "Al Safa"
+    "Al Barsha", "Sheikh Zayed Road corridor"
 ];
 
 const whyChooseUs = [
     {
-        icon: "userCheck",
-        title: "Permanent Workshop Technicians",
-        desc: "Every mobile mechanic dispatched is a permanent technician from our Al Satwa repair facility-not a freelance gig worker. You receive genuine workshop-grade technical expertise and trade accountability."
-    },
-    {
-        icon: "search",
-        title: "Accurate Diagnostic Equipment",
-        desc: "We bring multi-system OBD-II scanners and digital electrical testing instruments on every mobile dispatch. We identify the root mechanical or electrical cause rather than swapping components speculatively."
-    },
-    {
         icon: "award",
-        title: "Verified OEM-Grade Parts & Fluids",
-        desc: "All replacement batteries, filtration components, and lubricants carried in our mobile units adhere to manufacturer viscosity ratings and OEM engineering specifications."
+        title: "Established Independent Workshop (Since 2012)",
+        desc: "Serving motorists across Dubai for over a decade, with more than 8,500 vehicles serviced and a 4.8-star Google customer rating."
+    },
+    {
+        icon: "userCheck",
+        title: "Skilled Workshop Technicians",
+        desc: "Mobile services are handled by experienced mechanics from our Al Satwa workshop team of 8 professionals, ensuring practical trade knowledge on-site."
     },
     {
         icon: "receipt",
-        title: "Transparent, Upfront Quotations",
-        desc: "Call-out charges and diagnostic scope are communicated clearly before deployment. After on-site inspection, you receive an itemised quote covering parts and labour with no hidden arrival surcharges."
+        title: "Transparent Upfront Quotations",
+        desc: "We communicate call-out fees before dispatch and provide an itemised quote covering labour and any replacement parts before work begins."
+    },
+    {
+        icon: "search",
+        title: "Appropriate Mobile Diagnostic Tools",
+        desc: "Responding technicians bring appropriate testing tools—such as battery testers, code scanners, or jump units—matched to the reported vehicle symptoms."
     },
     {
         icon: "shield",
-        title: "Al Satwa Workshop Backup",
-        desc: "If on-site inspection reveals complex internal engine, gearbox, or suspension damage, our dedicated Al Satwa facility provides complete garage resources, lifting ramps, and prioritised booking."
+        title: "Workshop Facilities for Major Repairs",
+        desc: "If on-site inspection indicates complex mechanical or hydraulic faults, our 222 Al Satwa Road garage is equipped with hoists and machinery for complete repair."
     },
     {
         icon: "mapPin",
-        title: "Central Dubai Dispatch & Seven-Day Service",
-        desc: "Centrally positioned at 222 Al Satwa Road, we operate 7:00 AM to 10:00 PM every day, providing responsive mobile coverage across residential communities, business towers, and roadside locations."
+        title: "Central Dubai Location & 7-Day Operations",
+        desc: "Centrally based at 222 Al Satwa Road, open daily from 7:00 AM to 10:00 PM to support drivers with on-site assistance and workshop appointments."
     }
 ];
 
 const faqs = [
     {
         q: "How quickly can a mobile mechanic reach my location in Dubai?",
-        a: "Technicians are dispatched directly from our central workshop at 222 Al Satwa Road. Typical transit times range between 25 and 45 minutes for central neighbourhoods such as Jumeirah, Karama, Downtown, and Business Bay, and 40 to 60 minutes for outer districts like Dubai Marina, JVC, or Mirdif. Actual arrival times depend on traffic conditions on major arterial routes including Sheikh Zayed Road (E11) and Al Khail Road (E44). [CONFIRM: average dispatch times and peak traffic buffer]"
+        a: "Arrival times depend on current technician availability, your specific location in Dubai, and traffic conditions along major routes such as Sheikh Zayed Road (E11) and Al Khail Road (E44). Central locations near our Al Satwa workshop are generally reached faster than outer communities. When you contact us and share your location, our team provides an estimated arrival window before dispatch."
     },
     {
         q: "What is the call-out fee for mobile car repair in Dubai?",
-        a: "Our standard mobile call-out fee is AED 30 [CONFIRM: call-out fee amount and travel radius]. This fee covers technician travel, arrival at your designated vehicle location, and initial physical assessment. If diagnostic scanning, fluid testing, or replacement parts are required, an itemised quote is provided for your approval before any repair work commences."
+        a: "Our mobile call-out fee starts from AED 30 for central Dubai areas (such as Al Satwa, Jumeirah, and Business Bay). The call-out fee covers technician travel and initial assessment of your vehicle. Any required diagnostic scanning, labour, or replacement parts are itemised in a clear quotation for your approval before work begins."
     },
     {
         q: "Can a mobile mechanic repair car AC problems on-site?",
-        a: "Our mobile team can perform manifold pressure gauge testing, electrical checks on the compressor clutch and relays, and refrigerant top-ups (R134a or R1234yf) on systems that hold vacuum and pressure. However, if your air conditioning system has suffered an active refrigerant leak, compressor seizure, or evaporator core failure, the vehicle must be brought to our Al Satwa workshop for nitrogen pressure testing, leak tracing, and recovery station servicing."
+        a: "A technician can inspect AC high and low port pressures, check compressor clutch engagement, and perform a refrigerant top-up if the system holds pressure and has no severe leaks. However, major refrigerant leaks, failed compressors, condenser damage, or evaporator replacements require our Al Satwa workshop for recovery station recycling, component teardown, and leak testing."
     },
     {
         q: "What vehicle information should I provide when booking mobile service?",
-        a: "Please share your exact parking location (building name, street, or WhatsApp GPS pin), your vehicle make, model, and year of manufacture, and a clear description of the issue-such as whether the engine cranks, any active dashboard warning lights, unusual noises, or visible fluid leaks. This ensures the responding technician arrives with the correct battery group size, scan software, and fluid specifications for your vehicle."
+        a: "To ensure we send the right tools and parts, please provide your exact parking location (building, street, or WhatsApp GPS pin), vehicle make, model, and year, along with a description of the symptoms—for example, whether the engine cranks, if dashboard lights are on, or if there are strange sounds or leaks."
     },
     {
         q: "Is mobile car repair more expensive than visiting your workshop?",
-        a: "Our hourly labour and parts pricing remain consistent between mobile call-outs and our physical Al Satwa workshop. The only difference is the nominal mobile call-out charge [CONFIRM: call-out fee amount]. For vehicles that cannot start or are unsafe to drive, mobile repair is frequently more economical than paying for third-party flatbed towing across Dubai."
+        a: "Our labour rates and parts pricing are consistent between mobile service and our Al Satwa workshop. The only difference is the nominal call-out fee to cover technician travel. For non-starting vehicles, mobile repair is often more cost-effective and convenient than arranging flatbed towing across Dubai."
     },
     {
         q: "Can you carry out repairs inside covered residential or basement parking?",
-        a: "Yes, provided the building management permits mobile vehicle maintenance and there is adequate ceiling clearance and ventilation. We perform battery installations, diagnostic scans, filter replacements, and minor electrical repairs cleanly using protective mats and containment tools. Fully enclosed basement levels without mechanical airflow are restricted from engine run tests or fluid changes for environmental and safety compliance."
+        a: "Yes, provided the building or community management permits on-site maintenance and there is adequate ceiling clearance and lighting. Services like battery replacement, electronic scanning, and minor inspections are well-suited for parking spaces. Complex repairs, major fluid draining, or tasks creating noise or fumes are restricted in enclosed basements for environmental and safety reasons."
     }
 ];
 
@@ -247,7 +245,7 @@ const pageSchema = {
                 "@id": "https://dubaicarrepairservice.com/mobile-car-repair-dubai"
             },
             "serviceType": "Mobile Mechanic Service",
-            "description": "Professional mobile car repair service in Dubai. Certified mechanics provide on-site repairs at your home, office or roadside including diagnostics, battery replacement, AC service, oil changes and general vehicle repairs. Available 7AM–10PM across Dubai.",
+            "description": "Mobile car repair assistance in Dubai. On-site battery testing and replacement, jump starts, diagnostic scanning, and minor repairs at selected locations. Dispatched from 222 Al Satwa Road.",
             "provider": {
                 "@id": "https://dubaicarrepairservice.com/#localbusiness"
             },
@@ -259,7 +257,7 @@ const pageSchema = {
                 "@type": "Offer",
                 "price": 30,
                 "priceCurrency": "AED",
-                "description": "Call-out fee",
+                "description": "Call-out fee from",
                 "availability": "https://schema.org/InStock"
             }
         },
@@ -322,7 +320,7 @@ const pageSchema = {
                     Mobile Car Repair Dubai - On-Site Mechanic Comes to You
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Experiencing an unexpected mechanical fault, sudden battery depletion, or flat tyre in a basement car park or roadside across Dubai can disrupt your entire day. Our mobile car repair in Dubai brings professional workshop tools, portable OBD-II diagnostic equipment, and certified mechanics straight to your home, office, or breakdown location. Supported by our central Al Satwa garage, we deliver prompt on-site repairs and transparent solutions with fast and affordable pricing.
+                    Dealing with a dead battery, puncture, or unexpected breakdown? With our mobile car repair in Dubai, customers can request on-site assistance at selected locations across the city. Dispatched from our central Al Satwa workshop, our mobile technicians handle common roadside and driveway issues—including battery testing and replacement, jump starts, computer diagnostics, and minor repairs. For complex mechanical faults requiring lifting equipment or major teardown, we provide honest assessments and coordinate workshop transfer. Call-out from AED 30.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -342,16 +340,16 @@ const pageSchema = {
                     <div class="dcrs-intro-content">
                         <div class="dcrs-kicker">Service Overview</div>
                         <h2 class="dcrs-heading__title">
-                            Mobile Car Repair Dubai - Professional On-Site Workshop Services
+                            Mobile Car Repair Dubai - Practical On-Site Mechanical Help
                         </h2>
                         <p class="dcrs-lead-text">
-                            Navigating congested Dubai highways with a misfiring engine or waiting for hours in roadside recovery queues creates avoidable frustration and potential safety hazards. Modern mobile automotive servicing offers a sensible, time-saving alternative by bringing essential garage capabilities directly to your vehicle's parking stall. Whether dealing with a vehicle that refuses to start in an underground villa garage or facing a sudden tyre blowout, on-site mechanical intervention resolves the problem efficiently without towing expenses.
+                            When your car experiences a sudden breakdown, starting trouble, or a warning light, driving to a garage may be impossible or unsafe. Mobile car repair provides practical assistance by sending a technician directly to your vehicle's location—whether in a residential driveway, office car park, or roadside bay. When you contact us, our team discusses the symptoms and parking access to determine whether the issue can be safely diagnosed and resolved on-site or if workshop repair is necessary.
                         </p>
                         <p class="dcrs-body-text">
-                            Dispatched directly from our primary workshop at 222 Al Satwa Road, our mobile technicians carry high-precision electronic scan tools, battery conductance analyzers, heavy-duty floor jacks, and specialized hand tools. We carry out urgent on-site <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">mobile battery replacement</a>, mess-free <a href="/engine-oil-change-dubai" class="dcrs-inline-link">scheduled oil changes</a>, emergency puncture repairs, and electronic diagnostics. For complex repairs that cannot be performed safely roadside, our team provides transparent guidance and coordinates transfer to our garage for advanced <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine servicing</a>.
+                            For eligible faults, our technicians carry portable diagnostic scanners, battery testers, jump-pack units, and essential hand tools directly from our central workshop on 222 Al Satwa Road. Common on-site services include <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">mobile battery replacement</a>, emergency jump starts, puncture repairs, and electronic fault code scanning. If inspection indicates deeper issues—such as brake disc wear, transmission faults, or severe overheating—we advise you transparently and can arrange for vehicle transfer to our workshop for dedicated <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine repair</a> or <a href="/car-maintenance-dubai" class="dcrs-inline-link">major vehicle servicing</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            Our mobile service vans operate seven days a week across all major Dubai communities, from Downtown, Business Bay, and DIFC to Jumeirah, Dubai Marina, and Al Barsha. We provide clear upfront cost estimates over the phone or WhatsApp before dispatch, ensuring complete peace of mind. For immediate technician availability or to share your live pin location, contact our <a href="/contact" class="dcrs-inline-link">mobile dispatch desk</a>.
+                            Mobile assistance is available across central Dubai districts, including Al Satwa, Jumeirah, Business Bay, Downtown, and surrounding areas, subject to technician availability and current traffic. Before dispatching a mechanic, we explain the applicable call-out fee and discuss initial pricing so you know what to expect. To request mobile assistance or confirm availability for your area, simply call us or share your location via WhatsApp.
                         </p>
 
                         <div class="dcrs-action-row">
@@ -376,7 +374,7 @@ const pageSchema = {
                             />
                             <div class="dcrs-photo-badge">
                                 <div class="dcrs-photo-badge__value">AED 30</div>
-                                <div class="dcrs-photo-badge__label">Call-Out Fee Only</div>
+                                <div class="dcrs-photo-badge__label">Call-Out Fee From</div>
                             </div>
                         </div>
                     </div>
@@ -420,7 +418,7 @@ const pageSchema = {
                 </div>
 
                 <p class="dcrs-pricing-disclaimer">
-                    <Fragment set:html={icons.info} /> Call-out fees start from AED 30 in central districts (Al Satwa, Jumeirah, Business Bay). Prices include labor and standard diagnostic scanning. Replacement parts (batteries, fluids, sensors) are itemized transparently.
+                    <Fragment set:html={icons.infoCircle} /> Note: Call-out fees start from AED 30 in central districts (Al Satwa, Jumeirah, Business Bay). Call-out covers travel and arrival; diagnostic scanning, labour, and replacement parts (such as batteries or filters) are itemised transparently for customer approval before work proceeds.
                 </p>
             </div>
         </section>
@@ -448,7 +446,7 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 5. TYPES, PARTS, PRODUCTS AND BRANDS ----------------------------->
+        <!-- 5. CAPABILITIES & BOUNDARIES ------------------------------------->
         <section class="dcrs-section dcrs-section--tint" id="capabilities">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
@@ -469,7 +467,7 @@ const pageSchema = {
                         </h3>
                     </div>
                     <p class="dcrs-workshop-box__lead">
-                        Certain automotive repairs cannot be carried out safely or reliably in a parking bay without heavy hydraulic lifts, precision torque rigs, or controlled cleanroom environments. Attempting complex structural or internal repairs roadside compromises safety. If your vehicle requires workshop intervention, we explain the reasons clearly and coordinate the transition.
+                        Certain automotive repairs cannot be carried out safely or reliably in a parking bay without heavy hydraulic lifts, precision torque rigs, or controlled cleanroom environments. Attempting complex structural or internal repairs roadside compromises safety. If your vehicle requires workshop intervention, we explain the reasons clearly and coordinate the transition with your approval.
                     </p>
                     <div class="dcrs-workshop-list">
                         {workshopRepairs.map((w) => (
@@ -485,34 +483,35 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 6. SIGNS YOU NEED THIS SERVICE ----------------------------------->
+        <!-- 6. COVERAGE & SERVICE LOCATIONS ---------------------------------->
         <section class="dcrs-section dcrs-section--paper" id="coverage">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Coverage &amp; Arrival Times</div>
-                    <h2 class="dcrs-heading__title">When to Request a Mobile Mechanic in Dubai</h2>
+                    <div class="dcrs-kicker">Coverage &amp; Locations</div>
+                    <h2 class="dcrs-heading__title">Mobile Car Repair Service Locations in Dubai</h2>
                     <p class="dcrs-heading__sub">
-                        Ideal for basement parking breakdowns, home driveway maintenance, or roadside warning lights.
+                        Dispatched from our central Al Satwa workshop, serving drivers across central and surrounding Dubai communities.
                     </p>
                 </div>
 
                 <div class="dcrs-coverage-grid">
                     <div class="dcrs-coverage-card">
-                        <h3 class="dcrs-coverage-card__title">Estimated Mobile Arrival Times</h3>
-                        <p class="dcrs-coverage-card__sub">Times reflect typical daytime traffic from our central Al Satwa Road workshop.</p>
-                        <div class="dcrs-times-list">
-                            {responseTimes.map((r) => (
-                                <div class="dcrs-time-row">
-                                    <span class="dcrs-time-area">{r.area}</span>
-                                    <span class="dcrs-time-val">{r.time}</span>
-                                </div>
-                            ))}
+                        <h3 class="dcrs-coverage-card__title">Mobile Service Availability</h3>
+                        <p class="dcrs-coverage-card__sub">
+                            Mobile assistance is dispatched directly from our workshop at 222 Al Satwa Road. Response times vary based on current technician availability, the nature of the vehicle fault, and real-time traffic conditions across Dubai's road network. Priority is given to central areas close to our facility.
+                        </p>
+                        <div class="dcrs-callout-action">
+                            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                                <Fragment set:html={icons.chat} /> Share WhatsApp Location
+                            </a>
                         </div>
                     </div>
 
                     <div class="dcrs-coverage-card">
-                        <h3 class="dcrs-coverage-card__title">Communities We Serve Daily</h3>
-                        <p class="dcrs-coverage-card__sub">Our mobile vans cover residential villas, commercial towers, and highway lay-bys.</p>
+                        <h3 class="dcrs-coverage-card__title">Central Communities We Frequently Attend</h3>
+                        <p class="dcrs-coverage-card__sub">
+                            We attend mobile call-outs across central and nearby Dubai communities, subject to scheduling:
+                        </p>
                         <div class="dcrs-areas-tags">
                             {coverageAreas.map((area) => (
                                 <span class="dcrs-area-tag">
@@ -520,6 +519,9 @@ const pageSchema = {
                                 </span>
                             ))}
                         </div>
+                        <p class="dcrs-coverage-note">
+                            Need assistance outside these central areas? Share your location pin via WhatsApp to check current availability and travel estimates.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -531,18 +533,18 @@ const pageSchema = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Our Mobile Mechanics</h2>
-                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, genuine replacement parts, and fast and affordable pricing.</p>
+                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, qualified mechanics, and transparent pricing.</p>
                 </div>
 
-                <div class="dcrs-reasons-grid">
+                <div class="dcrs-why-grid">
                     {whyChooseUs.map((r) => (
-                        <div class="dcrs-reason-card">
-                            <span class="dcrs-reason-card__icon">
+                        <div class="dcrs-why-card">
+                            <span class="dcrs-why-card__icon">
                                 <Fragment set:html={icons[r.icon]} />
                             </span>
                             <div>
-                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
-                                <p class="dcrs-reason-card__text">{r.desc}</p>
+                                <h3 class="dcrs-why-card__title">{r.title}</h3>
+                                <p class="dcrs-why-card__desc">{r.desc}</p>
                             </div>
                         </div>
                     ))}
@@ -603,12 +605,12 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Mobile Mechanic On Standby</span>
+                        <span class="dcrs-cta-banner__badge">Al Satwa Workshop &amp; Mobile Assistance</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Need a Mobile Mechanic Dispatched in Dubai?
+                            Book Mobile Car Repair in Dubai
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing with call-out from AED 30. Open daily 7:00 AM – 10:00 PM. Call or share your WhatsApp location pin for rapid technician arrival.
+                            Contact our team with your vehicle details and location to confirm service availability, call-out charges, and estimated arrival time. Central Dubai call-outs from AED 30. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -616,7 +618,7 @@ const pageSchema = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp Pin
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
                         </a>
                     </div>
                 </div>
@@ -640,13 +642,13 @@ const pageSchema = {
     :root {
         --ink: #10201F;
         --ink-soft: #1B302E;
-        --paper: #E8E4D8;
-        --paper-alt: #DFDACB;
-        --white: #FBF9F4;
+        --paper: #FAF8F5;
+        --paper-alt: #f1f3f5;
+        --white: #FFFFFF;
         --brass: #D48E33;
         --brass-deep: #9C6423;
-        --steel: #354D4B;
-        --rule-on-paper: rgba(16, 32, 31, 0.15);
+        --steel: #444444;
+        --rule-on-paper: rgba(16, 32, 31, 0.12);
         --rule-on-ink: rgba(251, 249, 244, 0.16);
     }
 
@@ -656,19 +658,8 @@ const pageSchema = {
         max-width: 100%;
         overflow-x: clip;
         box-sizing: border-box;
-    }
-
-    @media (min-width: 768px) {
-        .dcrs-service-page {
-            padding-bottom: 0;
-        }
-    }
-
-    /* Hide floating WhatsApp button on mobile when sticky bar is active */
-    @media (max-width: 767.98px) {
-        :global(.float) {
-            display: none !important;
-        }
+        background-color: var(--paper, #FAF8F5);
+        color: var(--ink, #10201F);
     }
 
     .dcrs-container {
@@ -695,10 +686,11 @@ const pageSchema = {
         color: var(--brass-deep);
         font-weight: 600;
         margin-bottom: 0.5rem;
-        max-width: 100%;
-        white-space: normal;
-        word-break: break-word;
-        box-sizing: border-box;
+        background: rgba(193, 128, 46, 0.08);
+        border: 1px solid rgba(193, 128, 46, 0.25);
+        padding: 4px 10px;
+        border-radius: 4px;
+        line-height: 1.4;
     }
 
     .dcrs-heading {
@@ -713,7 +705,7 @@ const pageSchema = {
     }
 
     .dcrs-heading__title {
-        font-family: var(--font-display, serif);
+        font-family: 'Fraunces', serif;
         font-size: clamp(1.65rem, 4.2vw, 2.35rem);
         line-height: 1.2;
         color: var(--ink);
@@ -723,7 +715,7 @@ const pageSchema = {
     }
 
     .dcrs-heading__sub {
-        color: var(--steel);
+        color: #666;
         font-size: 0.98rem;
         line-height: 1.6;
         margin: 0;
@@ -743,7 +735,7 @@ const pageSchema = {
     .dcrs-body-text {
         font-size: 0.96rem;
         line-height: 1.75;
-        color: var(--steel);
+        color: #555;
         margin: 0 0 1.2rem;
         word-break: break-word;
         overflow-wrap: break-word;
@@ -761,8 +753,8 @@ const pageSchema = {
         padding: clamp(3rem, 6.5vw, 5rem) 0;
         box-sizing: border-box;
     }
-    .dcrs-section--paper { background: var(--paper); }
-    .dcrs-section--tint { background: var(--paper-alt); }
+    .dcrs-section--paper { background: var(--paper, #FAF8F5); }
+    .dcrs-section--tint { background: #f7f9fa; border-top: 1px solid #eef1f3; border-bottom: 1px solid #eef1f3; }
 
     /* Buttons */
     .dcrs-btn {
@@ -792,16 +784,16 @@ const pageSchema = {
 
     .dcrs-btn--solid {
         background: var(--brass);
-        color: var(--ink);
+        color: var(--ink) !important;
     }
     .dcrs-btn--solid:hover {
         background: var(--brass-deep);
-        color: #fff;
+        color: #fff !important;
     }
 
     .dcrs-btn--wa {
         background: #25d366;
-        color: #fff;
+        color: #fff !important;
     }
     .dcrs-btn--wa:hover {
         background: #1ebc59;
@@ -818,7 +810,7 @@ const pageSchema = {
     .dcrs-hero-banner {
         position: relative;
         background-color: var(--ink);
-        color: var(--white);
+        color: #FBF9F4;
         padding: clamp(3.5rem, 8vw, 5.5rem) 0;
         overflow: hidden;
         min-height: 500px;
@@ -890,12 +882,12 @@ const pageSchema = {
     }
 
     .dcrs-hero-banner__title {
-        font-family: var(--font-display, serif);
+        font-family: 'Fraunces', serif;
         font-size: clamp(1.5rem, 5.5vw, 2.9rem);
         line-height: 1.2;
         letter-spacing: -0.01em;
         margin: 0 0 1rem;
-        color: var(--white);
+        color: #FBF9F4;
         word-break: break-word;
         overflow-wrap: break-word;
     }
@@ -948,17 +940,14 @@ const pageSchema = {
         .dcrs-grid-2col--align-center {
             align-items: center;
         }
-        .dcrs-grid-2col--align-start {
-            align-items: start;
-        }
     }
 
     .dcrs-photo-card {
         position: relative;
-        border-radius: 6px;
+        border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(16, 32, 31, 0.12);
-        background: #fff;
+        background: #000;
     }
 
     .dcrs-photo-card__img {
@@ -972,25 +961,25 @@ const pageSchema = {
         position: absolute;
         bottom: 1.25rem;
         right: 1.25rem;
-        background: var(--brass-deep);
-        color: #fff;
+        background: var(--brass);
+        color: var(--ink);
         padding: 0.6rem 1rem;
-        border-radius: 4px;
+        border-radius: 6px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         text-align: center;
     }
 
     .dcrs-photo-badge__value {
-        font-family: var(--font-display, serif);
         font-size: 1.35rem;
-        font-weight: 700;
+        font-weight: 800;
         line-height: 1;
     }
 
     .dcrs-photo-badge__label {
-        font-size: 0.74rem;
+        font-size: 0.72rem;
+        font-weight: 600;
         letter-spacing: 0.04em;
-        opacity: 0.9;
+        text-transform: uppercase;
         margin-top: 0.2rem;
     }
 
@@ -1016,12 +1005,18 @@ const pageSchema = {
 
     .dcrs-onsite-card {
         background: #fff;
-        border-radius: 6px;
+        border-radius: 8px;
         padding: 1.5rem;
-        border: 1px solid var(--rule-on-paper);
+        border: 1px solid #e4e8ec;
         box-shadow: 0 2px 8px rgba(16, 32, 31, 0.04);
         display: flex;
         flex-direction: column;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dcrs-onsite-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(16, 32, 31, 0.08);
     }
 
     .dcrs-onsite-card__header {
@@ -1054,7 +1049,6 @@ const pageSchema = {
     }
 
     .dcrs-onsite-card__title {
-        font-family: var(--font-body, sans-serif);
         font-size: 0.95rem;
         font-weight: 700;
         color: var(--ink);
@@ -1095,17 +1089,35 @@ const pageSchema = {
     }
 
     .dcrs-onsite-card__desc {
-        font-size: 0.88rem;
+        font-size: 0.86rem;
         line-height: 1.65;
-        color: var(--steel);
+        color: #555;
         margin: 0;
+    }
+
+    .dcrs-pricing-disclaimer {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.82rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .dcrs-pricing-disclaimer :global(svg) {
+        width: 16px;
+        height: 16px;
+        color: var(--brass);
+        flex-shrink: 0;
+        margin-top: 2px;
     }
 
     /* Workshop Backup Callout Box */
     .dcrs-workshop-box {
         background: #fff;
         border: 1px solid var(--brass);
-        border-radius: 6px;
+        border-radius: 8px;
         padding: clamp(1.5rem, 3.5vw, 2.25rem);
         box-shadow: 0 4px 16px rgba(193, 128, 46, 0.08);
     }
@@ -1129,7 +1141,7 @@ const pageSchema = {
     }
 
     .dcrs-workshop-box__title {
-        font-family: var(--font-display, serif);
+        font-family: 'Fraunces', serif;
         font-size: 1.25rem;
         color: var(--ink);
         margin: 0;
@@ -1138,7 +1150,7 @@ const pageSchema = {
     .dcrs-workshop-box__lead {
         font-size: 0.92rem;
         line-height: 1.7;
-        color: var(--steel);
+        color: #555;
         margin: 0 0 1.25rem;
     }
 
@@ -1195,165 +1207,119 @@ const pageSchema = {
 
     .dcrs-step-card {
         background: #fff;
-        border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
+        border: 1px solid #e4e8ec;
+        border-radius: 8px;
         padding: 1.75rem 1.25rem;
         text-align: center;
         box-shadow: 0 2px 8px rgba(16, 32, 31, 0.04);
-    }
-
-    .dcrs-step-card__icon {
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        background: var(--ink);
-        color: var(--brass);
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-    }
-
-    .dcrs-step-card__icon :global(svg) {
-        width: 24px;
-        height: 24px;
     }
 
     .dcrs-step-card__num {
-        font-family: var(--font-mono, monospace);
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: var(--brass-deep);
-        margin-bottom: 0.4rem;
-        letter-spacing: 0.05em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--brass);
+        color: var(--ink);
+        font-weight: 800;
+        font-size: 0.9rem;
+        margin-bottom: 0.85rem;
     }
 
     .dcrs-step-card__title {
-        font-family: var(--font-display, serif);
-        font-size: 1.05rem;
+        font-size: 1rem;
+        font-weight: 700;
         color: var(--ink);
         margin: 0 0 0.65rem;
+        line-height: 1.35;
     }
 
     .dcrs-step-card__desc {
         font-size: 0.85rem;
         line-height: 1.65;
-        color: var(--steel);
+        color: #555;
         margin: 0;
     }
 
-    /* 5. Coverage & Response Box */
-    .dcrs-response-box {
-        background: var(--ink);
-        color: #fff;
-        border-radius: 6px;
-        padding: 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .dcrs-response-box__header {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        margin-bottom: 1rem;
-    }
-
-    .dcrs-response-box__icon {
-        color: var(--brass);
-        display: flex;
-        align-items: center;
-    }
-
-    .dcrs-response-box__icon :global(svg) {
-        width: 20px;
-        height: 20px;
-    }
-
-    .dcrs-response-box__title {
-        font-family: var(--font-display, serif);
-        font-size: 1.15rem;
-        color: #fff;
-        margin: 0;
-    }
-
-    .dcrs-response-table {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .dcrs-response-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.65rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        font-size: 0.85rem;
-        gap: 0.5rem;
-    }
-
-    .dcrs-response-row__area {
-        color: rgba(255, 255, 255, 0.88);
-    }
-
-    .dcrs-response-row__time {
-        font-family: var(--font-mono, monospace);
-        font-weight: 700;
-        color: var(--brass);
-        white-space: normal;
-        word-break: normal;
-        overflow-wrap: break-word;
-    }
-
-    .dcrs-response-box__note {
-        font-size: 0.76rem;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.6);
-        margin: 1rem 0 0;
-    }
-
-    .dcrs-areas-grid {
+    /* 5. Coverage Grid */
+    .dcrs-coverage-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    @media (min-width: 640px) {
-        .dcrs-areas-grid {
-            grid-template-columns: repeat(3, 1fr);
+    @media (min-width: 768px) {
+        .dcrs-coverage-grid {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
-    .dcrs-area-pill {
+    .dcrs-coverage-card {
         background: #fff;
-        border: 1px solid var(--rule-on-paper);
+        border: 1px solid #e4e8ec;
+        border-radius: 8px;
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 8px rgba(16, 32, 31, 0.04);
+    }
+
+    .dcrs-coverage-card__title {
+        font-family: 'Fraunces', serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin: 0 0 0.5rem;
+    }
+
+    .dcrs-coverage-card__sub {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: #555;
+        margin: 0 0 1.25rem;
+    }
+
+    .dcrs-callout-action {
+        margin-top: auto;
+    }
+
+    .dcrs-areas-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .dcrs-area-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: #f7f9fa;
+        border: 1px solid #e2e6e9;
         border-radius: 4px;
-        padding: 0.65rem 0.85rem;
-        display: flex;
-        align-items: center;
-        gap: 0.45rem;
-        min-height: 48px;
-        box-sizing: border-box;
-    }
-
-    .dcrs-area-pill__icon {
-        color: var(--brass-deep);
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .dcrs-area-pill__icon :global(svg) {
-        width: 14px;
-        height: 14px;
-    }
-
-    .dcrs-area-pill__name {
-        font-size: 0.85rem;
+        padding: 0.45rem 0.75rem;
+        font-size: 0.82rem;
         color: var(--ink);
         font-weight: 500;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    }
+
+    .dcrs-area-tag :global(svg) {
+        width: 13px;
+        height: 13px;
+        color: var(--brass-deep);
+    }
+
+    .dcrs-coverage-note {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        color: #777;
+        margin: 0;
+        font-style: italic;
     }
 
     /* 6. Why Choose Us Grid */
@@ -1377,13 +1343,19 @@ const pageSchema = {
 
     .dcrs-why-card {
         background: #fff;
-        border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
+        border: 1px solid #e4e8ec;
+        border-radius: 8px;
         padding: 1.5rem;
         display: flex;
         gap: 1rem;
         align-items: flex-start;
         box-shadow: 0 2px 8px rgba(16, 32, 31, 0.04);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dcrs-why-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(16, 32, 31, 0.08);
     }
 
     .dcrs-why-card__icon {
@@ -1404,7 +1376,6 @@ const pageSchema = {
     }
 
     .dcrs-why-card__title {
-        font-family: var(--font-body, sans-serif);
         font-size: 0.95rem;
         font-weight: 700;
         color: var(--ink);
@@ -1413,76 +1384,77 @@ const pageSchema = {
     }
 
     .dcrs-why-card__desc {
-        font-size: 0.865rem;
-        line-height: 1.65;
-        color: var(--steel);
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: #555;
         margin: 0;
     }
 
     /* 7. FAQ Accordion */
     .dcrs-faq-accordion {
-        max-width: 820px;
+        max-width: 860px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 0.85rem;
+        gap: 0.75rem;
     }
 
     .dcrs-faq-item {
         background: #fff;
-        border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
+        border: 1px solid #e4e8ec;
+        border-radius: 8px;
         overflow: hidden;
         transition: border-color 0.15s ease;
     }
 
-    .dcrs-faq-item.is-open {
+    .dcrs-faq-item[open] {
         border-color: var(--brass);
     }
 
-    .dcrs-faq-question {
-        width: 100%;
-        background: transparent;
-        border: none;
-        padding: 1.1rem 1.25rem;
-        text-align: left;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        cursor: pointer;
-        font-family: var(--font-body, sans-serif);
-        font-size: 0.95rem;
+    .dcrs-faq-item__question {
+        list-style: none;
+        padding: 1.15rem 1.35rem;
+        font-family: 'Fraunces', serif;
+        font-size: 1.05rem;
         font-weight: 600;
         color: var(--ink);
-    }
-
-    .dcrs-faq-question__chevron {
-        color: var(--brass-deep);
+        cursor: pointer;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        user-select: none;
+    }
+
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass-deep);
         transition: transform 0.2s ease;
         flex-shrink: 0;
     }
 
-    .dcrs-faq-question__chevron :global(svg) {
+    .dcrs-faq-item__toggle :global(svg) {
         width: 18px;
         height: 18px;
     }
 
-    .dcrs-faq-item.is-open .dcrs-faq-question__chevron {
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
         transform: rotate(180deg);
     }
 
-    .dcrs-faq-answer {
-        padding: 0 1.25rem 1.25rem;
-        font-size: 0.9rem;
-        line-height: 1.75;
-        color: var(--steel);
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid #e4e8ec;
     }
 
-    .dcrs-faq-answer p {
-        margin: 0;
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: #555;
     }
 
     /* 8. Related Services */
@@ -1506,8 +1478,8 @@ const pageSchema = {
 
     .dcrs-related-card {
         background: #fff;
-        border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
+        border: 1px solid #e4e8ec;
+        border-radius: 8px;
         padding: 1.5rem 1.25rem;
         text-align: center;
         text-decoration: none;
@@ -1516,6 +1488,7 @@ const pageSchema = {
         flex-direction: column;
         align-items: center;
         transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 2px 8px rgba(16, 32, 31, 0.04);
     }
 
     .dcrs-related-card:hover {
@@ -1542,7 +1515,6 @@ const pageSchema = {
     }
 
     .dcrs-related-card__title {
-        font-family: var(--font-body, sans-serif);
         font-size: 0.95rem;
         font-weight: 700;
         color: var(--ink);
@@ -1552,7 +1524,7 @@ const pageSchema = {
     .dcrs-related-card__desc {
         font-size: 0.82rem;
         line-height: 1.5;
-        color: var(--steel);
+        color: #555;
         margin: 0;
     }
 
@@ -1590,7 +1562,7 @@ const pageSchema = {
     }
 
     .dcrs-cta-banner__title {
-        font-family: var(--font-display, serif);
+        font-family: 'Fraunces', serif;
         font-size: clamp(1.5rem, 4vw, 2.2rem);
         color: #fff;
         margin: 0 0 0.5rem;
@@ -1625,7 +1597,7 @@ const pageSchema = {
 
     @media (min-width: 768px) {
         .dcrs-stickybar {
-            display: none;
+            display: none !important;
         }
     }
 
@@ -1640,156 +1612,4 @@ const pageSchema = {
         background: #25d366;
         color: #fff;
     }
-    /* Mobile areas grid & photo badge scaling */
-    @media (max-width: 480px) {
-        .dcrs-areas-grid {
-            grid-template-columns: 1fr;
-        }
-        .dcrs-photo-badge {
-            bottom: 0.75rem;
-            right: 0.75rem;
-            max-width: 175px;
-        }
-        .dcrs-photo-badge .dcrs-plate__tab {
-            font-size: 0.65rem;
-            padding: 0.4rem 0.35rem;
-        }
-        .dcrs-photo-badge .dcrs-plate__row--big {
-            font-size: 1.15rem;
-        }
-        .dcrs-photo-badge .dcrs-plate__row {
-            font-size: 0.68rem;
-        }
-    }
-    /* marker: dcrs-areas-grid-responsive */
-
-    /* Protection against flex/grid item blowout on mobile viewports */
-    .dcrs-engine-item,
-    .dcrs-warning-item,
-    .dcrs-process-step,
-    .dcrs-engines-block,
-    .dcrs-pricing-block,
-    .dcrs-warnings-block,
-    .dcrs-process-block,
-    .dcrs-col-block,
-    .dcrs-intro-content,
-    .dcrs-intro-media {
-        min-width: 0;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    .dcrs-engine-item > div,
-    .dcrs-warning-item > div,
-    .dcrs-process-step > div {
-        min-width: 0;
-        flex: 1;
-    }
-    @media (max-width: 480px) {
-        .dcrs-heading__title {
-            font-size: clamp(1.35rem, 5.5vw, 1.65rem);
-            line-height: 1.25;
-        }
-        .dcrs-engine-item {
-            padding: 0.75rem 0.85rem;
-            gap: 0.65rem;
-        }
-        .dcrs-engine-item__name {
-            font-size: 0.88rem;
-        }
-        .dcrs-engine-item__desc {
-            font-size: 0.78rem;
-            line-height: 1.4;
-        }
-        .dcrs-table-price,
-        .dcrs-table__price,
-        .dcrs-price-cell,
-        .dcrs-price-tag {
-            white-space: normal !important;
-            word-break: normal !important;
-            overflow-wrap: break-word !important;
-        }
-    }
-    /* marker: .dcrs-flex-overflow-fix */
-
-
-    /* Response box & area pill mobile optimization */
-    @media (max-width: 640px) {
-        .dcrs-response-box {
-            padding: 1.15rem 0.95rem;
-        }
-        .dcrs-response-row {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.35rem;
-            padding: 0.7rem 0;
-        }
-        .dcrs-response-row__area {
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: #fff;
-            line-height: 1.4;
-        }
-        .dcrs-response-row__time {
-            font-size: 0.82rem;
-            text-align: left;
-            align-self: flex-start;
-            white-space: normal;
-            word-break: normal;
-            overflow-wrap: break-word;
-            line-height: 1.35;
-        }
-        .dcrs-areas-grid {
-            grid-template-columns: 1fr;
-        }
-        .dcrs-area-pill__name {
-            white-space: normal;
-            overflow: visible;
-            text-overflow: clip;
-            word-break: normal;
-            line-height: 1.35;
-        }
-    }
-    /* marker: .dcrs-response-box-mobile-fix */
-    .dcrs-cta-inline-link {
-        color: var(--brass, #D48E33);
-        font-weight: 600;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-    .dcrs-cta-inline-link:hover { opacity: 0.85; }
-
 </style>
-
-<script>
-    // FAQ Accordion interaction
-    document.addEventListener('DOMContentLoaded', () => {
-        const accordion = document.querySelector('[data-accordion]');
-        if (!accordion) return;
-
-        const questions = accordion.querySelectorAll('.dcrs-faq-question');
-        questions.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.dcrs-faq-item');
-                const answer = item?.querySelector('.dcrs-faq-answer') as HTMLElement | null;
-                const isCurrentlyOpen = item?.classList.contains('is-open');
-
-                // Close other items
-                accordion.querySelectorAll('.dcrs-faq-item').forEach((otherItem) => {
-                    otherItem.classList.remove('is-open');
-                    const otherBtn = otherItem.querySelector('.dcrs-faq-question');
-                    const otherAnswer = otherItem.querySelector('.dcrs-faq-answer') as HTMLElement | null;
-                    if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-                    if (otherAnswer) otherAnswer.style.display = 'none';
-                });
-
-                // Toggle selected item
-                if (!isCurrentlyOpen && item && answer) {
-                    item.classList.add('is-open');
-                    btn.setAttribute('aria-expanded', 'true');
-                    answer.style.display = 'block';
-                }
-            });
-        });
-    });
-</script>
-
