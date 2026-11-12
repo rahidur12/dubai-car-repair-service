@@ -35,6 +35,7 @@ const icons: Record<string, string> = {
     tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
     info: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
     arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`,
+    snowflake: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="12" y1="12" x2="4" y2="7.5"/><line x1="12" y1="12" x2="20" y2="16.5"/><line x1="12" y1="12" x2="4" y2="16.5"/><line x1="12" y1="12" x2="20" y2="7.5"/></svg>`,
     disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`
 };
 
@@ -308,9 +309,9 @@ const faqs = [
 
 const relatedServices = [
     { icon: "cog", name: "Engine Diagnostics Dubai", desc: "OBD-II scans, sensor testing & engine troubleshooting", href: "/car-engine-service-dubai" },
-    { icon: "circle", name: "Car Maintenance Dubai", desc: "Periodic servicing, brake checks & fluid renewal", href: "/car-maintenance-dubai" },
+    { icon: "tools", name: "Car Maintenance Dubai", desc: "Periodic servicing, brake checks & fluid renewal", href: "/car-maintenance-dubai" },
     { icon: "disc", name: "Tyre Replacement Dubai", desc: "Wheel balancing, laser alignment & tyre supply", href: "/tyre-replacement-dubai" },
-    { icon: "bolt", name: "Car AC Repair Dubai", desc: "Refrigerant gas refill, leak tests & compressor repairs", href: "/car-ac-repair-dubai" }
+    { icon: "snowflake", name: "Car AC Repair Dubai", desc: "Refrigerant gas refill, leak tests & compressor repairs", href: "/car-ac-repair-dubai" }
 ];
 
 // ---------------------------------------------------------------------------
@@ -573,9 +574,12 @@ const pageSchema = {
                             </div>
                             <p class="dcrs-type-card__desc">{t.desc}</p>
                             
-                            <ul class="dcrs-type-card__bullets">
+                            <ul class="dcrs-type-card__list">
                                 {(t.list || []).map((b) => (
-                                    <li><Fragment set:html={icons.check} /> {b}</li>
+                                    <li>
+                                        <span class="dcrs-icon-check"><Fragment set:html={icons.check} /></span>
+                                        <span>{b}</span>
+                                    </li>
                                 ))}
                             </ul>
                         </div>
@@ -1197,14 +1201,17 @@ const pageSchema = {
         margin: 0 0 0.25rem;
     }
 
-    .dcrs-badge-tag {
+    .dcrs-badge-tag,
+    .dcrs-type-card__price {
+        display: inline-block;
         font-family: var(--font-mono, monospace);
         font-size: 0.72rem;
         background: var(--ink);
         color: var(--white);
-        padding: 0.15rem 0.45rem;
-        border-radius: 3px;
+        padding: 0.2rem 0.55rem;
+        border-radius: 4px;
         font-weight: 600;
+        letter-spacing: 0.02em;
     }
 
     .dcrs-type-card__desc {
@@ -1214,7 +1221,8 @@ const pageSchema = {
         margin: 0 0 1.25rem;
     }
 
-    .dcrs-type-card__list {
+    .dcrs-type-card__list,
+    .dcrs-type-card__bullets {
         list-style: none;
         padding: 0;
         margin: 0;
@@ -1224,10 +1232,11 @@ const pageSchema = {
         margin-top: auto;
     }
 
-    .dcrs-type-card__list li {
+    .dcrs-type-card__list li,
+    .dcrs-type-card__bullets li {
         display: flex;
         align-items: flex-start;
-        gap: 0.55rem;
+        gap: 0.65rem;
         font-size: 0.84rem;
         color: var(--ink-soft);
         line-height: 1.5;
@@ -1235,14 +1244,22 @@ const pageSchema = {
 
     .dcrs-icon-check {
         color: var(--brass-deep);
+        background: rgba(197, 160, 89, 0.15);
+        border: 1px solid rgba(197, 160, 89, 0.3);
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
         flex-shrink: 0;
-        margin-top: 0.15rem;
+        margin-top: 0.1rem;
         display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .dcrs-icon-check :global(svg) {
-        width: 14px;
-        height: 14px;
+        width: 10px;
+        height: 10px;
+        stroke-width: 2.5;
     }
 
     /* 4. 50-Point Checklist */

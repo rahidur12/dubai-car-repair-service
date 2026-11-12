@@ -211,7 +211,7 @@ const faqs = [
 const relatedServices = [
     { icon: "tools", name: "Annual Car Maintenance Dubai", desc: "Comprehensive scheduled service packages for UAE driving", href: "/car-maintenance-dubai" },
     { icon: "car", name: "Mobile Car Repair Dubai", desc: "On-site diagnostic, battery & basic AC support", href: "/mobile-car-repair-dubai" },
-    { icon: "bolt", name: "Full Car Check Up", desc: "Pre-purchase, electrical, and cooling system inspections", href: "/car-inspection-dubai" },
+    { icon: "search", name: "Full Car Check Up", desc: "Pre-purchase, electrical, and cooling system inspections", href: "/car-inspection-dubai" },
     { icon: "mapPin", name: "Car AC Repair Satwa", desc: "Fast neighborhood AC diagnostics at 222 Al Satwa Road", href: "/car-repair-al-satwa" }
 ];
 
@@ -424,11 +424,12 @@ const pageSchema = {
                 <div class="dcrs-process-grid">
                     {serviceSteps.map((s) => (
                         <div class="dcrs-process-card-item">
-                            <span class="dcrs-process-card-item__num">{s.num}</span>
-                            <div>
-                                <h3 class="dcrs-process-card-item__title">{s.title}</h3>
-                                <p class="dcrs-process-card-item__desc">{s.desc}</p>
+                            <div class="dcrs-process-card-item__top">
+                                <span class="dcrs-process-card-item__num">{s.num}</span>
+                                <span class="dcrs-process-card-item__step">Phase 0{s.num}</span>
                             </div>
+                            <h3 class="dcrs-process-card-item__title">{s.title}</h3>
+                            <p class="dcrs-process-card-item__desc">{s.desc}</p>
                         </div>
                     ))}
                 </div>
@@ -1215,66 +1216,93 @@ const pageSchema = {
 
     .dcrs-notice-box p { margin: 0; }
 
-    /* Process Card */
-    .dcrs-process-card {
+    /* Service Process Grid & Cards */
+    .dcrs-process-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-process-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-process-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+    }
+
+    .dcrs-process-card-item {
         background: var(--white);
         border: 1px solid var(--rule-on-paper);
         border-radius: 8px;
-        padding: clamp(1.5rem, 3.5vw, 2.25rem);
-    }
-
-    .dcrs-process-card__title {
-        font-family: var(--font-display, serif);
-        font-size: 1.35rem;
-        margin: 0 0 1.5rem;
-        color: var(--ink);
-    }
-
-    .dcrs-process-list {
+        padding: 1.6rem 1.4rem;
         display: flex;
         flex-direction: column;
-        gap: 1.15rem;
+        position: relative;
+        box-shadow: 0 1px 3px rgba(17, 24, 39, 0.04);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .dcrs-process-item {
+    .dcrs-process-card-item:hover {
+        transform: translateY(-3px);
+        border-color: var(--brass);
+        box-shadow: 0 8px 20px rgba(16, 32, 31, 0.08);
+    }
+
+    .dcrs-process-card-item__top {
         display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-        padding-bottom: 1.15rem;
-        border-bottom: 1px solid var(--rule-on-paper);
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.15rem;
     }
 
-    .dcrs-process-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .dcrs-process-item__num {
+    .dcrs-process-card-item__num {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 32px;
-        height: 32px;
-        background: var(--brass);
-        color: var(--ink);
+        width: 36px;
+        height: 36px;
+        background: rgba(197, 160, 89, 0.14);
+        color: var(--brass-deep);
+        border: 1px solid rgba(197, 160, 89, 0.35);
         border-radius: 50%;
         font-family: var(--font-mono, monospace);
         font-weight: 700;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         flex-shrink: 0;
     }
 
-    .dcrs-process-item__body h4 {
-        font-size: 0.95rem;
+    .dcrs-process-card-item__step {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--steel);
+        background: var(--paper);
+        padding: 0.2rem 0.55rem;
+        border-radius: 4px;
         font-weight: 600;
-        margin: 0 0 0.25rem;
-        color: var(--ink);
     }
 
-    .dcrs-process-item__body p {
-        font-size: 0.84rem;
+    .dcrs-process-card-item__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.12rem;
+        font-weight: 700;
+        margin: 0 0 0.65rem;
+        color: var(--ink);
+        line-height: 1.35;
+    }
+
+    .dcrs-process-card-item__desc {
+        font-size: 0.88rem;
         color: var(--steel);
-        line-height: 1.55;
+        line-height: 1.6;
         margin: 0;
     }
 

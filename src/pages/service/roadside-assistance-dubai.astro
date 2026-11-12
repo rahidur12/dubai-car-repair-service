@@ -1486,7 +1486,7 @@ const pageSchema = {
     .dcrs-related-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     @media (min-width: 640px) {
@@ -1502,35 +1502,35 @@ const pageSchema = {
     }
 
     .dcrs-related-card {
-        background: #fff;
+        background: var(--white);
         border: 1px solid var(--rule-on-paper);
         border-radius: 6px;
         padding: 1.5rem 1.25rem;
         text-align: center;
         text-decoration: none;
-        color: inherit;
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
     .dcrs-related-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
         border-color: var(--brass);
     }
 
     .dcrs-related-card__icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--ink);
-        color: var(--brass);
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--paper);
+        color: var(--brass-deep);
+        border-radius: 50%;
         margin-bottom: 0.85rem;
+        flex-shrink: 0;
     }
 
     .dcrs-related-card__icon :global(svg) {
@@ -1539,16 +1539,17 @@ const pageSchema = {
     }
 
     .dcrs-related-card__title {
+        font-family: var(--font-display, serif);
         font-size: 0.95rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--ink);
         margin: 0 0 0.35rem;
     }
 
     .dcrs-related-card__desc {
-        font-size: 0.82rem;
-        line-height: 1.5;
+        font-size: 0.8rem;
         color: var(--steel);
+        line-height: 1.45;
         margin: 0;
     }
 

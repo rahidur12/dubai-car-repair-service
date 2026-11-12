@@ -38,6 +38,8 @@ const icons: Record<string, string> = {
     coolant: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
     alert: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
     arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`,
+    truck: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    oilCan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/><path d="M5 10l3-5h8l3 5"/><line x1="12" y1="2" x2="12" y2="5"/></svg>`,
     check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
     infoCircle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`
 };
@@ -224,8 +226,8 @@ const faqs = [
 
 const relatedServices = [
     { icon: "battery", name: "Mobile Battery Service Dubai", desc: "On-site battery testing, supply & installation across Dubai", href: "/car-battery-replacement-dubai" },
-    { icon: "alert", name: "Roadside Assistance Dubai", desc: "Emergency assistance for breakdowns, punctures & jump starts", href: "/roadside-assistance-dubai" },
-    { icon: "oil", name: "Oil Change Service Dubai", desc: "Lube service with OEM filter & certified fluid disposal", href: "/engine-oil-change-dubai" },
+    { icon: "truck", name: "Roadside Assistance Dubai", desc: "Emergency assistance for breakdowns, punctures & jump starts", href: "/roadside-assistance-dubai" },
+    { icon: "oilCan", name: "Oil Change Service Dubai", desc: "Lube service with OEM filter & certified fluid disposal", href: "/engine-oil-change-dubai" },
     { icon: "snowflake", name: "Car AC Gas Refill Dubai", desc: "On-site manifold pressure test and refrigerant recharge", href: "/car-ac-repair-dubai" }
 ];
 
@@ -1461,7 +1463,7 @@ const pageSchema = {
     .dcrs-related-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     @media (min-width: 640px) {
@@ -1470,43 +1472,42 @@ const pageSchema = {
         }
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 1024px) {
         .dcrs-related-grid {
             grid-template-columns: repeat(4, 1fr);
         }
     }
 
     .dcrs-related-card {
-        background: #fff;
-        border: 1px solid #e4e8ec;
-        border-radius: 8px;
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
         padding: 1.5rem 1.25rem;
         text-align: center;
         text-decoration: none;
-        color: inherit;
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        box-shadow: 0 2px 8px rgba(16, 32, 31, 0.04);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
     .dcrs-related-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(16, 32, 31, 0.08);
         border-color: var(--brass);
     }
 
     .dcrs-related-card__icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--ink);
-        color: var(--brass);
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--paper);
+        color: var(--brass-deep);
+        border-radius: 50%;
         margin-bottom: 0.85rem;
+        flex-shrink: 0;
     }
 
     .dcrs-related-card__icon :global(svg) {
@@ -1515,16 +1516,17 @@ const pageSchema = {
     }
 
     .dcrs-related-card__title {
+        font-family: var(--font-display, serif);
         font-size: 0.95rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--ink);
         margin: 0 0 0.35rem;
     }
 
     .dcrs-related-card__desc {
-        font-size: 0.82rem;
-        line-height: 1.5;
-        color: #555;
+        font-size: 0.8rem;
+        color: var(--steel);
+        line-height: 1.45;
         margin: 0;
     }
 

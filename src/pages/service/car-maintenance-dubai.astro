@@ -307,7 +307,7 @@ const relatedServices = [
     { icon: "oilCan", name: "Engine Oil Change Dubai", desc: "Quality synthetic oil & OEM filter replacement", href: "/engine-oil-change-dubai" },
     { icon: "search", name: "Full Car Check Up", desc: "Comprehensive mechanical, electrical & pre-purchase inspection", href: "/car-inspection-dubai" },
     { icon: "cog", name: "Car Engine Service Dubai", desc: "Engine diagnostics, cooling repairs & mechanical maintenance", href: "/car-engine-service-dubai" },
-    { icon: "circle", name: "Mobile Car Service Dubai", desc: "On-site roadside assistance, jump starts & battery service", href: "/mobile-car-repair-dubai" }
+    { icon: "car", name: "Mobile Car Service Dubai", desc: "On-site roadside assistance, jump starts & battery service", href: "/mobile-car-repair-dubai" }
 ];
 
 // ---------------------------------------------------------------------------
@@ -483,13 +483,14 @@ const pageSchema = {
 
                 <div class="dcrs-packages-grid">
                     {packages.map((pkg) => (
-                        <div class="dcrs-pkg-card">
-                            <div class="dcrs-pkg-card__header">
-                                <div>
-                                    <h3 class="dcrs-pkg-card__title">{pkg.title}</h3>
-                                    <span class="dcrs-pkg-card__price">{pkg.price}</span>
-                                </div>
+                        <div class={`dcrs-pkg-card ${pkg.badge === 'Recommended' ? 'dcrs-pkg-card--featured' : ''}`}>
+                            <div class="dcrs-pkg-card__top">
+                                <span class="dcrs-pkg-card__badge">{pkg.badge}</span>
                                 <span class="dcrs-pkg-card__freq">{pkg.freq}</span>
+                            </div>
+                            <div class="dcrs-pkg-card__header">
+                                <h3 class="dcrs-pkg-card__title">{pkg.title}</h3>
+                                <span class="dcrs-pkg-card__price">{pkg.price}</span>
                             </div>
                             <p class="dcrs-pkg-card__desc">{pkg.desc}</p>
                             <div class="dcrs-pkg-card__items">
@@ -1132,9 +1133,17 @@ const pageSchema = {
         gap: 1.5rem;
     }
 
+    .dcrs-packages-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
     @media (min-width: 992px) {
         .dcrs-packages-grid {
             grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
     }
 
@@ -1142,49 +1151,89 @@ const pageSchema = {
         background: var(--white);
         border: 1px solid var(--rule-on-paper);
         border-radius: 8px;
-        padding: 1.75rem;
+        padding: 1.75rem 1.5rem;
         display: flex;
         flex-direction: column;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        position: relative;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .dcrs-pkg-card:hover {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        border-color: var(--brass);
         box-shadow: 0 8px 24px rgba(16, 32, 31, 0.08);
     }
 
-    .dcrs-pkg-card__header {
+    .dcrs-pkg-card--featured {
+        border: 2px solid var(--brass);
+        box-shadow: 0 4px 16px rgba(197, 160, 89, 0.12);
+    }
+
+    .dcrs-pkg-card__top {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 0.75rem;
+        gap: 0.5rem;
+        margin-bottom: 0.85rem;
+        flex-wrap: wrap;
     }
 
-    .dcrs-pkg-card__title {
-        font-family: var(--font-display, serif);
-        font-size: 1.3rem;
-        color: var(--ink);
-        margin: 0 0 0.2rem;
-    }
-
-    .dcrs-pkg-card__price {
+    .dcrs-pkg-card__badge {
+        display: inline-flex;
+        align-items: center;
         font-family: var(--font-mono, monospace);
-        font-size: 1.1rem;
+        font-size: 0.72rem;
         font-weight: 700;
-        color: var(--brass-deep);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.6rem;
+        border-radius: 4px;
+        background: var(--ink);
+        color: var(--white);
+    }
+
+    .dcrs-pkg-card--featured .dcrs-pkg-card__badge {
+        background: var(--brass);
+        color: var(--ink);
     }
 
     .dcrs-pkg-card__freq {
         font-family: var(--font-mono, monospace);
         font-size: 0.72rem;
         background: var(--paper-alt);
-        color: var(--ink);
-        padding: 0.25rem 0.5rem;
-        border-radius: 3px;
-        font-weight: 600;
-        text-align: right;
-        max-width: 140px;
+        color: var(--steel);
+        padding: 0.25rem 0.55rem;
+        border-radius: 4px;
+        font-weight: 500;
         line-height: 1.3;
+    }
+
+    .dcrs-pkg-card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--rule-on-paper);
+    }
+
+    .dcrs-pkg-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin: 0;
+        line-height: 1.25;
+    }
+
+    .dcrs-pkg-card__price {
+        font-family: var(--font-mono, monospace);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--brass-deep);
+        white-space: nowrap;
     }
 
     .dcrs-pkg-card__desc {
@@ -1197,7 +1246,7 @@ const pageSchema = {
     .dcrs-pkg-card__items {
         display: flex;
         flex-direction: column;
-        gap: 0.55rem;
+        gap: 0.65rem;
         padding-top: 1.15rem;
         border-top: 1px solid var(--rule-on-paper);
         margin-top: auto;
@@ -1206,10 +1255,30 @@ const pageSchema = {
     .dcrs-pkg-item {
         display: flex;
         align-items: flex-start;
-        gap: 0.55rem;
+        gap: 0.65rem;
         font-size: 0.84rem;
         color: var(--ink-soft);
-        line-height: 1.45;
+        line-height: 1.5;
+    }
+
+    .dcrs-pkg-card .dcrs-icon-check {
+        color: var(--brass-deep);
+        background: rgba(197, 160, 89, 0.15);
+        border: 1px solid rgba(197, 160, 89, 0.3);
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dcrs-pkg-card .dcrs-icon-check :global(svg) {
+        width: 10px;
+        height: 10px;
+        stroke-width: 2.5;
     }
 
     .dcrs-icon-check {
