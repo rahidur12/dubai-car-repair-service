@@ -5,8 +5,8 @@ import service4Image from '../../assets/images/service4.webp';
 // ---------------------------------------------------------------------------
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
-const pageTitle = "Car Oil Change Dubai | Engine Oil Change Service – From AED 89";
-const pageDescription = "Fast car oil change in Dubai at 222 Al Satwa Road. Synthetic, semi-synthetic & mineral oil. All makes. Prices from AED 89. Mobile oil change also available. Call now.";
+const pageTitle = "Car Oil Change Dubai | Engine Oil & Filter Service – From AED 89";
+const pageDescription = "Car oil change in Dubai from AED 89. Engine oil & filter replacement at 222 Al Satwa Road. Synthetic, semi-synthetic & mineral oil for all makes. Call or WhatsApp.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -31,7 +31,8 @@ const icons: Record<string, string> = {
     car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`,
     clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>`,
     cog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
-    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`
+    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    alert: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`
 };
 
 // ---------------------------------------------------------------------------
@@ -42,129 +43,243 @@ const oils = [
         icon: "award",
         badgeColor: "dcrs-oil-icon--primary",
         title: "Fully Synthetic Engine Oil",
-        price: "From AED 220 [CONFIRM: fully synthetic package starting price]",
-        desc: "Formulated with chemically engineered Group IV/V synthetic base stocks for maximum thermal stability in UAE summer heat (ambient temperatures exceeding 45°C). Retains viscosity without thinning, prevents high-temperature oxidation, and provides instant lubrication to turbochargers and variable valve timing (VVT) actuators.",
-        vehicles: "Modern Japanese, European, and American petrol, hybrid, and turbocharged engines (e.g., Toyota 0W-20, BMW Longlife-01/04, Mercedes MB 229.5, Porsche, and Volvo VCC RBS0-2AE)."
+        price: "From AED 220",
+        desc: "Manufactured from chemically synthesized base oils with advanced additive packages. It resists thermal breakdown, flows quickly on cold starts, and provides durable lubrication for modern high-efficiency, turbocharged, and hybrid engines. Formulated to meet strict vehicle manufacturer specifications.",
+        note: "Recommended for modern vehicles requiring high-performance or low-viscosity oils as specified in the owner's manual."
     },
     {
         icon: "flask",
         badgeColor: "dcrs-oil-icon--secondary",
         title: "Semi-Synthetic (Synthetic Blend) Oil",
-        price: "From AED 140 [CONFIRM: semi-synthetic package starting price]",
-        desc: "A balanced blend of synthetic base oil and refined mineral stock, offering improved shear stability and sludge resistance compared to standard mineral lubricants. An economical option for naturally aspirated older models and moderate-mileage commuter vehicles.",
-        vehicles: "Naturally aspirated commuter sedans, older Japanese and Korean platforms (e.g., pre-2016 Nissan Sunny, Mitsubishi Lancer, Hyundai Accent, and older Toyota models specifying 10W-40)."
+        price: "From AED 140",
+        desc: "A carefully balanced combination of synthetic and conventional mineral base oils. It offers enhanced protection against heat and oxidation compared to pure mineral lubricants at a moderate price point, making it a reliable option for vehicles with standard service requirements.",
+        note: "Commonly used in naturally aspirated engines, commuter vehicles, and models where semi-synthetic blends are specified."
     },
     {
         icon: "oilCan",
         badgeColor: "dcrs-oil-icon--warning",
         title: "Conventional Mineral Oil",
-        price: "From AED 89 [CONFIRM: mineral oil package starting price]",
-        desc: "Refined petroleum-based lubricant suited for older engine designs with wider bearing clearances that do not feature complex variable valve timing systems. Degrades and shears faster under thermal stress, requiring disciplined short drain intervals.",
-        vehicles: "Vintage platforms, older utility vehicles, and select older non-turbo diesel engines specifying thicker viscosity grades (e.g., 20W-50 or 15W-40)."
+        price: "From AED 89",
+        desc: "Refined directly from petroleum crude oil, providing essential lubrication for suitable vehicle engines. Because mineral oils break down more quickly under continuous heat, they require disciplined, shorter service intervals in line with manufacturer guidance.",
+        note: "Suited for older vehicle designs, classic platforms, and utility engines where mineral lubricants are recommended."
     }
 ];
 
 const grades = [
-    { grade: "0W-20", examples: "Toyota Corolla/Camry (2018+), Lexus, Honda Civic, Volvo (VCC spec)", type: "Fully Synthetic", interval: "7,500 – 10,000 km" },
-    { grade: "5W-30", examples: "BMW, Mercedes-Benz, Audi, Nissan Patrol VQ56, Ford EcoBoost", type: "Fully Synthetic", interval: "8,000 – 10,000 km" },
-    { grade: "5W-40", examples: "Volkswagen/Audi (VW 502/505), Porsche, turbo European engines", type: "Fully Synthetic", interval: "8,000 – 10,000 km" },
-    { grade: "0W-40", examples: "Mercedes-AMG, BMW M-models, high-output sports cars", type: "Fully Synthetic", interval: "7,500 – 8,500 km" },
-    { grade: "10W-40", examples: "Nissan Sunny, Mitsubishi Lancer, older commuter vehicles", type: "Semi-Synthetic", interval: "5,000 – 7,000 km" },
-    { grade: "15W-40 / 20W-50", examples: "High-mileage utility 4x4s, older Land Cruiser, classic engines", type: "Mineral / Blend", interval: "5,000 km" }
+    {
+        grade: "0W-20",
+        meaning: "Ultra-low viscosity oil engineered for minimal fluid friction at startup ('0W') and fuel-efficient running viscosity ('20') when at operating temperature.",
+        application: "Commonly specified in modern fuel-efficient passenger cars and hybrid engines designed with tight mechanical clearances."
+    },
+    {
+        grade: "5W-30",
+        meaning: "A versatile multi-grade oil offering smooth cold-start circulation ('5W') and dependable thermal protection at operating temperatures ('30').",
+        application: "Widely specified across a broad range of modern petrol, diesel, and turbocharged passenger vehicles and crossovers."
+    },
+    {
+        grade: "5W-40",
+        meaning: "Combines rapid circulation during startup with higher viscosity film protection ('40') at high engine operating temperatures.",
+        application: "Frequently specified for European engines, turbocharged powertrains, and vehicles subjected to sustained high loads."
+    },
+    {
+        grade: "0W-40",
+        meaning: "Features an exceptionally broad viscosity span, providing rapid low-temperature flow combined with robust high-temperature film strength.",
+        application: "Commonly required in high-performance engines, sports cars, and premium vehicles specifically calling for this grade."
+    },
+    {
+        grade: "10W-40",
+        meaning: "A medium-viscosity oil offering thicker protective fluid film at both startup ('10W') and normal operating temperature ('40').",
+        application: "Often used in older commuter vehicles and naturally aspirated engines designed for slightly higher-viscosity lubricants."
+    },
+    {
+        grade: "15W-40 / 20W-50",
+        meaning: "Higher-viscosity oils designed to provide heavy cushion and lubrication in engines with wider internal bearing clearances.",
+        application: "Specified in select classic vehicles, heavy-duty commercial utility engines, or vehicles specifically calling for thicker oil."
+    }
 ];
 
 const steps = [
-    { num: "1", title: "Specification & Capacity Lookup", desc: "We cross-reference your vehicle's engine code against manufacturer technical data to confirm exact viscosity grade, volume capacity, and OEM approval certifications (e.g., MB 229.5, BMW LL-04, VW 504/507, Dexos 1 Gen 3, Volvo RBS0-2AE)." },
-    { num: "2", title: "Gravity Drain & Temperature Check", desc: "With the vehicle on a hydraulic lift, engine oil is drained via the sump plug at operating temperature, allowing contaminants, metallic wear particulates, and suspended sludge to evacuate fully." },
-    { num: "3", title: "Drained Fluid & Sump Inspection", desc: "Technicians examine the evacuated oil for telltale signs of internal engine distress: fuel dilution, milky coolant emulsification (head gasket breach), or abnormal metallic glitter indicating bearing wear." },
-    { num: "4", title: "New OEM-Spec Filter & O-Ring Fitting", desc: "The old oil filter is replaced with an OEM-standard spin-on canister or pleated cartridge element. New rubber sealing rings are pre-lubricated with clean oil and torqued to specified limits." },
-    { num: "5", title: "Crush Washer Replacement & Drain Plug Torquing", desc: "A fresh copper or aluminium crush washer is fitted to prevent slow sump seepage. The drain plug is carefully torqued to prevent stripped threads in aluminium oil pans." },
-    { num: "6", title: "Precision Filling & Dipstick Verification", desc: "The exact measured volume of fresh engine oil is added. The engine is run to pressurize the system, followed by a settling period to confirm optimal dipstick or digital cluster oil level readings." }
+    {
+        num: "1",
+        title: "Specification & Capacity Verification",
+        desc: "We check your vehicle's make, model, and engine specifications to determine the exact required oil viscosity, capacity, and manufacturer approval standard."
+    },
+    {
+        num: "2",
+        title: "Engine Oil Draining",
+        desc: "With the vehicle safely raised on a hydraulic lift, the sump plug is removed to drain the used engine oil into an environmentally safe waste collection system."
+    },
+    {
+        num: "3",
+        title: "Drained Fluid & Undercarriage Inspection",
+        desc: "Technicians inspect the drained oil for obvious signs of contamination, such as milky coolant mixing or heavy fuel smell, and check visible underbody areas for oil leaks."
+    },
+    {
+        num: "4",
+        title: "Oil Filter & Seal Replacement",
+        desc: "The used oil filter is replaced with a quality OEM-standard filter, and fresh rubber seals are lubricated with clean oil to ensure proper fitment and seating."
+    },
+    {
+        num: "5",
+        title: "Drain Plug & Washer Reinstallation",
+        desc: "A fresh crush washer is fitted to the drain plug, and the plug is carefully installed and tightened to prevent thread damage in aluminium oil pans."
+    },
+    {
+        num: "6",
+        title: "Fresh Oil Filling & Level Verification",
+        desc: "The exact recommended volume of fresh oil is filled, the engine is run briefly to circulate oil, and the level is confirmed via dipstick or digital gauge. Service reminders are reset where supported."
+    }
 ];
 
 const pricingTable = [
-    { service: "Mineral Oil Change Package", price: "From AED 89 [CONFIRM: mineral package price]", includes: "Up to 4L oil + standard filter + labour" },
-    { service: "Semi-Synthetic Oil Change Package", price: "From AED 140 [CONFIRM: semi-synthetic package price]", includes: "Up to 4L oil + OEM-spec filter + labour" },
-    { service: "Fully Synthetic Oil Change Package", price: "From AED 220 [CONFIRM: synthetic package price]", includes: "Up to 4L oil + OEM-spec filter + labour" },
-    { service: "Engine Oil Sump Washer", price: "AED 10 – 20 [CONFIRM: washer replacement fee]", includes: "New crush washer + installation" },
-    { service: "Cabin AC Filter Replacement", price: "AED 50 – 120 [CONFIRM: cabin filter price range]", includes: "Filter element + fitting" },
-    { service: "Engine Air Filter Replacement", price: "AED 40 – 90 [CONFIRM: engine air filter price range]", includes: "Filter element + housing clean" },
-    { service: "Mobile Oil Service Call-Out", price: "From AED 50 [CONFIRM: mobile oil change call-out fee]", includes: "Technician travel to client location" }
+    {
+        service: "Conventional Mineral Oil Package",
+        price: "From AED 89",
+        interval: "Every 5,000 km or 3 months",
+        includes: "Up to 4L conventional mineral oil, new oil filter, sump washer, labour, and underbody visual inspection."
+    },
+    {
+        service: "Semi-Synthetic Oil Package",
+        price: "From AED 140",
+        interval: "Every 6,000 – 7,500 km or 6 months",
+        includes: "Up to 4L semi-synthetic blend oil, OEM-spec oil filter, sump washer, labour, and underbody visual check."
+    },
+    {
+        service: "Fully Synthetic Oil Package",
+        price: "From AED 220",
+        interval: "Every 8,000 – 10,000 km or 6–12 months",
+        includes: "Up to 4L premium fully synthetic oil, OEM-spec oil filter, sump washer, labour, and comprehensive visual inspection."
+    },
+    {
+        service: "Sump Drain Plug Washer Replacement",
+        price: "AED 10 – 20",
+        interval: "Every oil change",
+        includes: "New copper or aluminium crush washer (included with all oil change packages; fee applies only to standalone plug service)."
+    },
+    {
+        service: "Cabin AC Filter Replacement",
+        price: "AED 50 – 120",
+        interval: "Every 15,000 – 20,000 km or 1 year",
+        includes: "Removal of old cabin pollen filter, housing wipe-down, and installation of fresh filter element."
+    },
+    {
+        service: "Engine Air Filter Replacement",
+        price: "AED 40 – 90",
+        interval: "Every 15,000 – 20,000 km or 1 year",
+        includes: "Removal of dirty air filter, cleaning of airbox housing, and installation of new air filter element."
+    }
 ];
 
-const intervals = [
-    { oil: "Conventional Mineral Oil", interval: "Every 5,000 km or 3 months" },
-    { oil: "Semi-Synthetic (Synthetic Blend)", interval: "Every 6,000 – 7,500 km or 4–6 months" },
-    { oil: "Fully Synthetic (Standard Use)", interval: "Every 8,000 – 10,000 km or 6 months" },
-    { oil: "Turbocharged & High-Performance Engines", interval: "Every 6,000 – 8,000 km under UAE summer driving" },
-    { oil: "High-Mileage / Severe Stop-and-Go Usage", interval: "Every 5,000 – 7,000 km with filter renewal" }
+const warningSigns = [
+    {
+        num: "1",
+        icon: "flask",
+        title: "Dark, Dirty or Contaminated Oil",
+        desc: "Fresh engine oil is amber or light golden. As it collects soot, combustion blow-by, and heat by-products, it turns dark brown or black. While some darkening is normal, oil that feels gritty, thick, or smells strongly of fuel indicates depleted additives.",
+        action: "Inspect your dipstick; if the oil is gritty or overdue by mileage or time, arrange an oil and filter replacement."
+    },
+    {
+        num: "2",
+        icon: "alert",
+        title: "Dashboard Service Warning or Reminder",
+        desc: "A dashboard service wrench, maintenance reminder, or oil can icon illuminates when the vehicle calculates that service mileage or time has elapsed. A red oil pressure light indicates a critical drop in oil pressure, not merely old oil.",
+        action: "If a routine maintenance reminder appears, schedule an oil change. If the red oil pressure light illuminates, stop safely and check oil level immediately."
+    },
+    {
+        num: "3",
+        icon: "oilCan",
+        title: "Low Engine Oil Level or High Consumption",
+        desc: "If the dipstick reading falls below the minimum mark between scheduled intervals, your engine may be burning oil past worn rings, valve stem seals, or losing fluid through an external gasket leak.",
+        action: "Top up with the correct manufacturer-approved oil grade immediately and schedule a workshop inspection to diagnose the cause of consumption."
+    },
+    {
+        num: "4",
+        icon: "cog",
+        title: "Unusual Engine Ticking or Knocking Noises",
+        desc: "Depleted, thin, or low oil cannot maintain proper hydraulic pressure, causing hydraulic lifters to click or tick. A deeper metallic knocking sound may indicate severe bearing wear and requires urgent mechanical evaluation.",
+        action: "Do not continue driving if loud knocking is present; have a mechanic inspect the engine immediately to prevent catastrophic internal damage."
+    },
+    {
+        num: "5",
+        icon: "thermometer",
+        title: "Burning Oil Smell or Visible Oil Leaks",
+        desc: "A pungent burning smell often occurs when leaking oil drips onto hot exhaust manifolds or catalytic converters. Visible puddles or dark droplets under the car suggest failing gaskets, seals, or a loose drain plug.",
+        action: "Have the undercarriage inspected on a hoist to trace the leak source before oil levels drop to dangerous levels."
+    },
+    {
+        num: "6",
+        icon: "tools",
+        title: "Increased Engine Noise or Rough Operation",
+        desc: "As oil loses its lubricating film strength, friction between metal components increases, making the engine sound harsher, louder, or feel rougher during acceleration and idle.",
+        action: "Book an oil and filter change to restore proper lubrication, and have the technician check for any related engine mechanical issues."
+    }
 ];
 
 const reasons = [
     {
         icon: "award",
-        title: "Exact Manufacturer Oil Approvals",
-        desc: "We verify factory specifications before filling: BMW Longlife, Mercedes-Benz 229.5, Porsche A40, VW 504/507, GM Dexos, or Japanese ILSAC GF-6. We never pour generic bulk oil into engines requiring specialized additive packs."
+        title: "Established Independent Workshop (Since 2012)",
+        desc: "Serving Dubai car owners since 2012 with over 8,500 vehicles serviced and an established 4.8-star Google customer rating."
+    },
+    {
+        icon: "tools",
+        title: "Experienced Team of 8 Mechanics",
+        desc: "Our workshop team of 8 skilled mechanics provides thorough fluid servicing, underbody visual checks, and mechanical inspections."
+    },
+    {
+        icon: "flask",
+        title: "Manufacturer-Specified Oil Grades",
+        desc: "We ensure your engine receives the exact viscosity and specification required by its manufacturer, protecting modern valve timing and turbo systems."
     },
     {
         icon: "filter",
-        title: "Quality OEM-Spec Oil Filters",
-        desc: "A degraded filter compromises fresh engine oil. We install OEM-grade pleated media filters with high burst-strength steel casings and reliable anti-drainback valves to protect against dry cold starts."
-    },
-    {
-        icon: "search",
-        title: "Physical Fluid & Undercarriage Inspection",
-        desc: "Unlike drive-through suction bays, our lift-based gravity drain includes a visual underbody check for oil pan leaks, steering rack seepage, coolant hose cracking, and brake pad wear."
+        title: "Quality OEM-Standard Filters",
+        desc: "Every oil change includes a fresh, high-efficiency oil filter and new drain plug crush washer to maintain clean lubrication and reliable sealing."
     },
     {
         icon: "receipt",
-        title: "Itemised, Upfront Quotation",
-        desc: "You receive an exact price based on your engine's oil sump capacity and required oil grade before work begins. No hidden disposal fees or unexplained surcharges at invoice."
+        title: "Clear Upfront Price Confirmation",
+        desc: "We verify your vehicle's engine capacity and required oil grade to confirm the exact price before work begins, with no unexpected fees."
     },
     {
         icon: "car",
-        title: "Workshop & Mobile Roadside Availability",
-        desc: "Visit our dedicated Al Satwa workshop on 222 Al Satwa Road, or request on-site mobile maintenance for routine servicing at your home or office in central Dubai. [CONFIRM: mobile oil change service area and van equipment]"
-    },
-    {
-        icon: "clock",
-        title: "Prompt Turnaround & Reset Service",
-        desc: "Our workshop completes standard oil and filter servicing efficiently while carrying out manufacturer service interval resets on your dashboard computer."
+        title: "Central Al Satwa Location",
+        desc: "Conveniently located at 222 Al Satwa Road, easily accessible from Sheikh Zayed Road, Jumeirah, and Downtown Dubai. Open 7 days a week."
     }
 ];
 
 const faqs = [
     {
         q: "How often should engine oil be changed in Dubai?",
-        a: "Due to high ambient temperatures exceeding 45°C, frequent traffic idling, and airborne dust, automotive engineers recommend adhering to the 'severe driving' service schedule outlined in your owner's manual. For fully synthetic oil, an interval of 8,000 to 10,000 km (or 6 months) is typical in Dubai, while semi-synthetic oils should generally be changed every 6,000 to 7,500 km, and conventional mineral oils every 5,000 km."
+        a: "Engine oil change intervals depend primarily on your vehicle manufacturer's recommendations, the type of oil used, and your driving conditions. In Dubai, frequent idling in traffic, short trips, and high summer temperatures classify most daily driving as 'severe service'. Under these conditions, fully synthetic oil is typically changed every 8,000 to 10,000 km (or within 6 to 12 months), semi-synthetic blends around 6,000 to 7,500 km, and conventional mineral oils every 5,000 km. Always consult your vehicle's handbook for exact guidelines."
     },
     {
         q: "What is the best engine oil for driving in Dubai's heat?",
-        a: "The best oil is the viscosity and specification mandated by your vehicle manufacturer. For modern Japanese, Korean, and American passenger cars, 0W-20 or 5W-30 full synthetic oils meeting API SP and ILSAC GF-6 standards provide optimal flow and thermal protection. European models (such as BMW, Mercedes-Benz, Audi, and Volvo) require specific manufacturer approvals (e.g., MB 229.5, BMW LL-04, VW 504/507, or Volvo VCC RBS0-2AE) with robust high-temperature high-shear (HTHS) ratings."
+        a: "The best oil is the exact viscosity grade and quality specification mandated by your vehicle manufacturer. Modern engines often require low-viscosity synthetic oils like 0W-20 or 5W-30 with specific manufacturer approvals (such as BMW Longlife, Mercedes-Benz 229.5, or VW 504/507), while other vehicles may specify 5W-40 or 10W-40. Our mechanics verify your engine's technical requirements before adding oil to ensure proper lubrication and thermal stability."
     },
     {
         q: "Can Dubai Car Repair Service perform an oil change at my home or office?",
-        a: "Yes, our mobile servicing team can perform oil and filter replacements at your residential or commercial location across central Dubai, subject to parking access and safety clearance. The mobile service includes fresh oil, compatible filter, waste oil collection, and level verification. [CONFIRM: mobile oil change call-out fee and booking notice required]"
+        a: "Our primary oil change services are carried out at our fully equipped Al Satwa workshop on 222 Al Satwa Road, where vehicles are raised on hydraulic hoists for complete gravity draining, filter access, and underbody inspection. Please contact us via phone or WhatsApp to check current availability for mobile servicing or recovery assistance."
     },
     {
-        q: "How does independent garage servicing compare to fuel-station lube bays (like ENOC or ADNOC)?",
-        a: "Fuel-station lube bays typically use top-side vacuum suction through the dipstick tube to evacuate oil quickly. At our Al Satwa workshop, vehicles are raised on two-post hydraulic hoists for gravity drainage through the sump plug, allowing heavier metallic particles and sediment to escape. In addition, our mechanics perform visual underbody checks for oil leaks, axle boot tears, suspension slack, and brake condition during the service."
+        q: "How does independent garage servicing compare to fuel-station lube bays?",
+        a: "While fuel-station bays often use top-side dipstick suction to remove oil quickly, our workshop raises vehicles on two-post hydraulic hoists for thorough gravity draining from the oil pan sump plug. In addition, our mechanics take the time to inspect visible underbody components—including the oil pan, steering rack, suspension bushings, and brake lines—for early signs of wear or fluid leakage."
     },
     {
         q: "What happens if the wrong oil viscosity or specification is used?",
-        a: "Using oil that is too thick (such as pouring 20W-50 into an engine requiring 0W-20) starves tight variable valve timing (VVT) solenoids and hydraulic lash adjusters of oil upon start-up, increasing friction and fuel consumption. Conversely, using oil that lacks required thermal shear resistance in a high-output turbocharged engine can cause the oil film to break down at high temperatures, leading to accelerated bearing wear and oil vaporization."
+        a: "Using the wrong oil can harm engine performance and durability. Oil that is too thick can delay lubrication to sensitive variable valve timing (VVT) components and hydraulic lifters during startup. Oil that is too thin or lacks the required manufacturer approval may not provide an adequate protective film at high operating temperatures, leading to increased friction, accelerated component wear, and potential warranty complications."
     },
     {
         q: "Why does my engine consume oil between scheduled service intervals?",
-        a: "In the UAE, high operating temperatures can cause volatile fractions of lower-grade oils to evaporate. Modern high-compression engines may normally consume up to 0.5 litres of oil per 1,500–2,000 km. However, rapid consumption often points to hardened valve stem seals, stuck piston oil control rings, a malfunctioning PCV valve, or external gasket seepage (such as at the valve cover or oil pan), all of which we can diagnose during your service visit."
+        a: "Some minor oil consumption can be normal in modern high-compression or turbocharged engines. However, noticeable oil consumption often stems from external leaks (such as worn valve cover gaskets or oil pan seals), a clogged PCV valve, or internal wear on piston rings or valve stem seals. If your oil level drops frequently between changes, our technicians can inspect the engine to identify the underlying cause."
     }
 ];
 
 const relatedServices = [
-    { icon: "cog", title: "Car Engine Service Dubai", desc: "Engine diagnostics, repairs &amp; overhauls", href: "/car-engine-service-dubai" },
-    { icon: "tools", title: "Car Servicing Dubai", desc: "Scheduled minor &amp; major vehicle service", href: "/car-maintenance-dubai" },
+    { icon: "cog", title: "Car Engine Service Dubai", desc: "Engine diagnostics, repairs & overhauls", href: "/car-engine-service-dubai" },
+    { icon: "tools", title: "Car Servicing Dubai", desc: "Scheduled minor & major vehicle service", href: "/car-maintenance-dubai" },
     { icon: "search", title: "Full Car Check Up", desc: "Comprehensive 50-point vehicle inspection", href: "/car-inspection-dubai" },
-    { icon: "car", title: "Mobile Car Mechanic Dubai", desc: "Oil change &amp; maintenance at your location", href: "/mobile-car-repair-dubai" }
+    { icon: "car", title: "Mobile Car Repair Dubai", desc: "On-site mechanical diagnostics & call-outs", href: "/mobile-car-repair-dubai" }
 ];
 
 // ---------------------------------------------------------------------------
@@ -194,7 +309,7 @@ const schemaGraph = {
             "offers": {
                 "@type": "AggregateOffer",
                 "lowPrice": 89,
-                "highPrice": 380,
+                "highPrice": 350,
                 "priceCurrency": "AED",
                 "availability": "https://schema.org/InStock"
             }
@@ -255,10 +370,10 @@ const schemaGraph = {
                 </nav>
                 <span class="dcrs-badge">Al Satwa, Dubai · Engine Oil &amp; Filter Service · All Makes &amp; Models</span>
                 <h1 class="dcrs-hero-banner__title">
-                    Car Oil Change Dubai - Engine Oil &amp; Filter Service in Al Satwa
+                    Car Oil Change Dubai - Engine Oil &amp; Filter Replacement in Al Satwa
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    High ambient temperatures and frequent stop-and-go driving across Dubai subject motor oil to severe thermal shear, leading to accelerated additive depletion and dangerous sludge formation. Our car oil change in Dubai delivers complete crankcase draining, manufacturer-certified oil grade selection, OEM filter replacement, and a complimentary 20-point underbody inspection. At our central Al Satwa workshop or via mobile service at your door, we keep your engine lubricated and protected with fast and affordable pricing.
+                    Keep your engine running smoothly with a professional car oil change in Dubai. At Dubai Car Repair Service in Al Satwa, we provide complete engine oil replacement and fresh oil filter installation for all vehicle makes and models. Our experienced mechanics use the correct manufacturer-approved oil grade—synthetic, semi-synthetic, or mineral—to ensure optimal lubrication, engine cooling, and reliable protection for daily driving in the UAE. Packages start from AED 89.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -278,17 +393,17 @@ const schemaGraph = {
                     <div class="dcrs-split__content">
                         <div class="dcrs-kicker">Service Overview</div>
                         <h2 class="dcrs-heading__title">
-                            Car Oil Change Dubai - Thermal Protection &amp; Engine Longevity
+                            Car Oil Change Dubai - Engine Protection &amp; Longevity
                         </h2>
                         <div class="dcrs-prose">
                             <p>
-                                Engine oil is the vital lifeblood of your vehicle's powertrain, serving four essential functions: lubricating high-friction contact points, cooling internal combustion components, sealing piston rings, and suspending combustion contaminants. In Dubai's demanding climate, where summer asphalt temperatures regularly exceed 55°C, motor oil operates under extreme thermal stress. Extended exposure to these temperatures degrades polymer viscosity modifiers, causing standard lubricants to oxidize, lose film strength, and form abrasive carbon deposits.
+                                Engine oil is essential for your vehicle's engine health and longevity. It performs four vital functions: lubricating moving metal parts to minimize friction, dissipating intense combustion heat, cleaning away dirt and carbon by-products, and creating a seal between pistons and cylinder walls. In Dubai's warm climate and stop-and-go city driving, oil breaks down faster over time, gradually losing its protective qualities and allowing harmful sludge to accumulate if not replaced regularly.
                             </p>
                             <p>
-                                At Dubai Car Repair Service, we follow strict manufacturer specifications rather than applying generic bulk oils. Every service involves gravity sump draining to remove settled metallic particles, replacing the oil filter with a genuine OEM-equivalent high-efficiency element, and installing fresh crush washers to guarantee leak-free sump plug sealing. If you suspect deeper internal wear or notice unusual valvetrain ticking, our certified technicians can perform full <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine mechanical diagnostics</a> or a multi-point <a href="/car-inspection-dubai" class="dcrs-inline-link">vehicle safety inspection</a>.
+                                At Dubai Car Repair Service, our oil change service follows vehicle manufacturer specifications. We drain the old oil thoroughly using our workshop hydraulic hoists, inspect the drain plug and install a fresh crush washer, and fit a quality OEM-equivalent oil filter to ensure clean oil circulation. Selecting the correct oil viscosity grade and specification—whether 0W-20, 5W-30, or 5W-40—is crucial to protecting modern engine components like variable valve timing systems and turbochargers. If you notice unusual noises or want a broader check, our team can also perform <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine mechanical diagnostics</a> or a multi-point <a href="/car-inspection-dubai" class="dcrs-inline-link">vehicle inspection</a>.
                             </p>
                             <p>
-                                We stock full-synthetic, semi-synthetic, and specialized European long-life formulations (covering BMW Longlife, Mercedes-Benz 229.5, and VW 504/507 standards) at our workshop at 222 Al Satwa Road. For customers who prefer maintenance at home or office, our fully equipped <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car service in Dubai</a> arrives with drain containers, fresh oil, and filters for mess-free servicing. To schedule an appointment or verify oil capacity, reach out through our <a href="/contact" class="dcrs-inline-link">workshop service desk</a>.
+                                We stock fully synthetic, semi-synthetic, and conventional mineral oils suitable for Japanese, European, American, and Korean vehicles at our workshop at 222 Al Satwa Road. Routine oil changes can also be combined with scheduled <a href="/car-maintenance-dubai" class="dcrs-inline-link">car maintenance</a> for complete peace of mind. To check the recommended oil grade for your car or request an upfront estimate, simply call us or send a message on WhatsApp.
                             </p>
                         </div>
                     </div>
@@ -318,9 +433,9 @@ const schemaGraph = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Fast and Affordable Pricing</div>
-                    <h2 class="dcrs-heading__title">Engine Oil Change Pricing &amp; Service Intervals</h2>
+                    <h2 class="dcrs-heading__title">Engine Oil Change Pricing &amp; Service Packages</h2>
                     <p class="dcrs-heading__sub">
-                        Clear, transparent packages based on oil type and engine capacity. Every price includes oil, OEM-spec filter, labor, and safety inspection.
+                        Clear packages based on oil type and engine requirements. Every oil package includes engine oil, filter, labour, and underbody visual inspection.
                     </p>
                 </div>
 
@@ -328,19 +443,19 @@ const schemaGraph = {
                     <table class="dcrs-pricing-table">
                         <thead>
                             <tr>
-                                <th>Oil Package</th>
-                                <th>Price Range (AED)</th>
+                                <th>Service / Package</th>
+                                <th>Typical Price</th>
                                 <th>Recommended Interval</th>
-                                <th>Included Work</th>
+                                <th>Inclusions &amp; Scope</th>
                             </tr>
                         </thead>
                         <tbody>
                             {pricingTable.map((p) => (
                                 <tr>
-                                    <td class="dcrs-table-service"><strong>{p.package}</strong></td>
+                                    <td class="dcrs-table-service"><strong>{p.service}</strong></td>
                                     <td class="dcrs-table-price">{p.price}</td>
                                     <td class="dcrs-table-interval">{p.interval}</td>
-                                    <td class="dcrs-table-desc">{p.desc}</td>
+                                    <td class="dcrs-table-desc">{p.includes}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -348,7 +463,7 @@ const schemaGraph = {
                 </div>
 
                 <p class="dcrs-pricing-disclaimer">
-                    <Fragment set:html={icons.info} /> Price ranges reflect standard 4-cylinder and small V6 engine oil capacities (up to 5 litres). Large-capacity V8 engines, commercial vans, and high-performance vehicles requiring 6 to 9+ litres are priced transparently by volume. Written quotation confirmed before service.
+                    <Fragment set:html={icons.infoCircle} /> Note: Listed prices are provisional estimates based on standard 4-cylinder passenger vehicles requiring up to 4 litres of oil. Larger engines (V6, V8) requiring additional volume or vehicles requiring specialized manufacturer-approved oils are quoted transparently before service begins. Crush washer replacement is included in all packages.
                 </p>
             </div>
         </section>
@@ -358,9 +473,9 @@ const schemaGraph = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Service Process</div>
-                    <h2 class="dcrs-heading__title">Our 4-Step Professional Oil Change Workflow</h2>
+                    <h2 class="dcrs-heading__title">Our 6-Step Professional Oil Change Process</h2>
                     <p class="dcrs-heading__sub">
-                        We avoid fast-lube shortcuts. Every vehicle undergoes a thorough mechanical process designed to safeguard internal components.
+                        Every vehicle undergoes a methodical six-step procedure designed to safeguard internal components and verify vehicle condition.
                     </p>
                 </div>
 
@@ -381,9 +496,9 @@ const schemaGraph = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Oil Types &amp; Grades</div>
-                    <h2 class="dcrs-heading__title">Which Engine Oil Does Your Car Need in Dubai?</h2>
+                    <h2 class="dcrs-heading__title">Understanding Engine Oil Types &amp; Viscosity Grades</h2>
                     <p class="dcrs-heading__sub">
-                        Using the correct viscosity grade prevents metal-on-metal contact under heavy acceleration and high desert temperatures.
+                        Selecting the correct viscosity grade and performance specification ensures adequate lubrication film under all operating conditions.
                     </p>
                 </div>
 
@@ -400,30 +515,30 @@ const schemaGraph = {
                                 </div>
                             </div>
                             <p class="dcrs-oil-card__desc">{o.desc}</p>
-                            {o.vehicles && (
-                                <p class="dcrs-oil-card__desc" style="margin-top: 0.6rem;"><strong>Recommended for:</strong> {o.vehicles}</p>
+                            {o.note && (
+                                <p class="dcrs-oil-card__note"><strong>Application Note:</strong> {o.note}</p>
                             )}
                         </div>
                     ))}
                 </div>
 
                 <div class="dcrs-grade-table-wrap">
-                    <h3 class="dcrs-subheading">Common Viscosity Grades Used in Dubai</h3>
+                    <h3 class="dcrs-subheading">Common Viscosity Grades &amp; Applications</h3>
                     <div class="dcrs-table-wrapper">
                         <table class="dcrs-pricing-table">
                             <thead>
                                 <tr>
-                                    <th>Grade</th>
-                                    <th>Application &amp; Characteristics</th>
-                                    <th>Typical Vehicles</th>
+                                    <th>Viscosity Grade</th>
+                                    <th>Viscosity Characteristics &amp; Meaning</th>
+                                    <th>Application Considerations</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {grades.map((g) => (
                                     <tr>
-                                        <td><code>{g.grade}</code></td>
-                                        <td>{g.desc}</td>
-                                        <td>{g.vehicles}</td>
+                                        <td><code class="dcrs-code-grade">{g.grade}</code></td>
+                                        <td>{g.meaning}</td>
+                                        <td>{g.application}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -438,18 +553,23 @@ const schemaGraph = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Warning Signs</div>
-                    <h2 class="dcrs-heading__title">6 Signs Your Engine Oil Needs Immediate Changing</h2>
+                    <h2 class="dcrs-heading__title">6 Warning Signs Your Engine Oil Needs Attention</h2>
                     <p class="dcrs-heading__sub">
-                        Delaying an oil change past its service limit leads to sludge buildup, increased friction, and costly valvetrain damage.
+                        Delaying an oil change or driving with low or contaminated oil can lead to increased friction, valve noise, and preventable mechanical wear.
                     </p>
                 </div>
 
-                <div class="dcrs-intervals-grid">
-                    {intervals.map((item) => (
-                        <div class="dcrs-interval-card">
-                            <span class="dcrs-interval-card__km">{item.km}</span>
-                            <h3 class="dcrs-interval-card__title">{item.title}</h3>
-                            <p class="dcrs-interval-card__desc">{item.desc}</p>
+                <div class="dcrs-signs-grid">
+                    {warningSigns.map((s) => (
+                        <div class="dcrs-sign-card">
+                            <div class="dcrs-sign-card__head">
+                                <span class="dcrs-sign-card__num">{s.num}</span>
+                                <h3 class="dcrs-sign-card__title">{s.title}</h3>
+                            </div>
+                            <p class="dcrs-sign-card__desc">{s.desc}</p>
+                            <div class="dcrs-sign-card__action">
+                                <strong>Action:</strong> {s.action}
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -462,7 +582,7 @@ const schemaGraph = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Engine Oil Changes</h2>
-                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, premium certified lubricants, and fast and affordable pricing.</p>
+                    <p class="dcrs-heading__sub">Experienced mechanics, quality OEM filters, and upfront price confirmation at our Al Satwa workshop.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -471,9 +591,9 @@ const schemaGraph = {
                             <span class="dcrs-reason-card__icon">
                                 <Fragment set:html={icons[r.icon]} />
                             </span>
-                            <div>
+                            <div class="dcrs-reason-card__body">
                                 <h3 class="dcrs-reason-card__title">{r.title}</h3>
-                                <p class="dcrs-reason-card__text">{r.desc}</p>
+                                <p class="dcrs-reason-card__desc">{r.desc}</p>
                             </div>
                         </div>
                     ))}
@@ -521,7 +641,7 @@ const schemaGraph = {
                             <span class="dcrs-related-card__icon">
                                 <Fragment set:html={icons[r.icon]} />
                             </span>
-                            <h3 class="dcrs-related-card__title">{r.name}</h3>
+                            <h3 class="dcrs-related-card__title">{r.title}</h3>
                             <p class="dcrs-related-card__desc">{r.desc}</p>
                         </a>
                     ))}
@@ -534,12 +654,12 @@ const schemaGraph = {
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Quick &amp; Professional Service</span>
+                        <span class="dcrs-cta-banner__badge">Al Satwa Workshop · All Makes &amp; Models</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Engine Oil Change in Dubai Today
+                            Book Your Car Oil Change in Dubai Today
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing starting from AED 89. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or call for immediate lube bay availability.
+                            Affordable pricing starting from AED 89 for mineral oil packages, AED 140 for semi-synthetic, and AED 220 for fully synthetic. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us for prompt service.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -547,7 +667,7 @@ const schemaGraph = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
                         </a>
                     </div>
                 </div>
@@ -572,9 +692,9 @@ const schemaGraph = {
     :root {
         --ink: #10201F;
         --ink-soft: #1B302E;
-        --paper: #E8E4D8;
+        --paper: #FAF8F5;
         --paper-alt: #DFDACB;
-        --white: #FBF9F4;
+        --white: #FFFFFF;
         --brass: #D48E33;
         --brass-deep: #9C6423;
         --steel: #354D4B;
@@ -586,19 +706,8 @@ const schemaGraph = {
         max-width: 100%;
         overflow-x: clip;
         box-sizing: border-box;
-    }
-
-    @media (min-width: 768px) {
-        .dcrs-service-page {
-            padding-bottom: 0;
-        }
-    }
-
-    /* Hide floating WhatsApp button on mobile to prevent overlapping bottom sticky bar */
-    @media (max-width: 767.98px) {
-        :global(.float) {
-            display: none !important;
-        }
+        background-color: var(--paper, #FAF8F5);
+        color: var(--ink, #10201F);
     }
 
     .dcrs-container {
@@ -619,7 +728,7 @@ const schemaGraph = {
     .dcrs-hero-banner {
         position: relative;
         background-color: var(--ink, #10201F);
-        color: var(--white, #FBF9F4);
+        color: #FBF9F4;
         padding: clamp(3.5rem, 8vw, 5.5rem) 0;
         overflow: hidden;
         min-height: 500px;
@@ -691,12 +800,12 @@ const schemaGraph = {
     }
 
     .dcrs-hero-banner__title {
-        font-family: var(--font-display, serif);
+        font-family: 'Fraunces', serif;
         font-size: clamp(1.5rem, 5.5vw, 2.9rem);
         line-height: 1.2;
         letter-spacing: -0.01em;
         margin: 0 0 1rem;
-        color: var(--white, #FBF9F4);
+        color: #FBF9F4;
         word-break: break-word;
         overflow-wrap: break-word;
     }
@@ -734,7 +843,6 @@ const schemaGraph = {
         align-items: center;
         justify-content: center;
         gap: 0.55rem;
-        font-family: var(--font-body, sans-serif);
         font-weight: 600;
         font-size: 0.95rem;
         padding: 0.85rem 1.4rem;
@@ -754,27 +862,17 @@ const schemaGraph = {
     }
 
     .dcrs-btn--solid {
-        background: var(--brass);
-        color: var(--ink);
+        background: var(--brass, #D48E33);
+        color: var(--ink, #10201F) !important;
     }
     .dcrs-btn--solid:hover {
-        background: var(--brass-deep);
-        color: #fff;
-    }
-
-    .dcrs-btn--outline-ink {
-        background: transparent;
-        color: var(--ink);
-        border-color: var(--ink);
-    }
-    .dcrs-btn--outline-ink:hover {
-        background: var(--ink);
-        color: var(--white);
+        background: var(--brass-deep, #9C6423);
+        color: #fff !important;
     }
 
     .dcrs-btn--wa {
         background: #25d366;
-        color: #fff;
+        color: #fff !important;
     }
     .dcrs-btn--wa:hover {
         background: #1ebc59;
@@ -782,18 +880,13 @@ const schemaGraph = {
 
     /* SECTIONS COMMON */
     .dcrs-section {
-        padding: 48px 0;
-        background-color: #fff;
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
         width: 100%;
-        max-width: 100%;
-        /* overflow handled at page level */
         box-sizing: border-box;
     }
 
-    @media (min-width: 768px) {
-        .dcrs-section {
-            padding: 72px 0;
-        }
+    .dcrs-section--paper {
+        background-color: var(--paper, #FAF8F5);
     }
 
     .dcrs-section--tint {
@@ -803,13 +896,7 @@ const schemaGraph = {
     }
 
     .dcrs-heading {
-        margin-bottom: 32px;
-    }
-
-    @media (min-width: 768px) {
-        .dcrs-heading {
-            margin-bottom: 44px;
-        }
+        margin-bottom: clamp(2rem, 4vw, 3rem);
     }
 
     .dcrs-heading--center {
@@ -821,7 +908,7 @@ const schemaGraph = {
 
     .dcrs-kicker {
         display: inline-block;
-        font-family: 'IBM Plex Mono', monospace;
+        font-family: var(--font-mono, monospace);
         font-size: 0.76rem;
         text-transform: uppercase;
         letter-spacing: 0.06em;
@@ -832,11 +919,7 @@ const schemaGraph = {
         padding: 4px 10px;
         border-radius: 4px;
         margin-bottom: 12px;
-        max-width: 100%;
-        white-space: normal;
-        word-break: break-word;
         line-height: 1.4;
-        box-sizing: border-box;
     }
 
     .dcrs-heading__title {
@@ -860,10 +943,6 @@ const schemaGraph = {
     .dcrs-inline-link {
         color: var(--brass, #D48E33);
         font-weight: 600;
-        text-decoration: none;
-    }
-
-    .dcrs-inline-link:hover {
         text-decoration: underline;
     }
 
@@ -882,14 +961,6 @@ const schemaGraph = {
             grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
             gap: 50px;
         }
-    }
-
-    .dcrs-split > *,
-    .dcrs-split__content,
-    .dcrs-split__visual {
-        min-width: 0;
-        max-width: 100%;
-        box-sizing: border-box;
     }
 
     .dcrs-prose p {
@@ -935,7 +1006,7 @@ const schemaGraph = {
         bottom: 12px;
         right: 12px;
         background: var(--brass, #D48E33);
-        color: #fff;
+        color: var(--ink, #10201F);
         padding: 8px 14px;
         border-radius: 6px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -943,33 +1014,176 @@ const schemaGraph = {
     }
 
     .dcrs-photo-badge__value {
-        font-size: 1.2rem;
-        font-weight: 700;
+        font-size: 1.25rem;
+        font-weight: 800;
         line-height: 1.1;
     }
 
     .dcrs-photo-badge__label {
         font-size: 0.7rem;
-        opacity: 0.92;
+        font-weight: 600;
         letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-top: 2px;
     }
 
-    /* 3. OIL TYPES GRID */
+    /* 3. PRICING TABLE */
+    .dcrs-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #dee2e6;
+        margin-bottom: 0.85rem;
+        background: #fff;
+    }
+
+    .dcrs-pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+        text-align: left;
+    }
+
+    .dcrs-pricing-table thead th {
+        background: var(--ink-soft, #1B302E);
+        color: #fff;
+        padding: 0.85rem 1rem;
+        font-weight: 600;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .dcrs-pricing-table tbody td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #e9ecef;
+        color: #444;
+        vertical-align: top;
+    }
+
+    .dcrs-pricing-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .dcrs-pricing-table tbody tr:hover {
+        background-color: rgba(193, 128, 46, 0.04);
+    }
+
+    .dcrs-table-service {
+        color: var(--ink, #10201F);
+        font-weight: 600;
+    }
+
+    .dcrs-table-price {
+        font-weight: 700;
+        color: var(--brass, #D48E33);
+        white-space: nowrap;
+    }
+
+    .dcrs-table-interval {
+        font-size: 0.82rem;
+        color: #555;
+        white-space: nowrap;
+    }
+
+    .dcrs-table-desc {
+        font-size: 0.84rem;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    .dcrs-pricing-disclaimer {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.82rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .dcrs-pricing-disclaimer :global(svg) {
+        width: 16px;
+        height: 16px;
+        color: var(--brass, #D48E33);
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    /* 4. SERVICE PROCESS (6 STEPS) */
+    .dcrs-steps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-step-card {
+        background: #fff;
+        border: 1px solid #e4e8ec;
+        border-radius: 8px;
+        padding: 1.4rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dcrs-step-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .dcrs-step-card__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--brass, #D48E33);
+        color: var(--ink, #10201F);
+        font-weight: 800;
+        font-size: 0.9rem;
+    }
+
+    .dcrs-step-card__title {
+        font-size: 0.96rem;
+        font-weight: 700;
+        color: var(--ink, #10201F);
+        margin: 0;
+        line-height: 1.35;
+    }
+
+    .dcrs-step-card__desc {
+        font-size: 0.84rem;
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* 5. OIL TYPES GRID */
     .dcrs-oils-grid {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         gap: 20px;
         width: 100%;
         box-sizing: border-box;
+        margin-bottom: 3rem;
     }
 
     @media (min-width: 768px) {
-        .dcrs-oils-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-
-    @media (min-width: 1024px) {
         .dcrs-oils-grid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
@@ -984,7 +1198,6 @@ const schemaGraph = {
         flex-direction: column;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         box-sizing: border-box;
-        min-width: 0;
     }
 
     .dcrs-oil-card__header {
@@ -1014,7 +1227,7 @@ const schemaGraph = {
     }
 
     .dcrs-oil-icon--warning {
-        background: #D9822B;
+        background: #b86e24;
     }
 
     .dcrs-oil-card__icon :global(svg) {
@@ -1039,379 +1252,139 @@ const schemaGraph = {
         font-size: 0.86rem;
         line-height: 1.65;
         color: #555;
-        margin: 0 0 14px;
+        margin: 0 0 12px;
         flex-grow: 1;
     }
 
-    .dcrs-oil-card__vehicles {
+    .dcrs-oil-card__note {
+        font-size: 0.78rem;
+        color: #666;
         background: #f8f9fa;
         border-radius: 6px;
-        padding: 10px 12px;
-        font-size: 0.78rem;
-        line-height: 1.5;
-        box-sizing: border-box;
+        padding: 8px 10px;
+        margin: 0;
+        line-height: 1.45;
     }
 
-    .dcrs-oil-card__vehicles-label {
+    .dcrs-oil-card__note strong {
         color: var(--ink, #10201F);
-        display: block;
-        margin-bottom: 2px;
     }
 
-    .dcrs-oil-card__vehicles-text {
-        color: #666;
+    /* Viscosity table */
+    .dcrs-grade-table-wrap {
+        margin-top: 1rem;
     }
 
-    /* 4. GRADE REFERENCE TABLE */
-    .dcrs-table-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
+    .dcrs-subheading {
+        font-family: 'Fraunces', serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--ink, #10201F);
+        margin: 0 0 1.25rem;
+        text-align: center;
     }
 
-    .dcrs-table-card {
+    .dcrs-code-grade {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--brass, #D48E33);
+        background: rgba(193, 128, 46, 0.08);
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    /* 6. WARNING SIGNS GRID */
+    .dcrs-signs-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-signs-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-signs-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-sign-card {
         background: #fff;
         border: 1px solid #e4e8ec;
         border-radius: 10px;
-        padding: 18px;
+        padding: 1.4rem 1.25rem;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-        box-sizing: border-box;
-    }
-
-    @media (min-width: 768px) {
-        .dcrs-table-card {
-            padding: 24px;
-        }
-    }
-
-    .dcrs-table-card__header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .dcrs-table-card__icon :global(svg) {
-        width: 20px;
-        height: 20px;
-        color: var(--brass, #D48E33);
-        flex-shrink: 0;
-    }
-
-    .dcrs-table-card__title {
-        font-size: clamp(1rem, 3vw, 1.15rem);
-        font-weight: 700;
-        color: var(--ink, #10201F);
-        margin: 0;
-        text-align: center;
-    }
-
-    .dcrs-table-wrap {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        box-sizing: border-box;
-    }
-
-    .dcrs-responsive-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.88rem;
-    }
-
-    .dcrs-responsive-table th {
-        background: var(--ink-soft, #1B302E);
-        color: #fff;
-        padding: 10px 14px;
-        text-align: left;
-        font-weight: 600;
-        font-size: 0.82rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .dcrs-responsive-table td {
-        padding: 10px 14px;
-        border: 1px solid #e4e8ec;
-        vertical-align: middle;
-        color: #444;
-    }
-
-    .dcrs-responsive-table tr:hover {
-        background-color: #fbfbfc;
-    }
-
-    .dcrs-grade-highlight {
-        color: var(--brass, #D48E33);
-        font-size: 0.92rem;
-    }
-
-    .dcrs-pill-badge {
-        display: inline-block;
-        padding: 3px 8px;
-        background: #f1f3f5;
-        border: 1px solid #e2e6e9;
-        border-radius: 4px;
-        font-size: 0.78rem;
-        color: #333;
-    }
-
-    .dcrs-grade-interval {
-        font-weight: 600;
-        color: var(--ink, #10201F);
-        text-align: center;
-    }
-
-    .dcrs-table-note {
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        margin-top: 14px;
-        font-size: 0.8rem;
-        color: #666;
-        line-height: 1.5;
-    }
-
-    .dcrs-table-note :global(svg) {
-        width: 16px;
-        height: 16px;
-        color: var(--brass, #D48E33);
-        flex-shrink: 0;
-        margin-top: 2px;
-    }
-
-    /* Mobile Table Layout */
-    @media (max-width: 767px) {
-        .dcrs-responsive-table thead {
-            display: none;
-        }
-
-        .dcrs-responsive-table tbody,
-        .dcrs-responsive-table tr,
-        .dcrs-responsive-table td {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .dcrs-responsive-table tr {
-            margin-bottom: 14px;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 8px 10px;
-            background-color: #f8f9fa;
-        }
-
-        .dcrs-responsive-table td {
-            text-align: left !important;
-            border: none !important;
-            padding: 5px 6px !important;
-        }
-
-        .dcrs-responsive-table td::before {
-            content: attr(data-label);
-            display: block;
-            font-weight: 700;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: #6c757d;
-            margin-bottom: 2px;
-        }
-    }
-
-    /* 5. PROCESS & PRICING TWO COLUMN */
-    .dcrs-two-col {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 36px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    @media (min-width: 992px) {
-        .dcrs-two-col {
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            gap: 48px;
-        }
-    }
-
-    .dcrs-two-col > *,
-    .dcrs-two-col__col {
-        min-width: 0;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Steps */
-    .dcrs-oil-steps {
         display: flex;
         flex-direction: column;
-        gap: 14px;
-        width: 100%;
-        box-sizing: border-box;
+        transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .dcrs-oil-step {
+    .dcrs-sign-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .dcrs-sign-card__head {
         display: flex;
-        gap: 12px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #e4e8ec;
-        box-sizing: border-box;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 0.75rem;
     }
 
-    .dcrs-oil-step:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .dcrs-oil-step__num {
-        width: 32px;
-        height: 32px;
+    .dcrs-sign-card__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
         border-radius: 50%;
         background: var(--brass, #D48E33);
-        color: #fff;
-        font-weight: 700;
-        font-size: 0.82rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        color: var(--ink, #10201F);
+        font-weight: 800;
+        font-size: 0.85rem;
         flex-shrink: 0;
     }
 
-    .dcrs-oil-step__body {
-        min-width: 0;
-        flex: 1;
-    }
-
-    .dcrs-oil-step__title {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--ink, #10201F);
-        margin: 0 0 3px;
-    }
-
-    .dcrs-oil-step__desc {
-        font-size: 0.82rem;
-        line-height: 1.55;
-        color: #555;
-        margin: 0;
-    }
-
-    /* Pricing table */
-    .dcrs-price-table-wrap {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-    }
-
-    .dcrs-price-table {
-        width: 100%;
-        border-collapse: collapse;
-        background: #fff;
-        border: 1px solid #e4e8ec;
-        border-radius: 6px;
-        overflow: hidden;
-        font-size: 0.85rem;
-    }
-
-    .dcrs-price-table th {
-        background: var(--ink-soft, #1B302E);
-        color: #fff;
-        padding: 9px 12px;
-        text-align: left;
-        font-size: 0.8rem;
-    }
-
-    .dcrs-price-table td {
-        padding: 9px 12px;
-        border-bottom: 1px solid #eef1f3;
-        color: #444;
-    }
-
-    .dcrs-price-cell {
-        font-weight: 600;
-        color: var(--brass, #D48E33);
-        word-break: normal;
-        overflow-wrap: break-word;
-    }
-
-    .dcrs-include-cell {
-        font-size: 0.78rem;
-        color: #666;
-    }
-
-    /* Interval guide */
-    .dcrs-interval-box {
-        background: var(--ink, #10201F);
-        color: #fff;
-        border-radius: 10px;
-        padding: 18px;
-        box-sizing: border-box;
-        width: 100%;
-    }
-
-    .dcrs-interval-box__title {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    .dcrs-sign-card__title {
         font-size: 0.95rem;
         font-weight: 700;
-        color: #fff;
-        margin: 0 0 14px;
+        color: var(--ink, #10201F);
+        margin: 0;
+        line-height: 1.35;
     }
 
-    .dcrs-interval-box__title :global(svg) {
-        width: 18px;
-        height: 18px;
-        color: var(--brass, #D48E33);
-        flex-shrink: 0;
-    }
-
-    .dcrs-interval-box__rows {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .dcrs-interval-row {
-        display: flex;
-        flex-direction: column;
-        padding: 8px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    .dcrs-sign-card__desc {
         font-size: 0.84rem;
-        gap: 2px;
+        line-height: 1.6;
+        color: #555;
+        margin: 0 0 0.85rem;
+        flex-grow: 1;
     }
 
-    @media (min-width: 600px) {
-        .dcrs-interval-row {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .dcrs-sign-card__action {
+        font-size: 0.8rem;
+        color: #444;
+        background: #f8f9fa;
+        border-left: 3px solid var(--brass, #D48E33);
+        padding: 0.55rem 0.75rem;
+        border-radius: 0 6px 6px 0;
+        line-height: 1.5;
     }
 
-    .dcrs-interval-row:last-child {
-        border-bottom: none;
+    .dcrs-sign-card__action strong {
+        color: var(--ink, #10201F);
     }
 
-    .dcrs-interval-row__name {
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    .dcrs-interval-row__val {
-        font-weight: 700;
-        color: #fff;
-    }
-
-    /* 6. WHY CHOOSE US */
+    /* 7. WHY CHOOSE US (6 CARDS) */
     .dcrs-reasons-grid {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
-        gap: 18px;
+        gap: 1.25rem;
         width: 100%;
         box-sizing: border-box;
     }
@@ -1432,18 +1405,22 @@ const schemaGraph = {
         background: #fff;
         border: 1px solid #e4e8ec;
         border-radius: 10px;
-        padding: 20px;
+        padding: 1.4rem;
         display: flex;
         gap: 14px;
         align-items: flex-start;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         box-sizing: border-box;
-        min-width: 0;
+    }
+
+    .dcrs-reason-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
 
     .dcrs-reason-card__icon {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         background: var(--brass, #D48E33);
         color: #fff;
@@ -1454,8 +1431,8 @@ const schemaGraph = {
     }
 
     .dcrs-reason-card__icon :global(svg) {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
     }
 
     .dcrs-reason-card__body {
@@ -1464,114 +1441,88 @@ const schemaGraph = {
     }
 
     .dcrs-reason-card__title {
-        font-size: 0.92rem;
+        font-size: 0.95rem;
         font-weight: 700;
         color: var(--ink, #10201F);
-        margin: 0 0 5px;
+        margin: 0 0 0.4rem;
         line-height: 1.35;
     }
 
     .dcrs-reason-card__desc {
-        font-size: 0.84rem;
+        font-size: 0.85rem;
         line-height: 1.6;
-        color: #666;
+        color: #555;
         margin: 0;
     }
 
-    /* 7. FAQ ACCORDION */
-    .dcrs-faq-wrap {
-        max-width: 820px;
+    /* 8. FAQ ACCORDION */
+    .dcrs-faq-accordion {
+        max-width: 860px;
         margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .dcrs-accordion {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        box-sizing: border-box;
+        gap: 0.75rem;
     }
 
-    .dcrs-accordion__item {
+    .dcrs-faq-item {
         background: #fff;
         border: 1px solid #e4e8ec;
         border-radius: 8px;
         overflow: hidden;
-        transition: border-color 0.2s;
-        box-sizing: border-box;
-        width: 100%;
+        transition: border-color 0.15s ease;
     }
 
-    .dcrs-accordion__item.is-open {
+    .dcrs-faq-item[open] {
         border-color: var(--brass, #D48E33);
     }
 
-    .dcrs-accordion__header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 16px;
-        background: #fff;
-        border: none;
-        text-align: left;
-        cursor: pointer;
-        font-size: clamp(0.88rem, 2.5vw, 0.95rem);
+    .dcrs-faq-item__question {
+        list-style: none;
+        padding: 1.15rem 1.35rem;
+        font-family: 'Fraunces', serif;
+        font-size: 1.05rem;
         font-weight: 600;
         color: var(--ink, #10201F);
-        transition: background 0.2s;
-        box-sizing: border-box;
-    }
-
-    .dcrs-accordion__item.is-open .dcrs-accordion__header {
-        background: rgba(193, 128, 46, 0.05);
-        color: var(--brass-deep, #9C6423);
-    }
-
-    .dcrs-accordion__title {
-        flex: 1;
-        min-width: 0;
-        word-break: break-word;
-    }
-
-    .dcrs-accordion__arrow {
-        width: 18px;
-        height: 18px;
+        cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: center;
-        transition: transform 0.25s ease;
+        justify-content: space-between;
+        user-select: none;
+    }
+
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass, #D48E33);
+        transition: transform 0.2s ease;
         flex-shrink: 0;
     }
 
-    .dcrs-accordion__arrow :global(svg) {
-        width: 16px;
-        height: 16px;
+    .dcrs-faq-item__toggle :global(svg) {
+        width: 18px;
+        height: 18px;
     }
 
-    .dcrs-accordion__item.is-open .dcrs-accordion__arrow {
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
         transform: rotate(180deg);
     }
 
-    .dcrs-accordion__panel {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-        box-sizing: border-box;
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid #e4e8ec;
     }
 
-    .dcrs-accordion__content {
-        padding: 0 16px 16px;
-        font-size: 0.88rem;
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
         line-height: 1.7;
         color: #555;
-        box-sizing: border-box;
     }
 
-    /* 8. RELATED SERVICES */
+    /* 9. RELATED SERVICES */
     .dcrs-related-grid {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
@@ -1604,7 +1555,7 @@ const schemaGraph = {
         align-items: center;
         transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
         box-sizing: border-box;
-        min-width: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
     }
 
     .dcrs-related-card:hover {
@@ -1645,14 +1596,13 @@ const schemaGraph = {
         line-height: 1.4;
     }
 
-    /* 9. CTA BANNER */
+    /* 10. CTA BANNER */
     .dcrs-cta-banner {
         background: linear-gradient(135deg, #001516 0%, #002a2a 100%);
         color: #fff;
-        padding: 48px 0;
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
         width: 100%;
         box-sizing: border-box;
-        overflow-x: hidden;
     }
 
     .dcrs-cta-banner__inner {
@@ -1677,6 +1627,17 @@ const schemaGraph = {
         max-width: 680px;
         width: 100%;
         box-sizing: border-box;
+    }
+
+    .dcrs-cta-banner__badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass, #D48E33);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
     }
 
     .dcrs-cta-banner__title {
@@ -1717,7 +1678,7 @@ const schemaGraph = {
         }
     }
 
-    /* 10. STICKY MOBILE BAR */
+    /* 11. STICKY MOBILE BAR */
     .dcrs-stickybar {
         position: fixed;
         bottom: 0;
@@ -1731,9 +1692,11 @@ const schemaGraph = {
         gap: 8px;
         padding: 10px 14px;
         padding-bottom: max(10px, env(safe-area-inset-bottom));
-        background: #fff;
-        border-top: 1px solid #e0e0e0;
-        box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.1);
+        background: rgba(16, 32, 31, 0.96);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.25);
     }
 
     @media (min-width: 768px) {
@@ -1754,160 +1717,41 @@ const schemaGraph = {
         background-color: #25D366;
         border-color: #25D366;
     }
-    /* Mobile photo badge scaling */
-    @media (max-width: 480px) {
-        .dcrs-photo-badge {
-            bottom: 0.75rem;
-            right: 0.75rem;
-            max-width: 175px;
-        }
-        .dcrs-photo-badge .dcrs-plate__tab {
-            font-size: 0.65rem;
-            padding: 0.4rem 0.35rem;
-        }
-        .dcrs-photo-badge .dcrs-plate__row--big {
-            font-size: 1.15rem;
-        }
-        .dcrs-photo-badge .dcrs-plate__row {
-            font-size: 0.68rem;
-        }
-    }
-    /* marker: dcrs-photo-badge-responsive */
 
-    /* Responsive pricing & spec table font size & compact padding */
+    /* Responsive pricing table */
     @media (max-width: 768px) {
-        .dcrs-price-table th,
-        .dcrs-price-table td {
-            padding: 7px 8px;
-            font-size: 0.8rem;
+        .dcrs-pricing-table thead th,
+        .dcrs-pricing-table tbody td {
+            padding: 0.65rem 0.75rem;
+            font-size: 0.82rem;
         }
-        .dcrs-responsive-table th,
-        .dcrs-responsive-table td {
-            padding: 7px 8px;
-            font-size: 0.8rem;
+        .dcrs-table-price {
+            font-size: 0.82rem;
         }
     }
-    @media (max-width: 480px) {
-        .dcrs-price-table th {
-            padding: 5px 6px;
-            font-size: 0.68rem;
-        }
-        .dcrs-price-table td {
-            padding: 5px 6px;
-            font-size: 0.74rem;
-            line-height: 1.3;
-        }
-        .dcrs-price-cell {
-            font-size: 0.74rem;
-        }
-        .dcrs-include-cell {
-            font-size: 0.7rem;
-            line-height: 1.25;
-        }
-        .dcrs-responsive-table th {
-            padding: 5px 5px;
-            font-size: 0.68rem;
-        }
-        .dcrs-responsive-table td {
-            padding: 5px 5px;
-            font-size: 0.72rem;
-            line-height: 1.25;
-        }
-        .dcrs-grade-highlight {
-            font-size: 0.74rem;
-        }
-        .dcrs-pill-badge {
-            font-size: 0.65rem;
-            padding: 2px 4px;
-        }
-    }
-    /* marker: dcrs-price-table-mobile-text */
 
-
-    /* Protection against flex/grid item blowout on mobile viewports */
-    .dcrs-engine-item,
-    .dcrs-warning-item,
-    .dcrs-process-step,
-    .dcrs-engines-block,
-    .dcrs-pricing-block,
-    .dcrs-warnings-block,
-    .dcrs-process-block,
-    .dcrs-col-block,
-    .dcrs-intro-content,
-    .dcrs-intro-media {
-        min-width: 0;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    .dcrs-engine-item > div,
-    .dcrs-warning-item > div,
-    .dcrs-process-step > div {
-        min-width: 0;
-        flex: 1;
-    }
     @media (max-width: 480px) {
         .dcrs-heading__title {
             font-size: clamp(1.35rem, 5.5vw, 1.65rem);
             line-height: 1.25;
         }
-        .dcrs-engine-item {
-            padding: 0.75rem 0.85rem;
-            gap: 0.65rem;
+        .dcrs-pricing-table thead th {
+            padding: 0.55rem 0.5rem;
+            font-size: 0.72rem;
         }
-        .dcrs-engine-item__name {
-            font-size: 0.88rem;
+        .dcrs-pricing-table tbody td {
+            padding: 0.55rem 0.5rem;
+            font-size: 0.75rem;
+            line-height: 1.35;
         }
-        .dcrs-engine-item__desc {
-            font-size: 0.78rem;
-            line-height: 1.4;
-        }
-        .dcrs-table-price,
-        .dcrs-table__price,
-        .dcrs-price-cell,
-        .dcrs-price-tag {
+        .dcrs-table-price {
+            font-size: 0.74rem;
             white-space: normal !important;
             word-break: normal !important;
             overflow-wrap: break-word !important;
         }
+        .dcrs-pricing-disclaimer {
+            font-size: 0.74rem;
+        }
     }
-    /* marker: .dcrs-flex-overflow-fix */
-    .dcrs-cta-inline-link {
-        color: var(--brass, #D48E33);
-        font-weight: 600;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-    .dcrs-cta-inline-link:hover { opacity: 0.85; }
-
 </style>
-
-<script is:inline>
-    // Simple client-side accordion controller
-    document.addEventListener('DOMContentLoaded', () => {
-        const headers = document.querySelectorAll('[data-faq-toggle]');
-        headers.forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.closest('.dcrs-accordion__item');
-                const panel = item.querySelector('.dcrs-accordion__panel');
-                const isOpen = item.classList.contains('is-open');
-
-                // Close all items
-                document.querySelectorAll('.dcrs-accordion__item').forEach(other => {
-                    other.classList.remove('is-open');
-                    const otherBtn = other.querySelector('[data-faq-toggle]');
-                    if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-                    const otherPanel = other.querySelector('.dcrs-accordion__panel');
-                    if (otherPanel) otherPanel.style.maxHeight = '0';
-                });
-
-                // Toggle current if it was closed
-                if (!isOpen) {
-                    item.classList.add('is-open');
-                    header.setAttribute('aria-expanded', 'true');
-                    panel.style.maxHeight = panel.scrollHeight + 'px';
-                }
-            });
-        });
-    });
-</script>
-
