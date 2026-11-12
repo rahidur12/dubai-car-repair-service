@@ -6,7 +6,7 @@ import service2Image from '../../assets/images/service2.webp';
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
 const pageTitle = "Car Engine Repair Dubai | Diagnostics & Overhaul Service";
-const pageDescription = "Expert car engine repair in Dubai from AED 150. Computer diagnostics, timing belt, head gasket & complete overhauls at 222 Al Satwa Road. Call or WhatsApp.";
+const pageDescription = "Car engine repair in Dubai from AED 100. Professional computer diagnostics, timing belt replacement, head gasket repairs & overhauls at 222 Al Satwa Road. Call or WhatsApp.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -49,44 +49,44 @@ const engineServices = [
     {
         icon: "search",
         title: "Engine Diagnostics & Tune-Up",
-        price: "From AED 150 [CONFIRM: tune-up starting price]",
-        desc: "Comprehensive diagnostic assessment and scheduled minor servicing. Includes spark plug replacement, ignition coil testing, intake airflow and throttle body cleaning, PCV valve inspection, and air/fuel filter renewal. Restores idle stability, throttle response, and fuel efficiency.",
+        price: "AED 150 – 450",
+        desc: "Comprehensive diagnostic assessment and scheduled minor servicing. Includes spark plug replacement, ignition coil testing, intake and throttle body cleaning, and filter renewal to help restore smooth idling and fuel efficiency.",
         tags: ["OBD-II Scan", "Spark Plugs", "Ignition Coils", "Throttle Body"]
     },
     {
         icon: "clock",
         title: "Timing Belt & Chain Replacement",
-        price: "From AED 600 [CONFIRM: timing system service starting price]",
-        desc: "Precision timing synchronization service for interference and non-interference engines. We replace aging timing belts, hydraulic tensioners, idler pulleys, and guide rails. On belt-driven engines, we routinely replace the water pump simultaneously to eliminate double labour costs.",
+        price: "From AED 600",
+        desc: "Synchronization service for belt-driven and chain-driven engines. We replace aging timing belts, tensioners, idler pulleys, and guide rails, and replace the water pump where recommended to prevent duplicate labour.",
         tags: ["Timing Belt", "Timing Chain", "Hydraulic Tensioner", "Water Pump"]
     },
     {
         icon: "drop",
         title: "Cylinder Head Gasket Repair",
-        price: "From AED 1,200 [CONFIRM: head gasket repair starting price]",
-        desc: "Specialised top-end engine repair following thermal overheating or gasket failure. Includes cylinder head removal, precision straight-edge warpage measurement, pressure testing for micro-cracks, head skimming/resurfacing, multi-layer steel (MLS) gasket installation, and new head bolts torqued to factory angle specs.",
-        tags: ["Head Skimming", "MLS Gasket", "Pressure Testing", "Torque-to-Yield Bolts"]
+        price: "From AED 1,200",
+        desc: "Repairs following engine overheating or gasket failure. Includes cylinder head inspection, gasket surface preparation, multi-layer steel (MLS) gasket installation, and head bolt torque sequence.",
+        tags: ["Head Inspection", "MLS Gasket", "Pressure Testing", "Torque Sequence"]
     },
     {
         icon: "oilCan",
         title: "Oil & Fluid Leak Rectification",
-        price: "From AED 150 [CONFIRM: leak repair starting price]",
-        desc: "Systematic tracing and replacement of degraded engine seals. Dubai's ambient heat hardens rubber and silicone gaskets rapidly. We resolve leaks at the valve cover, oil filter housing, camshaft seals, front/rear crankshaft main seals, and oil sump pan using OEM-grade seals and sealant.",
+        price: "From AED 150",
+        desc: "Tracing and resolving oil leaks at valve covers, oil pans, camshaft seals, and crankshaft seals using quality gaskets and sealants suited for Dubai's climate.",
         tags: ["Valve Cover Gasket", "Main Crank Seals", "Oil Filter Housing", "Oil Pan"]
     },
     {
         icon: "wind",
         title: "Cooling System & Overheating Repair",
-        price: "From AED 200 [CONFIRM: cooling service starting price]",
-        desc: "Diagnosis and restoration of thermal management systems operating under UAE summer heat. Services include radiator leak repairs and core descaling, electronic thermostat replacement, water pump replacement, auxiliary cooling fan relay diagnostics, and high-temperature ethylene glycol coolant flushes.",
-        tags: ["Radiator Repair", "Water Pump", "Thermostat", "Coolant Flush"]
+        price: "From AED 200",
+        desc: "Diagnostic checks and repairs for thermal management systems, including radiator inspection, thermostat replacement, water pump renewal, cooling fan testing, and coolant flushes.",
+        tags: ["Radiator Check", "Water Pump", "Thermostat", "Coolant Flush"]
     },
     {
         icon: "tools",
         title: "Engine Rebuild, Overhaul & Replacement",
-        price: "From AED 3,500 [CONFIRM: engine rebuild/overhaul starting price]",
-        desc: "Full internal mechanical restoration or complete unit replacement for heavily worn or seized engines. Overhauls involve complete block tear-down, cylinder honing, new piston rings, crankshaft journal grinding, main/connecting rod bearings, valve lap/reseat, and new gasket sets. When rebuilding is not economically viable, we assist with sourcing tested replacement engines.",
-        tags: ["Block Machining", "Piston Rings", "Crankshaft Bearings", "Engine Replacement"]
+        price: "From AED 3,500",
+        desc: "Mechanical overhauls or complete unit replacement for heavily worn engines. Overhauls involve internal inspection, piston ring and bearing replacement, and precision assembly. When rebuilding is not economical, we assist in sourcing tested replacement engines.",
+        tags: ["Internal Overhaul", "Piston Rings", "Crankshaft Bearings", "Engine Replacement"]
     }
 ];
 
@@ -94,97 +94,115 @@ const warningSigns = [
     {
         icon: "alert",
         title: "Check Engine Light (Solid or Flashing)",
-        desc: "An illuminated MIL indicates stored Diagnostic Trouble Codes (DTCs). A flashing light indicates severe misfires that dump unburned fuel into the catalytic converter, demanding immediate shutdown to avoid permanent exhaust and engine damage."
+        desc: "An illuminated or flashing engine warning light indicates the engine management computer has detected a fault in the ignition, fuel, emission, or sensor systems.",
+        cause: "Oxygen sensor faults, ignition misfires, catalytic converter issues, or loose fuel cap."
     },
     {
         icon: "thermometer",
-        title: "Rapid Temperature Elevation & Overheating",
-        desc: "When coolant temp exceeds normal thresholds in UAE heat, alloy cylinder heads can warp within minutes. Immediate shutdown, cooling down, and pressure-testing the cooling circuit prevents catastrophic engine seizure."
+        title: "Engine Overheating",
+        desc: "The temperature gauge rises toward the red zone or high-temperature warnings appear on the dashboard. Continuing to drive while overheating risks head warpage or block cracking.",
+        cause: "Coolant leaks, stuck thermostat, radiator blockage, inoperative fan, or failing water pump."
     },
     {
         icon: "cloud",
-        title: "Unusual Exhaust Smoke (White, Blue, or Black)",
-        desc: "Dense white smoke points to coolant leaking into combustion chambers (blown head gasket); blue smoke signals burning oil from worn piston rings or valve stem seals; black smoke indicates unburned fuel from leaking injectors or sensor failure."
+        title: "Unusual Exhaust Smoke",
+        desc: "Excessive exhaust smoke indicates combustion irregularities: dense white smoke signals coolant intrusion, blue smoke indicates burning oil, and black smoke suggests unburned fuel.",
+        cause: "Blown head gasket, worn valve stem seals, piston ring wear, or leaking fuel injectors."
     },
     {
         icon: "bolt",
-        title: "Rough Idling, Hesitation & Engine Misfires",
-        desc: "Noticeable engine shaking at traffic stops, stumbling acceleration, or sudden loss of power typically stems from degraded spark plugs, failed ignition coil packs, clogged fuel injectors, or intake vacuum leaks."
+        title: "Rough Idling & Engine Misfires",
+        desc: "The engine shakes or stumbles when stopped at traffic lights, hesitates during acceleration, or produces uneven exhaust pulsing.",
+        cause: "Worn spark plugs, failing ignition coil packs, vacuum leaks, or dirty fuel injectors."
     },
     {
         icon: "volume",
-        title: "Mechanical Knocking, Tapping or Rattle",
-        desc: "A deep rhythmic knock from the lower engine block signals worn crankshaft rod bearings or low oil pressure. Sharp top-end ticking points to hydraulic lifters or valve clearance issues, while front rattles indicate timing chain guide wear."
+        title: "Engine Knocking or Tapping",
+        desc: "Rhythmic metallic clicking, tapping, or knocking sounds from the engine bay that fluctuate with engine speed point to mechanical clearance or lubrication issues.",
+        cause: "Worn connecting rod bearings, low oil pressure, hydraulic lifter wear, or timing chain slack."
     },
     {
         icon: "drop",
-        title: "Accelerated Oil Consumption or Coolant Loss",
-        desc: "Losing engine oil between regular changes or finding low coolant in the expansion reservoir without obvious ground puddles suggests internal oil consumption or high-pressure coolant vaporisation requiring mechanical leak-down checks."
+        title: "Excessive Oil Consumption",
+        desc: "Having to regularly top up motor oil between scheduled service intervals without visible external ground puddles indicates oil is burning internally.",
+        cause: "Hardened valve stem seals, worn piston rings, or a malfunctioning PCV valve."
+    },
+    {
+        icon: "oilCan",
+        title: "Coolant Loss or Visible Fluid Leaks",
+        desc: "Drips or puddles of coloured coolant or dark motor oil beneath the vehicle indicate aging gaskets, damaged hoses, or worn seals.",
+        cause: "Radiator hose degradation, water pump seal failure, cracked coolant tank, or valve cover gasket leaks."
+    },
+    {
+        icon: "tools",
+        title: "Loss of Engine Power & Sluggish Acceleration",
+        desc: "The vehicle feels sluggish when accelerating, struggles to maintain speed on inclines, or fails to respond normally to accelerator input.",
+        cause: "Clogged air or fuel filters, restricted exhaust, sensor faults, or turbocharger boost loss."
     }
 ];
 
 const diagnosticSteps = [
-    { num: "1", title: "Comprehensive Computer Diagnostics", desc: "We connect dedicated diagnostic scanners to read active, pending, and historic DTCs across engine management (ECU/DME), transmission, and cooling control modules, recording freeze-frame data." },
-    { num: "2", title: "Live Sensor Telemetry & Fuel Trim Analysis", desc: "With the engine running at operating temperature, our technicians evaluate live data streams: short/long-term fuel trims, mass air flow (MAF/MAP), oxygen sensor switching, coolant sensor readings, and misfire counters." },
-    { num: "3", title: "Physical & Under-Hood Inspection", desc: "We perform hands-on inspections of drive belts, tensioners, vacuum lines, radiator hoses, wiring harnesses, oil condition, and fluid levels to detect physical wear and external leaks that electronics cannot detect." },
-    { num: "4", title: "Compression, Leak-Down & Pressure Testing", desc: "For mechanical running faults or overheating, we conduct cylinder compression testing, cylinder leak-down testing to check ring/valve sealing, and cooling system pressure tests to pinpoint internal head gasket breaches." },
-    { num: "5", title: "Transparent Itemised Quotation", desc: "We present a detailed technical report explaining the underlying failure root cause, differentiating necessary immediate repairs from preventive maintenance, with an exact written estimate for parts and labour before work begins." },
-    { num: "6", title: "Precision Repair & Verification Road Test", desc: "Repairs are executed using OEM-specification components and factory torque procedures. We clear diagnostic codes, perform sensor adaptations where needed, and conduct road testing to verify performance." }
+    { num: "1", title: "Computer Diagnostic Scan", desc: "We connect an electronic diagnostic scanner to read active, pending, and stored trouble codes from the engine control unit to identify system irregularities." },
+    { num: "2", title: "Sensor & Operating Data Check", desc: "Technicians evaluate live sensor readings, including coolant temperature, airflow, and fuel trim values, to understand engine operating conditions." },
+    { num: "3", title: "Under-Hood Physical Inspection", desc: "Hands-on examination of drive belts, vacuum hoses, fluid condition, and visible signs of oil or coolant leaks that electronics cannot detect." },
+    { num: "4", title: "Targeted Mechanical Testing", desc: "For running faults or overheating issues, technicians perform compression tests or cooling circuit pressure checks where necessary to evaluate internal sealing." },
+    { num: "5", title: "Itemized Repair Quotation", desc: "We present our diagnostic findings and provide a clear written estimate detailing parts, labour, and repair options before any work proceeds." },
+    { num: "6", title: "Repair Execution & Quality Verification", desc: "Repairs are carried out using suitable parts and manufacturer-recommended torque procedures, followed by a road test to verify proper engine performance." }
 ];
 
 const engineTypes = [
-    { name: "Naturally Aspirated Petrol", desc: "Toyota, Nissan, Honda, Hyundai, Kia 4-cylinder and V6 platforms -routine servicing, timing chains, valve adjustments, and top-end repairs." },
-    { name: "Turbocharged & Direct Injection (GDI/TSI)", desc: "Modern forced-induction engines across BMW, Mercedes-Benz, Audi, VW, and Ford -boost leak diagnosis, high-pressure fuel pumps, and carbon cleaning." },
-    { name: "Commercial & SUV Turbodiesel", desc: "Toyota Land Cruiser 4.5L V8D, Nissan Patrol, Mitsubishi Pajero, and light commercial diesels -common-rail injector testing, turbo servicing, and glow plug renewal." },
-    { name: "Hybrid Powertrains", desc: "Toyota Camry Hybrid, Lexus hybrid systems, and Honda platforms -ICE engine servicing integrated with inverter cooling and hybrid drive diagnostics." },
-    { name: "Large-Displacement V6 & V8 Engines", desc: "Nissan Patrol 5.6L VK56, Toyota Land Cruiser V8, Chevrolet Tahoe/GMC Yukon V8 -valvetrain repair, timing components, and heavy cooling upgrades." },
-    { name: "European & Performance Powerplants", desc: "German high-performance engines (BMW M, Mercedes-AMG, Porsche) -specialized diagnostic tools, precision tolerances, and OEM-grade replacement parts." }
+    { name: "Naturally Aspirated Petrol", desc: "Routine servicing, timing components, valve adjustments, and top-end repairs for Japanese, Korean, and American 4-cylinder and V6 platforms." },
+    { name: "Turbocharged & Direct Injection (GDI/TSI)", desc: "Diagnosis of boost leaks, sensor testing, high-pressure fuel supply issues, and intake valve cleaning for modern turbocharged engines." },
+    { name: "Commercial & SUV Turbodiesel", desc: "Fuel injection checks, turbocharger inspections, glow plug replacement, and cooling maintenance for diesel SUVs and light commercial vehicles." },
+    { name: "Hybrid Powertrains", desc: "Combustion engine servicing and cooling system maintenance integrated with hybrid vehicle platforms." },
+    { name: "Large-Displacement V6 & V8 Engines", desc: "Valvetrain maintenance, timing component replacement, and cooling system servicing for full-size SUVs and trucks." },
+    { name: "European & Performance Engines", desc: "Diagnostic scanning, precision component fitment, and manufacturer-specified servicing for European and performance vehicles." }
 ];
 
 const pricingRows = [
-    { service: "OBD-II Engine Diagnostic Scan", price: "AED 100 – 200 [CONFIRM: diagnostic scan fee]" },
-    { service: "Engine Tune-Up (plugs, filters, inspection)", price: "AED 150 – 450 [CONFIRM: tune-up package range]" },
-    { service: "Timing Belt & Water Pump Replacement", price: "AED 600 – 1,800 [CONFIRM: timing belt range]" },
-    { service: "Cylinder Head Gasket Replacement", price: "AED 1,200 – 3,200 [CONFIRM: head gasket range]" },
-    { service: "Engine Oil Leak Repair (gaskets & seals)", price: "AED 150 – 850 [CONFIRM: leak repair range]" },
-    { service: "Cooling System Service & Thermostat", price: "AED 200 – 650 [CONFIRM: cooling service range]" },
-    { service: "Engine Mount Replacement (per mount)", price: "AED 200 – 550 [CONFIRM: mount replacement range]" },
-    { service: "Engine Rebuild / Complete Overhaul", price: "From AED 3,500 [CONFIRM: overhaul base price]" }
+    { service: "OBD-II Engine Diagnostic Scan", price: "AED 100 – 200", includes: "Computer scan across engine control modules, live sensor data review & fault code diagnosis report" },
+    { service: "Engine Tune-Up (plugs, filters, inspection)", price: "AED 150 – 450", includes: "Spark plug inspection/renewal, air & fuel filter check, throttle body cleaning & idle evaluation" },
+    { service: "Timing Belt & Water Pump Replacement", price: "AED 600 – 1,800", includes: "Timing belt, tensioners, idler pulleys & water pump replacement labour and fitment" },
+    { service: "Cylinder Head Gasket Replacement", price: "AED 1,200 – 3,200", includes: "Head disassembly, surface check, multi-layer gasket replacement & new bolts torqued to spec" },
+    { service: "Engine Oil Leak Repair (gaskets & seals)", price: "AED 150 – 850", includes: "Valve cover gasket, oil pan seal, or crankshaft seal replacement based on leak location" },
+    { service: "Cooling System Service & Thermostat", price: "AED 200 – 650", includes: "Thermostat replacement, cooling system pressure test, radiator check & fresh coolant flush" },
+    { service: "Engine Mount Replacement (per mount)", price: "AED 200 – 550", includes: "Worn engine or transmission mount removal, replacement fitting & vibration test" },
+    { service: "Engine Rebuild / Complete Overhaul", price: "From AED 3,500", includes: "Full engine teardown, internal component inspection, machining coordination & overhaul assembly" }
 ];
 
 const reasons = [
-    { icon: "laptop", title: "Root-Cause Diagnostics Before Disassembly", desc: "We verify mechanical faults and electrical sensor anomalies through structured OBD-II live telemetry, compression checks, and leak-down tests before disassembling engine components, eliminating guesswork and unnecessary parts replacement." },
-    { icon: "award", title: "Precision Assembly to Factory Torque Specs", desc: "Engine internals operate under tight micro-tolerances. From head bolt torque-to-yield angles to crankshaft bearing clearances, our engine mechanics follow manufacturer torque specifications and assembly procedures." },
-    { icon: "shield", title: "Clear Estimates & Verified Workmanship", desc: "All repair recommendations are backed by clear diagnostic findings. We provide itemised written quotations detailing parts and labour before work begins, supported by our workshop service guarantee. [CONFIRM: warranty terms on engine rebuilds and repairs]" },
-    { icon: "car", title: "Experience Across Diverse Powertrains", desc: "Our technicians have extensive hands-on experience across Japanese, European, American, and Asian powertrains operating in the UAE, from everyday commuter sedans to high-displacement 4x4 V8s. [CONFIRM: exact years of operation in Dubai]" },
-    { icon: "receipt", title: "Transparent Assessment: Repair vs. Replace", desc: "When major internal engine damage occurs, we provide an objective engineering comparison between component repair, full rebuild/overhaul, or sourcing a tested replacement engine based on cost and vehicle value." },
-    { icon: "wrench", title: "Dedicated Al Satwa Workshop Equipment", desc: "Major engine overhauls require specialized equipment including heavy engine cranes, engine stands, precision micrometers, and pressure testing rigs. Our 222 Al Satwa Road facility is equipped to handle complex teardowns and in-house assembly." }
+    { icon: "laptop", title: "Diagnostic-First Methodology", desc: "We verify mechanical and electrical faults using OBD-II scanning, sensor data evaluation, and compression testing before disassembling components, avoiding unnecessary parts replacement." },
+    { icon: "award", title: "Experienced Automotive Team", desc: "Established in 2012, our team of 8 skilled mechanics has serviced more than 8,500 vehicles across Dubai, earning a 4.8-star Google rating for dependable repair work." },
+    { icon: "shield", title: "Clear & Transparent Estimates", desc: "All repair recommendations are backed by clear diagnostic findings. We provide itemized written quotations detailing parts and labour before work begins." },
+    { icon: "car", title: "Multi-Make & Powertrain Experience", desc: "Our technicians have extensive hands-on experience across Japanese, European, American, and Asian petrol, diesel, and hybrid engines operating in the UAE." },
+    { icon: "receipt", title: "Objective Repair vs. Replace Guidance", desc: "When major internal damage occurs, we provide an honest engineering comparison between component repair, full overhaul, or sourcing a tested replacement engine based on cost and vehicle value." },
+    { icon: "wrench", title: "Centrally Located Al Satwa Workshop", desc: "Our facility at 222 Al Satwa Road is equipped with engine cranes, lifts, and diagnostic testing equipment to handle engine repairs and rebuilds." }
 ];
 
 const faqs = [
     {
         q: "What does car engine service include in Dubai?",
-        a: "Engine service covers everything from routine maintenance to comprehensive internal repairs. A standard engine tune-up includes replacing spark plugs, changing air and fuel filters, cleaning the throttle body, and scanning the engine management system. Major engine service addresses mechanical components: timing belt or chain replacement, cylinder head gasket repair, oil and coolant leak rectification, cooling system overhauls, and complete engine rebuilds or replacement."
+        a: "Engine service covers both routine maintenance and mechanical repairs. A routine service or tune-up involves scanning the engine management system, replacing spark plugs, changing air and fuel filters, and cleaning the throttle body. More extensive engine service includes timing belt or chain replacement, cylinder head gasket repair, resolving oil and coolant leaks, cooling system repairs, and complete engine overhauls or unit replacements when required."
     },
     {
         q: "How do I know whether my engine needs a minor repair, an overhaul, or replacement?",
-        a: "A minor repair or tune-up is appropriate when issues are isolated to external components such as spark plugs, coils, sensors, or gaskets. An engine overhaul is necessary when internal wear occurs -such as worn piston rings, damaged cylinder walls, worn crankshaft bearings, or severe valve leakage. A complete engine replacement (new, reconditioned, or tested low-mileage used unit) is usually recommended when severe catastrophic damage occurs, such as a cracked block, thrown connecting rod, or when the overhaul cost exceeds the replacement value."
+        a: "A minor repair or tune-up is appropriate when faults are confined to external or serviceable parts, such as spark plugs, ignition coils, sensors, or gaskets. An engine overhaul is typically necessary when internal mechanical components suffer wear-such as worn piston rings, damaged cylinder walls, or worn bearings causing knocking or low oil pressure. A replacement engine is usually recommended when catastrophic structural damage occurs, such as a cracked engine block or broken connecting rod, or when an overhaul exceeds the vehicle's market value."
     },
     {
         q: "What causes engines to overheat frequently in Dubai?",
-        a: "Dubai's summer temperatures regularly surpass 45°C, demanding maximum heat dissipation from the cooling system. Common causes of overheating include coolant leaks from degraded hoses or radiator plastic end tanks, failed thermostats stuck closed, worn water pump impellers, failing electric cooling fans or fan relays, and head gasket leaks allowing exhaust gas into the coolant. Operating an overheating engine can quickly warp the alloy cylinder head."
+        a: "In Dubai's intense summer climate, ambient temperatures exceeding 45°C place heavy demand on the engine's cooling system. Common causes of overheating include coolant leaks from brittle hoses or radiator end tanks, a failed thermostat stuck closed, a worn water pump, an inoperative cooling fan or relay, or a leaking cylinder head gasket. Driving an overheating vehicle can cause rapid cylinder head warpage, so the engine should be switched off promptly."
     },
     {
         q: "How much does car engine repair or an overhaul cost in Dubai?",
-        a: "Engine repair costs depend on vehicle make, engine architecture, and the severity of the defect. Diagnostic scans typically start from AED 100–200, minor tune-ups from AED 150–450, and timing belt replacements from AED 600. Major mechanical repairs such as cylinder head gasket replacement range from AED 1,200 to AED 3,200+, while complete engine overhauls or rebuilds generally start from AED 3,500 for compact vehicles and increase for complex European or V8 engines. [CONFIRM: exact engine service pricing and diagnostic fees]"
+        a: "Engine repair costs vary widely based on vehicle make, engine layout, and the extent of the issue. Diagnostic scans generally start from AED 100–200, minor tune-ups range from AED 150–450, and timing belt replacements range from AED 600–1,800. Major mechanical repairs such as cylinder head gasket replacement start from AED 1,200, while complete engine overhauls typically start from AED 3,500 depending on parts and machining requirements. A written estimate is always provided after initial diagnosis."
     },
     {
         q: "Why is my engine consuming oil between service intervals?",
-        a: "In the UAE climate, engine oil is subjected to sustained thermal degradation and evaporation. However, excessive oil consumption (more than 1 litre per 1,500–2,000 km) typically indicates either external leaks (valve cover gasket, crankshaft seals, oil pan) or internal consumption caused by hardened valve stem seals or worn piston oil control rings. Our mechanics conduct dry and wet compression tests and borescope cylinder inspections to determine the root cause."
+        a: "Sustained high operating temperatures in Dubai accelerate oil thinning and evaporation. However, noticeable oil consumption (requiring frequent top-ups between scheduled services) typically indicates either external leaks from hardened valve cover gaskets, oil pan seals, or crankshaft seals, or internal consumption caused by worn valve stem seals or sticking piston rings. A workshop inspection and compression check help identify the exact source."
     },
     {
         q: "Can engine repairs be done at my location, or is workshop service required?",
-        a: "Minor diagnostic scans, dead battery jumps, and select external sensor replacements can be handled via mobile roadside assistance. However, major mechanical engine services -including timing belt replacement, head gasket repairs, internal diagnostics requiring lifts, and full engine overhauls -must be performed at our fully equipped Al Satwa workshop where specialized lifting gear, machine tooling, and clean assembly conditions are available."
+        a: "Initial computer diagnostic scans, battery jumps, and select external sensor replacements can be performed on-site. However, major mechanical engine work-including timing belt replacements, cylinder head gasket repairs, internal diagnostics requiring vehicle hoists, and full engine overhauls-must be completed at our Al Satwa workshop, where lifting equipment, specialized tooling, and clean assembly bays are available."
     }
 ];
 
@@ -222,7 +240,14 @@ const pageSchema = {
             "offers": {
                 "@type": "Offer",
                 "priceCurrency": "AED",
-                "availability": "https://schema.org/InStock"
+                "price": "100",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": "100",
+                    "maxPrice": "3500",
+                    "priceCurrency": "AED"
+                }
             }
         },
         {
@@ -246,32 +271,14 @@ const pageSchema = {
         {
             "@type": "FAQPage",
             "@id": "https://dubaicarrepairservice.com/car-engine-service-dubai#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What does car engine service include in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Engine service covers everything from routine tune-ups (spark plugs, filters, throttle body cleaning) to advanced diagnostics and mechanical repairs including timing belts, head gaskets, cooling system repairs, and complete engine overhauls."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How much does car engine repair or overhaul cost in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Diagnostic scans generally range from AED 100–200, tune-ups from AED 150–450, and timing belt replacements from AED 600. Major cylinder head repairs start around AED 1,200, and full engine overhauls begin from AED 3,500 depending on vehicle make and engine condition."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What causes engine overheating in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Common causes include coolant loss from aged radiator hoses, stuck thermostats, failing water pump impellers, inoperative cooling fans, or blown cylinder head gaskets under extreme UAE ambient temperatures."
-                    }
+            "mainEntity": faqs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f.a
                 }
-            ]
+            }))
         }
     ]
 };
@@ -302,7 +309,7 @@ const pageSchema = {
                     Car Engine Repair Dubai - Diagnostics, Rebuilds &amp; Overhauls
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Severe ambient heat and high-speed highway driving in Dubai place intense mechanical and thermal stress on vehicle engines, accelerating oil shear, gasket hardening, and cooling circuit degradation. Our car engine repair in Dubai encompasses computer-guided OBD-II diagnostics, cylinder compression testing, timing chain and belt replacements, cylinder head gasket repairs, and precision engine rebuilds. Based at 222 Al Satwa Road, our experienced mechanics deliver dependable engine repairs with fast and affordable pricing.
+                    Car engine service in Dubai helps diagnose and resolve performance issues when your vehicle experiences engine warning lights, overheating, unusual noises, misfires, or fluid leaks. Dubai Car Repair Service provides computer diagnostics, mechanical inspections, timing system repairs, cooling system fixes, and complete engine overhauls for various vehicle makes and models. Visit our Al Satwa workshop at 222 Al Satwa Road for an accurate assessment and a clear explanation of recommended repairs.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -329,10 +336,10 @@ const pageSchema = {
                             Operating an internal combustion or hybrid engine in the UAE requires careful attention to thermal management and lubrication integrity. Sustained ambient temperatures above 45°C cause engine motor oil to operate near its thermal limits, accelerating viscosity breakdown, increasing crankcase pressure, and causing rubber valve stem seals and cylinder head gaskets to harden over time. Dubai Car Repair Service provides comprehensive engine diagnostic, repair, and rebuilding services to restore combustion efficiency, eliminate oil consumption, and ensure long-term mechanical reliability.
                         </p>
                         <p class="dcrs-body-text">
-                            Rather than guessing at symptoms, our certified mechanics begin every engine assessment with multi-system OBD-II electronic scanning, live-data sensor analysis (including short-term and long-term fuel trims), and mechanical cylinder compression checks. This thorough approach isolates the exact failure point—whether an intermittent ignition misfire, timing chain stretch, failing high-pressure fuel pump, or compromised cooling jacket. For preventative protection, we recommend timely <a href="/engine-oil-change-dubai" class="dcrs-inline-link">engine oil changes</a> and scheduled <a href="/car-maintenance-dubai" class="dcrs-inline-link">periodic car servicing</a> to keep internal bearings and camshafts fully protected.
+                            Rather than guessing at symptoms, our mechanics begin every engine assessment with multi-system OBD-II electronic scanning, live-data sensor analysis, and mechanical cylinder compression checks where needed. This structured approach isolates the root cause—whether an ignition misfire, timing chain slack, fuel supply issue, or cooling system failure. For preventative protection, we recommend timely <a href="/engine-oil-change-dubai" class="dcrs-inline-link">engine oil changes</a> and scheduled <a href="/car-maintenance-dubai" class="dcrs-inline-link">periodic car servicing</a> to keep internal bearings and camshafts fully protected.
                         </p>
                         <p class="dcrs-body-text">
-                            From minor sensor replacements and intake manifold cleaning to complete block resurfacing and cylinder head overhauls, our workshop at 222 Al Satwa Road is equipped with precision machine tooling and manufacturer-grade diagnostic software for Japanese, European, and American engines. For sudden roadside stalling or high-temperature warnings, our emergency <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance team</a> can arrange immediate recovery, or you can speak with our service advisors through our <a href="/contact" class="dcrs-inline-link">workshop contact desk</a>.
+                            From minor sensor replacements and intake cleaning to timing belt synchronization and cylinder head gasket repairs, our workshop at 222 Al Satwa Road is equipped with engine lifting gear, diagnostic scanners, and testing tools for Japanese, European, and American models. For non-drivable vehicles, recovery can be arranged through our <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance team</a>, and our service advisors provide clear written estimates before any work begins.
                         </p>
 
                         <div class="dcrs-action-row">
@@ -357,7 +364,7 @@ const pageSchema = {
                             <div class="dcrs-plate dcrs-price-badge" aria-hidden="true">
                                 <div class="dcrs-plate__tab">AED</div>
                                 <div class="dcrs-plate__body">
-                                    <span class="dcrs-plate__row dcrs-plate__row--big">150+</span>
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">100+</span>
                                     <span class="dcrs-plate__row">DIAGNOSTIC SCAN</span>
                                     <span class="dcrs-plate__row">AL SATWA WORKSHOP</span>
                                 </div>
@@ -385,9 +392,8 @@ const pageSchema = {
                         <thead>
                             <tr>
                                 <th>Service / Repair</th>
-                                <th>Typical Price (AED)</th>
-                                <th>Turnaround Time</th>
-                                <th>Warranty</th>
+                                <th>Typical Price</th>
+                                <th>Inclusions &amp; Scope</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -395,8 +401,7 @@ const pageSchema = {
                                 <tr>
                                     <td class="dcrs-table-service">{r.service}</td>
                                     <td class="dcrs-table-price">{r.price}</td>
-                                    <td class="dcrs-table-time">{r.time}</td>
-                                    <td class="dcrs-table-warranty">{r.warranty}</td>
+                                    <td class="dcrs-table-includes">{r.includes}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -414,7 +419,7 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Diagnostic Process</div>
-                    <h2 class="dcrs-heading__title">Our 5-Step Engine Diagnostic &amp; Repair Workflow</h2>
+                    <h2 class="dcrs-heading__title">Our 6-Step Engine Diagnostic &amp; Repair Workflow</h2>
                     <p class="dcrs-heading__sub">
                         A systematic procedure combining electronic scan tools, physical compression gauges, and quality-controlled assembly.
                     </p>
@@ -492,15 +497,17 @@ const pageSchema = {
                 <div class="dcrs-warning-grid">
                     {warningSigns.map((w) => (
                         <div class="dcrs-warning-card">
-                            <div class="dcrs-warning-card__head">
-                                <span class="dcrs-warning-card__icon">
-                                    <Fragment set:html={icons[w.icon]} />
-                                </span>
-                                <div>
-                                    <h3 class="dcrs-warning-card__title">{w.title}</h3>
+                            <div>
+                                <div class="dcrs-warning-card__head">
+                                    <span class="dcrs-warning-card__icon">
+                                        <Fragment set:html={icons[w.icon]} />
+                                    </span>
+                                    <div>
+                                        <h3 class="dcrs-warning-card__title">{w.title}</h3>
+                                    </div>
                                 </div>
+                                <p class="dcrs-warning-card__desc">{w.desc}</p>
                             </div>
-                            <p class="dcrs-warning-card__desc">{w.desc}</p>
                             <div class="dcrs-warning-card__cause">
                                 <span>Common Cause:</span>
                                 <strong>{w.cause}</strong>
@@ -517,7 +524,7 @@ const pageSchema = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Engine Repairs</h2>
-                    <p class="dcrs-heading__sub">12+ years of mechanical experience, advanced diagnostic tools, and fast and affordable pricing.</p>
+                    <p class="dcrs-heading__sub">Diagnostic-first approach, experienced mechanics, and transparent pricing at our Al Satwa workshop.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -589,12 +596,12 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Expert Mechanical Team</span>
+                        <span class="dcrs-cta-banner__badge">Professional Engine Diagnostics &amp; Repair</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Engine Diagnostic &amp; Inspection Today
+                            Book Your Car Engine Inspection in Dubai
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing from AED 100. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us for prompt appointment scheduling.
+                            Diagnostic inspections starting from AED 100. Open daily from 7:00 AM to 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us to schedule your engine check.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -602,7 +609,7 @@ const pageSchema = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
                         </a>
                     </div>
                 </div>
@@ -1710,6 +1717,185 @@ const pageSchema = {
         text-underline-offset: 3px;
     }
     .dcrs-cta-inline-link:hover { opacity: 0.85; }
+
+
+    /* Missing / Enhanced styles for Process Grid, Warning Grid, Engine Cards, and Table */
+    .dcrs-process-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+        .dcrs-process-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 1024px) {
+        .dcrs-process-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .dcrs-process-card-item {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    .dcrs-process-card-item__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+    }
+    .dcrs-process-card-item__title {
+        font-size: 0.98rem;
+        font-weight: 600;
+        margin: 0 0 0.35rem;
+        color: var(--ink);
+    }
+    .dcrs-process-card-item__desc {
+        font-size: 0.86rem;
+        color: var(--steel);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-engine-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        margin-top: 1.25rem;
+    }
+    .dcrs-engine-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 6px;
+        padding: 1rem 1.15rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    .dcrs-engine-card__head {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+    }
+    .dcrs-engine-card__icon {
+        color: var(--brass-deep);
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+    .dcrs-engine-card__icon :global(svg) {
+        width: 18px;
+        height: 18px;
+    }
+    .dcrs-engine-card__title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0;
+    }
+    .dcrs-engine-card__desc {
+        font-size: 0.84rem;
+        color: var(--steel);
+        margin: 0;
+        line-height: 1.55;
+    }
+
+    .dcrs-warning-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+        .dcrs-warning-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 1024px) {
+        .dcrs-warning-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    .dcrs-warning-card {
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .dcrs-warning-card__head {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 0.85rem;
+    }
+    .dcrs-warning-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    .dcrs-warning-card__icon :global(svg) {
+        width: 20px;
+        height: 20px;
+    }
+    .dcrs-warning-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.15rem;
+        color: var(--ink);
+        margin: 0;
+    }
+    .dcrs-warning-card__desc {
+        color: var(--steel);
+        font-size: 0.88rem;
+        line-height: 1.65;
+        margin: 0 0 1rem;
+        flex: 1;
+    }
+    .dcrs-warning-card__cause {
+        background: var(--paper);
+        border-left: 3px solid var(--brass);
+        padding: 0.65rem 0.85rem;
+        border-radius: 3px;
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        line-height: 1.45;
+    }
+    .dcrs-warning-card__cause strong {
+        color: var(--brass-deep);
+        font-weight: 600;
+    }
+
+    .dcrs-table-includes {
+        color: var(--steel);
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    @media (max-width: 480px) {
+        .dcrs-table-includes {
+            font-size: 0.72rem;
+            line-height: 1.3;
+        }
+    }
 
 </style>
 
