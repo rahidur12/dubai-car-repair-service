@@ -264,7 +264,7 @@ const pageSchema = {
 
     <main class="dcrs-service-page">
 
-        <!-- 1. HERO BANNER --------------------------------------------------->
+        <!-- 1. HERO / OPENING ------------------------------------------------>
         <header class="dcrs-hero-banner">
             <div class="dcrs-hero-banner__scrim"></div>
             <div class="dcrs-container dcrs-hero-banner__inner">
@@ -280,7 +280,7 @@ const pageSchema = {
                     Car AC Repair Dubai - Gas Refill, Compressor &amp; Leak Fix
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Car AC blowing warm air? We provide fast, dependable car AC repair in Dubai from our Al Satwa workshop, covering digital leak detection, R134a/R1234yf gas refills, compressor overhauls, and electrical diagnostics. Gas refill from AED 100. Open daily 7 AM to 10 PM.
+                    Dubai's prolonged summer heat and extreme under-hood temperatures place severe demands on automotive air conditioning systems, leading to rapid refrigerant loss, compressor clutch wear, and reduced cabin cooling. Our car AC repair in Dubai provides systematic electronic leak detection, factory-calibrated R134a and R1234yf gas refills, compressor overhauls, and evaporator coil servicing. From our dedicated workshop at 222 Al Satwa Road, our experienced mechanics restore factory cooling performance with fast and affordable pricing.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -293,7 +293,7 @@ const pageSchema = {
             </div>
         </header>
 
-        <!-- 2. INTRO SECTION ------------------------------------------------->
+        <!-- 2. SERVICE OVERVIEW ---------------------------------------------->
         <section class="dcrs-section dcrs-section--paper" id="service-overview">
             <div class="dcrs-container">
                 <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
@@ -304,13 +304,13 @@ const pageSchema = {
                             Car AC Repair Dubai - Fast Diagnostics &amp; Complete Cooling Fixes
                         </h2>
                         <p class="dcrs-lead-text">
-                            Automotive air conditioning systems in the UAE operate under extreme thermal stress. When ambient summer temperatures climb past 40°C, under-hood heat often exceeds 60°C, forcing the compressor to cycle constantly. At <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a>, our technicians isolate the root problem before replacing any parts. If you are experiencing weak airflow or warm vents, you can <a href="/contact" class="dcrs-inline-link">contact us</a> for immediate diagnostics.
+                            Operating a vehicle in Dubai without an efficient air conditioning system is intolerable during summer months when ambient temperatures consistently surpass 45°C. Under-hood temperatures often reach 70°C, causing refrigerant gas pressures to surge and placing continuous mechanical load on compressor clutch assemblies, condenser cooling fans, and rubber connection hoses. Dubai Car Repair Service delivers specialized automotive climate control diagnostics, precision refrigerant recharging, and component-level repairs to keep your vehicle cool and comfortable year-round.
                         </p>
                         <p class="dcrs-body-text">
-                            Adding refrigerant to a leaking circuit without fixing the source is a waste of time and money. We use digital manifold gauges, UV fluorescent dye, and electronic sniffer probes to locate micro-leaks in hoses, evaporators, and condensers. For minor top-ups or pressure testing at your home or workplace, our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair in Dubai</a> team provides convenient on-site assistance.
+                            A common mistake in vehicle AC maintenance is repeatedly topping up refrigerant gas without identifying the underlying leak path. Adding refrigerant to a leaking circuit provides only temporary relief while allowing moisture and atmospheric air to enter, which rapidly degrades polyalkylene glycol (PAG) compressor oil and leads to catastrophic compressor seizure. Our technicians use digital manifold pressure gauges, ultrasonic detectors, and UV fluorescent dye testing under nitrogen pressure to pinpoint micro-leaks in evaporator cores, condenser tubes, expansion valves, and O-ring seals. For complex cooling concerns linked to engine overheating, our garage also provides complete <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine cooling repair</a> and preventative <a href="/car-maintenance-dubai" class="dcrs-inline-link">annual vehicle maintenance</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            Located at 222 Al Satwa Road, we are the trusted neighborhood choice for <a href="/car-repair-al-satwa" class="dcrs-inline-link">car ac repair in Satwa</a> and nearby areas like Jumeirah and DIFC. Before peak summer arrives, it is wise to bundle your air conditioning check into your <a href="/car-maintenance-dubai" class="dcrs-inline-link">annual car maintenance in Dubai</a> schedule, or schedule a comprehensive <a href="/car-inspection-dubai" class="dcrs-inline-link">full car check up</a> to keep your entire cooling and electrical system running safely.
+                            Whether you need a quick cabin filter replacement, a routine pressure test, or a comprehensive compressor rebuild, our mechanics service Japanese, European, and American models with equal proficiency. For mobile refrigerant top-ups or battery-related cooling fan faults at your doorstep, our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car mechanic service</a> is available throughout Dubai. Drivers are welcome to visit our workshop at 222 Al Satwa Road or speak with our service advisors through our <a href="/contact" class="dcrs-inline-link">customer contact team</a> for honest, transparent advice.
                         </p>
 
                         <div class="dcrs-action-row">
@@ -347,32 +347,64 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 3. AC FAULTS WE FIX ---------------------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="faults">
+        <!-- 3. PRICING AND COST FACTORS -------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="pricing">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">AC Faults We Diagnose &amp; Fix</div>
-                    <h2 class="dcrs-heading__title">Common Car AC Problems in Dubai's Climate</h2>
+                    <div class="dcrs-kicker">Fast and Affordable Pricing</div>
+                    <h2 class="dcrs-heading__title">Car AC Repair &amp; Gas Refill Pricing Guide</h2>
                     <p class="dcrs-heading__sub">
-                        Every AC fault has a root cause. We identify the source before replacing parts to prevent recurring cooling loss.
+                        Clear, transparent estimates before work begins. Prices vary by refrigerant specification (R134a vs. R1234yf), vehicle make, and system condition.
                     </p>
                 </div>
 
-                <div class="dcrs-faults-grid">
-                    {faults.map((f) => (
-                        <div class="dcrs-fault-card">
-                            <div class="dcrs-fault-card__head">
-                                <span class="dcrs-fault-card__icon">
-                                    <Fragment set:html={icons[f.icon]} />
-                                </span>
-                                <div>
-                                    <h3 class="dcrs-fault-card__title">{f.title}</h3>
-                                </div>
-                            </div>
-                            <p class="dcrs-fault-card__desc">{f.desc}</p>
-                            <div class="dcrs-fault-card__cost">
-                                <span>Typical Cost:</span>
-                                <strong>{f.cost}</strong>
+                <div class="dcrs-table-wrapper">
+                    <table class="dcrs-pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Service / Repair</th>
+                                <th>Starting Price (AED)</th>
+                                <th>Turnaround Time</th>
+                                <th>Warranty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {pricingRows.map((r) => (
+                                <tr>
+                                    <td class="dcrs-table-service">{r.service}</td>
+                                    <td class="dcrs-table-price">{r.price}</td>
+                                    <td class="dcrs-table-time">{r.time}</td>
+                                    <td class="dcrs-table-warranty">{r.warranty}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="dcrs-pricing-disclaimer">
+                    <Fragment set:html={icons.info} /> Prices include refrigerant, compressor oil top-up, and labor for standard single-evaporator configurations. Dual-zone SUV and multi-evaporator luxury vehicles require additional refrigerant volume. Final written quotation confirmed following initial diagnostic pressure check.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. SERVICE PROCESS ----------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="our-process">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Service Process</div>
+                    <h2 class="dcrs-heading__title">Our 5-Step Car AC Service &amp; Diagnostic Process</h2>
+                    <p class="dcrs-heading__sub">
+                        We apply calibrated recovery and charging stations to diagnose and service automotive climate control circuits with complete precision.
+                    </p>
+                </div>
+
+                <div class="dcrs-process-grid">
+                    {serviceSteps.map((s) => (
+                        <div class="dcrs-process-card-item">
+                            <span class="dcrs-process-card-item__num">{s.num}</span>
+                            <div>
+                                <h3 class="dcrs-process-card-item__title">{s.title}</h3>
+                                <p class="dcrs-process-card-item__desc">{s.desc}</p>
                             </div>
                         </div>
                     ))}
@@ -380,8 +412,8 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 4. REFRIGERANT TYPES & PROCESS ------------------------------------>
-        <section class="dcrs-section dcrs-section--paper" id="refrigerants">
+        <!-- 5. TYPES, PARTS, PRODUCTS AND BRANDS ----------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="refrigerants">
             <div class="dcrs-container">
                 <div class="dcrs-grid-2col">
 
@@ -389,7 +421,7 @@ const pageSchema = {
                     <div class="dcrs-refrigerant-info">
                         <div class="dcrs-kicker">Refrigerant Types</div>
                         <h2 class="dcrs-heading__title">
-                            R134a vs. R1234yf -Matching Factory Refrigerant Specifications
+                            R134a vs. R1234yf - Matching Factory Refrigerant Specifications
                         </h2>
                         <p class="dcrs-body-text">
                             Modern vehicles require specific refrigerant formulations matched to their compressor lubricants and operating pressures. Mixing refrigerants or using R134a in a system designed for R1234yf causes chemical breakdown, damages compressor seals, and leads to complete system failure.
@@ -423,19 +455,41 @@ const pageSchema = {
                         </div>
                     </div>
 
-                    <!-- Right: Service Process Steps -->
-                    <div class="dcrs-process-card">
-                        <h3 class="dcrs-process-card__title">Our AC Service Process</h3>
-                        <div class="dcrs-process-list">
-                            {serviceSteps.map((s) => (
-                                <div class="dcrs-process-item">
-                                    <div class="dcrs-process-item__num">{s.num}</div>
-                                    <div class="dcrs-process-item__body">
-                                        <h4>{s.title}</h4>
-                                        <p>{s.desc}</p>
-                                    </div>
+                    <!-- Right: Key AC Components We Service -->
+                    <div class="dcrs-refrigerant-info">
+                        <div class="dcrs-kicker">Components We Repair</div>
+                        <h2 class="dcrs-heading__title">
+                            Complete Automotive Climate Control Component Servicing
+                        </h2>
+                        <p class="dcrs-body-text">
+                            A vehicle air conditioning system relies on multiple interconnected mechanical and electrical components. Our Al Satwa garage carries out component-level repairs and genuine part replacements across all major cooling system assemblies:
+                        </p>
+
+                        <div class="dcrs-gas-cards">
+                            <div class="dcrs-gas-card">
+                                <div class="dcrs-gas-card__header">
+                                    <h3 class="dcrs-gas-card__title">AC Compressor &amp; Magnetic Clutch</h3>
                                 </div>
-                            ))}
+                                <p class="dcrs-gas-card__desc">
+                                    We repair slipping electro-magnetic clutches, replace noisy internal swash-plate bearings, and install OEM compressors with correct PAG oil balance.
+                                </p>
+                            </div>
+                            <div class="dcrs-gas-card">
+                                <div class="dcrs-gas-card__header">
+                                    <h3 class="dcrs-gas-card__title">Condenser &amp; Radiator Fan Assembly</h3>
+                                </div>
+                                <p class="dcrs-gas-card__desc">
+                                    High-pressure heat exchangers inspected for road debris puncture, bent cooling fins, and weak auxiliary cooling fan motor operation.
+                                </p>
+                            </div>
+                            <div class="dcrs-gas-card">
+                                <div class="dcrs-gas-card__header">
+                                    <h3 class="dcrs-gas-card__title">Evaporator Core &amp; Expansion Valve</h3>
+                                </div>
+                                <p class="dcrs-gas-card__desc">
+                                    Deep in-cabin leak diagnosis, evaporator coil replacement, thermal expansion valve (TXV) recalibration, and cabin odor sanitization.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -443,52 +497,46 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 5. PRICING TABLE ------------------------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="pricing">
+        <!-- 6. SIGNS YOU NEED THIS SERVICE ----------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faults">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Pricing Guide</div>
-                    <h2 class="dcrs-heading__title">
-                        Car AC Repair &amp; Servicing Pricing Factors in Dubai
-                    </h2>
+                    <div class="dcrs-kicker">Warning Signs &amp; Faults</div>
+                    <h2 class="dcrs-heading__title">Common Car AC Problems in Dubai's Climate</h2>
                     <p class="dcrs-heading__sub">
-                        Air conditioning repair costs depend on the required refrigerant type, the location of any leak, and whether component replacement is necessary. We provide itemized quotes following physical inspection.
+                        Every AC fault has a root cause. We identify the source before replacing parts to prevent recurring cooling loss.
                     </p>
                 </div>
 
-                <div class="dcrs-table-wrapper">
-                    <table class="dcrs-pricing-table">
-                        <thead>
-                            <tr>
-                                <th>AC Service</th>
-                                <th>Price Range (AED)</th>
-                                <th>Includes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {pricingRows.map((row) => (
-                                <tr>
-                                    <td class="dcrs-table-service">{row.service}</td>
-                                    <td class="dcrs-table-price">{row.price}</td>
-                                    <td class="dcrs-table-includes">{row.includes}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                <div class="dcrs-faults-grid">
+                    {faults.map((f) => (
+                        <div class="dcrs-fault-card">
+                            <div class="dcrs-fault-card__head">
+                                <span class="dcrs-fault-card__icon">
+                                    <Fragment set:html={icons[f.icon]} />
+                                </span>
+                                <div>
+                                    <h3 class="dcrs-fault-card__title">{f.title}</h3>
+                                </div>
+                            </div>
+                            <p class="dcrs-fault-card__desc">{f.desc}</p>
+                            <div class="dcrs-fault-card__cost">
+                                <span>Typical Cost:</span>
+                                <strong>{f.cost}</strong>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-
-                <p class="dcrs-pricing-disclaimer">
-                    <Fragment set:html={icons.info} /> Price ranges vary based on vehicle make, engine displacement, refrigerant capacity, and OEM vs. aftermarket parts [CONFIRM: exact car AC repair prices and parts warranty terms]. Written quote provided after diagnosis. All prices include VAT.
-                </p>
             </div>
         </section>
 
-        <!-- 6. WHY CHOOSE US ------------------------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="why-choose-us">
+        <!-- 7. WHY CHOOSE DUBAI CAR REPAIR SERVICE? -------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="why-choose-us">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
-                    <h2 class="dcrs-heading__title">Why Dubai Drivers Choose Us for AC Repair</h2>
+                    <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Car AC Repair</h2>
+                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, certified diagnostic equipment, and fast and affordable pricing.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -507,12 +555,12 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 7. FREQUENTLY ASKED QUESTIONS (FAQ) ------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="faq">
+        <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) ----------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faq">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">FAQ</div>
-                    <h2 class="dcrs-heading__title">Car AC Repair Dubai -Common Questions Answered</h2>
+                    <h2 class="dcrs-heading__title">Car AC Repair Dubai - Frequently Asked Questions</h2>
                 </div>
 
                 <div class="dcrs-faq-accordion">
@@ -533,12 +581,12 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 8. RELATED SERVICES ---------------------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="related-services">
+        <!-- 9. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="related-services">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">More Services</div>
-                    <h2 class="dcrs-heading__title">Related Services</h2>
+                    <h2 class="dcrs-heading__title">Related Services You May Need</h2>
                 </div>
 
                 <div class="dcrs-related-grid">
@@ -555,17 +603,17 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 9. CTA BANNER ---------------------------------------------------->
+        <!-- 10. FINAL CTA ---------------------------------------------------->
         <section class="dcrs-cta-banner">
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Al Satwa Workshop</span>
+                        <span class="dcrs-cta-banner__badge">Fast &amp; Guaranteed AC Repairs</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Car AC Repair in Dubai Today
+                            Restore Ice-Cold Air Conditioning to Your Vehicle
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Open daily 7:00 AM – 10:00 PM · 222 Al Satwa Rd, Dubai · Gas refill, leak detection &amp; compressor fixes. <a href="/contact" class="dcrs-cta-inline-link">Contact us online</a> to schedule an inspection.
+                            Fast and affordable pricing from AED 100. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or call for immediate technician availability.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -580,7 +628,7 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 10. BOTTOM STICKY MOBILE BAR ------------------------------------->
+        <!-- 11. BOTTOM STICKY MOBILE BAR ------------------------------------>
         <div class="dcrs-stickybar">
             <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
                 <Fragment set:html={icons.phone} /> Call Now

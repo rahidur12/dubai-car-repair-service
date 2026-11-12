@@ -372,7 +372,7 @@ const pageSchema = {
 
     <main class="dcrs-service-page">
 
-        <!-- 1. HERO BANNER --------------------------------------------------->
+        <!-- 1. HERO / OPENING ------------------------------------------------>
         <header class="dcrs-hero-banner">
             <div class="dcrs-hero-banner__scrim"></div>
             <div class="dcrs-container dcrs-hero-banner__inner">
@@ -388,7 +388,7 @@ const pageSchema = {
                     Car Inspection Dubai - Pre-Purchase Check &amp; RTA Testing
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Need a trusted car inspection in Dubai before buying a used car or renewing your registration? Our certified mechanics run a thorough 50+ point check at 222 Al Satwa Road, covering engine diagnostics, brakes, tyres, and chassis. Starting from AED 99 with a clear written report.
+                    Purchasing a pre-owned vehicle or preparing for mandatory annual registration in Dubai requires an independent, thorough technical assessment to identify hidden mechanical defects and structural safety concerns. Our car inspection in Dubai includes full multi-system OBD-II diagnostic scanning, brake and suspension testing, chassis and paint thickness analysis, and roadworthiness verification. From our Al Satwa workshop, our certified mechanics deliver transparent, comprehensive vehicle health reports with fast and affordable pricing.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -401,7 +401,7 @@ const pageSchema = {
             </div>
         </header>
 
-        <!-- 2. INTRO SECTION ------------------------------------------------->
+        <!-- 2. SERVICE OVERVIEW ---------------------------------------------->
         <section class="dcrs-section dcrs-section--paper" id="service-overview">
             <div class="dcrs-container">
                 <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
@@ -409,16 +409,16 @@ const pageSchema = {
                     <div class="dcrs-intro-content">
                         <div class="dcrs-kicker">Service Overview</div>
                         <h2 class="dcrs-heading__title">
-                            Car Inspection Dubai - Complete Vehicle Health &amp; Pre-Purchase Checks
+                            Car Inspection Dubai - Technical Diagnostics &amp; Roadworthiness Verification
                         </h2>
                         <p class="dcrs-lead-text">
-                            An independent vehicle inspection provides an objective assessment of mechanical condition, safety systems, and structural integrity. At <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a> in Al Satwa, our vehicle checks are structured around three distinct requirements: evaluating pre-owned vehicles prior to purchase, identifying defects before mandatory RTA registration renewal tests, and establishing baseline health during routine ownership.
+                            A professional vehicle inspection is crucial in the UAE automotive market, where severe climate exposure, previous flood damage, or cosmetic repairs often conceal serious mechanical degradation. Whether you are finalizing a pre-purchase deal, preparing for annual RTA registration renewal, or planning long-distance desert road trips, a multi-point inspection provides an impartial, evidence-based evaluation of your vehicle's true mechanical condition.
                         </p>
                         <p class="dcrs-body-text">
-                            Operating conditions across Dubai place substantial stress on cooling circuits, rubber suspension bushings, electronic sensors, and friction materials. Our comprehensive inspection includes computerized <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine diagnostics in Dubai</a> to detect hidden fault codes, as well as testing whether you need an urgent <a href="/engine-oil-change-dubai" class="dcrs-inline-link">car oil change in Dubai</a> or cooling system service.
+                            At Dubai Car Repair Service, our inspection begins on dedicated hydraulic vehicle lifts, allowing technicians to inspect undercarriage crossmembers, subframes, and steering linkages for collision damage, stress fractures, or underbody corrosion. We employ specialized diagnostic scan tools to read live powertrain sensor streams, transmission clutch slip data, and stored ECU error codes. If we identify engine misfires or overdue lubricant degradation, our workshop can immediately arrange <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine mechanical repairs</a> or recommend an <a href="/engine-oil-change-dubai" class="dcrs-inline-link">engine oil change</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            We also inspect climate control components for necessary <a href="/car-ac-repair-dubai" class="dcrs-inline-link">car ac repair in Dubai</a>, examine tread depth and DOT date codes to determine if you need <a href="/tyre-replacement-dubai" class="dcrs-inline-link">tyre replacement in Dubai</a>, and advise on scheduled <a href="/car-maintenance-dubai" class="dcrs-inline-link">car maintenance in Dubai</a> to prevent unexpected breakdowns. If you need same-day testing, you can <a href="/contact" class="dcrs-inline-link">contact us</a> for prompt scheduling.
+                            Our 50+ point inspection protocol also evaluates safety-critical friction components, tyre manufacturing dates, and air conditioning cooling performance before minor defects lead to test failure or on-road breakdowns. Customers receive an itemized, clear written inspection report detailing immediate safety concerns, upcoming maintenance needs, and realistic repair estimates. Visit our workshop at 222 Al Satwa Road, or contact our <a href="/contact" class="dcrs-inline-link">service desk</a> to book your inspection slot.
                         </p>
 
                         <div class="dcrs-action-row">
@@ -455,16 +455,90 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 3. TYPES OF INSPECTION ------------------------------------------->
+        <!-- 3. PRICING AND COST FACTORS -------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="pricing">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Fast and Affordable Pricing</div>
+                    <h2 class="dcrs-heading__title">Vehicle Inspection Pricing in Dubai</h2>
+                    <p class="dcrs-heading__sub">
+                        Clear, upfront pricing with no hidden costs. Every inspection includes a written report and a verbal debrief with the inspecting mechanic.
+                    </p>
+                </div>
+
+                <div class="dcrs-table-wrapper">
+                    <table class="dcrs-pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Inspection Package</th>
+                                <th>Price Range (AED)</th>
+                                <th>Duration</th>
+                                <th>Included Work</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {pricingRows.map((r) => (
+                                <tr>
+                                    <td class="dcrs-table-service"><strong>{r.service}</strong></td>
+                                    <td class="dcrs-table-price">{r.price}</td>
+                                    <td class="dcrs-table-time">{r.time}</td>
+                                    <td class="dcrs-table-desc">{r.desc}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="dcrs-pricing-disclaimer">
+                    <Fragment set:html={icons.info} /> Pre-purchase inspections (PPI) can be conducted at our Al Satwa workshop or arranged as an on-site evaluation across Dubai. If major repair work identified during the inspection is carried out with us, we offer partial credit toward your invoice.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. SERVICE PROCESS ----------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="process">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Inspection Workflow</div>
+                    <h2 class="dcrs-heading__title">Our Systematic 4-Stage Inspection Procedure</h2>
+                    <p class="dcrs-heading__sub">
+                        Every vehicle is examined methodically from electronic memory buffers to structural underbody frame alignment.
+                    </p>
+                </div>
+
+                <div class="dcrs-steps-grid">
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">1</span>
+                        <h3 class="dcrs-step-card__title">OBD-II Computer Diagnostic Scan</h3>
+                        <p class="dcrs-step-card__desc">Complete electronic scan of engine, transmission, ABS, airbag, and body control modules to detect active and cleared historical fault codes.</p>
+                    </div>
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">2</span>
+                        <h3 class="dcrs-step-card__title">Under-Hood Mechanical &amp; Fluid Check</h3>
+                        <p class="dcrs-step-card__desc">Evaluation of cooling hoses, radiator, drive belts, engine oil quality, brake fluid moisture levels, and battery conductance health.</p>
+                    </div>
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">3</span>
+                        <h3 class="dcrs-step-card__title">Hoist Inspection &amp; Structural Safety</h3>
+                        <p class="dcrs-step-card__desc">Vehicle lifted to inspect chassis rails, suspension control arms, shock absorbers, brake discs/pads, steering rack, and fluid leaks.</p>
+                    </div>
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">4</span>
+                        <h3 class="dcrs-step-card__title">Road Test &amp; Itemized Written Report</h3>
+                        <p class="dcrs-step-card__desc">Dynamic evaluation of transmission shift quality, brake feel, and wheel alignment, followed by a detailed written report and verbal review.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TYPES, PARTS, PRODUCTS AND BRANDS ----------------------------->
         <section class="dcrs-section dcrs-section--tint" id="inspection-types">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Types of Inspection</div>
-                    <h2 class="dcrs-heading__title">
-                        Which Car Inspection Do You Need in Dubai?
-                    </h2>
+                    <h2 class="dcrs-heading__title">Inspection Packages &amp; Technical Checklist</h2>
                     <p class="dcrs-heading__sub">
-                        Three inspection types, each with a different purpose and scope. Choose the one that fits your situation.
+                        Tailored evaluation categories designed to match your specific vehicle ownership requirements.
                     </p>
                 </div>
 
@@ -472,160 +546,79 @@ const pageSchema = {
                     {inspectionTypes.map((t) => (
                         <div class="dcrs-type-card">
                             <div class="dcrs-type-card__head">
-                                <span class="dcrs-type-card__icon">
-                                    <Fragment set:html={icons[t.icon]} />
-                                </span>
+                                <span class="dcrs-type-card__icon"><Fragment set:html={icons[t.icon]} /></span>
                                 <div>
                                     <h3 class="dcrs-type-card__title">{t.title}</h3>
-                                    <span class="dcrs-badge-tag">{t.badge}</span>
+                                    <span class="dcrs-type-card__price">{t.badge || ""}</span>
                                 </div>
                             </div>
                             <p class="dcrs-type-card__desc">{t.desc}</p>
-                            <ul class="dcrs-type-card__list">
-                                {t.list.map((item) => (
-                                    <li>
-                                        <span class="dcrs-icon-check"><Fragment set:html={icons.check} /></span>
-                                        <span>{item}</span>
-                                    </li>
+                            
+                            <ul class="dcrs-type-card__bullets">
+                                {(t.list || t.bullets || []).map((b) => (
+                                    <li><Fragment set:html={icons.check} /> {b}</li>
                                 ))}
                             </ul>
+                        </div>
+                    ))}
+                </div>
+
+                <div class="dcrs-checklist-wrap">
+                    <h3 class="dcrs-subheading">Our 50-Point Technical Checklist</h3>
+                    <div class="dcrs-checklist-accordion">
+                        {checklistCategories.map((c, i) => (
+                            <details class="dcrs-faq-item" open={i === 0}>
+                                <summary class="dcrs-faq-item__question">
+                                    <span>{c.title}</span>
+                                    <span class="dcrs-faq-item__toggle">
+                                        <Fragment set:html={icons.chevronDown} />
+                                    </span>
+                                </summary>
+                                <div class="dcrs-faq-item__answer">
+                                    <ul class="dcrs-checklist-items">
+                                        {(c.points || c.items || []).map((item) => (
+                                            <li><Fragment set:html={icons.check} /> {item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </details>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SIGNS YOU NEED THIS SERVICE ----------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="rta-fails">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Common RTA Failure Points</div>
+                    <h2 class="dcrs-heading__title">Top 6 Reasons Cars Fail RTA Inspections in Dubai</h2>
+                    <p class="dcrs-heading__sub">
+                        Avoid re-test fees and administrative delays by checking these critical points before your official RTA testing appointment.
+                    </p>
+                </div>
+
+                <div class="dcrs-fails-grid">
+                    {rtaFails.map((f) => (
+                        <div class="dcrs-fail-card">
+                            <span class="dcrs-fail-card__num">{f.num}</span>
+                            <h3 class="dcrs-fail-card__title">{f.title}</h3>
+                            <p class="dcrs-fail-card__desc">{f.desc}</p>
+                            <span class="dcrs-fail-card__tip"><strong>Pre-Check Tip:</strong> {f.fix}</span>
                         </div>
                     ))}
                 </div>
             </div>
         </section>
 
-        <!-- 4. 50-POINT CHECKLIST ACCORDION ---------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="checklist">
-            <div class="dcrs-container">
-                <div class="dcrs-grid-2col align-start">
-
-                    <!-- Left: Description Box -->
-                    <div class="dcrs-checklist-info">
-                        <div class="dcrs-kicker">What We Check</div>
-                        <h2 class="dcrs-heading__title">
-                            Our 50-Point Car Inspection Checklist
-                        </h2>
-                        <p class="dcrs-body-text">
-                            Our inspection checklist examines visible, accessible mechanical components, suspension joints, safety gear, and electronic control modules across five key categories. Findings are documented with clear condition ratings and prioritised notes so you know exactly what requires attention.
-                        </p>
-
-                        <div class="dcrs-report-card">
-                            <h4 class="dcrs-report-card__title">Every Inspection Report Includes:</h4>
-                            <ul class="dcrs-report-list">
-                                <li><Fragment set:html={icons.check} /> Condition assessment across 5 key mechanical & safety systems</li>
-                                <li><Fragment set:html={icons.check} /> OBD-II electronic diagnostic trouble code (DTC) scan summary</li>
-                                <li><Fragment set:html={icons.check} /> Fluid level, contamination, and external leak checks</li>
-                                <li><Fragment set:html={icons.check} /> Urgency rating: Immediate safety priority, upcoming service, or monitor</li>
-                                <li><Fragment set:html={icons.check} /> Itemised repair cost estimate for recommended remedial work</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Right: Accordion of 5 Categories -->
-                    <div class="dcrs-checklist-accordion">
-                        {checklistCategories.map((cat, i) => (
-                            <details class="dcrs-check-item" open={i === 0}>
-                                <summary class="dcrs-check-item__head">
-                                    <div class="dcrs-check-item__title">
-                                        <span class="dcrs-check-item__icon"><Fragment set:html={icons[cat.icon]} /></span>
-                                        <span>{cat.title}</span>
-                                    </div>
-                                    <span class="dcrs-check-item__toggle"><Fragment set:html={icons.chevronDown} /></span>
-                                </summary>
-                                <div class="dcrs-check-item__body">
-                                    <div class="dcrs-points-grid">
-                                        {cat.points.map((p) => (
-                                            <div class="dcrs-point-line">
-                                                <span class="dcrs-icon-check"><Fragment set:html={icons.check} /></span>
-                                                <span>{p}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </details>
-                        ))}
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. RTA PREPARATION & PRICING GUIDE -------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="rta-section">
-            <div class="dcrs-container">
-                <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">RTA Inspection Dubai</div>
-                    <h2 class="dcrs-heading__title">
-                        Preparing Your Car for RTA Inspection in Dubai
-                    </h2>
-                </div>
-
-                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
-
-                    <!-- Left: Description & Fail Reasons -->
-                    <div class="dcrs-rta-copy">
-                        <p class="dcrs-body-text">
-                            In Dubai, passenger vehicles older than three years must pass an annual roadworthiness test at an authorised RTA testing centre -such as Tasjeel, Shamil, Wasel, or AG Cars -before vehicle registration (Mulkiya) can be renewed. Failing an official test requires repairing the faults and returning for a re-test within a specified window.
-                        </p>
-                        <p class="dcrs-body-text">
-                            Our workshop provides independent pre-RTA testing to identify issues before you enter the test lane. We inspect the common failure points targeted by testing technicians:
-                        </p>
-
-                        <div class="dcrs-fails-list">
-                            {rtaFails.map((f) => (
-                                <div class="dcrs-fail-item">
-                                    <span class="dcrs-fail-item__icon"><Fragment set:html={icons.times} /></span>
-                                    <span>{f}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div class="dcrs-action-row">
-                            <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
-                                <Fragment set:html={icons.phone} /> Book an Inspection -{phoneDisplay}
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right: Pricing Table Card -->
-                    <div class="dcrs-pricing-card">
-                        <h3 class="dcrs-pricing-card__title">Inspection Pricing Guide</h3>
-                        <div class="dcrs-table-wrapper">
-                            <table class="dcrs-pricing-table">
-                                <thead>
-                                    <tr>
-                                        <th>Inspection Type</th>
-                                        <th>Price (AED)</th>
-                                        <th>Duration</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {pricingRows.map((r) => (
-                                        <tr>
-                                            <td class="dcrs-table-service">{r.service}</td>
-                                            <td class="dcrs-table-price">{r.price}</td>
-                                            <td class="dcrs-table-duration">{r.duration}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="dcrs-pricing-disclaimer">
-                            <Fragment set:html={icons.info} /> Inspection fee is separate from any repair costs. Written report provided for all inspection types. [CONFIRM: exact inspection package prices and turnaround times]. Walk-ins welcome at 222 Al Satwa Road.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. WHY CHOOSE US ------------------------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="why-choose-us">
+        <!-- 7. WHY CHOOSE DUBAI CAR REPAIR SERVICE? -------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="why-choose-us">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
-                    <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Our Inspection Service</h2>
+                    <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Vehicle Inspections</h2>
+                    <p class="dcrs-heading__sub">12+ years of independent mechanical experience, transparent reporting, and fast and affordable pricing.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -644,12 +637,12 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 7. FREQUENTLY ASKED QUESTIONS (FAQ) ------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="faq">
+        <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) ----------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faq">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">FAQ</div>
-                    <h2 class="dcrs-heading__title">Car Inspection Dubai -Frequently Asked Questions</h2>
+                    <h2 class="dcrs-heading__title">Car Inspection Dubai - Frequently Asked Questions</h2>
                 </div>
 
                 <div class="dcrs-faq-accordion">
@@ -670,12 +663,12 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 8. RELATED SERVICES ---------------------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="related-services">
+        <!-- 9. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="related-services">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">More Services</div>
-                    <h2 class="dcrs-heading__title">Services Commonly Needed After Inspection</h2>
+                    <h2 class="dcrs-heading__title">Related Services You May Need</h2>
                 </div>
 
                 <div class="dcrs-related-grid">
@@ -692,17 +685,17 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 9. CTA BANNER ---------------------------------------------------->
+        <!-- 10. FINAL CTA ---------------------------------------------------->
         <section class="dcrs-cta-banner">
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Al Satwa Workshop</span>
+                        <span class="dcrs-cta-banner__badge">100% Independent Inspection</span>
                         <h2 class="dcrs-cta-banner__title">
                             Book Your Car Inspection in Dubai Today
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Open 7AM–10PM daily · 222 Al Satwa Rd · Pre-RTA checks, pre-purchase assessments &amp; full vehicle health reports. <a href="/contact" class="dcrs-cta-inline-link">Contact us online</a> to schedule your inspection.
+                            Fast and affordable pricing from AED 99 with a comprehensive written report. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us to schedule.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -717,7 +710,7 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 10. BOTTOM STICKY MOBILE BAR ------------------------------------->
+        <!-- 11. BOTTOM STICKY MOBILE BAR ------------------------------------>
         <div class="dcrs-stickybar">
             <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
                 <Fragment set:html={icons.phone} /> Call Now

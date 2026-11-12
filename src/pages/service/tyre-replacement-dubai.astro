@@ -336,7 +336,7 @@ const pageSchema = {
 
     <main class="dcrs-service-page">
 
-        <!-- 1. HERO BANNER --------------------------------------------------->
+        <!-- 1. HERO / OPENING ------------------------------------------------>
         <header class="dcrs-hero-banner">
             <div class="dcrs-hero-banner__scrim"></div>
             <div class="dcrs-container dcrs-hero-banner__inner">
@@ -352,7 +352,7 @@ const pageSchema = {
                     Tyre Change Dubai - Supply, Fitting, Balancing &amp; Alignment
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Dubai roads and summer heat are hard on tyres. Get the right tyre change in Dubai at our Al Satwa workshop - correct brand, correct size, proper balancing and 4-wheel alignment. Prices from AED 150/tyre. Open 7 days, 7 AM to 10 PM.
+                    Sustained highway speeds on Sheikh Zayed Road combined with summer asphalt temperatures exceeding 60°C place immense thermal and mechanical stress on automotive tyres across Dubai. Our tyre change in Dubai encompasses brand-new tyre supply, laser-calibrated dynamic balancing, precision 3D four-wheel alignment, and tubeless valve replacements. Operating from our central Al Satwa workshop, our experienced tyre technicians ensure safe road grip, optimal tread wear, and smooth handling with fast and affordable pricing.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -365,27 +365,24 @@ const pageSchema = {
             </div>
         </header>
 
-        <!-- 2. SERVICE OVERVIEW / INTRO -------------------------------------->
-        <section class="dcrs-section" id="service-overview">
+        <!-- 2. SERVICE OVERVIEW ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="service-overview">
             <div class="dcrs-container">
                 <div class="dcrs-split">
                     <div class="dcrs-split__content">
                         <div class="dcrs-kicker">Service Overview</div>
                         <h2 class="dcrs-heading__title">
-                            Tyre Change Dubai - What UAE Heat Does to Your Tyres
+                            Tyre Change Dubai - Heat Safety, Supply &amp; Precision Alignment
                         </h2>
                         <div class="dcrs-prose">
                             <p>
-                                Dubai roads are brutal on tyres. Surface temperatures regularly exceed 60°C in summer, accelerating rubber hardening, micro-fissuring, and tread compound breakdown. Combine that with sustained highway speeds on Sheikh Zayed Road and constant stop-start city driving, and even a relatively new tyre can become unsafe long before the tread runs out.
+                                Driving conditions in the UAE represent one of the most demanding environments in the world for pneumatic tyres. Extreme road surface heat causes rubber vulcanization compounds to dry out and harden, resulting in micro-cracking along tyre shoulders and sidewalls. Under UAE Ministry of Industry and Advanced Technology (MoIAT) and GSO safety regulations, passenger tyres older than five years must not be operated on roads, regardless of remaining tread depth, due to structural carcass fatigue and blowout risk.
                             </p>
                             <p>
-                                Under UAE and GSO regulations, tyres older than five years must be replaced regardless of remaining tread - the rubber loses structural resilience even when it looks fine. At <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a>, we inspect the DOT manufacturing date, tread depth, and sidewall condition on every visit. Need a full vehicle health check at the same time? Ask about our <a href="/car-inspection-dubai" class="dcrs-inline-link">car inspection in Dubai</a> - it covers tyres, brakes, suspension, and more.
+                                At Dubai Car Repair Service, we provide complete tyre safety evaluations on every visit, checking the four-digit DOT manufacture date stamp, tread depth across inside and outside shoulders, and inflation pressure against factory door-jamb specifications. Replacing tyres without precision dynamic wheel balancing and 3D wheel alignment causes premature uneven wear, steering wheel vibration, and excessive fuel consumption. While your vehicle is on the hoist, our mechanics can also carry out a comprehensive <a href="/car-inspection-dubai" class="dcrs-inline-link">vehicle safety check</a> or check your suspension and <a href="/car-maintenance-dubai" class="dcrs-inline-link">brake pad wear</a>.
                             </p>
                             <p>
-                                Based at 222 Al Satwa Road, we supply and fit all major tyre brands for saloons, SUVs, and commercial vehicles. We include dynamic balancing and optical 4-wheel alignment with every tyre change. For roadside punctures or spare tyre swaps, our <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance in Dubai</a> team can come to you - and for tyre fitting at your home or office, our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile mechanic in Dubai</a> handles that too. We also serve <a href="/car-repair-al-satwa" class="dcrs-inline-link">tyre shop in Satwa</a> customers and surrounding areas daily.
-                            </p>
-                            <p>
-                                While your tyres are on the lift, it's a smart time to also schedule an <a href="/engine-oil-change-dubai" class="dcrs-inline-link">oil change in Dubai</a> or check your <a href="/car-maintenance-dubai" class="dcrs-inline-link">annual car maintenance in Dubai</a> schedule - we can bundle both into a single visit.
+                                We supply leading international tyre brands tailored to Dubai's climate, including high-traction Michelin, Bridgestone, Continental, Pirelli, Yokohama, and budget-friendly alternatives with A-rated temperature classifications. Customers can visit our workshop at 222 Al Satwa Road for same-day drive-in fitting, or request emergency puncture repair and spare wheel installation via our <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance team</a>. To check size availability or request a quote, reach out to our <a href="/contact" class="dcrs-inline-link">workshop service desk</a>.
                             </p>
                         </div>
                     </div>
@@ -410,293 +407,123 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 3. WHEN TO REPLACE / 8 SIGNS -------------------------------------->
-        <section class="dcrs-section dcrs-section--tinted" id="when-to-replace">
+        <!-- 3. PRICING AND COST FACTORS -------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="pricing">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">When to Replace</div>
-                    <h2 class="dcrs-heading__title">8 Signs Your Tyres Need Replacing in Dubai</h2>
+                    <div class="dcrs-kicker">Fast and Affordable Pricing</div>
+                    <h2 class="dcrs-heading__title">Tyre Replacement &amp; Wheel Alignment Pricing Guide</h2>
                     <p class="dcrs-heading__sub">
-                        In Dubai, tyres can become dangerous before they look worn. Know these signs.
+                        Transparent pricing per tyre, including fitting, new tubeless valve, and computerized wheel balancing. Alignment is transparently itemized.
                     </p>
                 </div>
 
-                <div class="dcrs-signs-grid">
-                    {signs.map((s) => (
-                        <div class="dcrs-sign-card">
-                            <div class="dcrs-sign-card__icon">
-                                <Fragment set:html={icons[s.icon] || icons.alert} />
-                            </div>
-                            <h3 class="dcrs-sign-card__title">{s.title}</h3>
-                            <p class="dcrs-sign-card__desc">{s.desc}</p>
-                        </div>
-                    ))}
+                <div class="dcrs-table-wrapper">
+                    <table class="dcrs-pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Category / Service</th>
+                                <th>Rim Size Range</th>
+                                <th>Starting Price</th>
+                                <th>Included Work</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {pricingRows.map((r) => (
+                                <tr>
+                                    <td class="dcrs-table-service"><strong>{r.category}</strong></td>
+                                    <td>{r.size}</td>
+                                    <td class="dcrs-table-price">{r.price}</td>
+                                    <td class="dcrs-table-desc">{r.included}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
+
+                <p class="dcrs-pricing-disclaimer">
+                    <Fragment set:html={icons.info} /> Prices vary by specific brand, tyre model (e.g. touring vs. high-performance ultra-low profile), and speed rating. Run-flat tyres and specialist off-road tread patterns carry specific pricing. Final quotation confirmed upon vehicle tyre size verification.
+                </p>
             </div>
         </section>
 
-        <!-- 4. TYRE BRANDS & TYRE TYPES -------------------------------------->
-        <section class="dcrs-section" id="brands-and-types">
-            <div class="dcrs-container">
-                <div class="dcrs-columns-2">
-                    <!-- Column 1: Brands -->
-                    <div class="dcrs-col-block">
-                        <div class="dcrs-kicker">Tyre Brands</div>
-                        <h2 class="dcrs-heading__title dcrs-heading__title--col">
-                            Tyre Brands We Supply &amp; Fit in Dubai
-                        </h2>
-                        <div class="dcrs-brand-list">
-                            {brands.map((b) => (
-                                <div class="dcrs-brand-item">
-                                    <span class="dcrs-brand-item__name">{b.name}</span>
-                                    <span class="dcrs-brand-item__desc">{b.desc}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <!-- Column 2: Selection / Types -->
-                    <div class="dcrs-col-block">
-                        <div class="dcrs-kicker">Tyre Selection</div>
-                        <h2 class="dcrs-heading__title dcrs-heading__title--col">
-                            Which Tyre Type Is Right for Your Vehicle in Dubai?
-                        </h2>
-                        <div class="dcrs-type-list">
-                            {tyreTypes.map((t) => (
-                                <div class="dcrs-type-card">
-                                    <div class="dcrs-type-card__header">
-                                        <h3 class="dcrs-type-card__title">{t.name}</h3>
-                                        <span class="dcrs-type-card__badge">{t.price}</span>
-                                    </div>
-                                    <p class="dcrs-type-card__desc">{t.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. ALIGNMENT & BALANCING ------------------------------------------>
-        <section class="dcrs-section dcrs-section--tinted" id="alignment-balancing">
+        <!-- 4. SERVICE PROCESS ----------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="process">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Alignment &amp; Balancing</div>
-                    <h2 class="dcrs-heading__title">
-                        Wheel Alignment &amp; Balancing in Dubai - Why Both Matter
-                    </h2>
+                    <div class="dcrs-kicker">Service Process</div>
+                    <h2 class="dcrs-heading__title">Our Precision Tyre Fitting, Balancing &amp; Alignment Workflow</h2>
                     <p class="dcrs-heading__sub">
-                        Fitting new tyres without proper alignment and balancing leads to premature edge wear and high-speed vibration. We perform precision wheel balancing and alignment checks with every fitting.
+                        Every tyre replacement follows a strict technical protocol to ensure maximum safety, smooth rolling resistance, and even tread wear.
                     </p>
                 </div>
 
-                <div class="dcrs-cards-grid-3">
-                    <!-- Card 1: 4-Wheel Alignment -->
-                    <div class="dcrs-feature-card">
-                        <div class="dcrs-feature-card__header">
-                            <div class="dcrs-feature-card__icon">
-                                <Fragment set:html={icons.crosshairs} />
-                            </div>
-                            <h3 class="dcrs-feature-card__title">Computerised 4-Wheel Alignment</h3>
-                        </div>
-                        <p class="dcrs-feature-card__desc">
-                            Our laser alignment system measures all four wheels simultaneously - adjusting camber, caster, and toe to manufacturer specification. Incorrect alignment causes new tyres to wear unevenly within weeks and increases fuel consumption by up to 5%. Dubai's speed bumps and kerb strikes knock alignment out of specification frequently.
-                        </p>
-                        <div class="dcrs-feature-card__box">
-                            <div class="dcrs-feature-card__box-title">Signs Your Alignment Is Off:</div>
-                            <ul class="dcrs-feature-card__checklist">
-                                {alignmentSigns.map((item) => (
-                                    <li>
-                                        <Fragment set:html={icons.circleDot} />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div class="dcrs-feature-card__price">AED 80 – 150 (all 4 wheels)</div>
+                <div class="dcrs-steps-grid">
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">1</span>
+                        <h3 class="dcrs-step-card__title">Tyre &amp; Rim Specification Check</h3>
+                        <p class="dcrs-step-card__desc">We verify exact width, aspect ratio, diameter, load index, speed rating, and DOT production dates against manufacturer standards.</p>
                     </div>
-
-                    <!-- Card 2: Dynamic Wheel Balancing -->
-                    <div class="dcrs-feature-card">
-                        <div class="dcrs-feature-card__header">
-                            <div class="dcrs-feature-card__icon">
-                                <Fragment set:html={icons.gauge} />
-                            </div>
-                            <h3 class="dcrs-feature-card__title">Dynamic Wheel Balancing</h3>
-                        </div>
-                        <p class="dcrs-feature-card__desc">
-                            Balancing uses a computerised spin-balancer to detect and correct weight imbalance in the tyre-wheel assembly. Even a 10-gram imbalance causes noticeable vibration at highway speeds. Unbalanced wheels cause steering shimmy, accelerate tyre wear, and create stress in wheel bearings and suspension components.
-                        </p>
-                        <div class="dcrs-feature-card__box">
-                            <div class="dcrs-feature-card__box-title">Signs Your Wheels Are Unbalanced:</div>
-                            <ul class="dcrs-feature-card__checklist">
-                                {balancingSigns.map((item) => (
-                                    <li>
-                                        <Fragment set:html={icons.circleDot} />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div class="dcrs-feature-card__price">AED 15 – 25 per wheel</div>
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">2</span>
+                        <h3 class="dcrs-step-card__title">Touchless Tyre Demounting</h3>
+                        <p class="dcrs-step-card__desc">Using protective rim-clamp machinery, we demount old tyres without scratching delicate alloy wheels or damaging TPMS sensors.</p>
                     </div>
-
-                    <!-- Card 3: Tyre Rotation -->
-                    <div class="dcrs-feature-card">
-                        <div class="dcrs-feature-card__header">
-                            <div class="dcrs-feature-card__icon">
-                                <Fragment set:html={icons.sync} />
-                            </div>
-                            <h3 class="dcrs-feature-card__title">Tyre Rotation</h3>
-                        </div>
-                        <p class="dcrs-feature-card__desc">
-                            Front tyres wear faster than rear tyres - particularly on front-wheel-drive cars where the front tyres handle both steering and drive. Rotating tyres every 10,000 km equalises wear across all four tyres, extending their overall lifespan and ensuring all four tyres wear down together for consistent handling.
-                        </p>
-                        <div class="dcrs-feature-card__box">
-                            <div class="dcrs-feature-card__box-title">Rotation Patterns We Use:</div>
-                            <ul class="dcrs-feature-card__checklist">
-                                {rotationPatterns.map((item) => (
-                                    <li>
-                                        <Fragment set:html={icons.circleDot} />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div class="dcrs-feature-card__price">AED 40 – 80 per service</div>
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">3</span>
+                        <h3 class="dcrs-step-card__title">Valve Replacement &amp; Beading</h3>
+                        <p class="dcrs-step-card__desc">We install fresh valve stems, apply non-corrosive bead lubricant, seat tyres cleanly, and inflate to exact door-jamb pressures.</p>
+                    </div>
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">4</span>
+                        <h3 class="dcrs-step-card__title">Computerized Dynamic Balancing</h3>
+                        <p class="dcrs-step-card__desc">Wheels are spun on laser dynamic balancers to apply precision adhesive weights, eliminating high-speed steering vibration.</p>
+                    </div>
+                    <div class="dcrs-step-card">
+                        <span class="dcrs-step-card__num">5</span>
+                        <h3 class="dcrs-step-card__title">3D Optical 4-Wheel Alignment</h3>
+                        <p class="dcrs-step-card__desc">Camber, caster, and toe angles are adjusted to factory specifications to eliminate drift and protect your investment.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. PRICING GUIDE & UAE HEAT TIPS ---------------------------------->
-        <section class="dcrs-section" id="pricing-and-tips">
-            <div class="dcrs-container">
-                <div class="dcrs-columns-2">
-                    <!-- Column 1: Pricing Table -->
-                    <div class="dcrs-col-block">
-                        <div class="dcrs-kicker">Pricing Guide</div>
-                        <h2 class="dcrs-heading__title dcrs-heading__title--col">
-                            Tyre Service Prices in Dubai
-                        </h2>
-                        <div class="dcrs-table-wrapper">
-                            <table class="dcrs-table">
-                                <thead>
-                                    <tr>
-                                        <th>Service</th>
-                                        <th>Price (AED)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {pricingRows.map((row) => (
-                                        <tr>
-                                            <td>{row.service}</td>
-                                            <td class="dcrs-table__price">{row.price}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                        <p class="dcrs-table-note">
-                            <Fragment set:html={icons.infoCircle} />
-                            <span>Tyre prices vary by brand, dimensional size, speed rating, and load index. Baseline figures are estimates; exact quotations confirmed based on vehicle specifications. [CONFIRM: exact tyre replacement and wheel service pricing]. Old tyres are disposed of through certified recycling channels.</span>
-                        </p>
-                    </div>
-
-                    <!-- Column 2: Tyre Pressure & Heat Tips -->
-                    <div class="dcrs-col-block">
-                        <div class="dcrs-kicker">Tyre Pressure &amp; UAE Tips</div>
-                        <h2 class="dcrs-heading__title dcrs-heading__title--col">
-                            Tyre Pressure in Dubai - What You Must Know
-                        </h2>
-
-                        <!-- Heat Alert Card -->
-                        <div class="dcrs-heat-card">
-                            <div class="dcrs-heat-card__header">
-                                <Fragment set:html={icons.thermometer} />
-                                <h3>Heat Inflates Tyre Pressure</h3>
-                            </div>
-                            <p class="dcrs-heat-card__text">
-                                Tyre pressure increases by approximately 1 PSI for every 10°F (5.5°C) rise in temperature. At 45°C ambient with direct sun on tarmac, road surface temperatures can exceed 70°C - potentially raising tyre pressure by 6–8 PSI above your cold inflation target. Always check tyre pressure when the car has been parked for at least 3 hours (cold). Never release pressure from hot tyres.
-                            </p>
-                        </div>
-
-                        <!-- Safety Checklist -->
-                        <div class="dcrs-safety-card">
-                            <h3 class="dcrs-safety-card__title">Dubai Tyre Safety Checklist</h3>
-                            <ul class="dcrs-safety-checklist">
-                                {checklist.map((item) => (
-                                    <li>
-                                        <Fragment set:html={icons.checkCircle} />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. WHY CHOOSE US ------------------------------------------------->
-        <section class="dcrs-section dcrs-section--tinted" id="why-choose-us">
+        <!-- 5. TYPES, PARTS, PRODUCTS AND BRANDS ----------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="brands">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Why Choose Us</div>
-                    <h2 class="dcrs-heading__title">Why Dubai Drivers Choose Us for Tyre Replacement &amp; Wheel Care</h2>
+                    <div class="dcrs-kicker">Brands &amp; Types</div>
+                    <h2 class="dcrs-heading__title">Tyre Brands &amp; Categories We Supply in Dubai</h2>
+                    <p class="dcrs-heading__sub">
+                        We stock certified tyres from premier global manufacturers engineered for superior high-temperature performance.
+                    </p>
                 </div>
 
-                <div class="dcrs-reasons-grid">
-                    {reasons.map((r) => (
-                        <div class="dcrs-reason-card">
-                            <div class="dcrs-reason-card__icon">
-                                <Fragment set:html={icons[r.icon] || icons.circle} />
-                            </div>
-                            <div class="dcrs-reason-card__body">
-                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
-                                <p class="dcrs-reason-card__desc">{r.desc}</p>
-                            </div>
+                <div class="dcrs-brands-grid">
+                    {brands.map((b) => (
+                        <div class="dcrs-brand-card">
+                            <span class="dcrs-brand-card__tier">{b.tier}</span>
+                            <h3 class="dcrs-brand-card__name">{b.name}</h3>
+                            <p class="dcrs-brand-card__origin">{b.origin}</p>
+                            <p class="dcrs-brand-card__desc">{b.desc}</p>
+                            <span class="dcrs-brand-card__best">Best for: {b.bestFor}</span>
                         </div>
                     ))}
                 </div>
-            </div>
-        </section>
 
-        <!-- 8. FAQ ACCORDION ------------------------------------------------->
-        <section class="dcrs-section" id="faq">
-            <div class="dcrs-container">
-                <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">FAQ</div>
-                    <h2 class="dcrs-heading__title">Tyre Replacement Dubai - Common Questions Answered</h2>
-                </div>
-
-                <div class="dcrs-faq-wrap">
-                    <div class="dcrs-faq-accordion">
-                        {faqs.map((faq, i) => (
-                            <div class="dcrs-faq-item" data-state={i === 0 ? "open" : "closed"}>
-                                <button
-                                    type="button"
-                                    class="dcrs-faq-trigger"
-                                    aria-expanded={i === 0 ? "true" : "false"}
-                                    aria-controls={`faq-answer-${i}`}
-                                    id={`faq-btn-${i}`}
-                                >
-                                    <span class="dcrs-faq-trigger__text">{faq.q}</span>
-                                    <span class="dcrs-faq-trigger__icon" aria-hidden="true">
-                                        <Fragment set:html={icons.chevronDown} />
-                                    </span>
-                                </button>
-                                <div
-                                    class="dcrs-faq-panel"
-                                    id={`faq-answer-${i}`}
-                                    role="region"
-                                    aria-labelledby={`faq-btn-${i}`}
-                                    style={i === 0 ? "" : "display: none;"}
-                                >
-                                    <div class="dcrs-faq-panel__inner">
-                                        <p>{faq.a}</p>
+                <div class="dcrs-types-section">
+                    <h3 class="dcrs-subheading">Tyre Categories for Dubai Roads</h3>
+                    <div class="dcrs-types-grid">
+                        {tyreTypes.map((t) => (
+                            <div class="dcrs-type-card">
+                                <div class="dcrs-type-card__head">
+                                    <span class="dcrs-type-card__icon"><Fragment set:html={icons[t.icon]} /></span>
+                                    <div>
+                                        <h4 class="dcrs-type-card__title">{t.type}</h4>
+                                        <span class="dcrs-type-card__best">{t.bestFor}</span>
                                     </div>
                                 </div>
+                                <p class="dcrs-type-card__desc">{t.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -704,37 +531,121 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 9. RELATED SERVICES ---------------------------------------------->
-        <section class="dcrs-section dcrs-section--tinted" id="related-services">
+        <!-- 6. SIGNS YOU NEED THIS SERVICE ----------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="signs">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <h3 class="dcrs-heading__title" style="font-size: 1.6rem;">Related Services</h3>
+                    <div class="dcrs-kicker">Warning Signs</div>
+                    <h2 class="dcrs-heading__title">8 Signs Your Tyres Need Replacing in Dubai</h2>
+                    <p class="dcrs-heading__sub">
+                        In Dubai, tyres often become structurally unsafe before tread depth appears completely worn. Watch for these indicators.
+                    </p>
+                </div>
+
+                <div class="dcrs-signs-grid">
+                    {signs.map((s) => (
+                        <div class="dcrs-sign-card">
+                            <div class="dcrs-sign-card__head">
+                                <span class="dcrs-sign-card__num">{s.num}</span>
+                                <div>
+                                    <h3 class="dcrs-sign-card__title">{s.title}</h3>
+                                    <span class="dcrs-badge">{s.urgency}</span>
+                                </div>
+                            </div>
+                            <p class="dcrs-sign-card__desc">{s.desc}</p>
+                            <div class="dcrs-sign-card__action">
+                                <strong>Action:</strong> {s.action}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. WHY CHOOSE DUBAI CAR REPAIR SERVICE? -------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="why-choose-us">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Why Choose Us</div>
+                    <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Tyre Fitting</h2>
+                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, laser alignment gear, and fast and affordable pricing.</p>
+                </div>
+
+                <div class="dcrs-reasons-grid">
+                    {reasons.map((r) => (
+                        <div class="dcrs-reason-card">
+                            <span class="dcrs-reason-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <div>
+                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
+                                <p class="dcrs-reason-card__text">{r.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) ----------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faq">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">FAQ</div>
+                    <h2 class="dcrs-heading__title">Tyre Change Dubai - Frequently Asked Questions</h2>
+                </div>
+
+                <div class="dcrs-faq-accordion">
+                    {faqs.map((faq, i) => (
+                        <details class="dcrs-faq-item" open={i === 0}>
+                            <summary class="dcrs-faq-item__question">
+                                <span>{faq.q}</span>
+                                <span class="dcrs-faq-item__toggle">
+                                    <Fragment set:html={icons.chevronDown} />
+                                </span>
+                            </summary>
+                            <div class="dcrs-faq-item__answer">
+                                <p>{faq.a}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="related-services">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">More Services</div>
+                    <h2 class="dcrs-heading__title">Related Services You May Need</h2>
                 </div>
 
                 <div class="dcrs-related-grid">
-                    {relatedServices.map((rel) => (
-                        <a href={rel.href} class="dcrs-related-card">
-                            <div class="dcrs-related-card__icon">
-                                <Fragment set:html={icons[rel.icon] || icons.tools} />
-                            </div>
-                            <h4 class="dcrs-related-card__title">{rel.name}</h4>
-                            <p class="dcrs-related-card__desc">{rel.desc}</p>
+                    {relatedServices.map((r) => (
+                        <a href={r.href} class="dcrs-related-card">
+                            <span class="dcrs-related-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <h3 class="dcrs-related-card__title">{r.name}</h3>
+                            <p class="dcrs-related-card__desc">{r.desc}</p>
                         </a>
                     ))}
                 </div>
             </div>
         </section>
 
-        <!-- 10. CTA BANNER --------------------------------------------------->
+        <!-- 10. FINAL CTA ---------------------------------------------------->
         <section class="dcrs-cta-banner">
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
-                    <div class="dcrs-cta-banner__content">
+                    <div class="dcrs-cta-banner__copy">
+                        <span class="dcrs-cta-banner__badge">Guaranteed Quality &amp; Safety</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book a Tyre Change in Dubai Today
+                            Book Your Tyre Change &amp; Alignment in Dubai Today
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Open 7AM–10PM daily &bull; 222 Al Satwa Rd &bull; Balancing, alignment &amp; puncture repair included. <a href="/contact" class="dcrs-cta-inline-link">Contact us</a> for an exact quote.
+                            Fast and affordable pricing from AED 120 per tyre. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us for prompt tyre size availability.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -749,50 +660,18 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 11. STICKY MOBILE ACTION BAR ------------------------------------->
-        <div class="dcrs-stickybar" role="region" aria-label="Quick contact mobile bar">
+        <!-- 11. BOTTOM STICKY MOBILE ACTION BAR ----------------------------->
+        <div class="dcrs-stickybar">
             <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
-                <Fragment set:html={icons.phone} /> Call {phoneDisplay}
+                <Fragment set:html={icons.phone} /> Call Now
             </a>
-            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa dcrs-stickybar__btn">
+            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn dcrs-stickybar__btn--wa">
                 <Fragment set:html={icons.chat} /> WhatsApp
             </a>
         </div>
 
     </main>
 </BaseLayout>
-
-<script>
-    // FAQ Accordion Toggle Interaction
-    document.addEventListener('DOMContentLoaded', () => {
-        const faqItems = document.querySelectorAll<HTMLElement>('.dcrs-faq-item');
-        faqItems.forEach((item) => {
-            const trigger = item.querySelector<HTMLButtonElement>('.dcrs-faq-trigger');
-            const panel = item.querySelector<HTMLElement>('.dcrs-faq-panel');
-            if (!trigger || !panel) return;
-
-            trigger.addEventListener('click', () => {
-                const isOpen = item.getAttribute('data-state') === 'open';
-
-                // Close all others
-                faqItems.forEach((other) => {
-                    other.setAttribute('data-state', 'closed');
-                    const otherTrig = other.querySelector<HTMLButtonElement>('.dcrs-faq-trigger');
-                    const otherPan = other.querySelector<HTMLElement>('.dcrs-faq-panel');
-                    if (otherTrig) otherTrig.setAttribute('aria-expanded', 'false');
-                    if (otherPan) otherPan.style.display = 'none';
-                });
-
-                // Toggle selected
-                if (!isOpen) {
-                    item.setAttribute('data-state', 'open');
-                    trigger.setAttribute('aria-expanded', 'true');
-                    panel.style.display = 'block';
-                }
-            });
-        });
-    });
-</script>
 
 <style>
     /* =========================================================================

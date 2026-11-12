@@ -306,7 +306,7 @@ const pageSchema = {
 
     <main class="dcrs-service-page">
 
-        <!-- 1. HERO BANNER --------------------------------------------------->
+        <!-- 1. HERO / OPENING ------------------------------------------------>
         <header class="dcrs-hero-banner">
             <div class="dcrs-hero-banner__scrim"></div>
             <div class="dcrs-container dcrs-hero-banner__inner">
@@ -322,7 +322,7 @@ const pageSchema = {
                     Mobile Car Repair Dubai - On-Site Mechanic Comes to You
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Experiencing vehicle trouble at your home, workplace, or roadside? Our mobile car repair Dubai service brings experienced technicians, computerized diagnostics, and genuine replacement parts directly to your vehicle. Call-out from AED 30.
+                    Experiencing an unexpected mechanical fault, sudden battery depletion, or flat tyre in a basement car park or roadside across Dubai can disrupt your entire day. Our mobile car repair in Dubai brings professional workshop tools, portable OBD-II diagnostic equipment, and certified mechanics straight to your home, office, or breakdown location. Supported by our central Al Satwa garage, we deliver prompt on-site repairs and transparent solutions with fast and affordable pricing.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -335,23 +335,23 @@ const pageSchema = {
             </div>
         </header>
 
-        <!-- 2. SERVICE OVERVIEW / INTRO -------------------------------------->
+        <!-- 2. SERVICE OVERVIEW ---------------------------------------------->
         <section class="dcrs-section dcrs-section--paper" id="service-overview">
             <div class="dcrs-container">
                 <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
                     <div class="dcrs-intro-content">
                         <div class="dcrs-kicker">Service Overview</div>
                         <h2 class="dcrs-heading__title">
-                            Mobile Car Repair Dubai - Professional Garage Services at Your Doorstep
+                            Mobile Car Repair Dubai - Professional On-Site Workshop Services
                         </h2>
                         <p class="dcrs-lead-text">
-                            When an unexpected vehicle fault occurs, driving a compromised car through busy traffic or waiting hours for a recovery truck creates unnecessary stress. Through <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a>, our mobile car mechanic Dubai service brings complete workshop care right to your home driveway, office parking bay, or roadside location.
+                            Navigating congested Dubai highways with a misfiring engine or waiting for hours in roadside recovery queues creates avoidable frustration and potential safety hazards. Modern mobile automotive servicing offers a sensible, time-saving alternative by bringing essential garage capabilities directly to your vehicle's parking stall. Whether dealing with a vehicle that refuses to start in an underground villa garage or facing a sudden tyre blowout, on-site mechanical intervention resolves the problem efficiently without towing expenses.
                         </p>
                         <p class="dcrs-body-text">
-                            Dispatched from our workshop at 222 Al Satwa Road, our mobile mechanics operate with professional OBD-II diagnostic scanners, battery conductance testers, and specialized tools. Whether you require an urgent <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">mobile battery service in Dubai</a>, scheduled routine maintenance through an <a href="/engine-oil-change-dubai" class="dcrs-inline-link">oil change service in Dubai</a>, or a rapid <a href="/car-ac-repair-dubai" class="dcrs-inline-link">car ac gas refill in Dubai</a> before summer heat strikes, we arrive ready to fix the problem on the spot.
+                            Dispatched directly from our primary workshop at 222 Al Satwa Road, our mobile technicians carry high-precision electronic scan tools, battery conductance analyzers, heavy-duty floor jacks, and specialized hand tools. We carry out urgent on-site <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">mobile battery replacement</a>, mess-free <a href="/engine-oil-change-dubai" class="dcrs-inline-link">scheduled oil changes</a>, emergency puncture repairs, and electronic diagnostics. For complex repairs that cannot be performed safely roadside, our team provides transparent guidance and coordinates transfer to our garage for advanced <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine servicing</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            If you run into an unexpected puncture and need a quick <a href="/tyre-replacement-dubai" class="dcrs-inline-link">tyre change near me</a>, or find yourself stranded requiring immediate <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside help near me</a>, our mobile garage Dubai team is on call seven days a week. For custom quotes and booking, feel free to <a href="/contact" class="dcrs-inline-link">contact us</a> anytime.
+                            Our mobile service vans operate seven days a week across all major Dubai communities, from Downtown, Business Bay, and DIFC to Jumeirah, Dubai Marina, and Al Barsha. We provide clear upfront cost estimates over the phone or WhatsApp before dispatch, ensuring complete peace of mind. For immediate technician availability or to share your live pin location, contact our <a href="/contact" class="dcrs-inline-link">mobile dispatch desk</a>.
                         </p>
 
                         <div class="dcrs-action-row">
@@ -384,14 +384,14 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 3. WHAT WE FIX ON-SITE ------------------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="what-we-fix">
+        <!-- 3. PRICING AND COST FACTORS -------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="pricing">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">What We Fix On-Site</div>
-                    <h2 class="dcrs-heading__title">Mobile Car Repair Services Available Across Dubai</h2>
+                    <div class="dcrs-kicker">Fast and Affordable Pricing</div>
+                    <h2 class="dcrs-heading__title">Mobile Car Repair Pricing &amp; Service Rates in Dubai</h2>
                     <p class="dcrs-heading__sub">
-                        Targeted mechanical and electrical services performed safely at your parking location, with clear estimates provided before work begins.
+                        Transparent call-out rates and competitive service pricing. You approve a clear written quote on-site before any repair work starts.
                     </p>
                 </div>
 
@@ -419,14 +419,53 @@ const pageSchema = {
                     ))}
                 </div>
 
-                <!-- Workshop Backup Callout Box -->
+                <p class="dcrs-pricing-disclaimer">
+                    <Fragment set:html={icons.info} /> Call-out fees start from AED 30 in central districts (Al Satwa, Jumeirah, Business Bay). Prices include labor and standard diagnostic scanning. Replacement parts (batteries, fluids, sensors) are itemized transparently.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. SERVICE PROCESS ----------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="how-it-works">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">How It Works</div>
+                    <h2 class="dcrs-heading__title">Our 4-Step On-Site Service Workflow</h2>
+                    <p class="dcrs-heading__sub">
+                        From your first call or WhatsApp pin to completed repair and testing - simple, clear, and professional.
+                    </p>
+                </div>
+
+                <div class="dcrs-steps-grid">
+                    {steps.map((st) => (
+                        <div class="dcrs-step-card">
+                            <span class="dcrs-step-card__num">{st.num}</span>
+                            <h3 class="dcrs-step-card__title">{st.title}</h3>
+                            <p class="dcrs-step-card__desc">{st.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TYPES, PARTS, PRODUCTS AND BRANDS ----------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="capabilities">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Capabilities &amp; Boundaries</div>
+                    <h2 class="dcrs-heading__title">On-Site Services vs. Workshop Interventions</h2>
+                    <p class="dcrs-heading__sub">
+                        We believe in complete mechanical honesty. Here is what we handle on-site and what requires workshop lifting.
+                    </p>
+                </div>
+
                 <div class="dcrs-workshop-box">
                     <div class="dcrs-workshop-box__header">
                         <span class="dcrs-workshop-box__icon">
                             <Fragment set:html={icons.alert} />
                         </span>
                         <h3 class="dcrs-workshop-box__title">
-                            Repairs Requiring Our Al Satwa Workshop -Honest Advice First
+                            Repairs Requiring Our Al Satwa Workshop - Honest Advice First
                         </h3>
                     </div>
                     <p class="dcrs-workshop-box__lead">
@@ -446,95 +485,64 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 4. HOW IT WORKS -------------------------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="how-it-works">
+        <!-- 6. SIGNS YOU NEED THIS SERVICE ----------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="coverage">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">How It Works</div>
-                    <h2 class="dcrs-heading__title">How Our Mobile Mechanic Service Works -4 Simple Steps</h2>
+                    <div class="dcrs-kicker">Coverage &amp; Arrival Times</div>
+                    <h2 class="dcrs-heading__title">When to Request a Mobile Mechanic in Dubai</h2>
+                    <p class="dcrs-heading__sub">
+                        Ideal for basement parking breakdowns, home driveway maintenance, or roadside warning lights.
+                    </p>
                 </div>
 
-                <div class="dcrs-steps-grid">
-                    {steps.map((st) => (
-                        <div class="dcrs-step-card">
-                            <div class="dcrs-step-card__icon">
-                                <Fragment set:html={icons[st.icon]} />
-                            </div>
-                            <div class="dcrs-step-card__num">STEP {st.num}</div>
-                            <h3 class="dcrs-step-card__title">{st.title}</h3>
-                            <p class="dcrs-step-card__desc">{st.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. AREAS COVERED & RESPONSE TIMES -------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="areas-covered">
-            <div class="dcrs-container">
-                <div class="dcrs-grid-2col dcrs-grid-2col--align-start">
-                    <div class="dcrs-coverage-info">
-                        <div class="dcrs-kicker">Coverage Area</div>
-                        <h2 class="dcrs-heading__title">Mobile Automotive Coverage Across Dubai</h2>
-                        <p class="dcrs-body-text">
-                            Operating from our centrally located Al Satwa workshop on 222 Al Satwa Road, our mobile mechanics provide scheduled and prompt assistance across Dubai's major commercial and residential districts. Drivers looking for <a href="/car-repair-al-satwa" class="dcrs-inline-link">car repair al satwa</a> can have a technician at their doorstep in 20–35 minutes. We dispatch daily between 7:00 AM and 10:00 PM.
-                        </p>
-                        <p class="dcrs-body-text">
-                            Our technicians attend to vehicles parked in private residential villas, covered apartment basements, office complexes, hotel parking bays, and accessible highway breakdown zones. If you face an urgent breakdown on the highway, our <a href="/car-repair-sheikh-zayed-road" class="dcrs-inline-link">mobile mechanic sheikh zayed road</a> unit is staged for rapid response. If you need to confirm coverage for your specific community, call {phoneDisplay} for immediate assistance.
-                        </p>
-
-                        <div class="dcrs-response-box">
-                            <div class="dcrs-response-box__header">
-                                <span class="dcrs-response-box__icon">
-                                     <Fragment set:html={icons.clock} />
-                                </span>
-                                <h3 class="dcrs-response-box__title">Estimated Response Windows</h3>
-                            </div>
-                            <div class="dcrs-response-table">
-                                {responseTimes.map((rt) => (
-                                    <div class="dcrs-response-row">
-                                        <span class="dcrs-response-row__area">{rt.area}</span>
-                                        <span class="dcrs-response-row__time">{rt.time}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <p class="dcrs-response-box__note">
-                                Response windows are realistic estimates during normal traffic. Congestion during peak hours on Sheikh Zayed Road (E11) and Al Khail Road (E44) may affect transit times.
-                            </p>
+                <div class="dcrs-coverage-grid">
+                    <div class="dcrs-coverage-card">
+                        <h3 class="dcrs-coverage-card__title">Estimated Mobile Arrival Times</h3>
+                        <p class="dcrs-coverage-card__sub">Times reflect typical daytime traffic from our central Al Satwa Road workshop.</p>
+                        <div class="dcrs-times-list">
+                            {responseTimes.map((r) => (
+                                <div class="dcrs-time-row">
+                                    <span class="dcrs-time-area">{r.area}</span>
+                                    <span class="dcrs-time-val">{r.time}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    <div class="dcrs-areas-grid">
-                        {coverageAreas.map((area) => (
-                            <div class="dcrs-area-pill">
-                                <span class="dcrs-area-pill__icon">
-                                    <Fragment set:html={icons.mapPin} />
+                    <div class="dcrs-coverage-card">
+                        <h3 class="dcrs-coverage-card__title">Communities We Serve Daily</h3>
+                        <p class="dcrs-coverage-card__sub">Our mobile vans cover residential villas, commercial towers, and highway lay-bys.</p>
+                        <div class="dcrs-areas-tags">
+                            {coverageAreas.map((area) => (
+                                <span class="dcrs-area-tag">
+                                    <Fragment set:html={icons.check} /> {area}
                                 </span>
-                                <span class="dcrs-area-pill__name">{area}</span>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. WHY CHOOSE US ------------------------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="why-choose-us">
+        <!-- 7. WHY CHOOSE DUBAI CAR REPAIR SERVICE? -------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="why-choose-us">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
-                    <h2 class="dcrs-heading__title">Why Dubai Drivers Choose Our Mobile Mechanical Service</h2>
+                    <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Our Mobile Mechanics</h2>
+                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, genuine replacement parts, and fast and affordable pricing.</p>
                 </div>
 
-                <div class="dcrs-why-grid">
-                    {whyChooseUs.map((w) => (
-                        <div class="dcrs-why-card">
-                            <div class="dcrs-why-card__icon">
-                                <Fragment set:html={icons[w.icon]} />
-                            </div>
-                            <div class="dcrs-why-card__content">
-                                <h3 class="dcrs-why-card__title">{w.title}</h3>
-                                <p class="dcrs-why-card__desc">{w.desc}</p>
+                <div class="dcrs-reasons-grid">
+                    {whyChooseUs.map((r) => (
+                        <div class="dcrs-reason-card">
+                            <span class="dcrs-reason-card__icon">
+                                <Fragment set:html={icons[r.icon]} />
+                            </span>
+                            <div>
+                                <h3 class="dcrs-reason-card__title">{r.title}</h3>
+                                <p class="dcrs-reason-card__text">{r.desc}</p>
                             </div>
                         </div>
                     ))}
@@ -542,47 +550,38 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 7. FAQ ACCORDION ------------------------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="faq">
+        <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) ----------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="faq">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Frequently Asked Questions</div>
-                    <h2 class="dcrs-heading__title">Mobile Car Repair Dubai -Frequently Asked Questions</h2>
+                    <div class="dcrs-kicker">FAQ</div>
+                    <h2 class="dcrs-heading__title">Mobile Car Repair Dubai - Frequently Asked Questions</h2>
                 </div>
 
-                <div class="dcrs-faq-accordion" data-accordion>
+                <div class="dcrs-faq-accordion">
                     {faqs.map((faq, i) => (
-                        <div class={`dcrs-faq-item ${i === 0 ? 'is-open' : ''}`}>
-                            <button
-                                type="button"
-                                class="dcrs-faq-question"
-                                aria-expanded={i === 0 ? 'true' : 'false'}
-                                aria-controls={`faq-answer-${i}`}
-                            >
-                                <span class="dcrs-faq-question__text">{faq.q}</span>
-                                <span class="dcrs-faq-question__chevron">
+                        <details class="dcrs-faq-item" open={i === 0}>
+                            <summary class="dcrs-faq-item__question">
+                                <span>{faq.q}</span>
+                                <span class="dcrs-faq-item__toggle">
                                     <Fragment set:html={icons.chevronDown} />
                                 </span>
-                            </button>
-                            <div
-                                id={`faq-answer-${i}`}
-                                class="dcrs-faq-answer"
-                                style={i === 0 ? 'display: block;' : 'display: none;'}
-                            >
+                            </summary>
+                            <div class="dcrs-faq-item__answer">
                                 <p>{faq.a}</p>
                             </div>
-                        </div>
+                        </details>
                     ))}
                 </div>
             </div>
         </section>
 
-        <!-- 8. RELATED SERVICES ---------------------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="related-services">
+        <!-- 9. RELATED SERVICES ---------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="related-services">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Related Services</div>
-                    <h2 class="dcrs-heading__title">Related Automotive Services in Dubai</h2>
+                    <div class="dcrs-kicker">More Services</div>
+                    <h2 class="dcrs-heading__title">Related Services You May Need</h2>
                 </div>
 
                 <div class="dcrs-related-grid">
@@ -599,17 +598,17 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 9. CTA BANNER --------------------------------------------------->
+        <!-- 10. FINAL CTA ---------------------------------------------------->
         <section class="dcrs-cta-banner">
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Mobile Service Across Dubai</span>
+                        <span class="dcrs-cta-banner__badge">Mobile Mechanic On Standby</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Mobile Car Repair in Dubai Today
+                            Need a Mobile Mechanic Dispatched in Dubai?
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Open 7AM–10PM daily &bull; 222 Al Satwa Rd dispatch &bull; On-site diagnosis &amp; honest pricing. Or <a href="/contact" class="dcrs-cta-inline-link">contact us online</a> for an instant booking.
+                            Fast and affordable pricing with call-out from AED 30. Open daily 7:00 AM – 10:00 PM. Call or share your WhatsApp location pin for rapid technician arrival.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -617,14 +616,14 @@ const pageSchema = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp Us
+                            <Fragment set:html={icons.chat} /> WhatsApp Pin
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 10. BOTTOM STICKY MOBILE BAR ------------------------------------>
+        <!-- 11. BOTTOM STICKY MOBILE BAR ------------------------------------>
         <div class="dcrs-stickybar">
             <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
                 <Fragment set:html={icons.phone} /> Call Now
