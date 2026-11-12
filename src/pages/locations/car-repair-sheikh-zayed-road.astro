@@ -6,8 +6,8 @@ import diagnosticImage from '../../assets/images/loc2.webp';
 // Page Metadata & Settings (Strict SEO Requirements)
 // Title <= 60 chars | Description <= 155 chars | Primary: "car repair sheikh zayed road"
 // ---------------------------------------------------------------------------
-const pageTitle = "Car Repair Sheikh Zayed Road | Mobile Mechanic & Help";
-const pageDescription = "Need fast car repair sheikh zayed road? Our mobile mechanics reach SZR in 15 mins for breakdowns, battery jumps, flat tyres & repairs. Call now!";
+const pageTitle = "Car Repair Sheikh Zayed Road | Mobile Mechanic Dubai";
+const pageDescription = "Need car repair on Sheikh Zayed Road? Our mobile mechanics provide on-site diagnostics, battery jump & tyre help across SZR. Workshop in Al Satwa. Call now!";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -38,7 +38,33 @@ const icons: Record<string, string> = {
 };
 
 // ---------------------------------------------------------------------------
-// Structured Schema Markup (LocalBusiness with Service Area - No Fake Address)
+// FAQs (Defined early for 1:1 Schema alignment)
+// ---------------------------------------------------------------------------
+const faqs = [
+    {
+        q: "What should I do if my car breaks down while driving on Sheikh Zayed Road?",
+        a: "Safely guide your vehicle into the nearest emergency shoulder, exit slipway, or service station forecourt if possible. Turn on your hazard lights, place a warning triangle behind the vehicle if it is safe to do so, and wait in a safe area behind highway barriers. Then call +971 56 612 1423 or WhatsApp our team with your location. We will confirm mobile mechanic availability and dispatch assistance."
+    },
+    {
+        q: "Can your mobile mechanic assist in office basement parking along SZR?",
+        a: "Yes. Our mobile technicians regularly assist drivers in multi-level underground parking and hotel decks across DIFC, Downtown, Business Bay, and Sheikh Zayed Road office towers. We use portable diagnostic scanners, compact battery boosters, and hand tools designed to operate in low-clearance garages."
+    },
+    {
+        q: "What types of on-site car breakdowns can you repair along SZR?",
+        a: "We handle flat batteries, emergency jump starts, alternator and starter issues, flat tyres, wheel changes, emergency coolant hose and belt repairs, AC gas top-ups, and computer diagnostic scans on-site. If an issue requires heavy dismantling or specialized workshop machinery, we advise you honestly and can coordinate repair at our Al Satwa workshop."
+    },
+    {
+        q: "How fast can emergency roadside assistance reach me on SZR?",
+        a: "We prioritize roadside emergencies along the Sheikh Zayed Road corridor. Typical arrival times range from 20 to 35 minutes depending on traffic density, your exact highway exit or parking location, and technician availability. Our dispatcher provides an estimated arrival time when you call."
+    },
+    {
+        q: "What are your mobile repair charges for Sheikh Zayed Road call-outs?",
+        a: "On-site diagnostic checks and battery jump starts start from AED 120. Battery replacements with warranty range from AED 250 to AED 680 depending on vehicle specifications, and flat tyre services begin from AED 120. All charges and parts costs are quoted transparently before work begins."
+    }
+];
+
+// ---------------------------------------------------------------------------
+// Structured Schema Markup (LocalBusiness with Service Area - Aligned with Al Satwa Base)
 // ---------------------------------------------------------------------------
 const pageSchema = {
     "@context": "https://schema.org",
@@ -55,21 +81,22 @@ const pageSchema = {
             "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
             "openingHoursSpecification": [{
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "00:00",
-                "closes": "23:59"
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "07:00",
+                "closes": "22:00"
             }],
             "areaServed": [
                 { "@type": "AdministrativeArea", "name": "Sheikh Zayed Road" },
                 { "@type": "AdministrativeArea", "name": "DIFC" },
                 { "@type": "AdministrativeArea", "name": "Trade Centre" },
                 { "@type": "AdministrativeArea", "name": "Business Bay" },
+                { "@type": "AdministrativeArea", "name": "Downtown Dubai" },
                 { "@type": "AdministrativeArea", "name": "Al Quoz" },
                 { "@type": "AdministrativeArea", "name": "Dubai Marina" },
                 { "@type": "AdministrativeArea", "name": "JLT" },
                 { "@type": "City", "name": "Dubai" }
             ],
-            "description": "Rapid mobile car repair along Sheikh Zayed Road (SZR), Dubai. Emergency roadside assistance, dead battery replacement, mobile flat tyre changes, and on-site breakdown diagnostics across E11."
+            "description": "Professional mobile car repair and roadside assistance along Sheikh Zayed Road (SZR), Dubai. On-site vehicle diagnostics, battery replacement, tyre changes, and breakdown support, backed by our Al Satwa workshop."
         },
         {
             "@type": "BreadcrumbList",
@@ -98,48 +125,14 @@ const pageSchema = {
         {
             "@type": "FAQPage",
             "@id": "https://dubaicarrepairservice.com/car-repair-sheikh-zayed-road#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What should I do if my car breaks down while driving on Sheikh Zayed Road?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Safely guide your vehicle onto the nearest emergency shoulder or service road exit, turn on your hazard lights, and phone +971 56 612 1423 immediately. Our mobile mechanic units patrol the SZR corridor and reach you within 15 to 20 minutes."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Can your mobile mechanic assist in corporate basement parking along SZR?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. We frequently service cars in office basements, hotel parking decks, and residential towers in DIFC, Trade Centre, Downtown, Business Bay, and Dubai Marina."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What emergency on-site repairs can you perform roadside?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We handle on-the-spot battery jump starts and replacements, puncture repairs, tyre changes, emergency radiator hose checks, alternator diagnostics, belt adjustments, and computer error clearing."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How quickly can emergency roadside assistance reach me on SZR?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Because our mobile emergency vans are stationed near primary E11 interchanges, our average arrival time is 15 to 20 minutes depending on highway traffic conditions."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What are your mobile repair charges for Sheikh Zayed Road call-outs?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "On-site diagnostics and emergency jump starts begin at AED 120. Battery replacements with warranty range from AED 250 to AED 680, and flat tyre services start from AED 120 with transparent written quotes."
-                    }
+            "mainEntity": faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.q,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.a
                 }
-            ]
+            }))
         }
     ]
 };
@@ -151,29 +144,29 @@ const szrServices = [
     {
         icon: "tools",
         title: "Emergency Roadside Assistance",
-        badge: "15-Min Response",
-        desc: "Stranded on highway shoulders, slip lanes, or service roads? Fast roadside support for overheating, stalls, warning lights, and mechanical faults.",
+        badge: "Roadside Support",
+        desc: "Immediate support for unexpected highway breakdowns, engine overheating, sudden stalls, and safety hazards along the SZR corridor.",
         link: "/roadside-assistance-dubai"
     },
     {
         icon: "car",
         title: "Mobile Mechanic SZR",
-        badge: "Direct On-Site",
-        desc: "Certified mobile technicians dispatched right to your tower parking bay or roadside location with OBD-II diagnostic tools and parts.",
+        badge: "On-Site Assistance",
+        desc: "Mechanics attend your office parking, residential tower, or accessible roadside spot with OBD-II diagnostic tools and parts to assess and resolve issues.",
         link: "/mobile-car-repair-dubai"
     },
     {
         icon: "battery",
         title: "Battery Jump & Replacement",
-        badge: "Tested & Fitted",
-        desc: "Emergency jump starts, digital conductance alternator checks, and on-the-spot fitment of genuine branded batteries backed by warranties.",
+        badge: "Testing & Fitment",
+        desc: "Emergency 12V battery jump starts, digital charging-system tests, and on-site delivery and installation of genuine warranty-backed batteries.",
         link: "/car-battery-replacement-dubai"
     },
     {
         icon: "disc",
         title: "Emergency Tyre Replacement",
         badge: "Puncture & Fitment",
-        desc: "Rapid response tyre assistance for highway blowouts, road debris punctures, wheel swaps, and precision torque tightening anywhere on SZR.",
+        desc: "Rapid assistance for punctures, flat tyres, wheel changes using your spare, and replacement tyre fitting at safe roadside or parking locations.",
         link: "/tyre-replacement-dubai"
     }
 ];
@@ -182,13 +175,13 @@ const szrServices = [
 // Pricing Data
 // ---------------------------------------------------------------------------
 const priceList = [
-    { service: "Emergency Roadside Diagnostic Check", price: "AED 120 – 180", time: "15–25 mins" },
-    { service: "Car Battery Replacement (Delivered & Installed)", price: "AED 250 – 680", time: "20–30 mins" },
-    { service: "Mobile Flat Tyre Replacement / Wheel Swap", price: "AED 120 – 250", time: "20–35 mins" },
-    { service: "Emergency Battery Boost & Alternator Test", price: "AED 120 – 150", time: "15–20 mins" },
-    { service: "Engine Cooling System Emergency Check", price: "AED 150 – 350", time: "30–45 mins" },
-    { service: "Mobile AC Leak Check & Fast Gas Refill", price: "AED 150 – 350", time: "30–45 mins" },
-    { service: "Emergency Belt & Hose Roadside Fix", price: "AED 180 – 420", time: "30–50 mins" }
+    { service: "Emergency Roadside Diagnostic Check", price: "AED 120 – 180", time: "Approx. 20–30 mins" },
+    { service: "Car Battery Replacement (Delivered & Installed)", price: "AED 250 – 680", time: "Approx. 20–35 mins" },
+    { service: "Mobile Flat Tyre Replacement / Wheel Swap", price: "AED 120 – 250", time: "Approx. 20–35 mins" },
+    { service: "Emergency Battery Boost & Alternator Test", price: "AED 120 – 150", time: "Approx. 15–25 mins" },
+    { service: "Engine Cooling System Emergency Check", price: "AED 150 – 350", time: "Approx. 30–45 mins" },
+    { service: "Mobile AC Leak Check & Fast Gas Refill", price: "AED 150 – 350", time: "Approx. 30–45 mins" },
+    { service: "Emergency Belt & Hose Roadside Fix", price: "AED 180 – 420", time: "Approx. 30–50 mins" }
 ];
 
 // ---------------------------------------------------------------------------
@@ -196,54 +189,28 @@ const priceList = [
 // ---------------------------------------------------------------------------
 const reasons = [
     {
-        title: "15-Minute Highway Response",
-        desc: "Stationed near major SZR exits, our mobile rapid-response units reach broken down vehicles across Trade Centre, DIFC, Downtown, and Business Bay in minutes."
+        title: "Fast Mobile Response",
+        desc: "Mobile response units deployed near central SZR interchanges enable prompt dispatch to highway exits, service roads, and commercial clusters."
     },
     {
-        title: "No Inconvenient Towing Delays",
-        desc: "Skip costly flatbed recovery charges and lengthy workshop queues. We repair over 85% of starting, tyre, and electrical breakdowns directly on the spot."
+        title: "On-Site Repairs When Feasible",
+        desc: "Avoid inconvenient towing delays and costs. We inspect and repair starting, electrical, battery, and tyre issues directly where your vehicle is parked."
     },
     {
         title: "Office Basement & Tower Access",
-        desc: "Our service units carry low-clearance portable diagnostic gear, easily accessing multi-level underground parking across commercial high-rises."
+        desc: "Our mobile mechanics carry portable diagnostic tools, compact battery testers, and low-clearance equipment designed for multi-level underground parking."
     },
     {
         title: "Transparent Upfront Pricing",
-        desc: "Clear itemized rates with zero surprise fees. You receive a verified quote before work begins, with genuine parts and warranty protection."
-    }
-];
-
-// ---------------------------------------------------------------------------
-// FAQs
-// ---------------------------------------------------------------------------
-const faqs = [
-    {
-        q: "What should I do if my car breaks down while driving on Sheikh Zayed Road?",
-        a: "Immediately signal and move into the nearest emergency shoulder, slip lane, or petrol station forecourt. Turn on your hazard flashers, remain safely clear of passing highway traffic, and call +971 56 612 1423. Our mobile response team will head directly to your location."
-    },
-    {
-        q: "Can your mobile mechanic assist in office basement parking along SZR?",
-        a: "Yes. We frequently assist motorists in corporate basement lots, hotel decks, and residential high-rises throughout DIFC, Trade Centre, Business Bay, and Downtown Dubai. Our mobile units carry portable diagnostic gear, battery tools, and tyre equipment."
-    },
-    {
-        q: "What types of on-site car breakdowns can you repair along SZR?",
-        a: "We resolve flat batteries, sudden starter issues, puncture blowouts, radiator hose leaks, serpentine belt slippage, AC compressor cuts, and check engine warnings right where the vehicle is stopped."
-    },
-    {
-        q: "How fast can emergency roadside assistance reach me on SZR?",
-        a: "Our mobile response technicians are strategically distributed near central highway interchanges, enabling typical arrival times of 15 to 20 minutes depending on traffic flow."
-    },
-    {
-        q: "What are your mobile repair charges for Sheikh Zayed Road call-outs?",
-        a: "On-site diagnostics and emergency jump starts begin at AED 120. Battery replacements with warranty range from AED 250 to AED 680, and emergency tyre changes begin at AED 120, with clear written quotes confirmed upfront."
+        desc: "Clear itemized rates with zero surprise fees. You receive a verified quote before work begins, with genuine parts and workshop backup at our nearby Al Satwa facility."
     }
 ];
 
 const relatedServices = [
-    { icon: "tools", name: "Roadside Assistance Dubai", desc: "Emergency breakdown & towing help", href: "/roadside-assistance-dubai" },
-    { icon: "car", name: "Mobile Car Repair Dubai", desc: "On-site mechanical diagnostics & fixes", href: "/mobile-car-repair-dubai" },
-    { icon: "battery", name: "Car Battery Replacement Dubai", desc: "Delivered & fitted with warranty", href: "/car-battery-replacement-dubai" },
-    { icon: "disc", name: "Tyre Change Dubai", desc: "Mobile puncture repair & wheel swaps", href: "/tyre-replacement-dubai" }
+    { icon: "tools", name: "Roadside Assistance Dubai", desc: "Emergency breakdown & towing support across Dubai", href: "/roadside-assistance-dubai" },
+    { icon: "car", name: "Mobile Car Repair Dubai", desc: "On-site mechanical diagnostics & doorstep repairs", href: "/mobile-car-repair-dubai" },
+    { icon: "battery", name: "Car Battery Replacement Dubai", desc: "Delivered & installed on-site with warranty", href: "/car-battery-replacement-dubai" },
+    { icon: "disc", name: "Tyre Replacement Dubai", desc: "Mobile puncture repair, wheel swaps & tyre fitting", href: "/tyre-replacement-dubai" }
 ];
 ---
 
@@ -267,12 +234,12 @@ const relatedServices = [
                         <li aria-current="page">Car Repair Sheikh Zayed Road</li>
                     </ol>
                 </nav>
-                <span class="dcrs-badge">Rapid Highway Response · Sheikh Zayed Road Corridor · 24/7 Mobile Dispatch</span>
+                <span class="dcrs-badge">Rapid Mobile Dispatch · Sheikh Zayed Road Corridor · On-Site Repairs &amp; Al Satwa Workshop</span>
                 <h1 class="dcrs-hero-banner__title">
-                    Car Repair Sheikh Zayed Road - Fast Emergency Breakdown &amp; Mobile Mechanic
+                    Car Repair Sheikh Zayed Road – Mobile Mechanic &amp; Roadside Assistance
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Encountered a sudden breakdown, blown tyre, dead battery, or engine fault on the E11 highway? Our certified mobile mechanics reach your location along Sheikh Zayed Road within 15 to 20 minutes for complete on-site automotive repairs.
+                    Need a mobile mechanic on Sheikh Zayed Road? Dubai Car Repair Service provides professional on-site car repair and roadside assistance for drivers across Dubai. Whether you're dealing with a dead battery, flat tyre, engine warning light, starting problem or unexpected breakdown, our mobile mechanics can come to your location to assess the issue and carry out supported repairs. We also operate a fully equipped workshop in Al Satwa for more extensive mechanical work. Contact us for fast and affordable mobile car repair in Dubai.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -292,29 +259,29 @@ const relatedServices = [
                     <div class="dcrs-strip__item">
                         <span class="dcrs-strip__icon"><Fragment set:html={icons.clock} /></span>
                         <div>
-                            <strong>15–20 Min Arrival</strong>
-                            <span>Fast SZR Dispatch</span>
+                            <strong>Fast Mobile Response</strong>
+                            <span>SZR Highway &amp; Towers</span>
                         </div>
                     </div>
                     <div class="dcrs-strip__item">
-                        <span class="dcrs-strip__icon"><Fragment set:html={icons.wrench} /></span>
+                        <span class="dcrs-strip__icon"><Fragment set:html={icons.car} /></span>
                         <div>
-                            <strong>On-Site Repairs</strong>
-                            <span>Skip Middleman Towing</span>
-                        </div>
-                    </div>
-                    <div class="dcrs-strip__item">
-                        <span class="dcrs-strip__icon"><Fragment set:html={icons.tools} /></span>
-                        <div>
-                            <strong>Multi-Brand Techs</strong>
-                            <span>Dealer-Grade Scanners</span>
+                            <strong>Mobile Car Repair</strong>
+                            <span>Battery, Tyre &amp; Mechanical</span>
                         </div>
                     </div>
                     <div class="dcrs-strip__item">
                         <span class="dcrs-strip__icon"><Fragment set:html={icons.shield} /></span>
                         <div>
-                            <strong>Transparent AED Rates</strong>
-                            <span>Upfront Quotes</span>
+                            <strong>Upfront Quotations</strong>
+                            <span>Transparent AED Rates</span>
+                        </div>
+                    </div>
+                    <div class="dcrs-strip__item">
+                        <span class="dcrs-strip__icon"><Fragment set:html={icons.wrench} /></span>
+                        <div>
+                            <strong>Workshop in Al Satwa</strong>
+                            <span>222 Al Satwa Road Base</span>
                         </div>
                     </div>
                 </div>
@@ -327,32 +294,32 @@ const relatedServices = [
                 <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
                     
                     <div class="dcrs-intro-content">
-                        <div class="dcrs-kicker">Rapid Highway Assistance</div>
+                        <div class="dcrs-kicker">On-Site Automotive Assistance</div>
                         <h2 class="dcrs-heading__title">
-                            Urgent On-Site Car Repair Sheikh Zayed Road Motorists Can Rely On
+                            Professional Mobile Mechanic &amp; On-Site Car Repair on Sheikh Zayed Road
                         </h2>
                         <p class="dcrs-lead-text">
-                            Driving along Dubai's busiest arterial highway at speeds of 100 to 120 km/h places heavy demands on vehicle mechanical systems. When unexpected failures strike, getting urgent <strong>car repair sheikh zayed road</strong> drivers trust is vital for safety and peace of mind.
+                            Sheikh Zayed Road is Dubai's busiest transit corridor, connecting major commercial and residential districts. When your vehicle suffers a sudden breakdown, puncture, starting fault, or warning alert, waiting for a tow truck or searching for a distant garage causes unwanted delays and stress.
                         </p>
                         <p class="dcrs-body-text">
-                            At <a href="/" class="dcrs-inline-link">dubai car repair service</a>, our dedicated mobile response units patrol the entire highway corridor daily. Whether you are pulled onto an emergency shoulder, stranded at a service station, or parked in an office tower basement, our certified <strong>mobile mechanic sheikh zayed road</strong> arrives fast with diagnostic scanners, jump kits, replacement batteries, and tyre changing tools.
+                            At <a href="/" class="dcrs-inline-link">Dubai Car Repair Service</a>, our core focus along Sheikh Zayed Road is providing reliable <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair</a> and <a href="/roadside-assistance-dubai" class="dcrs-inline-link">emergency roadside assistance</a> directly at your location. Whether you are parked in an office basement tower in DIFC or Business Bay, stopped at a residential parking bay in Downtown, or safely positioned on an accessible service road, our mobile mechanics travel to you equipped with computerized diagnostic tools, jump-start packs, battery testers, and emergency repair equipment.
                         </p>
                         <p class="dcrs-body-text">
-                            Dealerships along the highway often charge inflated fees and require bookings days in advance. Instead of waiting hours for a tow truck, our team provides instant <strong>emergency car repair sheikh zayed road</strong> support directly where your vehicle is stopped, saving you time, stress, and unnecessary expense.
+                            Many common roadside problems—such as dead batteries, flat tyres, faulty starter relays, split radiator hoses, or minor electrical errors—can be diagnosed and repaired on the spot. For vehicles experiencing complex engine failures, transmission problems, or requiring hydraulic hoist access, our physical <a href="/car-engine-service-dubai" class="dcrs-inline-link">auto repair workshop</a> at <a href="/car-repair-al-satwa" class="dcrs-inline-link">222 Al Satwa Road</a> provides full workshop servicing with comprehensive mechanical capabilities.
                         </p>
 
                         <div class="dcrs-features-inline">
                             <div class="dcrs-feature-check">
                                 <span class="dcrs-check-icon"><Fragment set:html={icons.check} /></span>
-                                <span>Immediate highway dispatch for high-speed stalls, flat tyres, and thermal overheating</span>
+                                <span>Mobile mechanic assistance at office towers, residential parking, and accessible roadside areas</span>
                             </div>
                             <div class="dcrs-feature-check">
                                 <span class="dcrs-check-icon"><Fragment set:html={icons.check} /></span>
-                                <span>Basement garage access across DIFC, Trade Centre, Downtown, and Business Bay towers</span>
+                                <span>On-the-spot support for dead batteries, punctures, starting troubles, and coolant hose issues</span>
                             </div>
                             <div class="dcrs-feature-check">
                                 <span class="dcrs-check-icon"><Fragment set:html={icons.check} /></span>
-                                <span>Coordinated with our neighboring mobile team for <a href="/car-repair-al-satwa" class="dcrs-inline-link">car repair satwa</a> call-outs</span>
+                                <span>Clear upfront quotes with genuine parts and workshop backup at our nearby Al Satwa facility</span>
                             </div>
                         </div>
 
@@ -370,7 +337,7 @@ const relatedServices = [
                         <div class="dcrs-intro-media__frame">
                             <img
                                 src={diagnosticImage.src}
-                                alt="Emergency car repair sheikh zayed road mobile mechanic inspecting engine breakdown"
+                                alt="Mobile mechanic providing on-site car repair and roadside assistance along Sheikh Zayed Road"
                                 loading="eager"
                                 width="600"
                                 height="420"
@@ -378,8 +345,8 @@ const relatedServices = [
                             <div class="dcrs-plate dcrs-price-badge" aria-hidden="true">
                                 <div class="dcrs-plate__tab">SZR ROAD</div>
                                 <div class="dcrs-plate__body">
-                                    <span class="dcrs-plate__row dcrs-plate__row--big">15 MIN</span>
-                                    <span class="dcrs-plate__row">FAST DISPATCH</span>
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">MOBILE</span>
+                                    <span class="dcrs-plate__row">MECHANIC DISPATCH</span>
                                     <span class="dcrs-plate__row">ON-SITE REPAIRS</span>
                                 </div>
                             </div>
@@ -399,7 +366,7 @@ const relatedServices = [
                         Complete Mobile Assistance Along the SZR Corridor
                     </h2>
                     <p class="dcrs-heading__desc">
-                        From sudden electrical blackouts to highway tyre punctures, our mobile mechanics deliver rapid, dependable solutions without recovery delays.
+                        From sudden electrical blackouts to highway tyre punctures, our mobile mechanics deliver prompt, dependable on-site solutions. For complex jobs requiring specialized workshop machinery, our Al Satwa workshop provides complete backup.
                     </p>
                 </div>
 
@@ -427,29 +394,29 @@ const relatedServices = [
         <section class="dcrs-section dcrs-section--paper" id="deep-dive">
             <div class="dcrs-container">
                 <div class="dcrs-heading">
-                    <span class="dcrs-kicker">Breakdown Defense</span>
+                    <span class="dcrs-kicker">Breakdown Solutions</span>
                     <h2 class="dcrs-heading__title">
-                        Fast Highway Solutions for SZR Commuters &amp; Fleets
+                        Practical Solutions for Sheikh Zayed Road Breakdowns
                     </h2>
                     <p class="dcrs-heading__desc">
-                        Highway driving amplifies vehicle stress. Intense summer ambient heat combined with stop-and-go congestion frequently triggers rapid component failures. Here is how our mobile units solve emergencies on the spot:
+                        Highway traffic and Dubai's elevated temperatures place regular demands on vehicle cooling, electrical, and tyre systems. Here is how our mobile mechanics help drivers resolve common roadside issues:
                     </p>
                 </div>
 
                 <div class="dcrs-grid-2col">
                     <div>
                         <h3 class="dcrs-heading__title" style="font-size: 1.45rem;">
-                            Car Breakdown Sheikh Zayed Road - Rapid Response
+                            Car Breakdown Sheikh Zayed Road
                         </h3>
                         <p class="dcrs-body-text">
-                            Experiencing an unexpected <strong>car breakdown sheikh zayed road</strong> is a high-stress emergency. Stalling in active highway lanes or emergency shoulders requires immediate help. Our technicians carry diagnostic scanners to isolate limp-mode triggers, sensor disconnects, and fuel delivery faults, backed by full <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance dubai</a> support.
+                            Experiencing an unexpected vehicle breakdown along Sheikh Zayed Road is stressful. If your vehicle suddenly stalls, enters limp mode, or triggers an urgent dashboard warning, our mobile technicians travel to your location to carry out an immediate diagnostic assessment. Using handheld OBD-II scanners, we can read sensor codes, isolate electrical faults, and identify fuel or ignition issues. Supported mechanical faults can be repaired on-site, with full <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance in Dubai</a> available when immediate intervention is needed.
                         </p>
                         
                         <h3 class="dcrs-heading__title" style="font-size: 1.45rem; margin-top: 1.75rem;">
-                            Roadside Assistance Sheikh Zayed Road - Battery &amp; Alternator
+                            Roadside Assistance Sheikh Zayed Road – Battery &amp; Alternator
                         </h3>
                         <p class="dcrs-body-text">
-                            When your car will not crank in an office garage or along an exit slipway, our prompt <strong>roadside assistance sheikh zayed road</strong> team runs electronic conductance tests on your battery, starter motor, and alternator. If a replacement is needed, we deliver and install warranty-backed units on-site via our <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">car battery replacement dubai</a> service.
+                            When your car will not crank in an office garage or after a highway stop, our mobile team conducts on-the-spot electronic testing on your battery and charging system. If the battery is flat, we provide a safe jump start; if it has failed or degraded from heat, we deliver and install a fresh, genuine replacement with manufacturer warranty through our dedicated <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">car battery replacement in Dubai</a> service.
                         </p>
                     </div>
 
@@ -458,14 +425,14 @@ const relatedServices = [
                             Highway Puncture &amp; Emergency Tyre Changes
                         </h3>
                         <p class="dcrs-body-text">
-                            Road debris or tire delamination at 100 km/h requires immediate attention. Instead of wrestling with a manual jack in extreme heat, our mobile units arrive with pneumatic lifting gear, digital torque wrenches, and replacement tyres through our rapid <a href="/tyre-replacement-dubai" class="dcrs-inline-link">tyre change dubai</a> service.
+                            Tyre punctures and pressure drops on Sheikh Zayed Road require prompt, safe handling. If you safely exit or pull into an accessible service area, our mobile team can assess tyre damage, safely mount and torque your spare wheel, or supply and fit a suitable replacement tyre. Because highway safety is paramount, roadside tyre work is carried out only when the vehicle is situated in a safe, permitted location away from fast-moving traffic. Learn more about our <a href="/tyre-replacement-dubai" class="dcrs-inline-link">tyre replacement in Dubai</a> options.
                         </p>
 
                         <h3 class="dcrs-heading__title" style="font-size: 1.45rem; margin-top: 1.75rem;">
                             Engine Cooling, Belts &amp; Routine Mobile Care
                         </h3>
                         <p class="dcrs-body-text">
-                            Radiator blowouts, ruptured coolant hoses, and broken serpentine belts frequently disable vehicles along E11. We perform pressure tests, replace split hoses, and refill factory coolant roadside. For deeper mechanical issues, rely on our comprehensive <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine repair dubai</a> team or arrange convenient <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair dubai</a> right at your office parking bay.
+                            High ambient heat can quickly reveal weak radiator hoses, degraded coolant, or worn serpentine belts. Our mobile mechanics can inspect cooling circuits, replace accessible split hoses, top up coolant, and inspect auxiliary drive belts at your location. If a cooling failure involves a blown head gasket, internal radiator crack, or complex water pump failure, we will honestly explain the limitation and arrange repair at our <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine service</a> workshop or coordinate ongoing <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair</a>.
                         </p>
                     </div>
                 </div>
@@ -481,20 +448,20 @@ const relatedServices = [
                         Servicing All Key Sheikh Zayed Road Districts &amp; Interchanges
                     </h2>
                     <p class="dcrs-lead-text">
-                        Our mobile mechanic vans are strategically deployed across central Dubai, ensuring rapid dispatch to any section of the highway corridor.
+                        Our mobile mechanics assist motorists at suitable locations across the Sheikh Zayed Road corridor, offering the convenience of doorstep or roadside repairs instead of automatically having your vehicle towed.
                     </p>
                     <p class="dcrs-body-text">
-                        Primary areas covered for emergency dispatches and office call-outs include:
+                        Key coverage areas for mobile dispatches, corporate towers, and residential call-outs include:
                     </p>
                     <ul class="dcrs-location-bullets">
-                        <li><strong>DIFC &amp; Trade Centre:</strong> Quick access to financial towers, exhibition gates, and multi-story parking decks.</li>
-                        <li><strong>Downtown Dubai &amp; Business Bay:</strong> Fast arrival along Financial Centre Road and Happiness Street.</li>
-                        <li><strong>Al Quoz &amp; Al Safa:</strong> Immediate mobile response near industrial exits and service road petrol stations.</li>
-                        <li><strong>Dubai Marina &amp; JLT:</strong> Southern corridor coverage for high-rise residential towers and highway interchanges.</li>
-                        <li><strong>Barsha &amp; Mall of the Emirates:</strong> Central roadside support along major E11 flyovers and slipways.</li>
+                        <li><strong>DIFC &amp; Trade Centre:</strong> Quick access to commercial towers, exhibition gates, and multi-level parking decks.</li>
+                        <li><strong>Downtown Dubai &amp; Business Bay:</strong> Convenient on-site assistance at residential towers, office garages, and nearby arterial routes.</li>
+                        <li><strong>Al Quoz &amp; Al Safa:</strong> Prompt mobile dispatch near central interchanges, service roads, and commercial areas.</li>
+                        <li><strong>Dubai Marina &amp; JLT:</strong> Southern corridor coverage for high-rise residential basements and highway slip roads.</li>
+                        <li><strong>Barsha &amp; Mall of the Emirates:</strong> Central roadside support along major E11 flyovers, service lanes, and retail parking areas.</li>
                     </ul>
                     <p class="dcrs-body-text">
-                        Whether you need a scheduled <strong>car service sheikh zayed road</strong> drop-in at your corporate parking or emergency roadside repair on the highway shoulder, our specialists arrive promptly.
+                        Whether you need a scheduled mobile inspection at your office tower or urgent assistance in a permitted roadside space, our mobile mechanics provide dependable support. Arrival times depend on real-time traffic flow and current technician availability.
                     </p>
                 </div>
             </div>
@@ -509,7 +476,7 @@ const relatedServices = [
                         Sheikh Zayed Road Mobile Repair Pricing Guide
                     </h2>
                     <p class="dcrs-heading__desc">
-                        Transparent AED rates with zero dealership surcharges or unexpected add-on costs. Written estimates confirmed before any work begins.
+                        Transparent AED rates with no hidden call-out fees. Itemized estimates are confirmed and approved before any work begins.
                     </p>
                 </div>
 
@@ -547,7 +514,7 @@ const relatedServices = [
                 </div>
 
                 <p class="dcrs-table-note">
-                    * Pricing varies based on vehicle make, tyre profile, and battery model. All quotes are confirmed before technicians start work.
+                    * Starting price ranges include mobile technician call-out and on-site labor for the listed service or assessment. Battery prices include on-site delivery, fitment, and manufacturer warranty according to brand and capacity. Tyre service covers puncture assessment, spare wheel mounting, or new tyre fitment. Cooling and AC services include basic inspection, pressure test, and standard refrigerant top-up; replacement parts are quoted transparently based on vehicle make and model. All quotations require customer approval before work commences.
                 </p>
             </div>
         </section>
@@ -593,33 +560,33 @@ const relatedServices = [
                 <div class="dcrs-steps-grid">
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">1</span>
-                        <h3 class="dcrs-step-card__title">Emergency Call</h3>
+                        <h3 class="dcrs-step-card__title">Emergency Call or WhatsApp</h3>
                         <p class="dcrs-step-card__desc">
-                            Contact our dispatcher via phone or WhatsApp with your exact SZR mile marker, exit, or tower parking bay.
+                            Contact our team via phone or WhatsApp with your vehicle model, symptoms, and exact location along Sheikh Zayed Road or within a tower parking facility.
                         </p>
                     </div>
 
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">2</span>
-                        <h3 class="dcrs-step-card__title">Rapid Dispatch</h3>
+                        <h3 class="dcrs-step-card__title">Mobile Dispatch Confirmation</h3>
                         <p class="dcrs-step-card__desc">
-                            Our nearest mobile response vehicle heads directly to your location with diagnostic gear and parts.
+                            Our dispatcher confirms service availability, provides an estimated arrival time, and dispatches the nearest equipped mobile mechanic.
                         </p>
                     </div>
 
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">3</span>
-                        <h3 class="dcrs-step-card__title">On-Site Diagnostic</h3>
+                        <h3 class="dcrs-step-card__title">On-Site Diagnosis &amp; Quotation</h3>
                         <p class="dcrs-step-card__desc">
-                            Our mechanic evaluates the fault, explains parts and labor requirements, and confirms an upfront quote.
+                            The mechanic inspects your vehicle, identifies the root cause, explains the required repairs, and gives you a clear, itemized quotation.
                         </p>
                     </div>
 
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">4</span>
-                        <h3 class="dcrs-step-card__title">Complete Repair</h3>
+                        <h3 class="dcrs-step-card__title">Repair &amp; Safety Verification</h3>
                         <p class="dcrs-step-card__desc">
-                            We execute the repair using quality components, verify engine safety, and get you back on your journey.
+                            Upon your approval, the technician carries out supported repairs, tests the vehicle for safety, and confirms you are ready to drive. If workshop attention is needed, we help you arrange next steps.
                         </p>
                     </div>
                 </div>
@@ -671,8 +638,8 @@ const relatedServices = [
                             <span class="dcrs-related-card__icon">
                                 <Fragment set:html={icons[rel.icon] || icons.tools} />
                             </span>
-                            <span class="dcrs-related-card__title">{rel.name}</span>
-                            <span class="dcrs-related-card__desc">{rel.desc}</span>
+                            <h3 class="dcrs-related-card__title">{rel.name}</h3>
+                            <p class="dcrs-related-card__desc">{rel.desc}</p>
                         </a>
                     ))}
                 </div>
@@ -685,10 +652,10 @@ const relatedServices = [
                 <div>
                     <span class="dcrs-cta-banner__badge">Fast Mobile Response on Sheikh Zayed Road</span>
                     <h2 class="dcrs-cta-banner__title">
-                        Broken Down on SZR? We Arrive in 15 Minutes!
+                        Need a Mobile Mechanic on Sheikh Zayed Road?
                     </h2>
                     <p class="dcrs-cta-banner__sub">
-                        Call our emergency response mechanics now or <a href="/contact" class="dcrs-cta-inline-link">contact us</a> for prompt on-site vehicle repair along the highway.
+                        Get professional car repair assistance at your location along Sheikh Zayed Road. Call or WhatsApp our team, share your vehicle details and location, and arrange mobile mechanic assistance. For more extensive repairs, our Al Satwa workshop is also available.
                     </p>
                 </div>
                 <div class="dcrs-cta-banner__actions">
@@ -1527,10 +1494,12 @@ const relatedServices = [
     }
 
     .dcrs-related-card__title {
-        font-size: 0.95rem;
+        font-family: inherit;
+        font-size: 0.98rem;
         font-weight: 600;
         color: var(--ink);
         margin: 0 0 0.35rem;
+        line-height: 1.3;
     }
 
     .dcrs-related-card__desc {
