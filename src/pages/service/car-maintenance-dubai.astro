@@ -5,8 +5,8 @@ import service9Image from '../../assets/images/service9.webp';
 // ---------------------------------------------------------------------------
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
-const pageTitle = "Car Service Dubai | Scheduled Car Maintenance Packages";
-const pageDescription = "Car service in Dubai from AED 200. Minor, full & major periodic car maintenance at 222 Al Satwa Road. Genuine OEM parts & warranty. Call or WhatsApp.";
+const pageTitle = "Car Maintenance Dubai | Scheduled Car Service Packages";
+const pageDescription = "Car maintenance in Dubai from AED 200. Basic, full & major scheduled car service at 222 Al Satwa Road. Manufacturer-approved lubricants & OEM filters. Call or WhatsApp.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -45,132 +45,269 @@ const icons: Record<string, string> = {
 const packages = [
     {
         title: "Basic Service",
-        price: "From AED 200 [CONFIRM: basic service package starting price and range]",
-        freq: "Every 5,000–8,000 km or 4–6 months",
+        price: "From AED 200",
+        freq: "Every 5,000–10,000 km or 6 months",
         badge: "Essential Care",
-        desc: "Targeted lubrication and preventive inspection to protect internal engine components between major services. Essential for high ambient temperatures and stop-and-go driving across Dubai.",
+        desc: "Essential lubrication, oil filtration, and safety checks designed to protect internal engine components between major service milestones.",
         items: [
-            "Engine oil drain via gravity and refill with correct OEM-spec viscosity",
-            "OEM-quality oil filter replacement with fresh sump plug crush washer",
-            "Drained oil visual inspection for coolant contamination, sludge, or particulate wear",
-            "Engine air intake filter inspection and housing clearance",
-            "Cold tyre pressure adjustment across all four wheels and spare",
-            "Essential fluid top-up check -brake fluid, coolant, steering fluid, and washer reservoir",
-            "12V battery open-circuit voltage and terminal corrosion inspection",
-            "Exterior and safety lighting operation check (headlights, brake, hazard)",
-            "Underbody visual check for active fluid weeping or exhaust hanger damage"
+            "Engine oil replacement (up to 4L of manufacturer-specified synthetic or semi-synthetic oil)",
+            "OEM-quality oil filter replacement and new sump plug crush washer",
+            "Drained oil visual check for signs of coolant contamination, sludge, or metal particulates",
+            "Vital fluid inspection and essential top-up (coolant, brake fluid, steering, washer fluid)",
+            "Engine air filter inspection and housing clearance",
+            "Tyre pressure check and adjustment across all four road wheels and spare",
+            "12V battery terminal condition and resting voltage check",
+            "Exterior safety lighting operation check (headlights, tail lights, indicators, hazards)",
+            "Visual underbody inspection for active fluid weeping, exhaust damage, and undertray condition"
         ]
     },
     {
         title: "Full Service",
-        price: "From AED 450 [CONFIRM: full service package starting price and range]",
-        freq: "Every 15,000 km or 6–9 months",
+        price: "From AED 450",
+        freq: "Every 15,000–20,000 km or 12 months",
         badge: "Recommended",
-        desc: "Comprehensive mid-tier service covering all basic maintenance items plus multi-system inspection and secondary filtration replacement accelerated by UAE heat and desert dust.",
+        desc: "Comprehensive mid-tier service covering all essential maintenance items plus secondary filtration, detailed brake evaluation, and diagnostic health scanning.",
         items: [
             "Everything included in the Basic Service package",
-            "Engine air filter element replacement",
-            "Cabin pollen and AC microfilter replacement to restore HVAC ventilation",
-            "Brake pad friction lining measurement across all four corners",
-            "Brake rotor disc surface inspection, lip measurement, and caliper slider check",
+            "Engine air filter replacement (matching OEM specifications)",
+            "Cabin AC microfilter replacement to restore fresh, clean interior ventilation",
+            "Brake system inspection: pad lining thickness measurement and rotor disc surface check",
             "Brake fluid boiling point and moisture contamination test",
-            "Coolant concentration, glycol ratio, and freeze/boil point testing",
-            "Digital conductance battery health test (CCA vs rated capacity)",
-            "OBD-II diagnostic scan across powertrain, ABS, and body control modules",
-            "Tyre tread depth measurement, uneven wear analysis, and DOT age audit",
-            "Drive belt serpentine rib inspection for glazing, cracks, and tension",
-            "Chassis suspension inspection -ball joints, control arm bushes, and damper seals",
-            "Full underbody ramp inspection with itemised condition report"
+            "Coolant concentration, glycol ratio, and expansion tank condition inspection",
+            "Digital battery conductance health test (CCA and charge retention assessment)",
+            "OBD-II diagnostic scan across supported engine, transmission, ABS, and body modules",
+            "Tyre tread depth measurement, uneven wear analysis, and DOT age inspection",
+            "Auxiliary serpentine drive belt visual inspection for cracking, glazing, or tension loss",
+            "Suspension and steering linkage check: ball joints, tie rod ends, control arm bushes",
+            "Itemized vehicle condition report and service reminder light reset where supported"
         ]
     },
     {
         title: "Major Service",
-        price: "From AED 900 [CONFIRM: major service package starting price and range]",
-        freq: "Every 30,000–40,000 km or 12–18 months",
-        badge: "Complete Reset",
-        desc: "The complete vehicle reset covering critical scheduled wear items, multi-system fluid flushes, filtration overhaul, and full chassis safety diagnostics. Recommended annually for high-demand Dubai driving.",
+        price: "From AED 900",
+        freq: "Every 30,000–60,000 km or 24 months",
+        badge: "Complete Care",
+        desc: "Thorough vehicle service addressing scheduled long-term wear items, complete fluid replacements, comprehensive safety diagnostics, and dynamic road testing.",
         items: [
             "Everything included in the Full Service package",
-            "Spark plug replacement with manufacturer-specified platinum or iridium plugs",
-            "Fuel filtration system inspection and external filter replacement where applicable",
+            "Spark plug replacement (standard plugs included; platinum/iridium replaced per manufacturer schedule)",
+            "Fuel filter inspection or replacement (for vehicles with an externally serviceable filter)",
             "Transmission fluid and differential gear oil condition assessment and top-up",
-            "Brake fluid full system pressure flush and bleed (DOT 4 or DOT 5.1)",
-            "Engine cooling system drain, chemical flush, and refill with fresh premixed coolant",
-            "Throttle body intake inspection and electronic throttle cleaning if needed",
-            "Positive Crankcase Ventilation (PCV) valve operational test",
-            "Drive belt inspection or replacement recommendation based on wear",
-            "Four-wheel mechanical steering alignment check",
-            "Front and rear wiper blade replacement",
-            "Comprehensive safety checklist with written component health assessment",
-            "Post-service dynamic road test -engine response, braking balance, and transmission shift feel"
+            "Complete brake fluid pressure flush and bleed with fresh DOT-spec fluid",
+            "Engine cooling system condition test, drain, and refill with fresh premixed coolant",
+            "Throttle body intake inspection and cleaning where carbon buildup is detected",
+            "Positive Crankcase Ventilation (PCV) valve operational inspection",
+            "Drive belt tensioner and auxiliary belt condition assessment (replacement quoted if worn)",
+            "Steering geometry and wheel alignment check (computerized alignment available upon request)",
+            "Front and rear wiper blade condition inspection (replacement available as needed)",
+            "Post-service dynamic road test to evaluate engine response, transmission shifts, and braking"
         ]
     }
 ];
 
 const climateImpacts = [
-    { icon: "oilCan", title: "Engine Oil", desc: "Thermal oxidation and shear degradation accelerate in sustained 40°C+ ambient heat. Viscosity breaks down faster, requiring shorter drain intervals." },
-    { icon: "battery", title: "12V Battery", desc: "Extreme under-hood engine bay temperatures accelerate positive plate grid corrosion and electrolyte evaporation, reducing typical battery lifespan to 2–3 years." },
-    { icon: "drop", title: "Brake Fluid", desc: "Hygroscopic brake fluid absorbs atmospheric moisture in coastal Dubai humidity. Moisture depresses the boiling point, increasing vapour-lock fade risk under hard braking." },
-    { icon: "snowflake", title: "AC System", desc: "Automotive HVAC compressors operate near maximum duty cycle for 6+ continuous months, placing extreme thermal stress on shaft seals, condensers, and expansion valves." },
-    { icon: "filter", title: "Cabin Air Filter", desc: "Fine desert sand and airborne dust rapidly restrict pleated filter media, choking airflow and fostering musty bacterial odours in the cabin HVAC system." },
-    { icon: "thermometer", title: "Engine Coolant", desc: "Extended high-temperature operation depletes corrosion inhibitor packages and acidifies coolant pH, risking radiator core scaling and head gasket erosion." },
-    { icon: "disc", title: "Tyres", desc: "Road asphalt temperatures exceeding 65°C accelerate vulcanised rubber hardening, dry rotting, and tread oxidation. UAE traffic regulations strictly enforce a 5-year maximum tyre age." },
-    { icon: "tools", title: "Rubber Hoses & Belts", desc: "Thermal cycling hardens EPDM auxiliary drive belts and radiator hoses, causing micro-cracking, tension loss, and sudden coolant hose blowouts." }
+    {
+        icon: "oilCan",
+        title: "Engine Oil",
+        desc: "Sustained high summer temperatures and stop-and-go driving cause motor oil to degrade and lose protective viscosity faster than in moderate climates.",
+        impact: "Requires regular drain intervals using certified synthetic grades to protect engine bearings and internal components."
+    },
+    {
+        icon: "battery",
+        title: "12V Battery",
+        desc: "Elevated under-hood temperatures accelerate positive plate grid corrosion and internal fluid loss, which can lead to sudden starting failure.",
+        impact: "Voltage and conductance health testing during routine servicing helps detect weak cells before battery failure."
+    },
+    {
+        icon: "drop",
+        title: "Brake Fluid",
+        desc: "Brake fluid is hygroscopic and naturally absorbs moisture from coastal humidity over time, lowering its boiling point.",
+        impact: "Testing moisture levels and boiling point prevents pedal fade and corrosion inside ABS hydraulic units."
+    },
+    {
+        icon: "snowflake",
+        title: "AC System",
+        desc: "Automotive air conditioning works extensively during warmer months, placing continuous demand on compressors, condensers, and cooling fans.",
+        impact: "Refrigerant pressure checks and condenser cleaning preserve cooling efficiency and protect compressor seals."
+    },
+    {
+        icon: "filter",
+        title: "Cabin Air Filter",
+        desc: "Fine desert sand and airborne dust accumulate in pleated filter fibers, restricting fresh airflow into the vehicle cabin.",
+        impact: "Regular replacement restores HVAC airflow, eliminates musty odours, and reduces strain on the blower motor."
+    },
+    {
+        icon: "thermometer",
+        title: "Engine Coolant",
+        desc: "High operational heat causes coolant additive packages and corrosion inhibitors to break down over extended intervals.",
+        impact: "Checking coolant concentration, specific gravity, and pH balance protects radiators and head gaskets from corrosion."
+    },
+    {
+        icon: "disc",
+        title: "Tyres",
+        desc: "High asphalt temperatures and highway speeds accelerate tread wear, while sunlight exposure causes rubber drying or cracking over time.",
+        impact: "Monthly pressure checks, tread depth monitoring, and regular rotation promote even wear and safe road grip."
+    },
+    {
+        icon: "tools",
+        title: "Rubber Hoses & Belts",
+        desc: "Engine bay heat and thermal cycling cause auxiliary drive belts and radiator hoses to become brittle, glazed, or micro-cracked.",
+        impact: "Visual inspection during scheduled maintenance identifies aging rubber before unexpected roadside hose blowouts."
+    }
 ];
 
 const intervals = [
-    { item: "Engine Oil (Synthetic)", mfr: "Every 10,000–15,000 km", uae: "Every 7,500–10,000 km / 6 months [CONFIRM: severe interval recommendation]" },
-    { item: "Engine Oil (Semi-Synthetic/Mineral)", mfr: "Every 5,000–7,500 km", uae: "Every 4,000–5,000 km / 3–4 months [CONFIRM: mineral interval]" },
-    { item: "Engine Air Filter", mfr: "Every 20,000–30,000 km", uae: "Every 10,000–15,000 km (inspect every 5k)" },
-    { item: "Cabin Air Filter", mfr: "Every 20,000 km / 12 months", uae: "Every 10,000 km / 6 months" },
-    { item: "Spark Plugs (Iridium/Platinum)", mfr: "Every 80,000–100,000 km", uae: "Every 50,000–60,000 km" },
-    { item: "Brake Fluid Flush", mfr: "Every 24 months / 40,000 km", uae: "Every 12–18 months / 30,000 km" },
-    { item: "Cooling System Flush", mfr: "Every 4–5 years / 100,000 km", uae: "Every 2 years / 40,000–50,000 km" },
-    { item: "12V Battery Conductance Test", mfr: "Every 24 months", uae: "Every 6 months (after 18 months)" },
-    { item: "Tyre Safety & Age Audit", mfr: "5–6 year replacement limit", uae: "Annual check; strict 5-year UAE RTA limit" }
+    {
+        item: "Engine Oil (Fully Synthetic) & Filter",
+        mfr: "Every 10,000–15,000 km or 12 months",
+        uae: "Typically every 8,000–10,000 km or 6 months"
+    },
+    {
+        item: "Engine Oil (Semi-Synthetic) & Filter",
+        mfr: "Every 5,000–7,500 km or 6 months",
+        uae: "Typically every 5,000 km or 3–4 months"
+    },
+    {
+        item: "Engine Air Filter",
+        mfr: "Every 20,000–40,000 km",
+        uae: "Inspect every 10,000 km; replace every 15,000–20,000 km"
+    },
+    {
+        item: "Cabin AC Microfilter",
+        mfr: "Every 20,000 km or 12 months",
+        uae: "Replace every 10,000–15,000 km or 6–12 months"
+    },
+    {
+        item: "Spark Plugs (Platinum / Iridium)",
+        mfr: "Every 80,000–100,000 km",
+        uae: "Inspect or replace every 60,000–80,000 km per schedule"
+    },
+    {
+        item: "Brake Fluid Inspection & Flush",
+        mfr: "Every 24 months or 40,000 km",
+        uae: "Test moisture annually; replace every 24 months"
+    },
+    {
+        item: "Cooling System Service",
+        mfr: "Every 4–5 years or 80,000–100,000 km",
+        uae: "Inspect annually; flush per vehicle manual specifications"
+    },
+    {
+        item: "12V Battery Conductance Test",
+        mfr: "Every 12–24 months",
+        uae: "Test every 6 months after 18 months of service"
+    },
+    {
+        item: "Tyre Inspection & Rotation",
+        mfr: "Every 10,000 km or 12 months",
+        uae: "Check pressure monthly; rotate every 8,000–10,000 km"
+    }
+];
+
+const warningSigns = [
+    {
+        num: "1",
+        title: "Service Reminder or Warning Light",
+        desc: "A maintenance countdown, wrench icon, or check engine light on your instrument cluster indicates that an oil change interval has elapsed or an electronic sensor has detected a fault.",
+        action: "Connect a diagnostic scan tool to check for active codes and perform scheduled maintenance rather than merely clearing the light."
+    },
+    {
+        num: "2",
+        title: "Dark, Dirty or Low Engine Oil",
+        desc: "Engine oil that appears thick, black, gritty on the dipstick, or falls below the minimum level indicator, compromises internal lubrication and increases engine friction.",
+        action: "Schedule an oil and filter replacement promptly, and inspect the engine bay for signs of oil weeping or gasket leaks."
+    },
+    {
+        num: "3",
+        title: "Unusual Engine Noise or Rough Idling",
+        desc: "Ticking, tapping, vibration, or uneven engine idling can point to degraded oil, misfiring spark plugs, vacuum leaks, or worn auxiliary drive belts.",
+        action: "Have a mechanic perform a mechanical and diagnostic inspection to identify the source before internal wear worsens."
+    },
+    {
+        num: "4",
+        title: "Squealing Brakes or Reduced Response",
+        desc: "High-pitched squealing, grinding noises, soft pedal feel, or longer stopping distances indicate worn friction pads, rotor wear, or moisture-contaminated brake fluid.",
+        action: "Request an immediate brake pad and fluid check to ensure safe, dependable stopping performance."
+    },
+    {
+        num: "5",
+        title: "Weak AC Cooling or Restricted Cabin Airflow",
+        desc: "Reduced blower volume, slow cabin cooling, or musty interior odors often indicate a clogged cabin air filter, condenser debris, or low refrigerant levels.",
+        action: "Inspect and replace the cabin air filter, and have technician test AC pressures and condenser condition."
+    },
+    {
+        num: "6",
+        title: "Coolant Leaks, Overheating or Temperature Spikes",
+        desc: "Fluctuating temperature gauge readings, coolant warnings, or visible colored puddles beneath the car indicate cooling system leakage or component distress.",
+        action: "Turn off the engine safely to prevent severe overheating, and have the cooling system pressure-tested before further driving."
+    }
 ];
 
 const reasons = [
-    { icon: "thermometer", title: "UAE Severe-Duty Service Schedules", desc: "We tailor maintenance protocols to actual Gulf operating realities: high ambient heat, extended idle hours with maximum AC load, and airborne dust that degrade lubricants and filters faster than standard factory baselines." },
-    { icon: "award", title: "Verified OEM-Specification Parts & Fluids", desc: "We never use unbranded lubricants or grey-market filtration elements. Every oil, fluid, and replacement filter installed at our Al Satwa workshop matches or exceeds manufacturer viscosity grades and engineering certifications." },
-    { icon: "fileText", title: "Complete Itemised Service Records", desc: "Following every scheduled maintenance, you receive an itemised invoice and service record detailing all fluids, filter part numbers, and diagnostic tests performed. This documented history preserves your vehicle's resale value and warranty traceability." },
-    { icon: "search", title: "Multi-Point Preventive Condition Reports", desc: "Our technicians inspect safety and wear items beyond the routine checklist. You receive a transparent breakdown of brake pad thickness, tyre tread depth, and belt condition so you can plan future maintenance without unexpected surprises." },
-    { icon: "car", title: "Multi-Brand Workshop Expertise", desc: "Located at 222 Al Satwa Road, our facility is equipped with multi-system scan tools, hydraulic vehicle lifts, and calibrated fluid-exchange machinery suited for Japanese, European, American, and Korean vehicles." },
-    { icon: "receipt", title: "No Unnecessary Service Upselling", desc: "We recommend only what your vehicle legitimately requires based on elapsed time, recorded mileage, and verified physical inspection. If a component is in sound working order, we leave it alone." }
+    {
+        icon: "thermometer",
+        title: "Established Experience Since 2012",
+        desc: "Over a decade of independent automotive experience in Dubai, with 8 skilled mechanics and more than 8,500 vehicles serviced across Al Satwa and greater Dubai."
+    },
+    {
+        icon: "award",
+        title: "Quality Parts & Approved Fluids",
+        desc: "We use lubricants matching manufacturer viscosity specifications and certified filtration products, protecting engine durability and warranty requirements."
+    },
+    {
+        icon: "fileText",
+        title: "Transparent Itemised Service Records",
+        desc: "Every completed service includes a detailed invoice listing parts replaced, fluid specifications, diagnostic checks, and recorded mileage to support your vehicle's history."
+    },
+    {
+        icon: "search",
+        title: "Multi-Point Preventive Inspection",
+        desc: "Our mechanics evaluate safety-critical wear items including brake pads, tyre condition, battery health, and suspension joints, providing clear condition summaries."
+    },
+    {
+        icon: "car",
+        title: "Equipped Al Satwa Workshop",
+        desc: "Located at 222 Al Satwa Road, our workshop features hydraulic vehicle lifts, computerized diagnostic scan tools, and fluid-servicing equipment for Asian, European, and American models."
+    },
+    {
+        icon: "receipt",
+        title: "No Unnecessary Upselling",
+        desc: "We recommend replacements and mechanical repairs only when justified by physical wear, diagnostic findings, or manufacturer service schedules, always securing your prior approval."
+    }
 ];
 
 const faqs = [
     {
         q: "How often should I service my car in Dubai?",
-        a: "Due to sustained summer ambient temperatures exceeding 40°C, stop-and-go highway traffic, and continuous AC compressor load, vehicle manufacturers classify Dubai driving as 'severe service.' Under these conditions, engine oil and filters should be replaced every 7,500–10,000 km (for fully synthetic oils) or every 5,000 km (for semi-synthetic oils). A full service should be performed every 15,000 km or 6 months, and a major service every 30,000–40,000 km or 12 months. [CONFIRM: severe interval recommendations]"
+        a: "Maintenance frequency depends on your vehicle manufacturer's schedule, engine type, oil specification, and driving conditions. Due to Dubai's sustained summer heat, stop-and-go traffic, and airborne dust, vehicles operate under severe-duty conditions. Fully synthetic engine oils typically require replacement every 8,000–10,000 km or 6 months, while semi-synthetic oils are usually changed every 5,000 km. Full and major services follow manufacturer intervals, commonly every 15,000 km and 30,000–40,000 km respectively."
     },
     {
         q: "What is the difference between a Full Service and a Major Service?",
-        a: "A Full Service focuses on essential fluid replacements (oil and filter), engine and cabin air filters, brake lining inspection, battery load testing, and underbody safety checks. A Major Service is a comprehensive vehicle reset: it includes everything in a full service plus spark plug replacement, complete brake fluid flush, engine coolant exchange, gearbox and differential fluid condition checks, throttle body cleaning, and four-wheel alignment checks."
+        a: "A Full Service focuses on essential lubrication and preventive filtration: engine oil and filter replacement, air and cabin filter renewal, brake lining wear inspection, battery health testing, fluid top-ups, and underbody safety checks. A Major Service is a broader scheduled overhaul that includes everything in a full service plus vehicle-specific wear items such as spark plug replacement, brake fluid pressure flush, engine coolant renewal, auxiliary belt inspection, and comprehensive steering and suspension checks."
     },
     {
         q: "Does servicing my car at an independent garage void my warranty in Dubai?",
-        a: "No. Under UAE Consumer Protection regulations, having your vehicle serviced at an independent automotive workshop does not invalidate your manufacturer or dealer warranty, provided the service follows the manufacturer's specified service schedule, uses OEM-approved parts and fluids, and is supported by a stamped, itemised service invoice. We provide complete documentation specifying parts, oil viscosities, and labour performed."
+        a: "Under UAE Consumer Protection regulations, having your vehicle serviced at a certified independent automotive workshop does not automatically invalidate your manufacturer or dealer warranty, provided the service strictly follows the manufacturer's specified schedule, uses approved parts and fluids, and is supported by an itemized, stamped service invoice. We provide complete documentation detailing parts, oil viscosities, and labor performed."
     },
     {
         q: "How long does a scheduled car maintenance service take?",
-        a: "Service turnaround depends on the package selected and workshop scheduling. A basic oil and filter service typically takes 45 to 60 minutes. A full scheduled service with multi-point inspections takes approximately 2 to 3 hours. A major service requiring complete fluid flushes, spark plug replacement, and alignment takes 4 to 6 hours. We provide a confirmed completion estimate when you drop off your vehicle at our Al Satwa workshop. [CONFIRM: workshop turnaround times]"
+        a: "Service duration depends on the package selected, vehicle make, and any additional repairs needed. A basic oil and filter service typically takes 45 to 60 minutes. A full scheduled service with multi-point inspections takes approximately 2 to 3 hours. A major service requiring multiple fluid flushes, spark plug replacement, and detailed checks usually takes 4 to 6 hours. Our Al Satwa workshop provides a realistic completion time when your vehicle is received."
     },
     {
         q: "What is the difference between routine maintenance and mechanical repairs?",
-        a: "Scheduled maintenance is preventive: it replaces fluids, filters, and predictable wear items before they fail, ensuring optimum lubrication and preventing component wear. Mechanical repair is corrective: it addresses components that have already malfunctioned, worn beyond tolerance, or broken (such as a seized AC compressor, worn alternator, or blown radiator hose). Regular maintenance minimizes the risk of costly corrective repairs."
+        a: "Routine maintenance is preventive: it replaces fluids, filters, and predictable wear items before they deteriorate, ensuring proper lubrication and preventing premature component wear. Mechanical repair is corrective: it addresses components that have already malfunctioned, worn beyond tolerance, or failed (such as a seized alternator, worn wheel bearing, or leaking water pump). Following scheduled maintenance significantly minimizes the need for costly corrective repairs."
     },
     {
         q: "Can you service my vehicle if I do not have its past service history?",
-        a: "Yes. When customers bring in recently purchased pre-owned vehicles with missing records, our technicians conduct a comprehensive baseline health assessment. We test brake fluid boiling point, check coolant pH and specific gravity, inspect spark plug electrode gap, perform a battery conductance test, check tyre DOT manufacture dates, and scan all onboard ECUs for stored diagnostic trouble codes. This gives you an accurate snapshot of the vehicle's true mechanical health."
+        a: "Yes. If you have recently purchased a pre-owned vehicle or do not possess past maintenance records, our technicians conduct a thorough baseline health check. We test brake fluid boiling point, check coolant condition, assess spark plug and belt wear, test battery conductance, inspect tyre condition, and scan onboard modules for stored diagnostic fault codes. This baseline allows us to recommend exactly what maintenance is due and establish a reliable service record going forward."
     }
 ];
 
 const relatedServices = [
-    { icon: "oilCan", name: "Engine Oil Change Dubai", desc: "Premium synthetic oil & OEM filter replacement", href: "/engine-oil-change-dubai" },
-    { icon: "search", name: "Full Car Check Up", desc: "50-point pre-RTA, electrical & mechanical inspection", href: "/car-inspection-dubai" },
-    { icon: "cog", name: "Car Engine Service Dubai", desc: "Precision engine diagnostics & cooling repairs", href: "/car-engine-service-dubai" },
-    { icon: "circle", name: "Mobile Car Service Dubai", desc: "On-site scheduled maintenance & minor repairs", href: "/mobile-car-repair-dubai" }
+    { icon: "oilCan", name: "Engine Oil Change Dubai", desc: "Quality synthetic oil & OEM filter replacement", href: "/engine-oil-change-dubai" },
+    { icon: "search", name: "Full Car Check Up", desc: "Comprehensive mechanical, electrical & pre-purchase inspection", href: "/car-inspection-dubai" },
+    { icon: "cog", name: "Car Engine Service Dubai", desc: "Engine diagnostics, cooling repairs & mechanical maintenance", href: "/car-engine-service-dubai" },
+    { icon: "circle", name: "Mobile Car Service Dubai", desc: "On-site roadside assistance, jump starts & battery service", href: "/mobile-car-repair-dubai" }
 ];
 
 // ---------------------------------------------------------------------------
@@ -189,7 +326,7 @@ const pageSchema = {
                 "@id": "https://dubaicarrepairservice.com/car-maintenance-dubai"
             },
             "serviceType": "Scheduled Car Maintenance Service",
-            "description": "Professional car maintenance services in Dubai including periodic servicing, oil changes, filter replacement, brake inspections, battery testing, cooling system maintenance, diagnostic checks and manufacturer-recommended maintenance schedules for all vehicle makes and models.",
+            "description": "Professional car maintenance services in Dubai including basic, full, and major periodic servicing, engine oil changes, filter replacement, brake inspections, battery testing, coolant renewal, and diagnostic checks for all vehicle makes and models at 222 Al Satwa Road.",
             "provider": {
                 "@id": "https://dubaicarrepairservice.com/#localbusiness"
             },
@@ -259,12 +396,12 @@ const pageSchema = {
                         <li aria-current="page">Car Maintenance Dubai</li>
                     </ol>
                 </nav>
-                <span class="dcrs-badge">Al Satwa, Dubai · Basic to Major Servicing · All Makes &amp; Models</span>
+                <span class="dcrs-badge">Al Satwa, Dubai · Scheduled Maintenance · All Makes &amp; Models</span>
                 <h1 class="dcrs-hero-banner__title">
-                    Car Service Dubai - Scheduled Car Maintenance Packages
+                    Car Maintenance Dubai - Scheduled Car Service Packages
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Maintaining peak mechanical reliability under Dubai's severe operating conditions requires systematic, preventative maintenance designed to protect critical engine, transmission, and cooling systems. Our car service in Dubai offers comprehensive basic, interim, and major service packages utilizing manufacturer-approved synthetic lubricants, OEM filters, and computerized diagnostic checks. Based at 222 Al Satwa Road, our master mechanics keep your vehicle running smoothly and efficiently with fast and affordable pricing.
+                    Regular vehicle maintenance is essential for keeping your car safe, reliable, and performing at its best on Dubai roads. At Dubai Car Repair Service, our Al Satwa workshop provides basic, full, and major car maintenance tailored to your vehicle's specific requirements and manufacturer guidelines. Whether you need a routine engine oil and filter service, comprehensive mechanical and safety inspections, or a major service reset, our experienced mechanics deliver professional care with transparent quotations and honest advice.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -288,21 +425,21 @@ const pageSchema = {
                             Car Service Dubai - Periodic Vehicle Maintenance &amp; Care
                         </h2>
                         <p class="dcrs-lead-text">
-                            Standard factory maintenance schedules in owner manuals are calibrated for moderate, temperate climates. In the UAE, sustained ambient temperatures exceeding 45°C, high dust levels, and congested urban traffic qualify vehicles for the 'severe operating schedule.' Under these demanding conditions, motor oil shears prematurely, cabin air filters choke with desert particulate, and cooling system hoses and seals experience rapid thermal hardening.
+                            Regular scheduled maintenance is the most effective way to protect your car against premature wear, maintain fuel efficiency, and ensure driving safety. While standard owner handbooks assume moderate driving conditions, everyday motoring in Dubai involves high summer ambient temperatures, frequent stop-and-go highway traffic, airborne desert dust, and constant air conditioning load. These conditions place additional stress on motor oil, filtration media, cooling lines, and electrical components.
                         </p>
                         <p class="dcrs-body-text">
-                            At Dubai Car Repair Service, our scheduled vehicle servicing follows a rigorous diagnostic protocol rather than basic visual checks. Each service includes precision gravity oil draining with certified viscosity matching, OEM filter replacement, spark plug and belt inspections, and digital testing of your <a href="/car-battery-replacement-dubai" class="dcrs-inline-link">car battery health</a>. If our technicians detect deeper mechanical issues during the underbody hoist check, we can immediately carry out necessary <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine repairs</a> or test air conditioning efficiency with our specialized <a href="/car-ac-repair-dubai" class="dcrs-inline-link">car AC service</a>.
+                            At Dubai Car Repair Service, our scheduled vehicle maintenance follows systematic checklists tailored to your car's mileage and operating requirements. Every service includes fresh lubricant matching manufacturer viscosity grades with an <a href="/engine-oil-change-dubai" class="dcrs-inline-link">engine oil change</a>, OEM-spec filter replacement, battery testing, and underbody safety inspection. If our mechanics identify deeper mechanical concerns or cooling issues during inspection, we can carry out necessary <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine service</a> or perform comprehensive cooling tests with our specialized <a href="/car-ac-repair-dubai" class="dcrs-inline-link">car AC repair</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            Our Al Satwa garage services Japanese, European, and American marques with complete manufacturer-grade scan tooling and reset capabilities for service indicator lights. Drivers seeking routine minor maintenance at home or office can take advantage of our convenient <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car service</a> across Dubai, or reach out through our <a href="/contact" class="dcrs-inline-link">workshop service desk</a> for upfront pricing advice.
+                            Located at 222 Al Satwa Road, our garage services Japanese, European, American, and Asian marques using hydraulic lifts, multi-brand OBD diagnostic scanners, and dedicated fluid-servicing tools. For minor roadside issues or battery testing on location, drivers can also access our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car service</a> in selected central Dubai areas. To discuss your maintenance schedule or book an appointment, simply call our workshop or send us a WhatsApp message.
                         </p>
 
                         <div class="dcrs-action-row">
                             <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
                                 <Fragment set:html={icons.phone} /> Call Workshop
                             </a>
-                            <a href="/contact" class="dcrs-btn dcrs-btn--outline-ink">
-                                Book Scheduled Service <Fragment set:html={icons.arrowRight} />
+                            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
+                                <Fragment set:html={icons.chat} /> WhatsApp Us
                             </a>
                         </div>
                     </div>
@@ -311,7 +448,7 @@ const pageSchema = {
                         <div class="dcrs-intro-media__frame">
                             <img
                                 src={service9Image.src}
-                                alt="Technician conducting comprehensive car service in Dubai on hydraulic lift at Al Satwa auto workshop"
+                                alt="Mechanic inspecting vehicle underbody on hydraulic lift during scheduled car maintenance in Dubai"
                                 loading="eager"
                                 width="600"
                                 height="400"
@@ -319,9 +456,9 @@ const pageSchema = {
                             <div class="dcrs-plate dcrs-price-badge" aria-hidden="true">
                                 <div class="dcrs-plate__tab">AED</div>
                                 <div class="dcrs-plate__body">
-                                    <span class="dcrs-plate__row dcrs-plate__row--big">200+</span>
+                                    <span class="dcrs-plate__row dcrs-plate__row--big">200</span>
                                     <span class="dcrs-plate__row">BASIC SERVICE FROM</span>
-                                    <span class="dcrs-plate__row">GENUINE OEM PARTS</span>
+                                    <span class="dcrs-plate__row">AL SATWA GARAGE</span>
                                 </div>
                             </div>
                         </div>
@@ -340,7 +477,7 @@ const pageSchema = {
                         Car Maintenance Packages for Dubai Drivers
                     </h2>
                     <p class="dcrs-heading__sub">
-                        Three transparent maintenance tiers calibrated for UAE severe driving schedules, protecting your vehicle's mechanical integrity from routine oil changes to complete fluid flushes.
+                        Three clear maintenance tiers structured for routine lubrication, comprehensive safety inspections, and major scheduled component servicing.
                     </p>
                 </div>
 
@@ -368,7 +505,7 @@ const pageSchema = {
                 </div>
 
                 <p class="dcrs-pricing-disclaimer">
-                    <Fragment set:html={icons.info} /> Package pricing reflects standard 4-cylinder and small V6 vehicles. Larger displacement engines, luxury European models, and vehicles requiring specialized synthetic fluids are quoted transparently based on exact volume requirements.
+                    <Fragment set:html={icons.info} /> Starting prices apply to standard 4-cylinder petrol vehicles requiring up to 4 litres of standard oil. Vehicles with larger engine capacities (V6, V8, twin-turbo), European marques requiring specialized synthetic lubricants, or models needing platinum/iridium spark plugs are quoted transparently based on exact parts and volume specifications. All additional repairs require customer approval before work begins.
                 </p>
             </div>
         </section>
@@ -380,43 +517,43 @@ const pageSchema = {
                     <div class="dcrs-kicker">Service Workflow</div>
                     <h2 class="dcrs-heading__title">Our 4-Stage Vehicle Service Workflow</h2>
                     <p class="dcrs-heading__sub">
-                        Every service follows a structured technical checklist to maintain warranty compliance and complete road safety.
+                        Every service follows a structured technical workflow to maintain vehicle reliability, safety, and manufacturer standards.
                     </p>
                 </div>
 
                 <div class="dcrs-steps-grid">
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">1</span>
-                        <h3 class="dcrs-step-card__title">Intake &amp; Computer Diagnostic Scan</h3>
-                        <p class="dcrs-step-card__desc">Complete electronic health check of engine, transmission, ABS, and airbag control modules to detect stored fault codes.</p>
+                        <h3 class="dcrs-step-card__title">Vehicle Intake &amp; Diagnostic Check</h3>
+                        <p class="dcrs-step-card__desc">We review past maintenance records, noted symptoms, and mileage, connecting an OBD scanner to check for active or stored fault codes where supported.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">2</span>
-                        <h3 class="dcrs-step-card__title">Hoist Inspection &amp; Underbody Safety</h3>
-                        <p class="dcrs-step-card__desc">Full examination of suspension ball joints, steering linkages, brake pads/rotors, drive shafts, exhaust, and fluid leaks.</p>
+                        <h3 class="dcrs-step-card__title">Hoist Elevation &amp; Underbody Check</h3>
+                        <p class="dcrs-step-card__desc">The vehicle is raised on a hydraulic lift to examine suspension bushes, ball joints, brake lines, steering rack, exhaust mountings, and signs of fluid leaks.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">3</span>
-                        <h3 class="dcrs-step-card__title">Fluid Flush, Oil Fill &amp; Filter Service</h3>
-                        <p class="dcrs-step-card__desc">Gravity engine oil draining, OEM filter fitment, brake fluid moisture testing, coolant top-up, and air filter renewal.</p>
+                        <h3 class="dcrs-step-card__title">Oil, Filters &amp; Scheduled Work</h3>
+                        <p class="dcrs-step-card__desc">Engine oil is drained and refilled with the correct manufacturer-approved grade, new filters are fitted, and fluids are inspected or serviced as specified.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">4</span>
-                        <h3 class="dcrs-step-card__title">Road Test &amp; Service Light Reset</h3>
-                        <p class="dcrs-step-card__desc">Operational drive check to verify smooth shifting and braking, followed by digital dashboard service interval resetting.</p>
+                        <h3 class="dcrs-step-card__title">Final Checks, Road Test &amp; Reset</h3>
+                        <p class="dcrs-step-card__desc">Technicians verify fluid levels, conduct an operational road test where appropriate, digitally reset service reminder lights where supported, and provide an itemized report.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. TYPES, PARTS, PRODUCTS AND BRANDS ----------------------------->
+        <!-- 5. UAE CLIMATE IMPACT & INTERVALS -------------------------------->
         <section class="dcrs-section dcrs-section--tint" id="climate-intervals">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Climate Impact &amp; Intervals</div>
-                    <h2 class="dcrs-heading__title">UAE Climate Impact on Vehicle Components</h2>
+                    <div class="dcrs-kicker">Climate Impact &amp; Maintenance</div>
+                    <h2 class="dcrs-heading__title">UAE Driving Impact on Vehicle Components</h2>
                     <p class="dcrs-heading__sub">
-                        Why European and international standard service schedules must be shortened for Dubai driving.
+                        How high ambient heat, stop-and-go commuting, airborne dust, and frequent air conditioning usage affect key vehicle systems.
                     </p>
                 </div>
 
@@ -426,23 +563,41 @@ const pageSchema = {
                             <span class="dcrs-climate-card__icon"><Fragment set:html={icons[c.icon]} /></span>
                             <h3 class="dcrs-climate-card__title">{c.title}</h3>
                             <p class="dcrs-climate-card__desc">{c.desc}</p>
-                            <span class="dcrs-climate-card__impact"><strong>Component Impact:</strong> {c.impact}</span>
+                            <div class="dcrs-climate-card__impact">
+                                <strong>Maintenance Focus:</strong> {c.impact}
+                            </div>
                         </div>
                     ))}
                 </div>
 
                 <div class="dcrs-intervals-wrap">
                     <h3 class="dcrs-subheading">Recommended Service Intervals in Dubai</h3>
-                    <div class="dcrs-intervals-grid">
-                        {intervals.map((int) => (
-                            <div class="dcrs-interval-card">
-                                <span class="dcrs-interval-card__km">{int.km}</span>
-                                <h4 class="dcrs-interval-card__name">{int.name}</h4>
-                                <span class="dcrs-interval-card__months">{int.months}</span>
-                                <p class="dcrs-interval-card__desc">{int.desc}</p>
-                            </div>
-                        ))}
+                    <p class="dcrs-subheading-lead">
+                        Service intervals vary by manufacturer guidelines, engine design, vehicle age, mileage, oil type, and operating environment. The table below outlines standard manufacturer baselines alongside general severe-driving recommendations for vehicles operating in Dubai conditions.
+                    </p>
+                    <div class="dcrs-table-wrapper">
+                        <table class="dcrs-pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Maintenance Item</th>
+                                    <th>Standard Manufacturer Baseline</th>
+                                    <th>Dubai / Severe Driving Guidance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {intervals.map((iv) => (
+                                    <tr>
+                                        <td class="dcrs-table-service">{iv.item}</td>
+                                        <td class="dcrs-table-mfr">{iv.mfr}</td>
+                                        <td class="dcrs-table-uae">{iv.uae}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
+                    <p class="dcrs-pricing-disclaimer">
+                        <Fragment set:html={icons.info} /> Always consult your vehicle's owner manual for official service requirements, warranty conditions, and fluid specifications.
+                    </p>
                 </div>
             </div>
         </section>
@@ -452,33 +607,23 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Warning Signs</div>
-                    <h2 class="dcrs-heading__title">Signs Your Car is Overdue for Maintenance</h2>
+                    <h2 class="dcrs-heading__title">Signs Your Car Needs Immediate Maintenance</h2>
                     <p class="dcrs-heading__sub">
-                        Watch for these indicators that your vehicle requires immediate fluid renewal and mechanical inspection.
+                        Watch for these indicators that your vehicle requires prompt fluid renewal, filter replacement, or professional inspection.
                     </p>
                 </div>
 
-                <div class="dcrs-steps-grid">
-                    <div class="dcrs-step-card">
-                        <span class="dcrs-step-card__num">⚠️</span>
-                        <h3 class="dcrs-step-card__title">Service Reminder Illuminated</h3>
-                        <p class="dcrs-step-card__desc">Dashboard wrench icon or maintenance countdown indicates engine oil has reached its operational kilometer or time limit.</p>
-                    </div>
-                    <div class="dcrs-step-card">
-                        <span class="dcrs-step-card__num">⚠️</span>
-                        <h3 class="dcrs-step-card__title">Dark, Oxidized Engine Oil</h3>
-                        <p class="dcrs-step-card__desc">Dipstick oil appears black, thick, or gritty, signaling additive breakdown and loss of hydrodynamic lubrication protection.</p>
-                    </div>
-                    <div class="dcrs-step-card">
-                        <span class="dcrs-step-card__num">⚠️</span>
-                        <h3 class="dcrs-step-card__title">Spongy Brakes or Squeal</h3>
-                        <p class="dcrs-step-card__desc">Moisture-contaminated brake fluid or worn brake pads cause extended stopping distances and audible metal squeaking.</p>
-                    </div>
-                    <div class="dcrs-step-card">
-                        <span class="dcrs-step-card__num">⚠️</span>
-                        <h3 class="dcrs-step-card__title">Weak AC &amp; Stuffy Cabin Air</h3>
-                        <p class="dcrs-step-card__desc">Clogged cabin air filters restrict blower airflow and trap dust mites, allergens, and unpleasant musty odors.</p>
-                    </div>
+                <div class="dcrs-steps-grid--6col">
+                    {warningSigns.map((w) => (
+                        <div class="dcrs-step-card">
+                            <span class="dcrs-step-card__num">{w.num}</span>
+                            <h3 class="dcrs-step-card__title">{w.title}</h3>
+                            <p class="dcrs-step-card__desc">{w.desc}</p>
+                            <div class="dcrs-step-card__action">
+                                <strong>Recommended Action:</strong> {w.action}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
@@ -489,7 +634,7 @@ const pageSchema = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Vehicle Maintenance</h2>
-                    <p class="dcrs-heading__sub">12+ years of independent mechanical experience, factory-spec parts, and fast and affordable pricing.</p>
+                    <p class="dcrs-heading__sub">Independent mechanical care, factory-specification parts, and transparent servicing since 2012.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -563,10 +708,10 @@ const pageSchema = {
                     <div class="dcrs-cta-banner__copy">
                         <span class="dcrs-cta-banner__badge">Fast &amp; Honest Servicing</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Scheduled Car Service in Dubai Today
+                            Book Your Car Maintenance Service in Dubai Today
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing from AED 200. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us to secure your service booking.
+                            Scheduled maintenance packages starting from AED 200. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Final quotation depends on vehicle make, engine displacement, oil capacity, and selected package. Call or WhatsApp us to schedule your service.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -910,10 +1055,6 @@ const pageSchema = {
         align-items: center;
     }
 
-    .align-start {
-        align-items: start;
-    }
-
     /* Media Frame & Price Badge */
     .dcrs-intro-media__frame {
         position: relative;
@@ -1083,75 +1224,196 @@ const pageSchema = {
         height: 14px;
     }
 
-    .dcrs-notice-banner {
-        display: flex;
-        gap: 0.85rem;
-        align-items: center;
+    /* 4. Steps Grid (Service Process & Warning Signs) */
+    .dcrs-steps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-steps-grid--6col {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-steps-grid--6col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-steps-grid--6col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-step-card {
         background: var(--white);
         border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
-        padding: 1rem 1.25rem;
-        margin-top: 2rem;
-        font-size: 0.86rem;
-        color: var(--steel);
-        line-height: 1.55;
-    }
-
-    .dcrs-notice-banner__icon {
-        color: var(--brass-deep);
-        flex-shrink: 0;
-        display: inline-flex;
-    }
-
-    .dcrs-notice-banner__icon :global(svg) {
-        width: 20px;
-        height: 20px;
-    }
-
-    .dcrs-notice-banner p { margin: 0; }
-
-    /* 4. Climate Impacts & Intervals */
-    .dcrs-impacts-list {
+        border-radius: 8px;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
-        margin-top: 1.25rem;
+        gap: 0.65rem;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .dcrs-impact-item {
+    .dcrs-step-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(16, 32, 31, 0.06);
+    }
+
+    .dcrs-step-card__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: var(--brass);
+        color: var(--ink);
+        border-radius: 50%;
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+    }
+
+    .dcrs-step-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.12rem;
+        color: var(--ink);
+        margin: 0;
+    }
+
+    .dcrs-step-card__desc {
+        color: var(--steel);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .dcrs-step-card__action {
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        background: var(--paper-alt);
+        padding: 0.5rem 0.65rem;
+        border-radius: 4px;
+        line-height: 1.45;
+        margin-top: auto;
+    }
+
+    .dcrs-step-card__action strong {
+        color: var(--brass-deep);
+    }
+
+    /* 5. Climate Impacts & Intervals */
+    .dcrs-climate-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-climate-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-climate-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-climate-card {
         background: var(--white);
         border: 1px solid var(--rule-on-paper);
-        border-radius: 6px;
-        padding: 0.9rem 1.1rem;
+        border-radius: 8px;
+        padding: 1.35rem;
         display: flex;
-        gap: 0.85rem;
-        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.6rem;
     }
 
-    .dcrs-impact-item__icon {
-        color: var(--brass-deep);
-        flex-shrink: 0;
-        margin-top: 0.15rem;
+    .dcrs-climate-card__icon {
         display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background: var(--paper-alt);
+        color: var(--brass-deep);
+        border-radius: 50%;
+        margin-bottom: 0.2rem;
     }
 
-    .dcrs-impact-item__icon :global(svg) {
+    .dcrs-climate-card__icon :global(svg) {
         width: 18px;
         height: 18px;
     }
 
-    .dcrs-impact-item__title {
-        font-size: 0.92rem;
-        font-weight: 600;
+    .dcrs-climate-card__title {
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
         color: var(--ink);
-        margin: 0 0 0.15rem;
+        margin: 0;
     }
 
-    .dcrs-impact-item__desc {
-        font-size: 0.83rem;
+    .dcrs-climate-card__desc {
+        font-size: 0.85rem;
         color: var(--steel);
-        line-height: 1.5;
+        line-height: 1.55;
         margin: 0;
+    }
+
+    .dcrs-climate-card__impact {
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+        background: var(--paper);
+        padding: 0.5rem 0.65rem;
+        border-radius: 4px;
+        line-height: 1.45;
+        margin-top: auto;
+    }
+
+    .dcrs-climate-card__impact strong {
+        color: var(--brass-deep);
+    }
+
+    .dcrs-intervals-wrap {
+        margin-top: 3rem;
+        background: var(--white);
+        border: 1px solid var(--rule-on-paper);
+        border-radius: 8px;
+        padding: 2rem;
+    }
+
+    .dcrs-subheading {
+        font-family: var(--font-display, serif);
+        font-size: 1.35rem;
+        color: var(--ink);
+        margin: 0 0 0.5rem;
+    }
+
+    .dcrs-subheading-lead {
+        color: var(--steel);
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin: 0 0 1.5rem;
     }
 
     .dcrs-table-wrapper {
@@ -1161,7 +1423,7 @@ const pageSchema = {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         width: 100%;
-        margin-top: 1.25rem;
+        margin-top: 1rem;
     }
 
     .dcrs-pricing-table {
@@ -1217,7 +1479,7 @@ const pageSchema = {
         align-items: center;
         gap: 0.4rem;
         line-height: 1.5;
-        margin-top: 0.85rem;
+        margin-top: 1rem;
     }
 
     .dcrs-pricing-disclaimer :global(svg) {
@@ -1227,7 +1489,7 @@ const pageSchema = {
         flex-shrink: 0;
     }
 
-    /* 5. Why Choose Us */
+    /* 6. Why Choose Us */
     .dcrs-reasons-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -1294,7 +1556,7 @@ const pageSchema = {
         margin: 0;
     }
 
-    /* 6. FAQ Accordion */
+    /* 7. FAQ Accordion */
     .dcrs-faq-accordion {
         max-width: 860px;
         margin: 0 auto;
@@ -1361,7 +1623,7 @@ const pageSchema = {
         color: var(--steel);
     }
 
-    /* 7. Related Services */
+    /* 8. Related Services */
     .dcrs-related-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -1430,7 +1692,7 @@ const pageSchema = {
         margin: 0;
     }
 
-    /* 8. CTA Banner */
+    /* 9. CTA Banner */
     .dcrs-cta-banner {
         background: var(--ink);
         color: var(--white);
@@ -1483,7 +1745,7 @@ const pageSchema = {
         flex-shrink: 0;
     }
 
-    /* 9. Sticky Mobile Bar */
+    /* 10. Sticky Mobile Bar */
     .dcrs-stickybar {
         position: fixed;
         left: 0;
@@ -1514,6 +1776,7 @@ const pageSchema = {
         background: #25d366;
         color: #fff;
     }
+
     /* Mobile price badge scaling */
     @media (max-width: 480px) {
         .dcrs-price-badge {
@@ -1532,7 +1795,6 @@ const pageSchema = {
             font-size: 0.68rem;
         }
     }
-    /* marker: dcrs-price-badge-responsive */
 
     /* Responsive pricing table font size & compact padding */
     @media (max-width: 768px) {
@@ -1544,7 +1806,11 @@ const pageSchema = {
             padding: 0.75rem 0.85rem;
             font-size: 0.84rem;
         }
+        .dcrs-intervals-wrap {
+            padding: 1.25rem 1rem;
+        }
     }
+
     @media (max-width: 480px) {
         .dcrs-pricing-table {
             font-size: 0.78rem;
@@ -1571,63 +1837,23 @@ const pageSchema = {
             font-size: 0.75rem;
         }
     }
-    /* marker: dcrs-pricing-table-mobile-text */
-
 
     /* Protection against flex/grid item blowout on mobile viewports */
-    .dcrs-engine-item,
-    .dcrs-warning-item,
-    .dcrs-process-step,
-    .dcrs-engines-block,
-    .dcrs-pricing-block,
-    .dcrs-warnings-block,
-    .dcrs-process-block,
-    .dcrs-col-block,
     .dcrs-intro-content,
-    .dcrs-intro-media {
+    .dcrs-intro-media,
+    .dcrs-step-card,
+    .dcrs-climate-card,
+    .dcrs-pkg-card,
+    .dcrs-reason-card {
         min-width: 0;
         max-width: 100%;
         box-sizing: border-box;
     }
-    .dcrs-engine-item > div,
-    .dcrs-warning-item > div,
-    .dcrs-process-step > div {
-        min-width: 0;
-        flex: 1;
-    }
+
     @media (max-width: 480px) {
         .dcrs-heading__title {
             font-size: clamp(1.35rem, 5.5vw, 1.65rem);
             line-height: 1.25;
         }
-        .dcrs-engine-item {
-            padding: 0.75rem 0.85rem;
-            gap: 0.65rem;
-        }
-        .dcrs-engine-item__name {
-            font-size: 0.88rem;
-        }
-        .dcrs-engine-item__desc {
-            font-size: 0.78rem;
-            line-height: 1.4;
-        }
-        .dcrs-table-price,
-        .dcrs-table__price,
-        .dcrs-price-cell,
-        .dcrs-price-tag {
-            white-space: normal !important;
-            word-break: normal !important;
-            overflow-wrap: break-word !important;
-        }
     }
-    /* marker: .dcrs-flex-overflow-fix */
-    .dcrs-cta-inline-link {
-        color: var(--brass, #D48E33);
-        font-weight: 600;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-    .dcrs-cta-inline-link:hover { opacity: 0.85; }
-
 </style>
-
