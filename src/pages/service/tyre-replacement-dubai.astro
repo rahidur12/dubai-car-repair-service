@@ -5,8 +5,8 @@ import service3Image from '../../assets/images/service3.webp';
 // ---------------------------------------------------------------------------
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
-const pageTitle = "Tyre Change Dubai | Tyre Replacement, Balancing & Alignment";
-const pageDescription = "Tyre change in Dubai from AED 150/tyre. All brands, all sizes. Balancing, 4-wheel alignment & puncture repair at 222 Al Satwa Road. Open 7 days. Call or WhatsApp.";
+const pageTitle = "Tyre Replacement Dubai | Supply, Fitting, Balancing & Alignment";
+const pageDescription = "Tyre replacement and fitting in Dubai from AED 150 per tyre. Tyre supply, wheel mounting, dynamic balancing & 4-wheel alignment at 222 Al Satwa Road. Call or WhatsApp.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -28,11 +28,7 @@ const icons: Record<string, string> = {
     volumeUp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`,
     gauge: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M3.34 17a10 10 0 1 1 17.32 0"/><path d="m13.4 10.6 3.6-3.6"/></svg>`,
     crosshairs: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>`,
-    sync: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>`,
     circleDot: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>`,
-    thermometer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>`,
-    checkCircle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>`,
-    circle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg>`,
     shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
     receipt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h6"/></svg>`,
     car: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`,
@@ -46,44 +42,68 @@ const icons: Record<string, string> = {
 // ---------------------------------------------------------------------------
 const signs = [
     {
+        num: "1",
         icon: "ruler",
-        title: "Tread Depth Below Safe Thresholds",
-        desc: "The UAE legal minimum is 1.6mm across the central three-quarters of the tread. For high-speed highway driving in Dubai, replacement is strongly recommended at 2.5mm–3mm, as shallow tread drastically increases braking distances and reduces dry-heat traction."
+        urgency: "Safety Recommendation",
+        title: "Tread Depth Approaching Wear Limits",
+        desc: "The UAE legal minimum tread depth is 1.6 mm across the central three-quarters of the tread. However, for highway driving in Dubai, automotive safety experts recommend considering replacement at 2.5 mm–3.0 mm, as shallower tread reduces dry road grip and significantly increases braking distances.",
+        action: "Have your tread depth measured with a calibrated gauge and plan tyre replacement before reaching the legal limit."
     },
     {
+        num: "2",
         icon: "calendar",
-        title: "Manufacturing Age Exceeding 5 Years",
-        desc: "Check the 4-digit DOT code on the tyre sidewall (e.g., 2421 indicates week 24 of 2021). Per UAE ESMA/GSO standards, tyres older than 5 years must be replaced regardless of remaining tread depth because rubber compounds harden and oxidize internally."
+        urgency: "Age Advisory",
+        title: "Tyre Age Reaching Five Years",
+        desc: "Check the 4-digit DOT date stamped on the sidewall (e.g., 2621 indicates week 26 of 2021). Under UAE vehicle inspection standards, tyres older than 5 years generally fail annual RTA roadworthiness tests because rubber compounds harden and oxidize in warm climates regardless of remaining tread.",
+        action: "Check your tyre DOT codes; if any tyre is approaching 5 years of age, schedule a replacement inspection."
     },
     {
+        num: "3",
         icon: "alert",
+        urgency: "Inspection Required",
         title: "Sidewall Surface Cracking & Weathering",
-        desc: "Fine hairline fissures on the sidewall or between tread blocks indicate ozone damage and thermal fatigue from Dubai's sustained summer asphalt heat. Degraded rubber increases the risk of carcass failure under load."
+        desc: "Fine cracks, crazing, or fissures along the sidewall or between tread grooves indicate rubber drying, ozone degradation, and thermal exposure. Surface weathering can weaken the tyre's outer protective compound over time.",
+        action: "Have an experienced technician evaluate the depth of the cracks to confirm whether casing integrity is compromised."
     },
     {
+        num: "4",
         icon: "arrowsHorizontal",
+        urgency: "Immediate Hazard",
         title: "Sidewall Bulges, Blisters or Hernias",
-        desc: "A visible bulge indicates ruptured internal carcass cords, typically caused by sharp pothole impacts, speed bumps, or kerb strikes. This represents severe structural damage and requires immediate replacement to avoid a blowout."
+        desc: "A visible bulge or bubble on the sidewall indicates that the internal structural cords have ruptured, typically from pothole impacts, speed bumps, or kerb strikes. This poses an immediate blowout risk; the vehicle should not continue to be driven if unsafe.",
+        action: "Install your spare wheel or arrange recovery; do not drive on a tyre with a visible sidewall bulge."
     },
     {
+        num: "5",
         icon: "arrowsVertical",
-        title: "Uneven Shoulder or Centre Tread Wear",
-        desc: "Excessive inner or outer edge wear indicates wheel alignment faults (toe/camber errors), while centre wear signals chronic over-inflation. Irregular wear shortens tyre lifespan and compromises vehicle handling."
+        urgency: "Alignment & Inflation Check",
+        title: "Irregular or Uneven Tread Wear",
+        desc: "Wear concentrated on the inner or outer shoulder often points to suspension geometry faults (camber or toe misalignment) or worn suspension bushings. In contrast, centre tread wear suggests chronic over-inflation, while wear on both outer edges indicates under-inflation.",
+        action: "Book a wheel alignment check and inspect tyre cold pressures and suspension components for wear."
     },
     {
+        num: "6",
         icon: "steering",
-        title: "Steering Wheel Shimmy & High-Speed Vibration",
-        desc: "Vibrations felt through the steering wheel or seat at 80–120 km/h point to wheel assembly unbalance, radial runout, or internal belt separation. If dynamic wheel balancing does not resolve the issue, structural replacement is needed."
+        urgency: "Diagnostic Check",
+        title: "Steering Wheel or High-Speed Vibration",
+        desc: "Vibration felt through the steering wheel or seat between 80 and 120 km/h can stem from wheel imbalance, tyre runout, a bent rim, or worn suspension components. Dynamic wheel balancing resolves weight imbalances, but underlying mechanical faults should also be checked.",
+        action: "Have wheels dynamically balanced and have technician inspect rims and suspension for mechanical play."
     },
     {
+        num: "7",
         icon: "volumeUp",
+        urgency: "Mechanical Inspection",
         title: "Rhythmic Road Roar or Tread Cupping",
-        desc: "An unexpected drone, hum, or rhythmic thumping sound indicates tread cupping (scalloping) caused by worn suspension dampers or loose wheel bearings, creating high-spot tyre wear."
+        desc: "A rhythmic drone, humming, or thumping sound that increases with vehicle speed often signals tread cupping (scalloping) caused by worn shock absorbers, loose wheel bearings, or prolonged lack of tyre rotation.",
+        action: "Have tyres checked for scalloped wear and have shock absorbers and wheel bearings inspected."
     },
     {
+        num: "8",
         icon: "gauge",
+        urgency: "Leak Assessment",
         title: "Persistent Air Pressure Loss",
-        desc: "Losing pressure repeatedly without an obvious nail puncture suggests rim bead corrosion, a failing valve stem, or microscopic tread fissures. Tyres operating under-inflated overheat rapidly on UAE motorways."
+        desc: "Repeatedly losing air pressure without an obvious nail puncture suggests a deteriorating valve stem, rim bead corrosion, or a small hidden puncture. Driving on low pressure causes rapid heat build-up and tyre damage.",
+        action: "Have the tyre demounted, the valve stem checked, and the wheel rim bead inspected for proper sealing."
     }
 ];
 
@@ -91,99 +111,159 @@ const signs = [
 // Tyre Brands
 // ---------------------------------------------------------------------------
 const brands = [
-    { name: "Bridgestone", desc: "Japanese engineering known for high thermal resistance. Popular OEM fitment across Toyota, Lexus, and Nissan SUVs operating in the Gulf." },
-    { name: "Michelin", desc: "French premium brand featuring advanced silica compounds, high-speed stability, and low rolling resistance for European and luxury models." },
-    { name: "Continental", desc: "German precision with outstanding wet and dry braking safety. Common original equipment fitment for Mercedes-Benz, Audi, and Volkswagen." },
-    { name: "Pirelli", desc: "Italian high-performance tyres designed for high lateral grip, precise steering response, and stability on sports cars and performance saloons." },
-    { name: "Yokohama", desc: "Japanese tyre manufacturer offering dependable durability, heat endurance, and balanced comfort for Japanese and Korean vehicles." },
-    { name: "Hankook", desc: "Korean performance manufacturer providing strong thermal resilience, quiet ride comfort, and exceptional value for daily commuters." },
-    { name: "Dunlop", desc: "Reliable all-around handling and robust casing construction across passenger cars, commercial utes, and 4WD platforms." },
-    { name: "Kumho & Nexen", desc: "Certified Korean brands offering reliable GSO-compliant performance and accessible pricing for urban driving." }
-];
-
-// ---------------------------------------------------------------------------
-// Tyre Types
-// ---------------------------------------------------------------------------
-const tyreTypes = [
     {
-        name: "Summer & High-Temperature Passenger Tyres",
-        desc: "Standard fitment for Dubai road conditions, featuring heat-resistant synthetic rubber compounds designed for dry highways and occasional rain. [CONFIRM: passenger tyre starting price]",
-        price: "From AED 150/tyre"
+        name: "Bridgestone",
+        tier: "Premium",
+        origin: "Japan",
+        desc: "Renowned for robust durability and heat-resistant casing design, widely fitted as original equipment on Gulf vehicles.",
+        bestFor: "SUVs, sedans, and high-mileage highway driving"
     },
     {
-        name: "SUV & Crossover Highway Terrain (H/T)",
-        desc: "Engineered for mid-size to full-size SUVs such as the Nissan Patrol, Toyota Land Cruiser, and Prado, balancing quiet highway cruising with high load capacity. [CONFIRM: SUV tyre starting price]",
-        price: "From AED 220/tyre"
+        name: "Michelin",
+        tier: "Premium",
+        origin: "France",
+        desc: "Engineered for superior braking grip, high-speed stability, and low rolling resistance for luxury and performance cars.",
+        bestFor: "Luxury saloons, sports cars, and premium comfort"
     },
     {
-        name: "All-Terrain (A/T) & Off-Road Tyres",
-        desc: "Reinforced sidewalls and open-tread patterns designed for dual highway driving and desert gravel trails. Built to resist stone drilling and sidewall cuts. [CONFIRM: A/T tyre starting price]",
-        price: "From AED 280/tyre"
+        name: "Continental",
+        tier: "Premium",
+        origin: "Germany",
+        desc: "German engineered with a focus on short braking distances and precise steering response in dry and wet conditions.",
+        bestFor: "European sedans, performance crossovers, and family cars"
     },
     {
-        name: "Run-Flat Tyres (RFT)",
-        desc: "Reinforced self-supporting sidewalls fitted to many BMW, Mercedes-Benz, and Mini models, allowing safe driving up to 80 km at 80 km/h after pressure loss. [CONFIRM: run-flat starting price]",
-        price: "From AED 450/tyre"
+        name: "Pirelli",
+        tier: "Premium",
+        origin: "Italy",
+        desc: "Performance-oriented design offering exceptional lateral stability and responsive road feel for dynamic driving.",
+        bestFor: "Sports cars, performance coupes, and high-end SUVs"
     },
     {
-        name: "Ultra High Performance (UHP) Tyres",
-        desc: "Engineered for sports saloons and performance coupes (V, W, Y speed ratings). Wide contact patch, rigid tread blocks, and maximum high-speed thermal stability. [CONFIRM: UHP tyre starting price]",
-        price: "From AED 380/tyre"
+        name: "Yokohama",
+        tier: "Mid-Range / Premium",
+        origin: "Japan",
+        desc: "Dependable performance and tread longevity across passenger cars and 4WD vehicles operating in warm climates.",
+        bestFor: "Japanese and Korean passenger vehicles and 4x4s"
+    },
+    {
+        name: "Hankook",
+        tier: "Mid-Range",
+        origin: "South Korea",
+        desc: "Balanced ride comfort, low cabin noise, and reliable heat endurance offering excellent value for daily commuters.",
+        bestFor: "Daily commuter sedans, crossovers, and urban driving"
+    },
+    {
+        name: "Dunlop",
+        tier: "Mid-Range",
+        origin: "Japan / UK",
+        desc: "Strong casing construction and consistent handling across passenger cars, commercial vehicles, and 4WD platforms.",
+        bestFor: "Light commercial vehicles, 4WDs, and family SUVs"
+    },
+    {
+        name: "Kumho & Nexen",
+        tier: "Quality Budget",
+        origin: "South Korea",
+        desc: "GSO-compliant tyre options providing dependable everyday traction and accessible pricing for urban driving.",
+        bestFor: "Cost-effective city commuting and compact passenger cars"
     }
 ];
 
 // ---------------------------------------------------------------------------
-// Alignment, Balancing & Rotation Cards
+// Tyre Categories
 // ---------------------------------------------------------------------------
-const alignmentSigns = [
-    "Car pulls left or right on a straight road",
-    "Steering wheel not centred when driving straight",
-    "Uneven inner or outer tyre wear",
-    "Steering vibration at motorway speeds"
-];
-
-const balancingSigns = [
-    "Vibration in steering wheel at 80–120km/h",
-    "Seat or floor vibration at specific speeds",
-    "Scalloped or cupped tyre wear pattern",
-    "Worsens with speed, not road surface"
-];
-
-const rotationPatterns = [
-    "Forward cross (FWD vehicles)",
-    "Rearward cross (RWD & AWD vehicles)",
-    "X-pattern (symmetrical tyres only)",
-    "Side-to-side (directional tyres only)"
+const tyreCategories = [
+    {
+        type: "Passenger Car Tyres",
+        icon: "car",
+        bestFor: "Sedans, hatchbacks, and compact cars",
+        desc: "Standard touring tyres designed for quiet ride comfort, reliable dry-weather grip, and even tread wear for daily urban and highway commuting. Tyres must match the vehicle manufacturer's specified dimensions, load index, and speed rating."
+    },
+    {
+        type: "SUV & Crossover Tyres",
+        icon: "tools",
+        bestFor: "Compact to full-size SUVs & crossovers",
+        desc: "Built with reinforced carcasses and higher load ratings to support heavier vehicle weights while delivering stable highway cruising and comfortable family travel."
+    },
+    {
+        type: "All-Terrain (A/T) & 4x4 Tyres",
+        icon: "circleDot",
+        bestFor: "4WDs, pickups, and dual-purpose driving",
+        desc: "Features open tread patterns and reinforced sidewalls engineered for balanced performance on paved motorways as well as desert sand and gravel tracks."
+    },
+    {
+        type: "Run-Flat Tyres (RFT)",
+        icon: "shield",
+        bestFor: "Vehicles engineered without spare wheels",
+        desc: "Constructed with reinforced, self-supporting sidewalls that allow controlled driving after a loss of air pressure. Maximum driving distance and speed vary by tyre brand; always refer to the specific tyre manufacturer's operating instructions."
+    },
+    {
+        type: "Ultra-High-Performance (UHP) Tyres",
+        icon: "gauge",
+        bestFor: "Sports cars, coupes, and high-output sedans",
+        desc: "Engineered with rigid tread blocks and high-traction rubber compounds to deliver maximum steering precision and high-speed stability. Specified with V, W, or Y speed ratings."
+    }
 ];
 
 // ---------------------------------------------------------------------------
-// Pricing Guide Table
+// Pricing Guide Table (Provisional Rates for Reference)
 // ---------------------------------------------------------------------------
 const pricingRows = [
-    { service: "Passenger Car Tyre Supply & Fit (per tyre)", price: "From AED 150 [CONFIRM: entry passenger tyre pricing]" },
-    { service: "Mid-Range Touring Tyre Supply & Fit", price: "From AED 250/tyre [CONFIRM: mid-range tyre pricing]" },
-    { service: "Premium Brand Tyre Supply & Fit", price: "From AED 450/tyre [CONFIRM: premium tyre pricing]" },
-    { service: "SUV & 4x4 Tyre Supply & Fit", price: "From AED 280/tyre [CONFIRM: SUV tyre pricing]" },
-    { service: "Tyre Mounting & Balancing (customer-supplied)", price: "AED 35 – 60/tyre [CONFIRM: mounting labour fee]" },
-    { service: "Computerised Dynamic Wheel Balancing (per wheel)", price: "AED 20 – 35 [CONFIRM: wheel balancing fee]" },
-    { service: "Computerised 4-Wheel Laser Alignment", price: "AED 100 – 180 [CONFIRM: 4-wheel alignment fee]" },
-    { service: "Tyre Rotation (all 4 wheels)", price: "AED 50 – 80 [CONFIRM: tyre rotation fee]" },
-    { service: "Puncture Repair (internal patch & plug)", price: "AED 35 – 60 [CONFIRM: puncture repair fee]" },
-    { service: "Valve Stem Replacement (rubber or metal)", price: "AED 15 – 30/wheel [CONFIRM: valve stem fee]" },
-    { service: "TPMS Sensor Diagnostics & Reset", price: "AED 75 – 150 [CONFIRM: TPMS service fee]" }
-];
-
-// ---------------------------------------------------------------------------
-// Dubai Tyre Safety Checklist
-// ---------------------------------------------------------------------------
-const checklist = [
-    "Check cold inflation pressure monthly - more frequently in summer",
-    "Inspect sidewalls weekly for cracking or bulging",
-    "Check tread depth every 6 months - minimum 2.5mm for safety, 1.6mm legal limit",
-    "Check DOT date code - replace any tyre over 5 years",
-    "Carry a TPMS gauge - dashboard TPMS only triggers below ~25% under-inflation",
-    "Park in shade where possible - UV and heat accelerate sidewall degradation",
-    "Do not over-inflate to compensate for heat - use manufacturer cold pressure"
+    {
+        service: "Entry-Level Passenger Tyres",
+        price: "From AED 150 / tyre",
+        included: "Tyre supply & tyre mounting. Dynamic wheel balancing included with purchase; wheel alignment charged separately."
+    },
+    {
+        service: "Mid-Range Touring Tyres",
+        price: "From AED 250 / tyre",
+        included: "Quality branded touring tyre supply, tyre mounting, and dynamic balancing per fitted tyre."
+    },
+    {
+        service: "Premium Brand Tyres",
+        price: "From AED 450 / tyre",
+        included: "Premium tyre supply (Michelin, Bridgestone, Continental, Pirelli), mounting, and dynamic balancing."
+    },
+    {
+        service: "SUV & 4x4 Tyres",
+        price: "From AED 280 / tyre",
+        included: "High load-index SUV/crossover tyre supply, mounting, and heavy-duty wheel balancing."
+    },
+    {
+        service: "Tyre Mounting (Customer-Supplied)",
+        price: "AED 35 – 60 / tyre",
+        included: "Labour for demounting old tyre and mounting customer-supplied tyre onto rim. Balancing quoted separately."
+    },
+    {
+        service: "Wheel Balancing (Dynamic)",
+        price: "AED 20 – 35 / wheel",
+        included: "Wheel unbalance assessment and installation of precision counter-balancing weights."
+    },
+    {
+        service: "Four-Wheel Alignment",
+        price: "AED 100 – 180",
+        included: "Front and rear camber, caster, and toe angle measurement and adjustment where adjustable."
+    },
+    {
+        service: "Tyre Rotation",
+        price: "AED 50 – 80 (set of 4)",
+        included: "4-wheel position rotation according to vehicle drive layout to promote even tread wear."
+    },
+    {
+        service: "Puncture Repair",
+        price: "AED 35 – 60",
+        included: "Tread crown puncture inspection, demounting, and internal puncture repair where tyre safety permits."
+    },
+    {
+        service: "Valve Stem Replacement",
+        price: "AED 15 – 30 / wheel",
+        included: "Replacement rubber or metal valve stem to prevent air leakage around the valve seat."
+    },
+    {
+        service: "TPMS Diagnostics & Service",
+        price: "AED 75 – 150",
+        included: "Electronic TPMS sensor diagnostic scan, battery/sensor condition check, and system reset."
+    }
 ];
 
 // ---------------------------------------------------------------------------
@@ -191,34 +271,34 @@ const checklist = [
 // ---------------------------------------------------------------------------
 const reasons = [
     {
-        icon: "circle",
-        title: "Certified GSO Brands & Fresh DOT Codes",
-        desc: "We supply brand-new tyres carrying Gulf Standardization Organization (GSO) conformity certification, verified for Gulf climate heat resistance with fresh manufacturing dates. [CONFIRM: tyre brand inventory and distributor partnerships]"
+        icon: "shield",
+        title: "Established Independent Workshop (Since 2012)",
+        desc: "Serving Dubai motorists since 2012 with over 8,500 vehicles serviced and an established 4.8-star Google rating at our Al Satwa workshop."
     },
     {
-        icon: "crosshairs",
-        title: "Computerised 4-Wheel Laser Alignment",
-        desc: "Proper wheel geometry prevents premature tyre edge scrubbing. Our workshop utilizes computerised optical sensors to check and adjust camber, caster, and toe settings to factory specifications. [CONFIRM: whether 4-wheel alignment check is complimentary or charged separately]"
+        icon: "tools",
+        title: "Experienced Team of 8 Mechanics",
+        desc: "Our workshop team of 8 skilled mechanics provides thorough inspection, wheel mounting, dynamic balancing, and suspension alignment checks."
     },
     {
         icon: "calendar",
-        title: "Comprehensive Safety & DOT Inspection",
-        desc: "Every wheel service includes a complete physical safety assessment checking sidewall integrity, bead seating, remaining tread depth, and tyre age so you drive with verified roadworthiness."
-    },
-    {
-        icon: "shield",
-        title: "Exact Manufacturer Load & Speed Match",
-        desc: "We match the exact dimensional size, load index, and speed rating specified on your vehicle's door jamb placard, ensuring high-speed motorway safety and brake stability."
+        title: "Fresh Manufacturing DOT Codes",
+        desc: "We supply brand-new tyres carrying recognized Gulf climate specifications with verified production dates for road safety and testing compliance."
     },
     {
         icon: "receipt",
-        title: "Transparent Itemised Estimates",
-        desc: "You receive a clear quotation detailing tyre unit price, mounting, balancing, and environmental disposal of old tyres, with no unexpected fees at completion."
+        title: "Transparent Quotation Before Work",
+        desc: "You receive a clear, itemised written quote outlining tyre costs, mounting, and balancing before any work proceeds, with no hidden charges."
+    },
+    {
+        icon: "crosshairs",
+        title: "Accurate Wheel Balancing & Alignment",
+        desc: "We dynamically balance every fitted wheel and inspect alignment settings to protect your tyre investment from premature, uneven wear."
     },
     {
         icon: "car",
-        title: "Al Satwa Workshop & Mobile Roadside Help",
-        desc: "Our 222 Al Satwa Road garage is equipped with tyre mounting and balancing machines, while our mobile roadside team assists with flat tyres, spare changes, and emergency puncture callouts across central Dubai. [CONFIRM: mobile tyre replacement and on-site fitting van capability]"
+        title: "Central Al Satwa Location",
+        desc: "Conveniently located at 222 Al Satwa Road, easily accessible from Sheikh Zayed Road, Jumeirah, and Downtown Dubai. Open 7 days a week."
     }
 ];
 
@@ -228,27 +308,27 @@ const reasons = [
 const faqs = [
     {
         q: "How long do car tyres typically last in Dubai?",
-        a: "In Dubai's climate, passenger car tyres typically last 30,000–50,000 km, while heavier SUVs often see 25,000–40,000 km depending on driving habits and road conditions. However, age is as critical as mileage: under UAE regulations, tyres older than 5 years from their DOT production date cannot pass official RTA roadworthiness tests and should be replaced regardless of tread depth because thermal cycles harden and degrade the rubber internally."
+        a: "In Dubai, passenger car tyres typically last 30,000 to 50,000 km, while heavier SUVs often see 25,000 to 40,000 km, depending on driving habits, mileage, and maintenance. However, tyre age is just as important as mileage. In the UAE's hot climate, rubber compounds harden and oxidize over time. For annual RTA vehicle testing, tyres older than 5 years from their DOT manufacturing date generally fail roadworthiness checks and must be replaced regardless of remaining tread depth."
     },
     {
         q: "What tyre pressure should I maintain during the Dubai summer?",
-        a: "Always inflate your tyres to the vehicle manufacturer's recommended cold pressure, found on the placard inside the driver's door jamb or in the owner's manual. High ambient temperatures elevate tyre pressure by approximately 1 PSI for every 5.5°C rise. Check pressure when tyres are cold (parked for at least three hours) and never bleed air from hot tyres after driving."
+        a: "Always maintain the cold tyre inflation pressure specified by your vehicle manufacturer. This is found on the placard inside the driver's door jamb or in the owner's manual. Do not guess a universal figure or intentionally under-inflate tyres to compensate for summer heat; under-inflated tyres generate dangerous internal heat during highway driving. Always check tyre pressures when the tyres are cold (parked for at least three hours or driven less than 2 km)."
     },
     {
         q: "Can a punctured tyre be repaired, or does it need replacement?",
-        a: "A puncture can be safely repaired if the puncture is located within the central three-quarters of the tread crown, the damage diameter is 6mm or smaller, and the tyre was not driven flat. Safe repair requires removing the tyre from the wheel rim and installing a combined internal plug-patch. Punctures in the sidewall or shoulder cannot be repaired and require tyre replacement."
+        a: "Whether a puncture can be repaired depends on its size, location, and the tyre manufacturer's guidance. A puncture can generally be repaired if it is small (typically up to 6 mm) and located within the central three-quarters of the tread crown, and the tyre was not driven flat. Safe repair requires demounting the tyre to inspect internal casing damage and installing a combination patch-and-plug. Punctures in the tyre shoulder or sidewall cannot be repaired safely and require tyre replacement."
     },
     {
         q: "How do I read my car tyre size and specifications?",
-        a: "Tyre sizes are moulded onto the sidewall in a standardized code, such as 225/55 R17 97W. In this example, 225 is the section width in millimetres, 55 is the aspect ratio (sidewall height as a percentage of width), R indicates radial casing, 17 is the wheel rim diameter in inches, 97 is the load index (730 kg per tyre), and W is the speed rating (up to 270 km/h). Replacement tyres must match or exceed original equipment load and speed ratings."
+        a: "Tyre sizes are stamped on the sidewall in a sequence such as 225/55 R17 97W. Here, 225 is the tyre width in millimetres, 55 is the aspect ratio (sidewall height as 55% of width), R denotes radial construction, and 17 is the wheel rim diameter in inches. 97 is the load index (maximum load capacity per tyre, 730 kg), and W is the speed rating (up to 270 km/h). Replacement tyres must match or exceed your vehicle manufacturer's specified load index and speed rating."
     },
     {
         q: "How often should wheel alignment and balancing be performed?",
-        a: "We recommend checking wheel alignment every 15,000–20,000 km, whenever new tyres are fitted, or immediately if you notice the car pulling to one side or uneven tread wear. Dynamic wheel balancing should be done whenever tyres are mounted, rotated, or if you feel a steering wheel shimmy between 80 and 120 km/h."
+        a: "Wheel balancing should be performed whenever new tyres are fitted, after a puncture repair, or if you feel steering wheel or seat vibration at motorway speeds. Wheel alignment should be checked every 15,000 to 20,000 km, whenever you install a new set of tyres, or if you notice your car pulling to one side or tyres wearing unevenly on the shoulders."
     },
     {
         q: "Are budget tyres safe for driving in the UAE?",
-        a: "Budget tyres are safe provided they carry official GSO/ESMA conformity marking with high temperature ratings (Temperature A) suitable for tarmac temperatures exceeding 60°C. However, premium and mid-range brands generally offer superior braking distances, quieter highway ride, and longer tread life. Never install tyres with lower load or speed ratings than specified by your vehicle manufacturer."
+        a: "Budget tyres are safe for UAE roads provided they carry official GSO conformity marking and appropriate temperature ratings for high-temperature climates. However, premium and mid-range tyres generally provide shorter braking distances, quieter highway cruising, and longer tread life. Regardless of brand, always ensure the tyres match the load index and speed rating specified for your vehicle."
     }
 ];
 
@@ -256,10 +336,10 @@ const faqs = [
 // Related Services
 // ---------------------------------------------------------------------------
 const relatedServices = [
-    { icon: "search", name: "Car Inspection in Dubai", desc: "50-point check including tyre, brake & suspension", href: "/car-inspection-dubai" },
-    { icon: "alert", name: "Roadside Assistance Dubai", desc: "Emergency flat tyre & puncture response", href: "/roadside-assistance-dubai" },
-    { icon: "tools", name: "Annual Car Maintenance Dubai", desc: "Full service bundle including tyre check", href: "/car-maintenance-dubai" },
-    { icon: "circle", name: "Oil Change Dubai", desc: "Book alongside your tyre change - single visit", href: "/engine-oil-change-dubai" }
+    { icon: "search", name: "Car Inspection in Dubai", desc: "Comprehensive vehicle safety, tyre, brake & chassis check", href: "/car-inspection-dubai" },
+    { icon: "alert", name: "Roadside Assistance Dubai", desc: "Emergency roadside support, flat tyre change & towing", href: "/roadside-assistance-dubai" },
+    { icon: "tools", name: "Annual Car Maintenance Dubai", desc: "Complete vehicle servicing bundle including brakes and tyres", href: "/car-maintenance-dubai" },
+    { icon: "car", name: "Oil Change Dubai", desc: "Engine oil and filter change during your workshop visit", href: "/engine-oil-change-dubai" }
 ];
 
 // ---------------------------------------------------------------------------
@@ -278,7 +358,7 @@ const pageSchema = {
                 "@id": "https://dubaicarrepairservice.com/tyre-replacement-dubai"
             },
             "serviceType": "Tyre Replacement, Wheel Alignment and Balancing",
-            "description": "Professional tyre replacement and wheel services in Dubai including tyre fitting, wheel balancing and alignment for all vehicle types. We handle all major tyre brands with fast service available 7AM–10PM across Dubai.",
+            "description": "Professional tyre replacement and wheel services in Dubai including tyre fitting, wheel balancing and alignment for all vehicle types. We handle all major tyre brands at our Al Satwa workshop, open 7 days a week.",
             "provider": {
                 "@id": "https://dubaicarrepairservice.com/#localbusiness"
             },
@@ -288,7 +368,7 @@ const pageSchema = {
             },
             "offers": {
                 "@type": "Offer",
-                "price": 120,
+                "price": 150,
                 "priceCurrency": "AED",
                 "availability": "https://schema.org/InStock"
             }
@@ -349,10 +429,10 @@ const pageSchema = {
                 </nav>
                 <span class="dcrs-badge">Al Satwa, Dubai · All Tyre Brands · Alignment &amp; Balancing</span>
                 <h1 class="dcrs-hero-banner__title">
-                    Tyre Change Dubai - Supply, Fitting, Balancing &amp; Alignment
+                    Tyre Replacement &amp; Fitting Dubai - Balancing &amp; Alignment
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Sustained highway speeds on Sheikh Zayed Road combined with summer asphalt temperatures exceeding 60°C place immense thermal and mechanical stress on automotive tyres across Dubai. Our tyre change in Dubai encompasses brand-new tyre supply, laser-calibrated dynamic balancing, precision 3D four-wheel alignment, and tubeless valve replacements. Operating from our central Al Satwa workshop, our experienced tyre technicians ensure safe road grip, optimal tread wear, and smooth handling with fast and affordable pricing.
+                    Need a tyre change or replacement in Dubai? At Dubai Car Repair Service in Al Satwa, we supply and fit brand-new tyres for all passenger cars, SUVs, and 4x4s. Every tyre replacement is backed by expert wheel mounting, dynamic balancing, and wheel alignment checks to ensure maximum grip, safe braking, and smooth highway handling. From AED 150 per tyre.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -372,17 +452,17 @@ const pageSchema = {
                     <div class="dcrs-split__content">
                         <div class="dcrs-kicker">Service Overview</div>
                         <h2 class="dcrs-heading__title">
-                            Tyre Change Dubai - Heat Safety, Supply &amp; Precision Alignment
+                            Tyre Replacement Dubai - Heat Safety, Supply &amp; Precision Alignment
                         </h2>
                         <div class="dcrs-prose">
                             <p>
-                                Driving conditions in the UAE represent one of the most demanding environments in the world for pneumatic tyres. Extreme road surface heat causes rubber vulcanization compounds to dry out and harden, resulting in micro-cracking along tyre shoulders and sidewalls. Under UAE Ministry of Industry and Advanced Technology (MoIAT) and GSO safety regulations, passenger tyres older than five years must not be operated on roads, regardless of remaining tread depth, due to structural carcass fatigue and blowout risk.
+                                Driving conditions across the UAE place rigorous demands on automotive tyres. High summer road surface temperatures accelerate rubber oxidation, hardening tread compounds and leading to premature sidewall weathering. Under UAE standard guidelines and annual RTA roadworthiness vehicle inspections, tyre age is strictly evaluated. Tyres older than five years from their DOT manufacturing date (stamped as a 4-digit code on the sidewall, showing production week and year) generally fail testing and should be replaced regardless of tread depth. While the legal minimum tread depth across the UAE is 1.6 mm, automotive safety specialists recommend considering replacement when tread wears down to 2.5 mm to 3.0 mm for dependable wet-grip and high-speed braking stability.
                             </p>
                             <p>
-                                At Dubai Car Repair Service, we provide complete tyre safety evaluations on every visit, checking the four-digit DOT manufacture date stamp, tread depth across inside and outside shoulders, and inflation pressure against factory door-jamb specifications. Replacing tyres without precision dynamic wheel balancing and 3D wheel alignment causes premature uneven wear, steering wheel vibration, and excessive fuel consumption. While your vehicle is on the hoist, our mechanics can also carry out a comprehensive <a href="/car-inspection-dubai" class="dcrs-inline-link">vehicle safety check</a> or check your suspension and <a href="/car-maintenance-dubai" class="dcrs-inline-link">brake pad wear</a>.
+                                Maintaining correct tyre pressure and specifications is essential for road safety. Tyre pressure should always follow your vehicle manufacturer's cold-inflation specification (found on the driver's door-jamb sticker or in the owner's manual), checked when the tyres are cool. Furthermore, wheel balancing and wheel alignment are distinct services: balancing distributes weight evenly around the wheel assembly to prevent steering vibration, whereas wheel alignment adjusts the suspension angles so tyres meet the road squarely. Whenever you install new tyres, we balance each wheel and recommend an alignment check to prevent premature, irregular tyre wear. Our technicians can also perform a routine <a href="/car-inspection-dubai" class="dcrs-inline-link">vehicle safety check</a> or inspect your brake components during regular <a href="/car-maintenance-dubai" class="dcrs-inline-link">car maintenance</a>.
                             </p>
                             <p>
-                                We supply leading international tyre brands tailored to Dubai's climate, including high-traction Michelin, Bridgestone, Continental, Pirelli, Yokohama, and budget-friendly alternatives with A-rated temperature classifications. Customers can visit our workshop at 222 Al Satwa Road for same-day drive-in fitting, or request emergency puncture repair and spare wheel installation via our <a href="/roadside-assistance-dubai" class="dcrs-inline-link">roadside assistance team</a>. To check size availability or request a quote, reach out to our <a href="/contact" class="dcrs-inline-link">workshop service desk</a>.
+                                We supply a wide range of reliable tyre brands suitable for driving conditions in Dubai, from premium touring and high-performance tyres to dependable everyday options matching your vehicle's required load index and speed rating. You can visit our workshop at 222 Al Satwa Road for prompt fitting, balancing, and tyre care. To check tyre size availability or get an itemised estimate for your vehicle, simply call us or reach out via WhatsApp.
                             </p>
                         </div>
                     </div>
@@ -391,14 +471,14 @@ const pageSchema = {
                         <div class="dcrs-photo-card">
                             <img
                                 src={service3Image.src}
-                                alt="Technician fitting and balancing a tyre during a tyre change at Dubai Car Repair Service Al Satwa workshop"
+                                alt="Tyre replacement and precision wheel balancing at Dubai Car Repair Service workshop in Al Satwa"
                                 width="600"
                                 height="400"
                                 loading="eager"
                                 class="dcrs-photo-card__img"
                             />
                             <div class="dcrs-photo-badge">
-                                <div class="dcrs-photo-badge__value">AED 120+</div>
+                                <div class="dcrs-photo-badge__value">AED 150+</div>
                                 <div class="dcrs-photo-badge__label">Per Tyre From</div>
                             </div>
                         </div>
@@ -414,26 +494,24 @@ const pageSchema = {
                     <div class="dcrs-kicker">Fast and Affordable Pricing</div>
                     <h2 class="dcrs-heading__title">Tyre Replacement &amp; Wheel Alignment Pricing Guide</h2>
                     <p class="dcrs-heading__sub">
-                        Transparent pricing per tyre, including fitting, new tubeless valve, and computerized wheel balancing. Alignment is transparently itemized.
+                        Transparent pricing guide per tyre and wheel service. Final quotation is provided before any work begins.
                     </p>
                 </div>
 
                 <div class="dcrs-table-wrapper">
-                    <table class="dcrs-pricing-table">
+                    <table class="dcrs-table">
                         <thead>
                             <tr>
-                                <th>Category / Service</th>
-                                <th>Rim Size Range</th>
-                                <th>Starting Price</th>
-                                <th>Included Work</th>
+                                <th>Service / Tyre Category</th>
+                                <th>Typical Price</th>
+                                <th>Inclusions &amp; Scope</th>
                             </tr>
                         </thead>
                         <tbody>
                             {pricingRows.map((r) => (
                                 <tr>
-                                    <td class="dcrs-table-service"><strong>{r.category}</strong></td>
-                                    <td>{r.size}</td>
-                                    <td class="dcrs-table-price">{r.price}</td>
+                                    <td class="dcrs-table-service"><strong>{r.service}</strong></td>
+                                    <td class="dcrs-table__price">{r.price}</td>
                                     <td class="dcrs-table-desc">{r.included}</td>
                                 </tr>
                             ))}
@@ -441,8 +519,8 @@ const pageSchema = {
                     </table>
                 </div>
 
-                <p class="dcrs-pricing-disclaimer">
-                    <Fragment set:html={icons.info} /> Prices vary by specific brand, tyre model (e.g. touring vs. high-performance ultra-low profile), and speed rating. Run-flat tyres and specialist off-road tread patterns carry specific pricing. Final quotation confirmed upon vehicle tyre size verification.
+                <p class="dcrs-table-note">
+                    <Fragment set:html={icons.infoCircle} /> Note: Listed rates are provisional estimates for reference. Final prices depend on exact tyre dimensions, brand, speed rating, and vehicle specifications. All work is quoted transparently before proceeding.
                 </p>
             </div>
         </section>
@@ -452,9 +530,9 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Service Process</div>
-                    <h2 class="dcrs-heading__title">Our Precision Tyre Fitting, Balancing &amp; Alignment Workflow</h2>
+                    <h2 class="dcrs-heading__title">Our Tyre Fitting, Balancing &amp; Alignment Workflow</h2>
                     <p class="dcrs-heading__sub">
-                        Every tyre replacement follows a strict technical protocol to ensure maximum safety, smooth rolling resistance, and even tread wear.
+                        Every tyre replacement follows a thorough five-step procedure to ensure road grip, safety, and even tread wear.
                     </p>
                 </div>
 
@@ -462,27 +540,27 @@ const pageSchema = {
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">1</span>
                         <h3 class="dcrs-step-card__title">Tyre &amp; Rim Specification Check</h3>
-                        <p class="dcrs-step-card__desc">We verify exact width, aspect ratio, diameter, load index, speed rating, and DOT production dates against manufacturer standards.</p>
+                        <p class="dcrs-step-card__desc">We verify exact tyre dimensions (width, profile, rim diameter), load index, speed rating, and DOT production dates against vehicle specifications.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">2</span>
-                        <h3 class="dcrs-step-card__title">Touchless Tyre Demounting</h3>
-                        <p class="dcrs-step-card__desc">Using protective rim-clamp machinery, we demount old tyres without scratching delicate alloy wheels or damaging TPMS sensors.</p>
+                        <h3 class="dcrs-step-card__title">Careful Old Tyre Demounting</h3>
+                        <p class="dcrs-step-card__desc">The worn tyre is deflated and demounted carefully from the wheel rim, taking precautions to protect rim edges and TPMS sensors.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">3</span>
-                        <h3 class="dcrs-step-card__title">Valve Replacement &amp; Beading</h3>
-                        <p class="dcrs-step-card__desc">We install fresh valve stems, apply non-corrosive bead lubricant, seat tyres cleanly, and inflate to exact door-jamb pressures.</p>
+                        <h3 class="dcrs-step-card__title">Fitting Replacement &amp; Pressure Check</h3>
+                        <p class="dcrs-step-card__desc">We mount the new tyre using proper bead lubricant, replace the valve stem when needed, seat the tyre bead, and inflate to door-jamb cold pressure.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">4</span>
-                        <h3 class="dcrs-step-card__title">Computerized Dynamic Balancing</h3>
-                        <p class="dcrs-step-card__desc">Wheels are spun on laser dynamic balancers to apply precision adhesive weights, eliminating high-speed steering vibration.</p>
+                        <h3 class="dcrs-step-card__title">Dynamic Wheel Balancing</h3>
+                        <p class="dcrs-step-card__desc">The assembled wheel is spun on a dynamic wheel balancer to identify weight discrepancies and fit counter-balancing weights for smooth driving.</p>
                     </div>
                     <div class="dcrs-step-card">
                         <span class="dcrs-step-card__num">5</span>
-                        <h3 class="dcrs-step-card__title">3D Optical 4-Wheel Alignment</h3>
-                        <p class="dcrs-step-card__desc">Camber, caster, and toe angles are adjusted to factory specifications to eliminate drift and protect your investment.</p>
+                        <h3 class="dcrs-step-card__title">Wheel Alignment Check &amp; Adjustment</h3>
+                        <p class="dcrs-step-card__desc">Suspension geometry is measured and camber, caster, and toe settings are adjusted as required to prevent uneven shoulder wear and vehicle pulling.</p>
                     </div>
                 </div>
             </div>
@@ -492,10 +570,10 @@ const pageSchema = {
         <section class="dcrs-section dcrs-section--tint" id="brands">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Brands &amp; Types</div>
+                    <div class="dcrs-kicker">Brands &amp; Categories</div>
                     <h2 class="dcrs-heading__title">Tyre Brands &amp; Categories We Supply in Dubai</h2>
                     <p class="dcrs-heading__sub">
-                        We stock certified tyres from premier global manufacturers engineered for superior high-temperature performance.
+                        We supply quality tyres from recognized global manufacturers matching your vehicle's required dimensions, load index, and speed rating.
                     </p>
                 </div>
 
@@ -514,7 +592,7 @@ const pageSchema = {
                 <div class="dcrs-types-section">
                     <h3 class="dcrs-subheading">Tyre Categories for Dubai Roads</h3>
                     <div class="dcrs-types-grid">
-                        {tyreTypes.map((t) => (
+                        {tyreCategories.map((t) => (
                             <div class="dcrs-type-card">
                                 <div class="dcrs-type-card__head">
                                     <span class="dcrs-type-card__icon"><Fragment set:html={icons[t.icon]} /></span>
@@ -538,7 +616,7 @@ const pageSchema = {
                     <div class="dcrs-kicker">Warning Signs</div>
                     <h2 class="dcrs-heading__title">8 Signs Your Tyres Need Replacing in Dubai</h2>
                     <p class="dcrs-heading__sub">
-                        In Dubai, tyres often become structurally unsafe before tread depth appears completely worn. Watch for these indicators.
+                        In Dubai's climate, tyres often become structurally unsafe before tread depth is completely worn away. Watch for these indicators.
                     </p>
                 </div>
 
@@ -568,7 +646,7 @@ const pageSchema = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Tyre Fitting</h2>
-                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, laser alignment gear, and fast and affordable pricing.</p>
+                    <p class="dcrs-heading__sub">Experienced mechanics, accurate dynamic balancing, and transparent pricing at our Al Satwa workshop.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -579,7 +657,7 @@ const pageSchema = {
                             </span>
                             <div>
                                 <h3 class="dcrs-reason-card__title">{r.title}</h3>
-                                <p class="dcrs-reason-card__text">{r.desc}</p>
+                                <p class="dcrs-reason-card__desc">{r.desc}</p>
                             </div>
                         </div>
                     ))}
@@ -592,7 +670,7 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">FAQ</div>
-                    <h2 class="dcrs-heading__title">Tyre Change Dubai - Frequently Asked Questions</h2>
+                    <h2 class="dcrs-heading__title">Tyre Replacement Dubai - Frequently Asked Questions</h2>
                 </div>
 
                 <div class="dcrs-faq-accordion">
@@ -640,12 +718,12 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Guaranteed Quality &amp; Safety</span>
+                        <span class="dcrs-cta-banner__badge">Al Satwa Workshop · All Makes &amp; Models</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Tyre Change &amp; Alignment in Dubai Today
+                            Book Your Tyre Replacement in Dubai Today
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing from AED 120 per tyre. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us for prompt tyre size availability.
+                            Affordable pricing from AED 150 per tyre. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or contact us for prompt tyre size availability.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -653,7 +731,7 @@ const pageSchema = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
                         </a>
                     </div>
                 </div>
@@ -698,8 +776,8 @@ const pageSchema = {
     /* 1. HERO BANNER */
     .dcrs-hero-banner {
         position: relative;
-        background-color: var(--ink);
-        color: var(--white);
+        background-color: var(--ink, #10201F);
+        color: var(--white, #FFFFFF);
         padding: clamp(3.5rem, 8vw, 5.5rem) 0;
         overflow: hidden;
         min-height: 500px;
@@ -756,7 +834,7 @@ const pageSchema = {
     }
 
     .dcrs-breadcrumb a:hover {
-        color: var(--brass);
+        color: var(--brass, #D48E33);
     }
 
     .dcrs-badge {
@@ -765,7 +843,7 @@ const pageSchema = {
         font-size: 0.78rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--brass);
+        color: var(--brass, #D48E33);
         font-weight: 600;
         margin-bottom: 0.6rem;
     }
@@ -776,7 +854,7 @@ const pageSchema = {
         line-height: 1.2;
         letter-spacing: -0.01em;
         margin: 0 0 1rem;
-        color: var(--white);
+        color: var(--white, #FFFFFF);
         word-break: break-word;
         overflow-wrap: break-word;
     }
@@ -863,7 +941,11 @@ const pageSchema = {
         padding: clamp(3rem, 6vw, 4.5rem) 0;
     }
 
-    .dcrs-section--tinted {
+    .dcrs-section--paper {
+        background-color: var(--chalk, #FAF8F5);
+    }
+
+    .dcrs-section--tint {
         background-color: #f1f3f5;
     }
 
@@ -898,11 +980,6 @@ const pageSchema = {
         line-height: 1.25;
         color: var(--ink, #10201F);
         margin: 0 0 0.75rem;
-    }
-
-    .dcrs-heading__title--col {
-        font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-        margin-bottom: 1.25rem;
     }
 
     .dcrs-heading__sub {
@@ -984,7 +1061,307 @@ const pageSchema = {
         margin-top: 3px;
     }
 
-    /* 5. 8 SIGNS GRID */
+    /* 5. PRICING TABLE */
+    .dcrs-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #dee2e6;
+        margin-bottom: 0.85rem;
+        background: #fff;
+    }
+
+    .dcrs-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    .dcrs-table thead th {
+        background: var(--ink, #10201F);
+        color: #fff;
+        padding: 0.85rem 1rem;
+        font-weight: 600;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .dcrs-table tbody td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #e9ecef;
+        color: #444;
+        vertical-align: top;
+    }
+
+    .dcrs-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .dcrs-table tbody tr:hover {
+        background-color: rgba(193, 128, 46, 0.05);
+    }
+
+    .dcrs-table-service {
+        color: var(--ink, #10201F);
+        font-weight: 600;
+    }
+
+    .dcrs-table__price {
+        font-weight: 700;
+        color: var(--brass, #D48E33);
+        white-space: nowrap;
+    }
+
+    .dcrs-table-desc {
+        font-size: 0.86rem;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    .dcrs-table-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.82rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .dcrs-table-note :global(svg) {
+        width: 16px;
+        height: 16px;
+        color: var(--brass, #D48E33);
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    /* 6. SERVICE PROCESS (5 STEPS) */
+    .dcrs-steps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-steps-grid {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    .dcrs-step-card {
+        background: #fff;
+        border: 1px solid #e4e8ec;
+        border-radius: 8px;
+        padding: 1.4rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dcrs-step-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .dcrs-step-card__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--brass, #D48E33);
+        color: var(--ink, #10201F);
+        font-weight: 800;
+        font-size: 0.9rem;
+    }
+
+    .dcrs-step-card__title {
+        font-size: 0.96rem;
+        font-weight: 700;
+        color: var(--ink, #10201F);
+        margin: 0;
+        line-height: 1.35;
+    }
+
+    .dcrs-step-card__desc {
+        font-size: 0.84rem;
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* 7. BRANDS & CATEGORIES */
+    .dcrs-brands-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 576px) {
+        .dcrs-brands-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .dcrs-brands-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .dcrs-brand-card {
+        background: #fff;
+        border: 1px solid #e4e8ec;
+        border-radius: 10px;
+        padding: 1.35rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dcrs-brand-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .dcrs-brand-card__tier {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        color: var(--brass, #D48E33);
+        font-weight: 700;
+        margin-bottom: 0.35rem;
+    }
+
+    .dcrs-brand-card__name {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--ink, #10201F);
+        margin: 0 0 0.2rem;
+    }
+
+    .dcrs-brand-card__origin {
+        font-size: 0.78rem;
+        color: #777;
+        margin: 0 0 0.65rem;
+    }
+
+    .dcrs-brand-card__desc {
+        font-size: 0.84rem;
+        line-height: 1.6;
+        color: #555;
+        margin: 0 0 0.85rem;
+        flex-grow: 1;
+    }
+
+    .dcrs-brand-card__best {
+        font-size: 0.76rem;
+        color: var(--ink, #10201F);
+        background: #f1f5f5;
+        padding: 0.35rem 0.6rem;
+        border-radius: 4px;
+        font-weight: 600;
+    }
+
+    .dcrs-types-section {
+        margin-top: 1rem;
+    }
+
+    .dcrs-subheading {
+        font-family: 'Cinzel', serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--ink, #10201F);
+        margin: 0 0 1.25rem;
+        text-align: center;
+    }
+
+    .dcrs-types-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .dcrs-types-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dcrs-types-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .dcrs-type-card {
+        background: #fff;
+        border: 1px solid #e4e8ec;
+        border-radius: 10px;
+        padding: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .dcrs-type-card__head {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .dcrs-type-card__icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(193, 128, 46, 0.12);
+        color: var(--brass, #D48E33);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .dcrs-type-card__icon :global(svg) {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dcrs-type-card__title {
+        font-size: 0.96rem;
+        font-weight: 700;
+        color: var(--ink, #10201F);
+        margin: 0 0 0.2rem;
+    }
+
+    .dcrs-type-card__best {
+        font-size: 0.74rem;
+        color: #777;
+        font-weight: 500;
+    }
+
+    .dcrs-type-card__desc {
+        font-size: 0.84rem;
+        line-height: 1.6;
+        color: #555;
+        margin: 0;
+    }
+
+    /* 8. 8 WARNING SIGNS GRID */
     .dcrs-signs-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -1007,8 +1384,7 @@ const pageSchema = {
         background: #fff;
         border: 1px solid #e4e8ec;
         border-radius: 10px;
-        padding: 1.5rem 1.25rem;
-        text-align: center;
+        padding: 1.4rem 1.25rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         display: flex;
         flex-direction: column;
@@ -1016,393 +1392,64 @@ const pageSchema = {
     }
 
     .dcrs-sign-card:hover {
-        transform: translateY(-3px);
+        transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-    .dcrs-sign-card__icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--brass, #D48E33);
-        color: #fff;
+    .dcrs-sign-card__head {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-        flex-shrink: 0;
+        align-items: flex-start;
+        gap: 0.85rem;
+        margin-bottom: 0.75rem;
     }
 
-    .dcrs-sign-card__icon :global(svg) {
-        width: 22px;
-        height: 22px;
+    .dcrs-sign-card__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--brass, #D48E33);
+        color: var(--ink, #10201F);
+        font-weight: 800;
+        font-size: 0.9rem;
+        flex-shrink: 0;
     }
 
     .dcrs-sign-card__title {
         font-size: 0.95rem;
         font-weight: 700;
         color: var(--ink, #10201F);
-        margin: 0 0 0.5rem;
+        margin: 0 0 0.25rem;
+        line-height: 1.35;
+    }
+
+    .dcrs-sign-card .dcrs-badge {
+        margin-bottom: 0;
+        font-size: 0.72rem;
     }
 
     .dcrs-sign-card__desc {
         font-size: 0.84rem;
         line-height: 1.6;
-        color: #666;
-        margin: 0;
-    }
-
-    /* 6. COLUMNS 2 (BRANDS & TYPES / PRICING & TIPS) */
-    .dcrs-columns-2 {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: clamp(2rem, 5vw, 3.5rem);
-        width: 100%;
-    }
-
-    .dcrs-columns-2 > * {
-        min-width: 0;
-        max-width: 100%;
-    }
-
-    @media (min-width: 992px) {
-        .dcrs-columns-2 {
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        }
-    }
-
-    .dcrs-col-block {
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Brand List */
-    .dcrs-brand-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .dcrs-brand-item {
-        display: flex;
-        align-items: flex-start;
-        background: #f8f9fa;
-        border: 1px solid #e9ecef;
-        border-radius: 8px;
-        padding: 0.85rem 1rem;
-        gap: 1rem;
-    }
-
-    .dcrs-brand-item__name {
-        font-weight: 700;
-        font-size: 0.9rem;
-        color: var(--brass, #D48E33);
-        min-width: 90px;
-        flex-shrink: 0;
-    }
-
-    .dcrs-brand-item__desc {
-        font-size: 0.85rem;
         color: #555;
-        line-height: 1.5;
-    }
-
-    /* Tyre Types */
-    .dcrs-type-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.85rem;
-    }
-
-    .dcrs-type-card {
-        background: #f8f9fa;
-        border: 1px solid #e9ecef;
-        border-radius: 8px;
-        padding: 1rem;
-    }
-
-    .dcrs-type-card__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 0.5rem;
-        margin-bottom: 0.4rem;
-    }
-
-    .dcrs-type-card__title {
-        font-size: 0.92rem;
-        font-weight: 700;
-        color: var(--ink, #10201F);
-        margin: 0;
-    }
-
-    .dcrs-type-card__badge {
-        background: var(--brass, #D48E33);
-        color: var(--ink, #10201F);
-        font-size: 0.76rem;
-        font-weight: 700;
-        padding: 0.2rem 0.55rem;
-        border-radius: 4px;
-        white-space: nowrap;
-    }
-
-    .dcrs-type-card__desc {
-        font-size: 0.84rem;
-        line-height: 1.6;
-        color: #555;
-        margin: 0;
-    }
-
-    /* 7. ALIGNMENT & BALANCING (3 CARDS) */
-    .dcrs-cards-grid-3 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    @media (min-width: 768px) {
-        .dcrs-cards-grid-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    .dcrs-feature-card {
-        background: #fff;
-        border: 1px solid #e4e8ec;
-        border-radius: 10px;
-        padding: 1.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        display: flex;
-        flex-direction: column;
-    }
-
-    .dcrs-feature-card__header {
-        display: flex;
-        align-items: center;
-        gap: 0.85rem;
-        margin-bottom: 1rem;
-    }
-
-    .dcrs-feature-card__icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: var(--brass, #D48E33);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .dcrs-feature-card__icon :global(svg) {
-        width: 20px;
-        height: 20px;
-    }
-
-    .dcrs-feature-card__title {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--ink, #10201F);
-        margin: 0;
-        line-height: 1.3;
-    }
-
-    .dcrs-feature-card__desc {
-        font-size: 0.86rem;
-        line-height: 1.65;
-        color: #555;
-        margin: 0 0 1.25rem;
+        margin: 0 0 0.85rem;
         flex-grow: 1;
     }
 
-    .dcrs-feature-card__box {
-        background: #f8f9fa;
-        border-radius: 8px;
-        padding: 0.9rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .dcrs-feature-card__box-title {
-        font-weight: 700;
-        font-size: 0.85rem;
-        color: var(--ink, #10201F);
-        margin-bottom: 0.5rem;
-    }
-
-    .dcrs-feature-card__checklist {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.45rem;
-    }
-
-    .dcrs-feature-card__checklist li {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
-        font-size: 0.82rem;
-        color: #444;
-        line-height: 1.4;
-    }
-
-    .dcrs-feature-card__checklist :global(svg) {
-        width: 13px;
-        height: 13px;
-        color: var(--brass, #D48E33);
-        margin-top: 2px;
-        flex-shrink: 0;
-    }
-
-    .dcrs-feature-card__price {
-        font-size: 0.92rem;
-        font-weight: 700;
-        color: var(--brass, #D48E33);
-        margin-top: auto;
-    }
-
-    /* 8. PRICING TABLE & TIPS */
-    .dcrs-table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        width: 100%;
-        border-radius: 8px;
-        border: 1px solid #dee2e6;
-        margin-bottom: 0.85rem;
-    }
-
-    .dcrs-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.9rem;
-        text-align: left;
-    }
-
-    .dcrs-table thead th {
-        background: var(--ink, #10201F);
-        color: #fff;
-        padding: 0.75rem 1rem;
-        font-weight: 600;
-        border-bottom: 1px solid #dee2e6;
-    }
-
-    .dcrs-table tbody td {
-        padding: 0.7rem 1rem;
-        border-bottom: 1px solid #e9ecef;
-        color: #444;
-    }
-
-    .dcrs-table tbody tr:last-child td {
-        border-bottom: none;
-    }
-
-    .dcrs-table tbody tr:hover {
-        background-color: rgba(193, 128, 46, 0.05);
-    }
-
-    .dcrs-table__price {
-        font-weight: 600;
-        color: var(--ink, #10201F);
-        word-break: normal;
-        overflow-wrap: break-word;
-    }
-
-    .dcrs-table-note {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
+    .dcrs-sign-card__action {
         font-size: 0.8rem;
-        color: #666;
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    .dcrs-table-note :global(svg) {
-        width: 16px;
-        height: 16px;
-        color: var(--brass, #D48E33);
-        flex-shrink: 0;
-        margin-top: 2px;
-    }
-
-    /* Heat Alert Card */
-    .dcrs-heat-card {
-        background: linear-gradient(135deg, #10201F 0%, #173836 100%);
-        color: #fff;
-        border-radius: 10px;
-        padding: 1.4rem;
-        margin-bottom: 1.25rem;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    }
-
-    .dcrs-heat-card__header {
-        display: flex;
-        align-items: center;
-        gap: 0.65rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .dcrs-heat-card__header :global(svg) {
-        width: 20px;
-        height: 20px;
-        color: var(--brass-light, #E3A354);
-    }
-
-    .dcrs-heat-card__header h3 {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 0;
-    }
-
-    .dcrs-heat-card__text {
-        font-size: 0.86rem;
-        line-height: 1.65;
-        color: rgba(255, 255, 255, 0.9);
-        margin: 0;
-    }
-
-    /* Safety Checklist Card */
-    .dcrs-safety-card {
-        background: #f8f9fa;
-        border: 1px solid #e9ecef;
-        border-radius: 10px;
-        padding: 1.4rem;
-    }
-
-    .dcrs-safety-card__title {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--ink, #10201F);
-        margin: 0 0 1rem;
-    }
-
-    .dcrs-safety-checklist {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.65rem;
-    }
-
-    .dcrs-safety-checklist li {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.6rem;
-        font-size: 0.875rem;
         color: #444;
+        background: #f8f9fa;
+        border-left: 3px solid var(--brass, #D48E33);
+        padding: 0.55rem 0.75rem;
+        border-radius: 0 6px 6px 0;
         line-height: 1.5;
     }
 
-    .dcrs-safety-checklist :global(svg) {
-        width: 17px;
-        height: 17px;
-        color: var(--brass, #D48E33);
-        flex-shrink: 0;
-        margin-top: 2px;
+    .dcrs-sign-card__action strong {
+        color: var(--ink, #10201F);
     }
 
     /* 9. WHY CHOOSE US (6 CARDS) */
@@ -1474,83 +1521,70 @@ const pageSchema = {
     }
 
     /* 10. FAQ ACCORDION */
-    .dcrs-faq-wrap {
-        max-width: 820px;
-        margin: 0 auto;
-    }
-
     .dcrs-faq-accordion {
+        max-width: 860px;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 0.85rem;
+        gap: 0.75rem;
     }
 
     .dcrs-faq-item {
+        background: #fff;
         border: 1px solid #e4e8ec;
         border-radius: 8px;
-        background: #fff;
         overflow: hidden;
-        transition: border-color 0.2s;
+        transition: border-color 0.15s ease;
     }
 
-    .dcrs-faq-item[data-state="open"] {
+    .dcrs-faq-item[open] {
         border-color: var(--brass, #D48E33);
     }
 
-    .dcrs-faq-trigger {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.15rem 1.4rem;
-        background: #fff;
-        border: none;
-        cursor: pointer;
-        text-align: left;
-        gap: 1rem;
-        font-family: inherit;
-        transition: background-color 0.2s;
-    }
-
-    .dcrs-faq-item[data-state="open"] .dcrs-faq-trigger {
-        background: rgba(193, 128, 46, 0.06);
-    }
-
-    .dcrs-faq-trigger__text {
-        font-size: 0.95rem;
-        font-weight: 700;
+    .dcrs-faq-item__question {
+        list-style: none;
+        padding: 1.15rem 1.35rem;
+        font-family: var(--font-display, serif);
+        font-size: 1.05rem;
+        font-weight: 600;
         color: var(--ink, #10201F);
-    }
-
-    .dcrs-faq-trigger__icon {
-        width: 20px;
-        height: 20px;
+        cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: center;
-        transition: transform 0.25s ease;
-        flex-shrink: 0;
-        color: var(--brass, #D48E33);
+        justify-content: space-between;
+        user-select: none;
     }
 
-    .dcrs-faq-trigger__icon :global(svg) {
+    .dcrs-faq-item__question::-webkit-details-marker {
+        display: none;
+    }
+
+    .dcrs-faq-item__toggle {
+        display: inline-flex;
+        color: var(--brass, #D48E33);
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .dcrs-faq-item__toggle :global(svg) {
         width: 18px;
         height: 18px;
     }
 
-    .dcrs-faq-item[data-state="open"] .dcrs-faq-trigger__icon {
+    .dcrs-faq-item[open] .dcrs-faq-item__toggle {
         transform: rotate(180deg);
     }
 
-    .dcrs-faq-panel {
-        padding: 0 1.4rem 1.25rem;
+    .dcrs-faq-item__answer {
+        padding: 0 1.35rem 1.25rem;
+        border-top: 1px solid #e4e8ec;
     }
 
-    .dcrs-faq-panel p {
-        font-size: 0.9rem;
-        line-height: 1.75;
+    .dcrs-faq-item__answer p {
+        margin: 0.85rem 0 0;
+        font-size: 0.93rem;
+        line-height: 1.7;
         color: #555;
-        margin: 0;
     }
 
     /* 11. RELATED SERVICES */
@@ -1646,6 +1680,17 @@ const pageSchema = {
         }
     }
 
+    .dcrs-cta-banner__badge {
+        display: inline-block;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brass, #D48E33);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
     .dcrs-cta-banner__title {
         font-family: 'Cinzel', serif;
         font-size: clamp(1.4rem, 2.8vw, 2rem);
@@ -1705,44 +1750,42 @@ const pageSchema = {
             padding: clamp(3rem, 7vw, 4rem) 0;
         }
     }
+
     /* Mobile photo badge scaling */
     @media (max-width: 480px) {
         .dcrs-photo-badge {
             bottom: 0.75rem;
             right: 0.75rem;
-            max-width: 175px;
+            padding: 0.5rem 0.8rem;
         }
-        .dcrs-photo-badge .dcrs-plate__tab {
-            font-size: 0.65rem;
-            padding: 0.4rem 0.35rem;
-        }
-        .dcrs-photo-badge .dcrs-plate__row--big {
+        .dcrs-photo-badge__value {
             font-size: 1.15rem;
         }
-        .dcrs-photo-badge .dcrs-plate__row {
-            font-size: 0.68rem;
+        .dcrs-photo-badge__label {
+            font-size: 0.65rem;
         }
     }
-    /* marker: dcrs-photo-badge-responsive */
 
-    /* Responsive tyre pricing table font size & compact padding */
+    /* Responsive tyre pricing table */
     @media (max-width: 768px) {
-        .dcrs-table thead th {
-            padding: 0.65rem 0.8rem;
-            font-size: 0.82rem;
-        }
+        .dcrs-table thead th,
         .dcrs-table tbody td {
-            padding: 0.65rem 0.8rem;
+            padding: 0.65rem 0.75rem;
             font-size: 0.82rem;
         }
         .dcrs-table__price {
             font-size: 0.82rem;
         }
     }
+
     @media (max-width: 480px) {
+        .dcrs-heading__title {
+            font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+            line-height: 1.25;
+        }
         .dcrs-table thead th {
             padding: 0.55rem 0.5rem;
-            font-size: 0.7rem;
+            font-size: 0.72rem;
         }
         .dcrs-table tbody td {
             padding: 0.55rem 0.5rem;
@@ -1751,70 +1794,12 @@ const pageSchema = {
         }
         .dcrs-table__price {
             font-size: 0.74rem;
-            word-break: normal;
-        overflow-wrap: break-word;
+            white-space: normal !important;
+            word-break: normal !important;
+            overflow-wrap: break-word !important;
         }
         .dcrs-table-note {
             font-size: 0.74rem;
         }
     }
-    /* marker: dcrs-table-mobile-text */
-
-
-    /* Protection against flex/grid item blowout on mobile viewports */
-    .dcrs-engine-item,
-    .dcrs-warning-item,
-    .dcrs-process-step,
-    .dcrs-engines-block,
-    .dcrs-pricing-block,
-    .dcrs-warnings-block,
-    .dcrs-process-block,
-    .dcrs-col-block,
-    .dcrs-intro-content,
-    .dcrs-intro-media {
-        min-width: 0;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    .dcrs-engine-item > div,
-    .dcrs-warning-item > div,
-    .dcrs-process-step > div {
-        min-width: 0;
-        flex: 1;
-    }
-    @media (max-width: 480px) {
-        .dcrs-heading__title {
-            font-size: clamp(1.35rem, 5.5vw, 1.65rem);
-            line-height: 1.25;
-        }
-        .dcrs-engine-item {
-            padding: 0.75rem 0.85rem;
-            gap: 0.65rem;
-        }
-        .dcrs-engine-item__name {
-            font-size: 0.88rem;
-        }
-        .dcrs-engine-item__desc {
-            font-size: 0.78rem;
-            line-height: 1.4;
-        }
-        .dcrs-table-price,
-        .dcrs-table__price,
-        .dcrs-price-cell,
-        .dcrs-price-tag {
-            white-space: normal !important;
-            word-break: normal !important;
-            overflow-wrap: break-word !important;
-        }
-    }
-    /* marker: .dcrs-flex-overflow-fix */
-    .dcrs-cta-inline-link {
-        color: var(--brass, #D48E33);
-        font-weight: 600;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-    .dcrs-cta-inline-link:hover { opacity: 0.85; }
-
 </style>
-
