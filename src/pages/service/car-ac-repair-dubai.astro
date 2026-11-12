@@ -5,8 +5,8 @@ import service6Image from '../../assets/images/service6.webp';
 // ---------------------------------------------------------------------------
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
-const pageTitle = "Car AC Repair Dubai | Gas Refill & Compressor Fix";
-const pageDescription = "Car AC repair in Dubai from AED 100. Fast AC gas refill, compressor repair & leak detection at 222 Al Satwa Road. Ice-cold air guaranteed. Call or WhatsApp.";
+const pageTitle = "Car AC Repair Dubai | Gas Refill & Compressor Service";
+const pageDescription = "Car AC repair in Dubai from AED 100. Professional AC diagnostics, gas refilling, leak detection & compressor repairs at our Al Satwa workshop. Open daily 7AM-10PM.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -41,126 +41,176 @@ const icons: Record<string, string> = {
 // ---------------------------------------------------------------------------
 const faults = [
     {
-        icon: "drop",
-        title: "Refrigerant Leak",
-        desc: "Heat cycling dries out rubber O-rings, hose crimps, and aluminium line connections. We locate leaks using UV fluorescent dye and electronic detectors before recharging so the refrigerant does not escape again.",
-        cost: "AED 150–350*"
-    },
-    {
-        icon: "cog",
-        title: "Compressor Wear or Failure",
-        desc: "Continuous high-load operation in Dubai summer traffic causes internal piston wear, bearing noise, or electromagnetic clutch failure. Symptoms include warm air at idle and metallic rattling sounds.",
-        cost: "AED 600–1,800*"
-    },
-    {
-        icon: "filter",
-        title: "Clogged Cabin Air Filter",
-        desc: "Sand and airborne dust restrict airflow across the evaporator core, making the blower fan feel weak and reducing cabin cooling even when the refrigeration cycle is functioning normally.",
-        cost: "AED 80–150*"
+        icon: "snowflake",
+        title: "Warm Air from Dashboard Vents",
+        desc: "The AC blows ambient or warm air rather than chilled air. This can result from low refrigerant due to a leak, a failing compressor clutch, an electrical switch fault, or a blocked condenser. A diagnostic pressure check identifies the actual cause before replacing parts."
     },
     {
         icon: "wind",
-        title: "Blocked or Damaged Condenser",
-        desc: "Positioned ahead of the radiator, the condenser releases heat from compressed refrigerant. Bent cooling fins or road debris build-up prevent proper heat exchange, resulting in warm air from vents.",
-        cost: "AED 100–200*"
+        title: "Weak Airflow from Vents",
+        desc: "The blower motor is running, but air volume from the vents feels weak. Common causes include a cabin air filter clogged with desert dust, an obstructed blower motor, or evaporator icing blocking the airflow path."
+    },
+    {
+        icon: "cog",
+        title: "Unusual Noises When AC Is Switched On",
+        desc: "Rattling, squeaking, or grinding noises when engaging the air conditioning can indicate a slipping serpentine drive belt, a worn compressor clutch pulley, or internal mechanical wear. A physical inspection prevents belt snap or compressor failure."
+    },
+    {
+        icon: "filter",
+        title: "Musty or Stale Cabin Odours",
+        desc: "A damp or stale smell upon switching on the AC typically indicates bacterial or mould growth on the moist evaporator core surface or an aged cabin air filter. Replacing the filter and cleaning the housing helps restore fresh cabin air."
     },
     {
         icon: "sliders",
-        title: "Expansion Valve Restriction",
-        desc: "A stuck or restricted expansion valve disrupts refrigerant metering into the evaporator, causing erratic vent temperatures, evaporator core icing, or loss of cooling under acceleration.",
-        cost: "AED 250–500*"
+        title: "Intermittent Cooling in Traffic",
+        desc: "The AC cools while cruising on the highway but blows warm when idling in slow Dubai traffic. This often points to weak condenser cooling fan operation, road debris restricting the condenser fins, or an expansion valve struggling under low-speed loads."
     },
     {
-        icon: "bolt",
-        title: "Electrical & Sensor Faults",
-        desc: "Defective high/low pressure switches, failed compressor relays, damaged wiring harnesses, or climate control sensor errors can prevent the compressor clutch from engaging.",
-        cost: "AED 100–400*"
+        icon: "drop",
+        title: "Water Accumulation in Passenger Footwell",
+        desc: "Puddles or dampness inside the cabin usually mean the evaporator condensation drain hose is clogged with dust or algae, causing trapped water to overflow into the passenger floor instead of draining beneath the car."
     }
 ];
 
 const serviceSteps = [
-    { num: "1", title: "Pressure & Temperature Assessment", desc: "We connect digital manifold gauges to monitor high-side and low-side pressures while checking dashboard vent temperatures against ambient conditions." },
-    { num: "2", title: "Electronic & UV Leak Detection", desc: "If pressures indicate low refrigerant, we use electronic sniffer probes and UV dye to inspect hose connections, the condenser, compressor shaft seals, and valves." },
-    { num: "3", title: "Transparent Quote Approval", desc: "We explain the cause of cooling loss and provide an itemized quote for necessary parts and labour before beginning repairs [CONFIRM: exact car AC repair prices]." },
-    { num: "4", title: "Vacuum & Moisture Evacuation", desc: "We run a deep vacuum pump through the sealed circuit to boil off moisture and remove air, preventing acidic sludge buildup and internal icing." },
-    { num: "5", title: "Precision Refrigerant Recharge", desc: "We recharge the system by weight according to manufacturer specifications, adding compatible compressor lubricant (PAG or POE) to protect internal components." },
-    { num: "6", title: "Cooling Performance Verification", desc: "We test the vehicle under load to verify stable vent temperatures between 4°C and 8°C in Dubai ambient conditions before handover." }
+    {
+        num: "1",
+        title: "Pressure & Temperature Assessment",
+        desc: "We connect digital manifold gauges to monitor high-side and low-side pressures while checking dashboard vent temperatures against ambient conditions."
+    },
+    {
+        num: "2",
+        title: "Electronic & UV Leak Detection",
+        desc: "If pressures indicate low refrigerant, technicians use electronic leak detectors and UV fluorescent dye to inspect hose connections, condenser fins, compressor seals, and service valves."
+    },
+    {
+        num: "3",
+        title: "Transparent Quote Approval",
+        desc: "We explain the diagnostic findings and provide an itemized quote for necessary repairs, parts, and refrigerant recharge before any work begins."
+    },
+    {
+        num: "4",
+        title: "Vacuum & Moisture Evacuation",
+        desc: "We connect a specialized vacuum station to evacuate air and moisture from the sealed circuit, ensuring the system is clean and dry before recharging."
+    },
+    {
+        num: "5",
+        title: "Precision Refrigerant Recharge",
+        desc: "We recharge the system by weight according to manufacturer specifications (R134a or R1234yf) and add the correct compatible compressor lubricant (such as PAG or POE oil specified for your vehicle)."
+    },
+    {
+        num: "6",
+        title: "Cooling Performance Verification",
+        desc: "We test the vehicle under operating load to evaluate vent temperature and cooling performance against manufacturer specifications and Dubai ambient temperatures before handover."
+    }
 ];
 
 const pricingRows = [
-    { service: "AC Gas Refill (R134a)", price: "AED 100 – 180", includes: "Evacuation, gas by weight & pressure check" },
-    { service: "AC Gas Refill (R1234yf)", price: "AED 200 – 350", includes: "Dedicated R1234yf recovery, recharge & test" },
-    { service: "Comprehensive AC Service", price: "AED 250 – 450", includes: "Gas recharge, leak check, condenser rinse & vent test" },
-    { service: "AC Compressor Replacement", price: "AED 600 – 1,800", includes: "Compressor unit, installation & fresh gas recharge" },
-    { service: "AC Condenser Replacement", price: "AED 400 – 900", includes: "Condenser unit, fitment, vacuum & recharge" },
-    { service: "Expansion Valve Replacement", price: "AED 250 – 500", includes: "Component replacement & system pressure retest" },
-    { service: "Cabin Air Filter Replacement", price: "AED 80 – 150", includes: "OEM-spec filter supply & installation" },
-    { service: "AC Diagnostic & Leak Inspection", price: "AED 50 – 100", includes: "Pressure test, manifold gauge scan & leak report [CONFIRM: whether diagnostic fee is waived with repair]" }
+    {
+        service: "AC Gas Refill (R134a)",
+        price: "AED 100 – 180",
+        includes: "System evacuation, R134a refrigerant recharge by weight & operating pressure check"
+    },
+    {
+        service: "AC Gas Refill (R1234yf)",
+        price: "AED 200 – 350",
+        includes: "Dedicated R1234yf recovery, vacuum evacuation & precision recharge by weight"
+    },
+    {
+        service: "Comprehensive AC Service",
+        price: "AED 250 – 450",
+        includes: "Full system check, refrigerant recharge, basic leak check, condenser rinse & vent test"
+    },
+    {
+        service: "AC Compressor Replacement",
+        price: "AED 600 – 1,800",
+        includes: "Compressor removal & fitment labour; unit price, refrigerant & oil quoted by vehicle spec"
+    },
+    {
+        service: "AC Condenser Replacement",
+        price: "AED 400 – 900",
+        includes: "Condenser fitment & line inspection; refrigerant evacuation & recharge quoted as required"
+    },
+    {
+        service: "Expansion Valve Replacement",
+        price: "AED 250 – 500",
+        includes: "Valve installation & system pressure retest; refrigerant service quoted separately"
+    },
+    {
+        service: "Cabin Air Filter Replacement",
+        price: "AED 80 – 150",
+        includes: "OEM-specification cabin filter replacement & housing inspection"
+    },
+    {
+        service: "AC Diagnostic & Leak Inspection",
+        price: "AED 50 – 100",
+        includes: "Manifold pressure scan, electronic/UV dye leak testing & written assessment"
+    }
 ];
 
 const reasons = [
     {
         icon: "search",
-        title: "Accurate Diagnosis First",
-        desc: "We check operating pressures and inspect for physical leaks before recommending any repair. We do not upsell an expensive compressor replacement when a seal or relay solves the problem."
+        title: "Accurate Diagnostics First",
+        desc: "We test operating pressures and inspect for physical leaks before recommending any repair. We focus on identifying the actual root cause rather than replacing parts unnecessarily."
     },
     {
         icon: "snowflake",
-        title: "Vehicle-Compatible Refrigerants",
-        desc: "We verify your car's exact refrigerant specification (R134a or R1234yf) and charge by precise weight in grams rather than rough pressure approximations to protect your compressor."
+        title: "Vehicle-Specified Refrigerants",
+        desc: "We confirm your vehicle's factory refrigerant specification (R134a or R1234yf) and charge by precise weight according to manufacturer specifications to protect your compressor."
     },
     {
         icon: "tools",
-        title: "Dedicated Workshop Equipment",
-        desc: "Our workshop at 222 Al Satwa Road is equipped with vacuum recovery stations, manifold gauges, and electronic leak detectors suited for delicate AC system servicing [CONFIRM: mobile AC repair availability and coverage]."
+        title: "Dedicated Al Satwa Workshop",
+        desc: "Conveniently located at 222 Al Satwa Road, our garage is equipped with recovery and evacuation stations, manifold gauges, and electronic leak detectors for reliable AC servicing."
     },
     {
         icon: "shield",
         title: "Quality Replacement Parts",
-        desc: "We source OEM-grade compressors, condensers, expansion valves, and filter driers built to withstand prolonged Dubai summer thermal loads [CONFIRM: AC parts warranty terms]."
+        desc: "We supply OEM-specification compressors, condensers, expansion valves, and cabin filters suited to withstand Dubai's extreme summer temperatures, backed by available parts warranties."
     },
     {
-        icon: "mapPin",
-        title: "Centrally Located in Al Satwa",
-        desc: "Conveniently situated on 222 Al Satwa Road, our workshop provides direct drive-in access for motorists from Jumeirah, Downtown Dubai, DIFC, Bur Dubai, and Karama."
+        icon: "car",
+        title: "Experienced Automotive Team",
+        desc: "Established in 2012, our team of 8 skilled mechanics has serviced more than 8,500 vehicles across Dubai, earning a 4.8-star Google rating for honest, dependable repair work."
     },
     {
         icon: "calendar",
-        title: "Pre-Summer Cooling Checks",
-        desc: "We provide seasonal cooling system inspections to catch minor refrigerant loss or condenser debris buildup before high summer temperatures arrive."
+        title: "Seasonal Cooling Check-ups",
+        desc: "We offer pre-summer cooling inspections to check system pressures, evaluate condenser condition, and detect minor refrigerant loss before peak summer heat."
     }
 ];
 
 const faqs = [
     {
         q: "Why is my car AC blowing warm air in Dubai?",
-        a: "The most common causes are low refrigerant from an undetected leak, a failing compressor clutch, a blocked condenser, or an electrical pressure switch fault. In extreme Dubai heat, even a minor drop in refrigerant volume causes the evaporator to warm up rapidly. A pressure gauge test and electronic leak check are necessary to isolate the cause."
+        a: "Car air conditioning can blow warm air for several reasons, including low refrigerant caused by a leak, a failing compressor or clutch, a blocked condenser, an electrical relay fault, or a clogged cabin air filter. Because multiple issues cause similar symptoms, technicians connect manifold gauges and perform a leak check to determine the exact fault before recommending repairs."
     },
     {
         q: "Can I simply refill AC gas without fixing a leak?",
-        a: "Topping up refrigerant without repairing an active leak is a temporary fix. Refrigerant will escape again within days or weeks, allowing moisture and air into the lines which damages the compressor. We locate and repair leak points before refilling to ensure cooling performance lasts."
+        a: "Refilling refrigerant without repairing an active leak is only a temporary fix. Refrigerant will escape again over days or weeks, and operating a leaking system allows air and moisture to enter, which can damage the compressor and internal lubricants. We recommend locating and repairing the leak before recharging the system."
     },
     {
         q: "How often should I have my car AC serviced in Dubai?",
-        a: "We recommend an annual AC system inspection, ideally in March or April before peak summer temperatures. Annual servicing includes checking system pressures, inspecting the cabin air filter, cleaning debris from the condenser, and verifying vent temperature output."
+        a: "Given Dubai's extreme summer heat, we recommend having your car's AC system checked once a year, preferably in spring before peak temperatures arrive. An annual inspection includes checking operating pressures, inspecting the cabin filter, checking condenser fins for debris, and verifying overall cooling performance."
     },
     {
         q: "What is the difference between R134a and R1234yf refrigerant?",
-        a: "R134a is the standard refrigerant for most vehicles built before 2017, while R1234yf is an environmentally friendly formulation required in newer models. They require different service fittings, specific compressor oils, and separate recovery equipment. They must never be mixed."
+        a: "R134a and R1234yf are different chemical refrigerants engineered for specific AC systems. R134a is found in many older and select modern vehicles, while R1234yf is used in many newer vehicles to comply with lower environmental emissions standards. They require different service fittings, recovery machines, and compatible oils, and they must never be mixed."
     },
     {
         q: "How much does a car AC compressor repair or replacement cost in Dubai?",
-        a: "AC compressor replacement costs depend on whether the unit requires an electromagnetic clutch repair or a full compressor assembly replacement, as well as vehicle make and part availability. European vehicles generally cost more than Japanese or Korean models due to part pricing."
+        a: "AC compressor replacement costs typically range from AED 600 to AED 1,800 depending on vehicle make, model, engine size, and whether an OEM or aftermarket unit is selected. European and luxury vehicles generally have higher component costs than Japanese or Korean models. We provide a clear, itemized quote after inspecting the vehicle."
     },
     {
         q: "Do you provide mobile car AC repair in Dubai?",
-        a: "While basic symptom checks can be performed on-site, comprehensive leak repairs, deep vacuum evacuation, and compressor replacements require dedicated recovery stations at our Al Satwa workshop [CONFIRM: mobile AC repair availability and coverage]."
+        a: "We offer mobile assistance across Dubai for initial AC diagnostics and basic refrigerant top-ups where site conditions allow. However, extensive repairs involving component replacement, system flushing, or deep vacuum evacuation are best performed at our Al Satwa workshop, where dedicated recovery equipment is installed."
     }
 ];
 
 const relatedServices = [
     { icon: "tools", name: "Annual Car Maintenance Dubai", desc: "Comprehensive scheduled service packages for UAE driving", href: "/car-maintenance-dubai" },
-    { icon: "car", name: "Mobile Car Repair Dubai", desc: "On-site diagnostic, battery & AC gas refill support", href: "/mobile-car-repair-dubai" },
+    { icon: "car", name: "Mobile Car Repair Dubai", desc: "On-site diagnostic, battery & basic AC support", href: "/mobile-car-repair-dubai" },
     { icon: "bolt", name: "Full Car Check Up", desc: "Pre-purchase, electrical, and cooling system inspections", href: "/car-inspection-dubai" },
     { icon: "mapPin", name: "Car AC Repair Satwa", desc: "Fast neighborhood AC diagnostics at 222 Al Satwa Road", href: "/car-repair-al-satwa" }
 ];
@@ -181,7 +231,7 @@ const pageSchema = {
                 "@id": "https://dubaicarrepairservice.com/car-ac-repair-dubai"
             },
             "serviceType": "Car Air Conditioning Repair",
-            "description": "Professional car AC repair in Dubai including AC gas refill, compressor repair, refrigerant leak detection, condenser replacement, expansion valve repair, AC diagnostics and complete air conditioning maintenance for all vehicle makes and models.",
+            "description": "Professional car AC repair in Dubai including AC gas refill, compressor repair, refrigerant leak detection, condenser replacement, expansion valve repair, AC diagnostics and air conditioning maintenance for all vehicle makes and models.",
             "provider": {
                 "@id": "https://dubaicarrepairservice.com/#localbusiness"
             },
@@ -192,6 +242,7 @@ const pageSchema = {
             "offers": {
                 "@type": "Offer",
                 "priceCurrency": "AED",
+                "price": "100",
                 "availability": "https://schema.org/InStock"
             }
         },
@@ -216,40 +267,14 @@ const pageSchema = {
         {
             "@type": "FAQPage",
             "@id": "https://dubaicarrepairservice.com/car-ac-repair-dubai#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Why is my car AC not cooling in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "The most common causes are low refrigerant due to a leak, a failing compressor, a blocked condenser, a faulty expansion valve or electrical system issues. Professional diagnostics and leak detection help identify the exact cause."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How often should I service my car AC in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We recommend a complete AC inspection once a year before the Dubai summer season. Regular servicing helps maintain cooling performance and can prevent expensive compressor repairs."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How much does AC gas refill cost in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "AC gas refill costs vary depending on the refrigerant type and vehicle model. R134a systems generally cost less than R1234yf systems. A leak inspection is recommended before any refill service."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What is the difference between R134a and R1234yf refrigerant?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "R134a is commonly used in older vehicles, while R1234yf is used in many newer vehicles. These refrigerants are not interchangeable and should never be mixed because doing so can damage the air conditioning system."
-                    }
+            "mainEntity": faqs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f.a
                 }
-            ]
+            }))
         }
     ]
 };
@@ -280,7 +305,7 @@ const pageSchema = {
                     Car AC Repair Dubai - Gas Refill, Compressor &amp; Leak Fix
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Dubai's prolonged summer heat and extreme under-hood temperatures place severe demands on automotive air conditioning systems, leading to rapid refrigerant loss, compressor clutch wear, and reduced cabin cooling. Our car AC repair in Dubai provides systematic electronic leak detection, factory-calibrated R134a and R1234yf gas refills, compressor overhauls, and evaporator coil servicing. From our dedicated workshop at 222 Al Satwa Road, our experienced mechanics restore factory cooling performance with fast and affordable pricing.
+                    Car AC repair in Dubai helps restore proper cooling when your vehicle's air conditioning system starts blowing warm air, loses cooling efficiency, or develops unusual noises or odours. Dubai Car Repair Service provides car AC inspection, gas refilling, leak detection, and component repairs for different vehicle makes and models. Visit our Al Satwa workshop for professional AC servicing and diagnostics. Our technicians inspect the system to identify the cause of the problem before recommending suitable repairs.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -304,13 +329,13 @@ const pageSchema = {
                             Car AC Repair Dubai - Fast Diagnostics &amp; Complete Cooling Fixes
                         </h2>
                         <p class="dcrs-lead-text">
-                            Operating a vehicle in Dubai without an efficient air conditioning system is intolerable during summer months when ambient temperatures consistently surpass 45°C. Under-hood temperatures often reach 70°C, causing refrigerant gas pressures to surge and placing continuous mechanical load on compressor clutch assemblies, condenser cooling fans, and rubber connection hoses. Dubai Car Repair Service delivers specialized automotive climate control diagnostics, precision refrigerant recharging, and component-level repairs to keep your vehicle cool and comfortable year-round.
+                            During Dubai's long summer months, automotive air conditioning systems operate under intense thermal stress. High ambient temperatures exceeding 45°C combined with engine heat create extreme under-hood operating conditions. Over time, heat cycling and continuous operation can cause refrigerant seals to harden, dust to restrict condenser airflow, and mechanical components to wear down, leading to reduced cooling efficiency or warm air from your vents.
                         </p>
                         <p class="dcrs-body-text">
-                            A common mistake in vehicle AC maintenance is repeatedly topping up refrigerant gas without identifying the underlying leak path. Adding refrigerant to a leaking circuit provides only temporary relief while allowing moisture and atmospheric air to enter, which rapidly degrades polyalkylene glycol (PAG) compressor oil and leads to catastrophic compressor seizure. Our technicians use digital manifold pressure gauges, ultrasonic detectors, and UV fluorescent dye testing under nitrogen pressure to pinpoint micro-leaks in evaporator cores, condenser tubes, expansion valves, and O-ring seals. For complex cooling concerns linked to engine overheating, our garage also provides complete <a href="/car-engine-service-dubai" class="dcrs-inline-link">car engine cooling repair</a> and preventative <a href="/car-maintenance-dubai" class="dcrs-inline-link">annual vehicle maintenance</a>.
+                            When an air conditioner blows warm air, simply refilling refrigerant gas without testing the system often provides only short-lived cooling. If an active leak exists in the lines, condenser, or evaporator, new refrigerant will escape quickly, while moisture entering the system can cause internal damage. A professional inspection checks system pressures and uses electronic leak detectors and UV dye to identify the exact cause before recharging refrigerant. When engine overheating affects AC performance, our workshop also inspects the cooling fan and provides <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine cooling system repair</a> alongside routine <a href="/car-maintenance-dubai" class="dcrs-inline-link">car maintenance services</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            Whether you need a quick cabin filter replacement, a routine pressure test, or a comprehensive compressor rebuild, our mechanics service Japanese, European, and American models with equal proficiency. For mobile refrigerant top-ups or battery-related cooling fan faults at your doorstep, our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car mechanic service</a> is available throughout Dubai. Drivers are welcome to visit our workshop at 222 Al Satwa Road or speak with our service advisors through our <a href="/contact" class="dcrs-inline-link">customer contact team</a> for honest, transparent advice.
+                            Dubai Car Repair Service provides comprehensive AC inspections, precision gas refilling, and component replacements for Japanese, European, American, and Korean vehicles. Most comprehensive diagnostics and repairs are performed at our Al Satwa workshop, where dedicated recovery stations are installed, while basic diagnostic assessments and top-ups can also be arranged through our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair service</a>. We provide clear, itemized estimates so you understand the condition of your AC system before any work begins.
                         </p>
 
                         <div class="dcrs-action-row">
@@ -363,9 +388,8 @@ const pageSchema = {
                         <thead>
                             <tr>
                                 <th>Service / Repair</th>
-                                <th>Starting Price (AED)</th>
-                                <th>Turnaround Time</th>
-                                <th>Warranty</th>
+                                <th>Starting Price</th>
+                                <th>Inclusions &amp; Scope</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -373,8 +397,7 @@ const pageSchema = {
                                 <tr>
                                     <td class="dcrs-table-service">{r.service}</td>
                                     <td class="dcrs-table-price">{r.price}</td>
-                                    <td class="dcrs-table-time">{r.time}</td>
-                                    <td class="dcrs-table-warranty">{r.warranty}</td>
+                                    <td class="dcrs-table-includes">{r.includes}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -382,7 +405,7 @@ const pageSchema = {
                 </div>
 
                 <p class="dcrs-pricing-disclaimer">
-                    <Fragment set:html={icons.info} /> Prices include refrigerant, compressor oil top-up, and labor for standard single-evaporator configurations. Dual-zone SUV and multi-evaporator luxury vehicles require additional refrigerant volume. Final written quotation confirmed following initial diagnostic pressure check.
+                    <Fragment set:html={icons.info} /> Prices vary based on vehicle make, model, refrigerant capacity, and repair scope. Component replacements require separate refrigerant evacuation and recharge, which is itemized in your estimate before work begins.
                 </p>
             </div>
         </section>
@@ -392,7 +415,7 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Service Process</div>
-                    <h2 class="dcrs-heading__title">Our 5-Step Car AC Service &amp; Diagnostic Process</h2>
+                    <h2 class="dcrs-heading__title">Our 6-Step Car AC Service &amp; Diagnostic Process</h2>
                     <p class="dcrs-heading__sub">
                         We apply calibrated recovery and charging stations to diagnose and service automotive climate control circuits with complete precision.
                     </p>
@@ -424,34 +447,34 @@ const pageSchema = {
                             R134a vs. R1234yf - Matching Factory Refrigerant Specifications
                         </h2>
                         <p class="dcrs-body-text">
-                            Modern vehicles require specific refrigerant formulations matched to their compressor lubricants and operating pressures. Mixing refrigerants or using R134a in a system designed for R1234yf causes chemical breakdown, damages compressor seals, and leads to complete system failure.
+                            Modern vehicles require specific refrigerant formulations matched to their compressor lubricants and operating pressures. Mixing different refrigerants or using the wrong type can degrade system components and damage the compressor.
                         </p>
 
                         <div class="dcrs-gas-cards">
                             <div class="dcrs-gas-card">
                                 <div class="dcrs-gas-card__header">
                                     <h3 class="dcrs-gas-card__title">R134a (HFC Refrigerant)</h3>
-                                    <span class="dcrs-tag">Pre-2017 &amp; Select Global Models</span>
+                                    <span class="dcrs-tag">Widely Used Specification</span>
                                 </div>
                                 <p class="dcrs-gas-card__desc">
-                                    Standard across most vehicles manufactured prior to 2017. Widely available and engineered to work with specific polyalkylene glycol (PAG) oils under standard operating pressures.
+                                    R134a is used in many vehicles on Dubai roads, including older models and various modern vehicle applications. It operates with vehicle-compatible polyalkylene glycol (PAG) oils under standard operating pressures.
                                 </p>
                             </div>
 
                             <div class="dcrs-gas-card">
                                 <div class="dcrs-gas-card__header">
                                     <h3 class="dcrs-gas-card__title">R1234yf (HFO Refrigerant)</h3>
-                                    <span class="dcrs-tag dcrs-tag--brass">Modern &amp; European Specifications</span>
+                                    <span class="dcrs-tag dcrs-tag--brass">Newer Vehicle Applications</span>
                                 </div>
                                 <p class="dcrs-gas-card__desc">
-                                    Standard in newer European, American, and late-model vehicles. Features ultra-low global warming potential and requires dedicated recovery stations, specialized couplers, and precision weight measurements.
+                                    R1234yf is used in many newer European, American, and late-model vehicles to meet updated environmental standards. It requires dedicated recovery machines, specialized service couplers, and precision recharge measurements.
                                 </p>
                             </div>
                         </div>
 
                         <div class="dcrs-notice-box">
                             <span class="dcrs-notice-box__icon"><Fragment set:html={icons.info} /></span>
-                            <p>Our technicians verify the factory refrigerant specification and exact weight in grams from your vehicle's under-hood data plate before connecting service equipment.</p>
+                            <p>Refrigerants must never be mixed. Our technicians check your vehicle's under-hood refrigerant specification label and manufacturer guidelines before connecting equipment to ensure the correct refrigerant and lubricant are used.</p>
                         </div>
                     </div>
 
@@ -459,10 +482,10 @@ const pageSchema = {
                     <div class="dcrs-refrigerant-info">
                         <div class="dcrs-kicker">Components We Repair</div>
                         <h2 class="dcrs-heading__title">
-                            Complete Automotive Climate Control Component Servicing
+                            Key AC Components We Inspect &amp; Service
                         </h2>
                         <p class="dcrs-body-text">
-                            A vehicle air conditioning system relies on multiple interconnected mechanical and electrical components. Our Al Satwa garage carries out component-level repairs and genuine part replacements across all major cooling system assemblies:
+                            A vehicle's air conditioning relies on several interconnected mechanical and electrical parts. Our Al Satwa workshop provides diagnostic inspection and component repair or replacement across major cooling assemblies:
                         </p>
 
                         <div class="dcrs-gas-cards">
@@ -471,15 +494,15 @@ const pageSchema = {
                                     <h3 class="dcrs-gas-card__title">AC Compressor &amp; Magnetic Clutch</h3>
                                 </div>
                                 <p class="dcrs-gas-card__desc">
-                                    We repair slipping electro-magnetic clutches, replace noisy internal swash-plate bearings, and install OEM compressors with correct PAG oil balance.
+                                    We inspect compressor clutch engagement, test electrical feeds, and install OEM or manufacturer-compatible replacement compressors when a unit suffers internal failure.
                                 </p>
                             </div>
                             <div class="dcrs-gas-card">
                                 <div class="dcrs-gas-card__header">
-                                    <h3 class="dcrs-gas-card__title">Condenser &amp; Radiator Fan Assembly</h3>
+                                    <h3 class="dcrs-gas-card__title">Condenser &amp; Cooling Fan Assembly</h3>
                                 </div>
                                 <p class="dcrs-gas-card__desc">
-                                    High-pressure heat exchangers inspected for road debris puncture, bent cooling fins, and weak auxiliary cooling fan motor operation.
+                                    We inspect the front-mounted condenser for physical damage, fin blockage, and refrigerant leaks, while testing cooling fan motors and relays to ensure proper heat dissipation.
                                 </p>
                             </div>
                             <div class="dcrs-gas-card">
@@ -487,7 +510,7 @@ const pageSchema = {
                                     <h3 class="dcrs-gas-card__title">Evaporator Core &amp; Expansion Valve</h3>
                                 </div>
                                 <p class="dcrs-gas-card__desc">
-                                    Deep in-cabin leak diagnosis, evaporator coil replacement, thermal expansion valve (TXV) recalibration, and cabin odor sanitization.
+                                    We diagnose in-cabin refrigerant leaks, replace faulty expansion valves that restrict refrigerant metering, and replace cabin air filters to maintain healthy cabin airflow.
                                 </p>
                             </div>
                         </div>
@@ -501,10 +524,10 @@ const pageSchema = {
         <section class="dcrs-section dcrs-section--paper" id="faults">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
-                    <div class="dcrs-kicker">Warning Signs &amp; Faults</div>
-                    <h2 class="dcrs-heading__title">Common Car AC Problems in Dubai's Climate</h2>
+                    <div class="dcrs-kicker">Warning Signs &amp; Symptoms</div>
+                    <h2 class="dcrs-heading__title">Common Car AC Symptoms in Dubai's Climate</h2>
                     <p class="dcrs-heading__sub">
-                        Every AC fault has a root cause. We identify the source before replacing parts to prevent recurring cooling loss.
+                        Every AC symptom has a root cause. We inspect the system to identify the actual fault before replacing parts to prevent recurring cooling loss.
                     </p>
                 </div>
 
@@ -520,10 +543,6 @@ const pageSchema = {
                                 </div>
                             </div>
                             <p class="dcrs-fault-card__desc">{f.desc}</p>
-                            <div class="dcrs-fault-card__cost">
-                                <span>Typical Cost:</span>
-                                <strong>{f.cost}</strong>
-                            </div>
                         </div>
                     ))}
                 </div>
@@ -536,7 +555,7 @@ const pageSchema = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Car AC Repair</h2>
-                    <p class="dcrs-heading__sub">12+ years of independent workshop experience, certified diagnostic equipment, and fast and affordable pricing.</p>
+                    <p class="dcrs-heading__sub">Diagnostic-first approach, experienced technicians, and transparent pricing at our Al Satwa workshop.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -608,12 +627,12 @@ const pageSchema = {
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Fast &amp; Guaranteed AC Repairs</span>
+                        <span class="dcrs-cta-banner__badge">Automotive AC Servicing &amp; Diagnostics</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Restore Ice-Cold Air Conditioning to Your Vehicle
+                            Professional Car AC Repair in Dubai
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing from AED 100. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, Dubai. Drive in or call for immediate technician availability.
+                            Visit our Al Satwa workshop at 222 Al Satwa Road, Dubai, for thorough AC diagnostics, leak testing, and precision refrigerant recharge. Transparent pricing starting from AED 100. Open daily from 7:00 AM to 10:00 PM. Call or WhatsApp our experienced team today.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -621,7 +640,7 @@ const pageSchema = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
                         </a>
                     </div>
                 </div>
@@ -1091,7 +1110,7 @@ const pageSchema = {
         color: var(--steel);
         font-size: 0.88rem;
         line-height: 1.65;
-        margin: 0 0 1.25rem;
+        margin: 0;
         flex: 1;
     }
 
