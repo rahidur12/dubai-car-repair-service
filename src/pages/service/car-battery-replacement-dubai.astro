@@ -6,7 +6,7 @@ import service5Image from '../../assets/images/service5.webp';
 // Page Metadata & Settings
 // ---------------------------------------------------------------------------
 const pageTitle = "Car Battery Replacement Dubai | Mobile Battery Service";
-const pageDescription = "Car battery replacement in Dubai from AED 180. Genuine Bosch, Varta & Amaron batteries with on-site mobile fitting across Dubai. Call or WhatsApp 7AM-10PM.";
+const pageDescription = "Car battery replacement in Dubai from AED 150. Battery testing, charging system checks & mobile fitting across Dubai. Call or WhatsApp 7AM-10PM.";
 
 const phoneDisplay = "+971 56 612 1423";
 const phoneHref = "tel:+971566121423";
@@ -46,84 +46,81 @@ const warningSigns = [
     {
         icon: "car",
         title: "Sluggish Engine Cranking",
-        desc: "The starter motor turns over slowly or labours before starting. This indicates the battery cannot supply sufficient cold cranking amps under initial load."
+        desc: "The starter motor turns over slowly or labours before starting. This indicates the battery is struggling to deliver sufficient starting power under load."
     },
     {
         icon: "lightbulb",
         title: "Battery Warning Light",
-        desc: "An illuminated battery or charging symbol on your dashboard indicates a voltage irregularity, often linked to an alternator fault or failing internal cells."
+        desc: "An illuminated battery symbol on your dashboard indicates a charging system or voltage issue, which may be caused by an alternator problem, loose wiring, or battery degradation."
     },
     {
         icon: "plug",
         title: "Repeated Jump Starts",
-        desc: "If your car requires multiple jump starts within a short period, the battery plates have degraded and can no longer hold a resting charge."
+        desc: "If your car requires multiple jump starts within a short period, the battery may not be holding a charge, though charging-system faults should also be tested."
     },
     {
         icon: "power",
         title: "Flickering Electrical Accessories",
-        desc: "Dimming headlights at idle, slow power windows, or resetting audio screens point to unstable voltage output across the vehicle's electrical system."
+        desc: "Dimming headlights at idle, slow power windows, or resetting dashboard displays can point to unstable electrical voltage from a weak battery or struggling alternator."
     },
     {
         icon: "drop",
         title: "Case Swelling or Acid Residue",
-        desc: "A bloated battery casing or white powdery corrosion around terminal clamps indicates internal heat stress, overcharging, or venting issues."
+        desc: "A bloated battery casing or white powdery corrosion around terminal clamps indicates internal heat stress or venting, which warrants professional inspection."
     },
     {
         icon: "calendar",
         title: "Battery Over 2 Years in Service",
-        desc: "Because Dubai's climate accelerates chemical breakdown, batteries older than 24 months should be load-tested during regular vehicle maintenance."
+        desc: "In Dubai's warm climate, battery performance can degrade faster than in cooler regions. Testing is recommended once a battery reaches two years of service, rather than automatic replacement."
     },
     {
         icon: "alert",
         title: "Pungent Sulphur Odour",
-        desc: "A rotten egg smell near the battery suggests venting gases from an overcharged or internally shorted cell, requiring immediate technical inspection."
+        desc: "A rotten egg smell near the battery can indicate venting gases from an overcharging condition or internal cell damage, requiring immediate inspection."
     },
     {
         icon: "moon",
         title: "No-Start After Parking Overnight",
-        desc: "If your vehicle fails to crank after sitting parked overnight, the battery lacks reserve capacity or the vehicle has an active parasitic electrical drain."
+        desc: "If your car fails to start after sitting parked overnight, the battery may lack reserve capacity, or the vehicle could have an active electrical drain while parked."
     }
 ];
 
 const batteryBrands = [
-    { name: "Bosch", note: "Engineered to OEM standards for European and Asian models [CONFIRM: current Bosch battery stock and models]" },
-    { name: "Exide", note: "Reinforced plate construction with high heat tolerance [CONFIRM: warranty duration]" },
-    { name: "Varta", note: "Advanced AGM and EFB technology suited for modern vehicles with start-stop systems" },
-    { name: "Amaron", note: "High heat-resistant alloy formulation developed for demanding desert climates" },
-    { name: "ACDelco", note: "Direct factory-fit replacement for American and global vehicle platforms" }
+    { name: "Bosch", note: "Engineered to international standards for European and Asian models." },
+    { name: "Exide", note: "Reinforced plate construction suitable for high ambient temperatures." },
+    { name: "Varta", note: "AGM and EFB options suited for modern start-stop vehicles." },
+    { name: "Amaron", note: "Heat-tolerant alloy formulation designed for warm climates." },
+    { name: "ACDelco", note: "Factory-fit replacements for American and global vehicle platforms." }
 ];
 
 const batteryTypes = [
     {
         type: "Standard Flooded (SLI)",
-        desc: "Conventional lead-acid design for vehicles with standard electrical demands and no start-stop systems. Reliable and cost-effective for daily driving.",
-        rating: "⭐⭐⭐"
+        desc: "Conventional lead-acid design for vehicles with standard electrical systems and no start-stop feature. A reliable and cost-effective choice for standard daily driving."
     },
     {
         type: "EFB - Enhanced Flooded",
-        desc: "Features polyfleece scrims and thicker plates, offering improved cycle durability and heat tolerance for entry-level start-stop vehicles.",
-        rating: "⭐⭐⭐⭐"
+        desc: "Features reinforced internal plates and improved cyclic endurance, suited for vehicles with basic start-stop systems or higher electrical loads."
     },
     {
         type: "AGM - Absorbent Glass Mat",
-        desc: "Electrolyte is absorbed in glass-mat separators, providing superior charge acceptance, vibration resistance, and deep cycling for luxury and start-stop vehicles.",
-        rating: "⭐⭐⭐⭐⭐"
+        desc: "Electrolyte is absorbed in glass-mat separators, delivering high electrical capacity and vibration resistance, required for advanced start-stop and high-demand electronic systems."
     }
 ];
 
 const processSteps = [
-    { num: "1", title: "Contact Our Service Team", desc: "Call +971 56 612 1423 or message us on WhatsApp with your vehicle make, model, year, and location in Dubai to check technician availability." },
-    { num: "2", title: "Workshop Visit or Mobile Arrival", desc: "Drive into our workshop at 222 Al Satwa Road, or our mobile technician arrives at your home, office parking, or roadside location [CONFIRM: mobile coverage areas and call-out charges]." },
-    { num: "3", title: "Comprehensive Battery & System Test", desc: "We connect a calibrated digital tester to measure cold cranking amps (CCA), resting voltage, and internal resistance, while also checking alternator charging output." },
-    { num: "4", title: "Transparent Quote Approval", desc: "If replacement is required, we explain the test readings and confirm the total price including supply, installation, and testing before starting [CONFIRM: exact car battery replacement prices]." },
-    { num: "5", title: "Clean Installation & Terminal Securing", desc: "We safely disconnect the old unit, clean terminal corrosion, apply protective grease, install the new battery with correct polarity, and torque terminal clamps." },
-    { num: "6", title: "Alternator Output & Memory Verification", desc: "We test charging voltage under electrical load, register the battery on equipped modern vehicles, and verify clean starting before you drive away." }
+    { num: "1", title: "Consultation & Specification Check", desc: "You contact our team with your vehicle make, model, year, and location in Dubai so we can identify the recommended battery size and check technician availability." },
+    { num: "2", title: "Workshop Visit or Mobile Dispatch", desc: "Drive into our workshop at 222 Al Satwa Road, or request mobile technician attendance at your home, office, or roadside location, subject to availability." },
+    { num: "3", title: "Battery & Charging System Test", desc: "Our technician connects a digital tester to check your battery's voltage and starting power, and tests the alternator output to verify charging performance." },
+    { num: "4", title: "Clear Quote Approval", desc: "If replacement is needed, we explain the test results and confirm the total price, including battery and standard installation, before proceeding." },
+    { num: "5", title: "Clean Installation & Terminal Securing", desc: "The technician disconnects the old unit, cleans any terminal corrosion, applies protective terminal grease, and fits the replacement securely." },
+    { num: "6", title: "Final Check & Battery Registration", desc: "We test charging voltage under load, perform battery registration on equipped modern vehicles when required by factory specifications, and verify a clean start." }
 ];
 
 const pricingRows = [
-    { type: "Standard Flooded (SLI)", price: "AED 150 – 250", warranty: "[CONFIRM: warranty terms]" },
-    { type: "EFB (Enhanced Flooded)", price: "AED 250 – 380", warranty: "[CONFIRM: warranty terms]" },
-    { type: "AGM (Premium)", price: "AED 380 – 650", warranty: "[CONFIRM: warranty terms]" },
+    { type: "Standard Flooded (SLI)", price: "AED 150 – 250", warranty: "Warranty available" },
+    { type: "EFB (Enhanced Flooded)", price: "AED 250 – 380", warranty: "Warranty available" },
+    { type: "AGM (Premium)", price: "AED 380 – 650", warranty: "Warranty available" },
     { type: "Battery Health & System Test", price: "AED 30 – 50", warranty: "N/A" }
 ];
 
@@ -135,50 +132,50 @@ const makes = [
 ];
 
 const reasons = [
-    { icon: "mapPin", title: "Workshop & Mobile Coverage", desc: "Visit our central workshop at 222 Al Satwa Road or request mobile battery installation at your home, office, or roadside location in Dubai." },
-    { icon: "bolt", title: "Prompt Service & Dispatch", desc: "We keep common battery group sizes ready for rapid installation so you avoid prolonged roadside delays or towing expenses." },
-    { icon: "shield", title: "Diagnostic-First Approach", desc: "We test before replacing. If your battery is discharged due to lights left on or an alternator defect, we identify the true cause honestly." },
-    { icon: "award", title: "Manufacturer-Specified Units", desc: "We install fresh, genuine batteries matching factory cold cranking amps and reserve capacity [CONFIRM: battery warranty duration and terms]." },
-    { icon: "receipt", title: "Transparent Pricing", desc: "You receive an upfront quote covering parts and installation before any work commences, with no hidden disposal or diagnostic surcharges." },
-    { icon: "cog", title: "Complete System Verification", desc: "Every installation includes alternator charging rate testing, starter draw verification, and battery registration on equipped vehicles." }
+    { icon: "mapPin", title: "Central Al Satwa Workshop", desc: "Located at 222 Al Satwa Road, Al Satwa, minutes from Sheikh Zayed Road, Jumeirah, and Downtown Dubai." },
+    { icon: "award", title: "Established in 2012", desc: "Serving Dubai drivers since 2012 with 8 experienced mechanics and more than 8,500 vehicles serviced across makes and models." },
+    { icon: "star", title: "4.8-Star Customer Rating", desc: "Built on honest diagnostic assessments, reliable service, and transparent customer feedback across private and commercial drivers." },
+    { icon: "shield", title: "Diagnostic-First Approach", desc: "We test your battery and charging system before recommending replacement, confirming whether the issue is the battery, alternator, or wiring." },
+    { icon: "receipt", title: "Clear, Upfront Pricing", desc: "Transparent quotes starting from AED 150 with standard installation included. You approve the price before any replacement begins." },
+    { icon: "cog", title: "Vehicle Specification Matching", desc: "We verify the correct battery type, capacity, and terminal layout, and perform battery registration on modern vehicles where required." }
 ];
 
 const faqs = [
     {
         q: "How long does a car battery last in Dubai?",
-        a: "Most car batteries in Dubai last between two and three years. Sustained summer ambient temperatures exceeding 40°C accelerate electrolyte evaporation and internal plate corrosion. We recommend having your battery load-tested at every scheduled service once it passes 18 months of use."
+        a: "In Dubai's warm climate, most car batteries last between two and three years. High ambient temperatures accelerate chemical reactions and fluid loss within the battery. Having your battery tested during regular service once it reaches two years helps you catch deterioration before an unexpected starting failure."
     },
     {
         q: "Can you replace my car battery at my home or office in Dubai?",
-        a: "Yes. Our mobile technicians can test and replace your battery at your home, office parking garage, or roadside location without requiring a tow truck [CONFIRM: mobile battery replacement coverage and call-out charges]."
+        a: "Yes, we offer mobile battery replacement across Dubai, subject to technician availability and location. A technician can come to your home, office parking, or roadside to test your existing battery and install a replacement on-site."
     },
     {
         q: "How do I know if my battery needs replacing or just recharging?",
-        a: "A professional digital load test measures cold cranking amps (CCA) and internal plate resistance. If a battery tests below 70% of its rated capacity or has shorted cells, recharging will only provide a temporary start before failing again, and replacement is required."
+        a: "A digital battery test measures voltage, internal resistance, and cranking power under load. If the test shows that internal cells are damaged or the battery cannot hold sufficient charge, replacement is necessary. If the battery is healthy and was only discharged (for example, by leaving lights on), recharging it may be sufficient."
     },
     {
         q: "What battery brands do you supply in Dubai?",
-        a: "We supply batteries from recognized manufacturers including Exide, Varta, Amaron, ACDelco, and Bosch, subject to vehicle specifications and [CONFIRM: current Bosch battery stock and other available brands]."
+        a: "Subject to vehicle specifications and supplier availability, common brands include Bosch, Exide, Varta, Amaron, and ACDelco. Our technicians recommend a battery that matches your car manufacturer's technical requirements."
     },
     {
         q: "Does my car require an AGM battery?",
-        a: "Vehicles with automatic start-stop systems, regenerative braking, or heavy electrical options require an AGM or EFB battery. Installing a standard flooded battery in an AGM-specified vehicle will cause premature battery failure within months and may trigger electrical warning faults."
+        a: "Vehicles with automatic stop-start technology, regenerative braking, or heavy electrical equipment generally require an AGM or EFB battery. Fitting a standard flooded battery to an AGM-specified vehicle can cause rapid battery wear and electrical faults. We check your vehicle's factory specifications before installing a replacement."
     },
     {
         q: "What factors determine car battery replacement costs in Dubai?",
-        a: "Pricing depends on battery technology (standard flooded, EFB, or AGM), physical group size, amp-hour (Ah) capacity, brand warranty, and whether battery registration via OBD-II scanner is required for your vehicle's power management system."
+        a: "Battery replacement cost depends primarily on battery type (standard flooded, EFB, or AGM), capacity (Ah rating), physical size, and brand. Standard installation and basic charging testing are included, while specialized computer registration for certain vehicles is confirmed upfront."
     },
     {
         q: "Could my starting problem be caused by something other than the battery?",
-        a: "Yes. Faulty starter motors, failing alternator diodes, loose grounding cables, or parasitic electrical drains can mimic a dead battery. Our technicians test your charging and starting circuits before installing a new battery to ensure the real issue is resolved."
+        a: "Yes. A worn starter motor, a failing alternator, loose or corroded battery cables, or a parasitic electrical drain can cause similar symptoms to a dead battery. Our technicians test the charging and starting system to confirm the true cause before replacing any parts."
     }
 ];
 
 const relatedServices = [
-    { icon: "bolt", name: "Mobile Car Mechanic Dubai", desc: "On-site battery testing, diagnostics & mechanical assistance", href: "/mobile-car-repair-dubai" },
-    { icon: "alert", name: "Roadside Assistance Near Me", desc: "Emergency jump starts, breakdown towing & flat tyre response", href: "/roadside-assistance-dubai" },
-    { icon: "car", name: "Full Car Check Up", desc: "Multi-point electrical, charging system & vehicle inspection", href: "/car-inspection-dubai" },
-    { icon: "cog", name: "Car Engine Service Dubai", desc: "Alternator repairs, starter motor fixes & engine diagnostics", href: "/car-engine-service-dubai" }
+    { icon: "bolt", name: "Mobile Car Repair Dubai", desc: "On-site battery testing, diagnostics, and mechanical assistance at your location", href: "/mobile-car-repair-dubai" },
+    { icon: "alert", name: "Roadside Assistance Dubai", desc: "Emergency jump starts, breakdown assistance, and flat tyre support across Dubai", href: "/roadside-assistance-dubai" },
+    { icon: "car", name: "Car Inspection Dubai", desc: "Comprehensive electrical, battery, charging system, and vehicle safety checks", href: "/car-inspection-dubai" },
+    { icon: "cog", name: "Car Engine Service Dubai", desc: "Alternator repairs, starter motor diagnosis, and engine electrical servicing", href: "/car-engine-service-dubai" }
 ];
 
 // ---------------------------------------------------------------------------
@@ -197,7 +194,7 @@ const pageSchema = {
                 "@id": "https://dubaicarrepairservice.com/car-battery-replacement-dubai"
             },
             "serviceType": "Car Battery Replacement",
-            "description": "Professional car battery replacement in Dubai with mobile battery installation at your home, office, parking area or roadside. We supply and install genuine batteries for all vehicle makes and models, including AGM and standard batteries.",
+            "description": "Professional car battery replacement in Dubai with battery testing, charging system checks, and mobile installation at your home, office, or roadside.",
             "provider": {
                 "@id": "https://dubaicarrepairservice.com/#localbusiness"
             },
@@ -238,48 +235,14 @@ const pageSchema = {
         {
             "@type": "FAQPage",
             "@id": "https://dubaicarrepairservice.com/car-battery-replacement-dubai#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "How long does a car battery last in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Due to Dubai's extreme temperatures, most car batteries last between 2 and 3 years. Heat accelerates battery wear and can significantly reduce battery life compared to cooler climates."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Can you replace my car battery at my home or office in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. Our mobile battery replacement service is available across Dubai. We can replace your battery at your home, office, parking area or roadside location without requiring vehicle towing."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How much does car battery replacement cost in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Battery replacement costs depend on battery size, vehicle requirements and battery technology. Standard batteries generally cost less than AGM batteries. Installation and system testing are included with our service."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Does my car need an AGM battery?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Many vehicles equipped with stop-start systems or advanced electrical features require AGM batteries. Our technicians verify the manufacturer's specifications before recommending a replacement battery."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What battery brands do you stock in Dubai?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We supply genuine batteries from leading brands including Exide, Bosch, Varta, Amaron and ACDelco. Battery availability may vary depending on vehicle requirements and stock levels."
-                    }
+            "mainEntity": faqs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f.a
                 }
-            ]
+            }))
         }
     ]
 };
@@ -305,12 +268,12 @@ const pageSchema = {
                         <li aria-current="page">Car Battery Replacement Dubai</li>
                     </ol>
                 </nav>
-                <span class="dcrs-badge">Al Satwa, Dubai · Same-Day Service · All Makes &amp; Models</span>
+                <span class="dcrs-badge">Al Satwa, Dubai · Workshop &amp; Mobile Service · All Makes &amp; Models</span>
                 <h1 class="dcrs-hero-banner__title">
                     Car Battery Replacement Dubai - Mobile &amp; Workshop Fitting
                 </h1>
                 <p class="dcrs-hero-banner__lead">
-                    Extreme desert heat places exceptional strain on automotive batteries across the UAE, accelerating chemical degradation and reducing cold cranking amperage. Our car battery replacement in Dubai combines digital charging system diagnostics, computerized battery conductance testing, and on-site fitting of heavy-duty, heat-tolerant batteries. From our central Al Satwa workshop or via mobile emergency response across Dubai, we deliver manufacturer-compatible battery installation with fast and affordable pricing.
+                    Car battery replacement in Dubai involves checking your existing battery, testing the vehicle's charging system, and installing a suitable replacement when necessary. Dubai Car Repair Service provides battery testing and replacement for different vehicle makes and models. You can visit our Al Satwa workshop or request mobile battery replacement at your home, office, or roadside location, subject to availability. Our technicians check the battery specifications and installation requirements to help ensure reliable starting performance.
                 </p>
                 <div class="dcrs-hero-banner__actions">
                     <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
@@ -331,24 +294,24 @@ const pageSchema = {
                     <div class="dcrs-intro-content">
                         <div class="dcrs-kicker">Service Overview</div>
                         <h2 class="dcrs-heading__title">
-                            Car Battery Replacement Dubai - Diagnostics, Supply &amp; Installation
+                            Car Battery Replacement Dubai - Diagnostics, Testing &amp; Installation
                         </h2>
                         <p class="dcrs-lead-text">
-                            Automotive electrical systems in Dubai operate under rigorous conditions, where prolonged high temperatures and continuous air conditioning usage lead to accelerated electrolyte breakdown and plate sulphation. Unlike temperate climates where batteries regularly last four to five years, vehicles operating in the UAE typically require battery replacement every two to three years. Dubai Car Repair Service provides dedicated battery diagnostic, testing, and replacement solutions to help motorists identify power delivery issues before they result in sudden starting failures.
+                            Car batteries in Dubai face tough operating conditions. High summer temperatures accelerate chemical reactions inside the battery, leading to internal corrosion and fluid evaporation over time. While batteries in cooler climates often last four years or more, most vehicles in the UAE need a replacement battery every two to three years.
                         </p>
                         <p class="dcrs-body-text">
-                            When a vehicle experiences starting hesitation, our certified technicians do not simply swap the battery without verification. We test the entire charging circuit using digital conductance analyzers to measure resting open-circuit voltage, internal resistance, and cold cranking amps (CCA) under starter load. This systematic diagnosis determines whether the failure originates within the battery cells, a weakened alternator diode pack, or starter motor circuit resistance. For comprehensive engine electrical issues, our workshop also offers dedicated <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine electrical servicing</a> and multi-point <a href="/car-inspection-dubai" class="dcrs-inline-link">vehicle safety inspections</a>.
+                            Before replacing a battery, it is important to test it properly. Our technicians use digital testers to check the battery's voltage, internal condition, and cranking power. We also test your alternator and charging circuit to confirm whether the issue is genuinely a weak battery or an alternator that is not charging properly. For broader starting issues or electrical concerns, our workshop also provides <a href="/car-engine-service-dubai" class="dcrs-inline-link">engine electrical diagnostics</a> and <a href="/car-inspection-dubai" class="dcrs-inline-link">vehicle safety inspections</a>.
                         </p>
                         <p class="dcrs-body-text">
-                            We stock a wide range of standard flooded, Enhanced Flooded (EFB), and Absorbent Glass Mat (AGM) batteries matching factory specifications for Asian, European, and American models. Drivers can visit our workshop at 222 Al Satwa Road or request on-demand assistance through our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair service</a> for convenient fitting at home or office. If you have questions regarding battery fitment, warranty coverage, or booking, our service team is available through our <a href="/contact" class="dcrs-inline-link">customer contact desk</a>.
+                            When a replacement is needed, we help you select a battery that matches your car's factory size, power rating, and electrical requirements. You can bring your vehicle to our workshop at 222 Al Satwa Road, or request our <a href="/mobile-car-repair-dubai" class="dcrs-inline-link">mobile car repair service</a> to have a technician come to your home, office, or breakdown location, subject to availability.
                         </p>
 
                         <div class="dcrs-action-row">
                             <a href={phoneHref} class="dcrs-btn dcrs-btn--solid">
                                 <Fragment set:html={icons.phone} /> Call Mechanic
                             </a>
-                            <a href="/contact" class="dcrs-btn dcrs-btn--outline-ink">
-                                Book Battery Replacement <Fragment set:html={icons.arrowRight} />
+                            <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--outline-ink">
+                                Book On WhatsApp <Fragment set:html={icons.arrowRight} />
                             </a>
                         </div>
                     </div>
@@ -367,7 +330,7 @@ const pageSchema = {
                                 <div class="dcrs-plate__body">
                                     <span class="dcrs-plate__row dcrs-plate__row--big">150+</span>
                                     <span class="dcrs-plate__row">STARTING PRICE</span>
-                                    <span class="dcrs-plate__row">ON-SITE FITTING</span>
+                                    <span class="dcrs-plate__row">INSTALLATION INCLUDED</span>
                                 </div>
                             </div>
                         </div>
@@ -377,63 +340,43 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 3. PRICING AND COST FACTORS -------------------------------------->
+        <!-- 3. PRICING ------------------------------------------------------->
         <section class="dcrs-section dcrs-section--tint" id="pricing">
             <div class="dcrs-container">
-                <div class="dcrs-grid-2col dcrs-grid-2col--align-center">
-
-                    <!-- Left: Pricing Table -->
-                    <div class="dcrs-pricing-block">
-                        <div class="dcrs-kicker">Fast and Affordable Pricing</div>
-                        <h2 class="dcrs-heading__title">
-                            Car Battery Replacement Pricing Factors in Dubai
-                        </h2>
-                        <p class="dcrs-body-text">
-                            We operate on a transparent policy with fast and affordable pricing. Battery replacement costs vary depending on vehicle specifications, battery chemistry (conventional flooded, Enhanced Flooded Battery, or Absorbent Glass Mat), reserve capacity, and terminal layout. Modern European and hybrid models requiring battery management system (BMS) registration require specialized scan-tool coding during replacement to maintain proper alternator charging algorithms. We provide clear, itemized quotes before carrying out any work.
-                        </p>
-
-                        <div class="dcrs-table-wrapper">
-                            <table class="dcrs-pricing-table">
-                                <thead>
-                                    <tr>
-                                        <th>Battery Type</th>
-                                        <th>Price (AED)</th>
-                                        <th>Warranty</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {pricingRows.map((r) => (
-                                        <tr>
-                                            <td class="dcrs-table-service">{r.type}</td>
-                                            <td class="dcrs-table-price">{r.price}</td>
-                                            <td class="dcrs-table-warranty">{r.warranty}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <p class="dcrs-pricing-disclaimer">
-                            <Fragment set:html={icons.info} /> Prices include battery supply, standard installation, charging system check, and old battery disposal [CONFIRM: battery recycling and old-battery collection arrangements]. Final quote confirmed upon vehicle assessment.
-                        </p>
-                    </div>
-
-                    <!-- Right: Vehicles We Service -->
-                    <div class="dcrs-vehicles-card">
-                        <h3 class="dcrs-vehicles-card__title">Vehicles We Service</h3>
-                        <p class="dcrs-vehicles-card__sub">We support battery replacements across Japanese, European, American, and Korean vehicles in standard, SUV, and commercial categories.</p>
-                        
-                        <div class="dcrs-makes-grid">
-                            {makes.map((m) => (
-                                <div class="dcrs-make-pill">
-                                    <span class="dcrs-make-pill__icon"><Fragment set:html={icons.check} /></span>
-                                    <span>{m}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Transparent Pricing</div>
+                    <h2 class="dcrs-heading__title">
+                        Car Battery Replacement Pricing in Dubai
+                    </h2>
+                    <p class="dcrs-heading__sub">
+                        Clear, transparent pricing based on battery chemistry, capacity, and vehicle requirements. Standard installation and battery testing are included with replacement.
+                    </p>
                 </div>
+
+                <div class="dcrs-table-wrapper">
+                    <table class="dcrs-pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Battery / Service Type</th>
+                                <th>Price Range (AED)</th>
+                                <th>Warranty Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {pricingRows.map((r) => (
+                                <tr>
+                                    <td class="dcrs-table-service"><strong>{r.type}</strong></td>
+                                    <td class="dcrs-table-price">{r.price}</td>
+                                    <td class="dcrs-table-warranty">{r.warranty}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="dcrs-pricing-disclaimer">
+                    <Fragment set:html={icons.info} /> Battery testing and charging-system checks are included with every battery replacement purchase. Standalone battery health and charging tests are AED 30–50 if replacement is not required. Standard installation is included in the quoted battery replacement price. Specialized battery registration via scan tool for certain modern vehicles is quoted upfront when required by manufacturer specifications.
+                </p>
             </div>
         </section>
 
@@ -443,10 +386,10 @@ const pageSchema = {
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Service Process</div>
                     <h2 class="dcrs-heading__title">
-                        How We Replace Your Car Battery in Dubai
+                        How We Test &amp; Replace Your Car Battery in Dubai
                     </h2>
                     <p class="dcrs-heading__sub">
-                        A systematic, diagnostic-backed procedure ensuring correct battery fitment, terminal protection, and charging system health.
+                        A systematic procedure ensuring accurate diagnosis, correct battery matching, and proper electrical system connection.
                     </p>
                 </div>
 
@@ -464,26 +407,26 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 5. TYPES, PARTS, PRODUCTS AND BRANDS ----------------------------->
+        <!-- 5. BATTERY TYPES & BRANDS ---------------------------------------->
         <section class="dcrs-section dcrs-section--tint" id="battery-brands">
             <div class="dcrs-container">
                 <div class="dcrs-grid-2col">
 
                     <!-- Left: Brands -->
                     <div class="dcrs-brands-info">
-                        <div class="dcrs-kicker">Battery Types &amp; Brands</div>
+                        <div class="dcrs-kicker">Battery Brands</div>
                         <h2 class="dcrs-heading__title">
-                            Battery Specifications and Brands Suited for High-Heat Operation
+                            Recognized Battery Brands for Dubai's Climate
                         </h2>
                         <p class="dcrs-body-text">
-                            Automotive batteries in the UAE must endure severe ambient temperatures, prolonged under-hood heat soak, and continuous air conditioning electrical draw. We supply and install heat-tolerant batteries from established manufacturers, subject to [CONFIRM: current Bosch battery stock and other available brands]. Our mechanics match battery group sizes, terminal polarity, and amp-hour ratings strictly to your vehicle's factory standards.
+                            The right battery depends on your vehicle manufacturer's specifications, electrical load, and whether your car has start-stop technology. Subject to vehicle requirements and supplier availability, common brands used in Dubai include Bosch, Exide, Varta, Amaron, and ACDelco. Our technicians verify the required group size, capacity, and terminal layout before recommending a battery.
                         </p>
 
                         <div class="dcrs-brands-list">
                             {batteryBrands.map((b) => (
                                 <div class="dcrs-brand-item">
                                     <div class="dcrs-brand-item__name">{b.name}</div>
-                                    <div class="dcrs-brand-item__note">✅ {b.note}</div>
+                                    <div class="dcrs-brand-item__note">✓ {b.note}</div>
                                 </div>
                             ))}
                         </div>
@@ -497,7 +440,6 @@ const pageSchema = {
                                 <div class="dcrs-type-item">
                                     <div class="dcrs-type-item__header">
                                         <h4 class="dcrs-type-item__name">{bt.type}</h4>
-                                        <span class="dcrs-type-item__rating">{bt.rating}</span>
                                     </div>
                                     <p class="dcrs-type-item__desc">{bt.desc}</p>
                                 </div>
@@ -505,7 +447,7 @@ const pageSchema = {
                         </div>
                         <div class="dcrs-notice-box">
                             <span class="dcrs-notice-box__icon"><Fragment set:html={icons.info} /></span>
-                            <p>Our mechanics verify factory amp-hour (Ah) ratings, cold cranking amps (CCA), and battery registration requirements before fitting a new unit.</p>
+                            <p>No single battery type is universally best for every car. Our mechanics check your vehicle's factory requirements to install the appropriate specification.</p>
                         </div>
                     </div>
 
@@ -513,16 +455,36 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 6. SIGNS YOU NEED THIS SERVICE ----------------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="warning-signs">
+        <!-- 6. VEHICLES WE SERVICE ------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="vehicles-serviced">
+            <div class="dcrs-container">
+                <div class="dcrs-heading dcrs-heading--center">
+                    <div class="dcrs-kicker">Vehicles We Service</div>
+                    <h2 class="dcrs-heading__title">Vehicle Makes Supported for Battery Replacement</h2>
+                    <p class="dcrs-heading__sub">We service battery requirements across Japanese, European, American, and Korean vehicles in saloon, SUV, and commercial categories.</p>
+                </div>
+
+                <div class="dcrs-makes-grid">
+                    {makes.map((m) => (
+                        <div class="dcrs-make-pill">
+                            <span class="dcrs-make-pill__icon"><Fragment set:html={icons.check} /></span>
+                            <span>{m}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. WARNING SIGNS ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="warning-signs">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Warning Signs</div>
                     <h2 class="dcrs-heading__title">
-                        8 Signs Your Car Battery Needs Replacing in Dubai
+                        8 Signs Your Car Battery Needs Checking in Dubai
                     </h2>
                     <p class="dcrs-heading__sub">
-                        Recognizing early symptoms of battery deterioration helps you schedule a replacement before facing a roadside no-start situation.
+                        Recognizing early symptoms helps you test or replace your battery before experiencing an unexpected no-start situation.
                     </p>
                 </div>
 
@@ -540,13 +502,13 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 7. WHY CHOOSE DUBAI CAR REPAIR SERVICE? -------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="why-choose-us">
+        <!-- 8. WHY CHOOSE US ------------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="why-choose-us">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">Why Choose Us</div>
                     <h2 class="dcrs-heading__title">Why Dubai Drivers Trust Us for Battery Replacement</h2>
-                    <p class="dcrs-heading__sub">Professional diagnostics, experienced technicians, and fast and affordable pricing for all vehicle makes.</p>
+                    <p class="dcrs-heading__sub">Experienced technicians, transparent diagnostics, and dependable battery service at our workshop or your location.</p>
                 </div>
 
                 <div class="dcrs-reasons-grid">
@@ -565,8 +527,8 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ) ----------------------------->
-        <section class="dcrs-section dcrs-section--paper" id="faq">
+        <!-- 9. FAQS ---------------------------------------------------------->
+        <section class="dcrs-section dcrs-section--tint" id="faq">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">FAQ</div>
@@ -591,8 +553,8 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 9. RELATED SERVICES ---------------------------------------------->
-        <section class="dcrs-section dcrs-section--tint" id="related-services">
+        <!-- 10. RELATED SERVICES --------------------------------------------->
+        <section class="dcrs-section dcrs-section--paper" id="related-services">
             <div class="dcrs-container">
                 <div class="dcrs-heading dcrs-heading--center">
                     <div class="dcrs-kicker">More Services</div>
@@ -613,17 +575,17 @@ const pageSchema = {
             </div>
         </section>
 
-        <!-- 10. FINAL CTA ---------------------------------------------------->
+        <!-- 11. FINAL CTA ---------------------------------------------------->
         <section class="dcrs-cta-banner">
             <div class="dcrs-container">
                 <div class="dcrs-cta-banner__inner">
                     <div class="dcrs-cta-banner__copy">
-                        <span class="dcrs-cta-banner__badge">Professional Battery Service</span>
+                        <span class="dcrs-cta-banner__badge">Battery Testing &amp; Replacement</span>
                         <h2 class="dcrs-cta-banner__title">
-                            Book Your Car Battery Replacement in Dubai Today
+                            Need Your Car Battery Tested or Replaced?
                         </h2>
                         <p class="dcrs-cta-banner__sub">
-                            Fast and affordable pricing with genuine batteries and warranty support. Open daily 7:00 AM – 10:00 PM at 222 Al Satwa Road, or request rapid mobile battery delivery across Dubai. <a href="/contact" class="dcrs-cta-inline-link">Contact our workshop desk</a> for immediate availability.
+                            Visit our Al Satwa workshop at 222 Al Satwa Road, Dubai, or contact us to check mobile technician availability. Open daily from 7:00 AM to 10:00 PM. Call or WhatsApp our team for advice and transparent pricing.
                         </p>
                     </div>
                     <div class="dcrs-cta-banner__actions">
@@ -631,14 +593,14 @@ const pageSchema = {
                             <Fragment set:html={icons.phone} /> Call {phoneDisplay}
                         </a>
                         <a href={waHref} target="_blank" rel="noopener noreferrer" class="dcrs-btn dcrs-btn--wa">
-                            <Fragment set:html={icons.chat} /> WhatsApp
+                            <Fragment set:html={icons.chat} /> WhatsApp Us
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 11. BOTTOM STICKY MOBILE BAR ------------------------------------>
+        <!-- 12. BOTTOM STICKY MOBILE BAR ------------------------------------>
         <div class="dcrs-stickybar">
             <a href={phoneHref} class="dcrs-btn dcrs-btn--solid dcrs-stickybar__btn">
                 <Fragment set:html={icons.phone} /> Call Now
